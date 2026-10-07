@@ -26,6 +26,7 @@ Codex should be given:
 8. the final Stitch DESIGN.md
 9. all four final screenshots
 10. all four HTML files
+11. `docs/10-wordpress-runtime-boundary.md`
 
 The v1/v2 history is useful context but v3 is the implementation baseline.
 
@@ -219,3 +220,14 @@ The WordPress result passes when:
 - accessibility basics are implemented
 - no page builder is required
 - no prototype-only CDN implementation remains
+
+
+---
+
+## Local WordPress baseline
+
+WordPress **7.1.3** is installed under `wordpress/app/public/`.
+
+Codex may inspect WordPress Core as local reference, but Core is immutable for this project. Project implementation belongs under `wp-content`, primarily in the NOIR theme.
+
+See `docs/10-wordpress-runtime-boundary.md` before specifying implementation.

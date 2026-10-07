@@ -93,6 +93,8 @@ wordpress/app/public/wp-content/themes/*
 
 wordpress/app/public/.htaccess
 wordpress/app/public/debug.log
+wordpress/app/public/local-xdebuginfo.php
+wordpress/app/public/local-phpinfo.php
 
 wordpress/app/public/wp-content/advanced-cache.php
 wordpress/app/public/wp-content/object-cache.php
