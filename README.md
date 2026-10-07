@@ -45,4 +45,4 @@ The main output of this repository is not only the finished WordPress site. It i
 
 Pilot product: **NOIR Auto Detailing**.
 
-Stitch export v1 has been received and audited. The visual system is strong, but product copy, information density, and appointment-form scope need one refinement pass before the Codex/MATT handoff. Next: run `docs/05-stitch-refinement-prompt-v2.md`, export v2, compare, and freeze the approved visual baseline.
+Stitch v2 has been reviewed. The visual direction is accepted and content density/form scope improved materially, but stale legacy terminology remains in shared footer and secondary content. Next: run the final content-consistency pass in `docs/07-stitch-final-consistency-prompt-v3.md`, then freeze the Stitch baseline and begin Codex/MATT specification.
