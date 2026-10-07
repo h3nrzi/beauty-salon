@@ -1,0 +1,17 @@
+# 05: Submit a validated Appointment Request end-to-end
+
+**What to build:** Customers submit an Appointment Request with or without JavaScript, correct errors without retyping safe values, and receive an honest accepted-for-sending or definite-failure outcome. The Studio receives one notification for a normal valid submission. Implement the approved normal path using simple project-specific code; Ticket 06 completes the reliability boundary before final acceptance.
+
+**Blocked by:** 01 — Contact the Studio through Contact and shared navigation; 02 — Compare the five Services and choose an appointment interest.
+
+**Status:** ready-for-agent
+
+- [ ] Ordinary POST works for anonymous and logged-in visitors without JavaScript. Valid Service CTA preselection selects a currently published valid offering; unknown/unavailable selections cannot fabricate an option. GET never sends mail.
+- [ ] Server validation requires name, phone, vehicle and approved Service; email, Preferred Date and notes remain optional. Enforce every specified field/Unicode/body bound, scalar shape, encoding, sanitization and contextual escaping rule. Validate real dates as today or later in the configured Studio timezone, without calculating availability.
+- [ ] Apply the specified issued-token, visitor binding and scoped WordPress nonce/CSRF checks, including native logged-in nonce protection. Reject a filled honeypot without sending, reflecting its value or claiming success. Binding failures offer understandable direct-contact guidance.
+- [ ] Validation returns HTTP 422 with safe values in the current response, an accessible linked error summary and associated field errors. Enhanced focus moves to the summary; all feedback remains usable without JavaScript. Security failures return 403. Do not persist customer fields or place them in URLs, sessions, transients or diagnostics.
+- [ ] Send one plain-text Studio notification through WordPress mail to the explicitly configured recipient, with a site-controlled sender, optional validated customer Reply-To, seven normalized fields and request time/timezone. No automatic customer mail, attachments, CC/BCC or WordPress recovery copy is added; credentials remain environment configuration.
+- [ ] Success follows positive transport acceptance and recorded acceptance, using the specified signed/bound receipt and 303 POST/Redirect/GET to Contact. A guessed status URL cannot claim success. Use the approved accepted-for-sending wording, response expectation and explicit statement that the appointment is not confirmed.
+- [ ] Missing configuration and proven pre-acceptance failure return honest non-success/503 responses with safe preserved values where appropriate and explicit retry where proven safe. Do not classify ambiguous outcomes as definite failures or promise inbox delivery; Ticket 06 owns the complete uncertain-outcome and replay handling.
+- [ ] Focused policy and real WordPress/browser checks cover field boundaries/injection, timezone/date boundaries, unavailable Services, nonce/binding/honeypot rejection, safe error values, permissions for operational configuration, responsive/accessibility behavior and the JavaScript/no-JavaScript normal path. Local mail capture proves recipient, sender, Reply-To and body without becoming a shipped submission store.
+- [ ] Add only the project-owned processing and normal-path state needed by the approved contract. Do not build generalized infrastructure or independently redesign Ticket 06's reliability mechanism.
