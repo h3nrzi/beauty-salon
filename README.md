@@ -41,8 +41,8 @@ The main output of this repository is not only the finished WordPress site. It i
 
 ## Current status
 
-**Phase 1 — Stitch design / refinement**
+**Phase 2 — Engineering handoff / Codex + MATT**
 
 Pilot product: **NOIR Auto Detailing**.
 
-Stitch v2 has been reviewed. The visual direction is accepted and content density/form scope improved materially, but stale legacy terminology remains in shared footer and secondary content. Next: run the final content-consistency pass in `docs/07-stitch-final-consistency-prompt-v3.md`, then freeze the Stitch baseline and begin Codex/MATT specification.
+Stitch v3 is the frozen design baseline. Remaining issues are deterministic copy/implementation cleanup and are documented for engineering. Next: place the frozen v3 export in the local project, give Codex the handoff in `docs/09-codex-matt-handoff.md`, and begin the MATT `/to-spec` phase before any WordPress implementation.
