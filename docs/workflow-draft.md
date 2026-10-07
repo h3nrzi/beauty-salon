@@ -13,11 +13,15 @@
 6. Export HTML/CSS/assets
 7. Audit the export
 8. Feed the approved handoff into Codex
-9. Run MATT spec → tickets
-10. Implement as a native WordPress theme
-11. Compare WordPress against Stitch
-12. Record conversion problems and fixes
-13. Extract reusable rules
+9. Run Matt repo setup once
+10. Grill unresolved engineering decisions with docs
+11. Record vocabulary/ADRs as decisions settle
+12. Run MATT to-spec
+13. Run MATT to-tickets
+14. Implement ticket-by-ticket
+15. Code review and QA against Stitch
+16. Run retrospective
+17. Extract reusable rules
 ```
 
 ## Rules already established
@@ -39,7 +43,10 @@
 ### Codex + MATT
 
 - Do not begin by blindly splitting HTML into PHP files.
-- First understand the product, templates, repeated components, and editable data.
+- Run repo setup once before planning.
+- Use grilling to settle unresolved engineering choices before specification.
+- First understand the product, templates, repeated components, editable data, and runtime boundaries.
+- Let `/to-spec` synthesize settled decisions rather than inventing them.
 - Produce a spec and implementation tickets before code.
 - Prefer WordPress-native conventions over preserving generated structure.
 
