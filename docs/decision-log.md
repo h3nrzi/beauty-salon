@@ -33,3 +33,33 @@ Engineering starts from an explicit spec/ticket phase rather than immediately re
 **Status:** Accepted
 
 The repository records prompts, failures, deviations, and cleanup work. A successful website with undocumented manual steps is not considered a complete success.
+
+
+## D-006 — Pilot 01 product is a premium auto detailing studio
+
+**Status:** Accepted
+
+The fictional product is **NOIR Auto Detailing**.
+
+The four-page scope is:
+
+1. Home
+2. Services
+3. Gallery
+4. Contact / Appointment Request
+
+Rationale:
+
+- visually rich enough to test Stitch well
+- simple enough to avoid application/backend complexity
+- repeated services and gallery content create useful WordPress modeling questions
+- clearly different from previously explored salon/booking products
+- provides a realistic CTA and form without requiring a scheduling engine
+
+## D-007 — Appointment flow remains lead generation
+
+**Status:** Accepted
+
+Pilot 01 will not implement live slot selection, automatic appointment confirmation, payment, customer accounts, or appointment management.
+
+The contact form collects an appointment request. The business confirms it later.
