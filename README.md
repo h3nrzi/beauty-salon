@@ -45,4 +45,4 @@ The main output of this repository is not only the finished WordPress site. It i
 
 Pilot product: **NOIR Auto Detailing**.
 
-Stitch v3 is the frozen design baseline. Remaining issues are deterministic copy/implementation cleanup and are documented for engineering. Next: place the frozen v3 export in the local project, give Codex the handoff in `docs/09-codex-matt-handoff.md`, and begin the MATT `/to-spec` phase before any WordPress implementation.
+Stitch v3 is the frozen design baseline. Remaining issues are deterministic copy/implementation cleanup and are documented for engineering. Frozen Stitch v3 references and WordPress 7.1.3 are now present in the repository. WordPress Core is treated as immutable upstream code. Next: open Codex at the repository root, read `docs/09-codex-matt-handoff.md` and `docs/10-wordpress-runtime-boundary.md`, and begin the MATT `/to-spec` phase before any implementation.
