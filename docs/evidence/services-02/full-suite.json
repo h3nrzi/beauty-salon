@@ -37,5 +37,27 @@
       "stdout": "PASS chrome 375px: navigation, keyboard, no-JS, local assets, reflow\nPASS chrome 768px: navigation, keyboard, no-JS, local assets, reflow\nPASS chrome 1024px: navigation, keyboard, no-JS, local assets, reflow\nPASS chrome 1440px: navigation, keyboard, no-JS, local assets, reflow\nPASS firefox 375px: navigation, keyboard, no-JS, local assets, reflow\nPASS firefox 768px: navigation, keyboard, no-JS, local assets, reflow\nPASS firefox 1024px: navigation, keyboard, no-JS, local assets, reflow\nPASS firefox 1440px: navigation, keyboard, no-JS, local assets, reflow\n",
       "stderr": "page.evaluate: Execution context was destroyed, most likely because of a navigation\n    at /Users/hossein/Local Sites/stitch-wp-pilot/tests/contact-browser.cjs:120:42 {\n  log: [],\n  name: 'Error'\n}\n"
     }
-  ]
+  ],
+  "follow_up_checks": [
+    {
+      "command": "NOIR_BROWSER=webkit node tests/contact-browser.cjs",
+      "exit_code": 0,
+      "stdout": "PASS webkit 375px: navigation, keyboard, no-JS, local assets, reflow\nPASS webkit 768px: navigation, keyboard, no-JS, local assets, reflow\nPASS webkit 1024px: navigation, keyboard, no-JS, local assets, reflow\nPASS webkit 1440px: navigation, keyboard, no-JS, local assets, reflow\n",
+      "reason": "Capture a clean baseline after keyboard hash navigation and viewport changes; all four WebKit viewports pass."
+    },
+    {
+      "command": "NOIR_BROWSER=chrome,firefox,webkit node tests/services-browser.cjs",
+      "exit_code": 0,
+      "report": "browser-results-chrome-firefox-webkit.json",
+      "reason": "Services suite completed after the original full-suite run stopped in Contact WebKit."
+    }
+  ],
+  "final_status": "All four WordPress scripts, syntax checks, Contact and Services across all three engines and four viewports pass, including the targeted follow-up. The initial failed run is retained.",
+  "review_follow_up": {
+    "wordpress_exit_code": 0,
+    "wordpress_log": "wordpress-results.txt",
+    "browser_exit_code": 0,
+    "browser_stdout": "PASS chrome 375px: canonical facts, native footer, links/preselection, independent FAQ, keyboard/pointer/touch comparison, images, axe, no-JS\nPASS chrome 768px: canonical facts, native footer, links/preselection, independent FAQ, keyboard/pointer/touch comparison, images, axe, no-JS\nPASS chrome 1024px: canonical facts, native footer, links/preselection, independent FAQ, keyboard/pointer/touch comparison, images, axe, no-JS\nPASS chrome 1440px: canonical facts, native footer, links/preselection, independent FAQ, keyboard/pointer/touch comparison, images, axe, no-JS\nPASS firefox 375px: canonical facts, native footer, links/preselection, independent FAQ, keyboard/pointer/touch comparison, images, axe, no-JS\nPASS firefox 768px: canonical facts, native footer, links/preselection, independent FAQ, keyboard/pointer/touch comparison, images, axe, no-JS\nPASS firefox 1024px: canonical facts, native footer, links/preselection, independent FAQ, keyboard/pointer/touch comparison, images, axe, no-JS\nPASS firefox 1440px: canonical facts, native footer, links/preselection, independent FAQ, keyboard/pointer/touch comparison, images, axe, no-JS\nPASS webkit 375px: canonical facts, native footer, links/preselection, independent FAQ, keyboard/pointer/touch comparison, images, axe, no-JS\nPASS webkit 768px: canonical facts, native footer, links/preselection, independent FAQ, keyboard/pointer/touch comparison, images, axe, no-JS\nPASS webkit 1024px: canonical facts, native footer, links/preselection, independent FAQ, keyboard/pointer/touch comparison, images, axe, no-JS\nPASS webkit 1440px: canonical facts, native footer, links/preselection, independent FAQ, keyboard/pointer/touch comparison, images, axe, no-JS\n",
+    "admin_render": "Services fixed section box: 32 textareas; Service box: 3 textareas; no PHP errors."
+  }
 }

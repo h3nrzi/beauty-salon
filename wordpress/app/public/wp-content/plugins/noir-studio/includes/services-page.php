@@ -56,11 +56,26 @@ add_filter('rest_pre_insert_page',function($prepared,$request) {
  }
  return $prepared;
 },10,2);
+function noir_services_field_labels() {
+ return [
+  'intro'=>__('Introduction','noir-studio'),'details'=>__('Detailed Services','noir-studio'),
+  'metrics'=>__('Metrics','noir-studio'),'process'=>__('Process','noir-studio'),
+  'comparison'=>__('Comparison','noir-studio'),'faq'=>__('FAQ','noir-studio'),'final'=>__('Final CTA','noir-studio'),
+  'eyebrow'=>__('Eyebrow','noir-studio'),'heading'=>__('Heading','noir-studio'),'body'=>__('Body','noir-studio'),
+  'items'=>__('Items','noir-studio'),'title'=>__('Title','noir-studio'),'value'=>__('Value','noir-studio'),
+  'caption'=>__('Caption','noir-studio'),'icon'=>__('Decorative icon','noir-studio'),
+  'before_title'=>__('Before title','noir-studio'),'before_body'=>__('Before description','noir-studio'),
+  'after_title'=>__('After title','noir-studio'),'after_body'=>__('After description','noir-studio'),
+  'before_image'=>__('Before image','noir-studio'),'after_image'=>__('After image','noir-studio'),
+  'before_label'=>__('Before label','noir-studio'),'after_label'=>__('After label','noir-studio'),
+  'question'=>__('Question','noir-studio'),'answer'=>__('Answer','noir-studio'),
+ ];
+}
 // Fixed-schema recursive field rendering; editors never enter JSON or layout HTML.
 function noir_services_fields($name,$schema,$value,$label) {
  if ($schema['type']==='object') {
   echo '<fieldset><legend><h3>'.esc_html($label).'</h3></legend>';
-  foreach ($schema['properties'] as $key=>$child) { noir_services_fields($name.'['.$key.']',$child,$value[$key]??null,ucwords(str_replace('_',' ',$key))); }
+  foreach ($schema['properties'] as $key=>$child) { noir_services_fields($name.'['.$key.']',$child,$value[$key]??null,noir_services_field_labels()[$key]); }
   echo '</fieldset>';
  } elseif ($schema['type']==='array') {
   echo '<p>'.esc_html__('Clear all text in a row to remove it. Empty collections omit the section.','noir-studio').'</p>';
@@ -71,11 +86,11 @@ function noir_services_fields($name,$schema,$value,$label) {
   }
  } elseif (isset($schema['enum'])) {
   echo '<p><label>'.esc_html($label).' <select name="'.esc_attr($name).'">';
-  foreach ($schema['enum'] as $option) { echo '<option value="'.esc_attr($option).'" '.selected($value,$option,false).'>'.esc_html(ucwords(str_replace('_',' ',$option))).'</option>'; }
+  foreach ($schema['enum'] as $option) { echo '<option value="'.esc_attr($option).'" '.selected($value,$option,false).'>'.esc_html(['search'=>__('Inspection','noir-studio'),'local_car_wash'=>__('Wash','noir-studio'),'auto_fix_high'=>__('Polishing','noir-studio'),'verified_user'=>__('Protection','noir-studio')][$option]).'</option>'; }
   echo '</select></label></p>';
  } elseif ($schema['type']==='integer') {
   echo '<p><label>'.esc_html($label).' <input type="number" min="0" step="1" name="'.esc_attr($name).'" value="'.esc_attr($value??0).'"></label> '.esc_html__('Media Library attachment ID; 0 omits the image.','noir-studio').'</p>';
- } else { noir_admin_text_input($name,$label,$value??'',$schema['maxLength'],in_array($label,['Body','Answer'],true)); }
+ } else { noir_admin_text_input($name,$label,$value??'',$schema['maxLength'],($schema['maxLength']??0)>300); }
 }
 function noir_services_input($value,$schema) {
  if ($schema['type']==='object' && is_array($value)) {
@@ -91,7 +106,7 @@ add_action('add_meta_boxes_page',function($post) {
 });
 function noir_services_page_box($post) {
  wp_nonce_field('noir_services_page_save','noir_services_page_nonce');
- foreach (noir_services_page_schemas() as $section=>$schema) { noir_services_fields('noir_services['.$section.']',$schema,get_post_meta($post->ID,'_noir_services_'.$section,true),ucwords($section)); }
+ foreach (noir_services_page_schemas() as $section=>$schema) { noir_services_fields('noir_services['.$section.']',$schema,get_post_meta($post->ID,'_noir_services_'.$section,true),noir_services_field_labels()[$section]); }
 }
 add_action('save_post_page',function($post_id) {
  if (wp_is_post_revision($post_id) || wp_is_post_autosave($post_id) || (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) || !current_user_can('edit_post',$post_id) || !current_user_can('edit_others_pages') || get_page_template_slug($post_id)!=='page-services.php') { return; }

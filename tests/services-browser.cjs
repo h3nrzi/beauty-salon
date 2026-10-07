@@ -196,7 +196,11 @@ const titles = [
               (images) =>
                 images.length === 7 &&
                 images.every(
-                  (i) => i.srcset && i.sizes && i.loading === "lazy",
+                  (i, index) =>
+                    i.srcset &&
+                    i.sizes &&
+                    i.loading === (index === 0 ? "eager" : "lazy") &&
+                    (index !== 0 || i.getAttribute("fetchpriority") === "high"),
                 ),
             ),
         );

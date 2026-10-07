@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: NOIR Studio
- * Description: Bounded Contact editorial content and shared Studio settings.
- * Version: 0.1.0
+ * Description: Canonical Services, bounded page editorial content and shared Studio settings.
+ * Version: 0.2.0
  * Requires at least: 6.4
  * Requires PHP: 8.0
  * Text Domain: noir-studio
