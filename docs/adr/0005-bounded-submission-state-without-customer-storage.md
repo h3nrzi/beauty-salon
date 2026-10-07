@@ -1,0 +1,5 @@
+# Bounded submission state without storing customer fields
+
+Email-only requests need protection against concurrent double sends and refresh/replay without introducing stored customer submissions. Use a short-lived submission token with server-side states distinguishing issued, processing, accepted, and failed/expired; concurrency control must ensure that simultaneous use of a token cannot create multiple sends. The token state holds no customer form fields and is distinct from anonymous-visitor abuse throttling.
+
+Once transport acceptance is recorded, replay must not send again and may return the existing success outcome. Successful submission uses POST/Redirect/GET. Definite validation or transport failure permits a safe retry; an uncertain transport outcome must not trigger automatic resend or a success claim. Expiration alone cannot turn an uncertain processing outcome into proof that sending failed. Exactly-once email delivery is not promised, and the specification must choose explicitly bounded storage/lifetimes and a concurrency primitive that demonstrates these properties.
