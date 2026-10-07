@@ -25,11 +25,14 @@ Run checks in a disposable/local WordPress environment. The tests create and rem
 ```sh
 wp eval-file tests/contact-wordpress.php
 wp eval-file tests/studio-wordpress.php
+wp eval-file tests/plugin-fallback-wordpress.php
 npm ci
 npx playwright install
 npm run check
 npm run test:browser
 ```
+
+The plugin-fallback test temporarily deactivates the project plugin and restores it; it checks only the direct-contact fallback for this slice. Full recovery certification remains Ticket 07.
 
 The WP-CLI commands run from the repository root with the local installation selected (`--path=wordpress/app/public`). Use the Local shell or its PHP/MySQL socket configuration. Browser defaults are local Contact and installed Chrome; override `NOIR_CONTACT_URL`, `NOIR_BROWSER=firefox` or `NOIR_BROWSER=webkit`, and optionally `NOIR_BROWSER_EXECUTABLE`. Browser screenshots/results are written to `docs/evidence/contact-01/` (override `NOIR_EVIDENCE_DIR`). Playwright and axe-core are development dependencies only.
 

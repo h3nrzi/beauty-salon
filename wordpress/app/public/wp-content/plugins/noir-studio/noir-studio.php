@@ -8,5 +8,6 @@
  * Text Domain: noir-studio
  */
 defined('ABSPATH') || exit;
+require_once __DIR__ . '/includes/fields.php';
 require_once __DIR__ . '/includes/contact.php';
 require_once __DIR__ . '/includes/settings.php';

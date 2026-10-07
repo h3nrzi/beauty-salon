@@ -1,12 +1,6 @@
 <?php
 defined('ABSPATH') || exit;
 
-function noir_text_schema($min, $max) {
- return ['type'=>'string', 'minLength'=>$min, 'maxLength'=>$max, 'pattern'=>'^[^<>\\x00-\\x08\\x0B\\x0C\\x0E-\\x1F\\x7F]*$'];
-}
-function noir_object_schema($properties) {
- return ['type'=>'object', 'properties'=>$properties, 'required'=>array_keys($properties), 'additionalProperties'=>false];
-}
 function noir_contact_schemas() {
  $section = noir_object_schema(['eyebrow'=>noir_text_schema(0,80), 'heading'=>noir_text_schema(1,180), 'body'=>noir_text_schema(0,2000)]);
  return [
@@ -23,39 +17,12 @@ function noir_contact_error($message) {
   set_transient($key,array_unique($errors),120);
  }
 }
-// Canonical plain-text normalization without silently stripping invalid input.
-function noir_normalize_contact($value) {
- if (is_string($value)) { return trim(str_replace(["\r\n","\r"],"\n",$value)); }
- if (is_array($value)) { return array_map('noir_normalize_contact',$value); }
- return $value;
-}
-function noir_validate_contact($value, $schema, $name) {
- $valid = rest_validate_value_from_schema($value,$schema,$name);
- if ($schema['type']==='string' && is_string($value) && wp_check_invalid_utf8($value)!==$value) { return new WP_Error('noir_encoding',__('Use valid UTF-8 text.','noir-studio')); }
- if (is_wp_error($valid)) { return $valid; }
- // Whitespace-only required strings are not meaningful editorial content.
- if ($schema['type']==='string' && !empty($schema['minLength']) && trim($value)==='') {
-  return new WP_Error('noir_empty',sprintf(__('%s must contain text.','noir-studio'),$name));
- }
- if ($schema['type']==='object') {
-  foreach ($schema['properties'] as $field=>$child) {
-   $valid = noir_validate_contact($value[$field],$child,$name.'.'.$field);
-   if (is_wp_error($valid)) { return $valid; }
-  }
- } elseif ($schema['type']==='array') {
-  foreach ($value as $item) {
-   $valid = noir_validate_contact($item,$schema['items'],$name);
-   if (is_wp_error($valid)) { return $valid; }
-  }
- }
- return true;
-}
 add_action('init',function() {
  foreach (noir_contact_schemas() as $section=>$schema) {
   register_post_meta('page','_noir_contact_'.$section,[
    'type'=>$schema['type'], 'single'=>true, 'revisions_enabled'=>true,
    'show_in_rest'=>['schema'=>$schema],
-   'sanitize_callback'=>'noir_normalize_contact',
+   'sanitize_callback'=>'noir_normalize_text',
    'auth_callback'=>function($allowed,$key,$post_id) {
     return get_page_template_slug($post_id)==='page-contact.php' && current_user_can('edit_post',$post_id) && (current_user_can('edit_others_pages') || current_user_can('manage_options'));
    },
@@ -67,7 +34,7 @@ function noir_guard_contact_meta($check,$post_id,$key,$value) {
  $schemas = noir_contact_schemas();
  $section = substr($key,strlen('_noir_contact_'));
  if (!str_starts_with($key,'_noir_contact_') || !isset($schemas[$section])) { return $check; }
- $valid = noir_validate_contact($value,$schemas[$section],$section);
+ $valid = noir_validate_fields($value,$schemas[$section],$section);
  if (is_wp_error($valid)) {
   noir_contact_error($valid->get_error_message().' '.__('Previous content was kept. Correct this field and save again.','noir-studio'));
   return false;
@@ -81,25 +48,18 @@ add_action('add_meta_boxes_page',function($post) {
   add_meta_box('noir-contact',__('Contact fixed sections','noir-studio'),'noir_contact_box','page','normal','high');
  }
 });
-function noir_contact_input($name,$label,$value,$max,$multiline=false) {
- $id = 'noir-'.sanitize_html_class($name);
- echo '<p><label for="'.esc_attr($id).'"><strong>'.esc_html($label).'</strong></label><br>';
- if ($multiline) {
-  echo '<textarea class="widefat" rows="3" id="'.esc_attr($id).'" name="'.esc_attr($name).'" maxlength="'.(int)$max.'">'.esc_textarea($value).'</textarea>';
- } else {
-  echo '<input class="widefat" id="'.esc_attr($id).'" name="'.esc_attr($name).'" value="'.esc_attr($value).'" maxlength="'.(int)$max.'">';
- }
- echo '</p>';
-}
 function noir_contact_box($post) {
+ $section_labels = ['intro'=>__('Introduction','noir-studio'),'response'=>__('Response expectation','noir-studio'),'form'=>__('Surrounding form copy','noir-studio'),'standards'=>__('Studio standards','noir-studio'),'process'=>__('Appointment process','noir-studio')];
+ $field_labels = ['eyebrow'=>__('Eyebrow','noir-studio'),'heading'=>__('Heading','noir-studio'),'body'=>__('Body','noir-studio'),'title'=>__('Title','noir-studio')];
+ $icon_labels = ['verified_user'=>__('Secure Studio','noir-studio'),'coffee'=>__('Customer lounge','noir-studio'),'shield'=>__('Insurance','noir-studio')];
  wp_nonce_field('noir_contact_save','noir_contact_nonce');
  echo '<p>'.esc_html__('Layout and section order are fixed. Plain text only; invalid sections keep their previous content. Leave both title and body empty to remove a collection row.','noir-studio').'</p>';
  foreach (noir_contact_schemas() as $section=>$schema) {
   $value = get_post_meta($post->ID,'_noir_contact_'.$section,true);
-  echo '<fieldset><legend><h3>'.esc_html(ucfirst($section)).'</h3></legend>';
+  echo '<fieldset><legend><h3>'.esc_html($section_labels[$section]).'</h3></legend>';
   if ($schema['type']==='object') {
    foreach ($schema['properties'] as $field=>$bounds) {
-    noir_contact_input("noir_contact[$section][$field]",ucfirst($field),$value[$field]??'',$bounds['maxLength'],$field==='body');
+    noir_admin_text_input("noir_contact[$section][$field]",$field_labels[$field],$value[$field]??'',$bounds['maxLength'],$field==='body');
    }
   } else {
    for ($i=0;$i<$schema['maxItems'];$i++) {
@@ -108,9 +68,9 @@ function noir_contact_box($post) {
      $name = "noir_contact[$section][$i][$field]";
      if ($field==='icon') {
       echo '<label>'.esc_html__('Decorative icon','noir-studio').' <select name="'.esc_attr($name).'">';
-      foreach ($bounds['enum'] as $icon) { echo '<option value="'.esc_attr($icon).'" '.selected($value[$i]['icon']??'',$icon,false).'>'.esc_html($icon).'</option>'; }
+      foreach ($bounds['enum'] as $icon) { echo '<option value="'.esc_attr($icon).'" '.selected($value[$i]['icon']??'',$icon,false).'>'.esc_html($icon_labels[$icon]).'</option>'; }
       echo '</select></label>';
-     } else { noir_contact_input($name,ucfirst($field),$value[$i][$field]??'',$bounds['maxLength'],$field==='body'); }
+     } else { noir_admin_text_input($name,$field_labels[$field],$value[$i][$field]??'',$bounds['maxLength'],$field==='body'); }
     }
     echo '</details>';
    }
@@ -125,11 +85,11 @@ add_action('save_post_page',function($post_id) {
  if (!is_array($input)) { noir_contact_error(__('Contact content must be structured fields.','noir-studio')); return; }
  foreach (noir_contact_schemas() as $section=>$schema) {
   if (!array_key_exists($section,$input)) { continue; }
-  $value = noir_normalize_contact($input[$section]);
+  $value = noir_normalize_text($input[$section]);
   if ($schema['type']==='array' && is_array($value)) {
    $value = array_values(array_filter($value,function($row) { return !is_array($row) || !isset($row['title'],$row['body']) || !is_string($row['title']) || !is_string($row['body']) || trim($row['title'])!=='' || trim($row['body'])!==''; }));
   }
-  $valid = noir_validate_contact($value,$schema,$section);
+  $valid = noir_validate_fields($value,$schema,$section);
   if (is_wp_error($valid)) { noir_contact_error($valid->get_error_message().' '.__('Previous section was kept.','noir-studio')); continue; }
   update_post_meta($post_id,'_noir_contact_'.$section,wp_slash($value));
  }
@@ -150,7 +110,7 @@ add_filter('rest_pre_insert_page',function($prepared,$request) {
  foreach (noir_contact_schemas() as $section=>$schema) {
   $key = '_noir_contact_'.$section;
   if (!array_key_exists($key,$meta)) { continue; }
-  $valid = noir_validate_contact(noir_normalize_contact($meta[$key]),$schema,$section);
+  $valid = noir_validate_fields(noir_normalize_text($meta[$key]),$schema,$section);
   if (is_wp_error($valid)) {
    return new WP_Error('noir_contact_invalid',$valid->get_error_message().' '.__('Previous content was kept. Correct this field and save again.','noir-studio'),['status'=>400]);
   }

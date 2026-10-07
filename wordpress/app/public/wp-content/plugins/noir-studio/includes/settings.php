@@ -4,11 +4,11 @@ defined('ABSPATH') || exit;
 function noir_studio_settings() { return (array)get_option('noir_studio',[]); }
 function noir_studio_fields() {
  return [
-  'description'=>['Studio description',1,500],
-  'phone_label'=>['Public phone label',1,60], 'phone_dial'=>['Public phone dial string',7,16],
-  'direct_label'=>['Direct phone label (optional)',0,60], 'direct_dial'=>['Direct phone dial string (optional)',0,16],
-  'email'=>['Public email',1,254], 'timezone'=>['IANA Studio timezone',1,100],
-  'status'=>['Studio status (optional)',0,80], 'directions'=>['Directions HTTPS URL (optional)',0,2048],
+  'description'=>[__('Studio description','noir-studio'),1,500],
+  'phone_label'=>[__('Public phone label','noir-studio'),1,60], 'phone_dial'=>[__('Public phone dial string','noir-studio'),7,16],
+  'direct_label'=>[__('Direct phone label (optional)','noir-studio'),0,60], 'direct_dial'=>[__('Direct phone dial string (optional)','noir-studio'),0,16],
+  'email'=>[__('Public email','noir-studio'),1,254], 'timezone'=>[__('IANA Studio timezone','noir-studio'),1,100],
+  'status'=>[__('Studio status (optional)','noir-studio'),0,80], 'directions'=>[__('Directions HTTPS URL (optional)','noir-studio'),0,2048],
  ];
 }
 function noir_studio_error($message) { return new WP_Error('noir_studio_invalid',$message); }
@@ -20,7 +20,7 @@ function noir_validate_studio($input) {
  foreach (noir_studio_fields() as $key=>$field) {
   if (!isset($input[$key]) || !is_string($input[$key])) { return noir_studio_error($field[0].': '.__('enter a text value.','noir-studio')); }
   $text = trim($input[$key]);
-  $valid = noir_validate_contact($text,noir_text_schema($field[1],$field[2]),$field[0]);
+  $valid = noir_validate_fields($text,noir_text_schema($field[1],$field[2]),$field[0]);
   if (is_wp_error($valid)) { return $valid; }
   $clean[$key] = $text;
  }
@@ -38,7 +38,7 @@ function noir_validate_studio($input) {
   if (!is_string($line)) { return noir_studio_error(__('Address lines must be text.','noir-studio')); }
   $line = trim($line);
   if ($line==='') { continue; }
-  $valid = noir_validate_contact($line,noir_text_schema(1,200),'Address');
+  $valid = noir_validate_fields($line,noir_text_schema(1,200),'Address');
   if (is_wp_error($valid)) { return $valid; }
   $clean['address'][] = $line;
  }
@@ -104,7 +104,8 @@ add_action('admin_init',function() {
 // Also guard direct native option writes; Settings API is not loaded on every route.
 add_filter('pre_update_option_noir_studio',function($value,$old) {
  if (!current_user_can('manage_options')) { return $old; }
- return is_wp_error(noir_validate_studio($value)) ? $old : noir_validate_studio($value);
+ $valid = noir_validate_studio($value);
+ return is_wp_error($valid) ? $old : $valid;
 },10,2);
 add_action('admin_menu',function() {
  add_options_page(__('Studio settings','noir-studio'),__('Studio settings','noir-studio'),'manage_options','noir-studio','noir_settings_screen');
@@ -112,28 +113,32 @@ add_action('admin_menu',function() {
 function noir_settings_screen() {
  if (!current_user_can('manage_options')) { return; }
  $settings = noir_studio_settings();
+ $day_labels = ['monday'=>__('Monday','noir-studio'),'tuesday'=>__('Tuesday','noir-studio'),'wednesday'=>__('Wednesday','noir-studio'),'thursday'=>__('Thursday','noir-studio'),'friday'=>__('Friday','noir-studio'),'saturday'=>__('Saturday','noir-studio'),'sunday'=>__('Sunday','noir-studio')];
+ $time_labels = ['open'=>__('Opens','noir-studio'),'close'=>__('Closes','noir-studio')];
+ $page_labels = ['home'=>__('Home','noir-studio'),'services'=>__('Services','noir-studio'),'gallery'=>__('Gallery','noir-studio'),'contact'=>__('Contact','noir-studio')];
+ $legal_labels = ['privacy'=>__('Privacy — published page ID or HTTPS URL','noir-studio'),'terms'=>__('Terms — published page ID or HTTPS URL','noir-studio')];
  echo '<div class="wrap"><h1>'.esc_html__('Studio settings','noir-studio').'</h1>';
  settings_errors('noir_studio');
  echo '<p>'.esc_html__('Shared facts are maintained here only. Site identity and navigation remain under native WordPress settings and menus. Legal destinations and directions must be supplied explicitly before acceptance.','noir-studio').'</p><form method="post" action="options.php">';
  settings_fields('noir_studio');
- foreach (noir_studio_fields() as $key=>$field) { noir_contact_input("noir_studio[$key]",$field[0],$settings[$key]??'',$field[2],$key==='description'); }
- for ($i=0;$i<4;$i++) { noir_contact_input("noir_studio[address][$i]",sprintf(__('Address line %d','noir-studio'),$i+1),$settings['address'][$i]??'',200); }
+ foreach (noir_studio_fields() as $key=>$field) { noir_admin_text_input("noir_studio[$key]",$field[0],$settings[$key]??'',$field[2],$key==='description'); }
+ for ($i=0;$i<4;$i++) { noir_admin_text_input("noir_studio[address][$i]",sprintf(__('Address line %d','noir-studio'),$i+1),$settings['address'][$i]??'',200); }
  echo '<h2>'.esc_html__('Opening hours (Studio timezone)','noir-studio').'</h2>';
  foreach (['monday','tuesday','wednesday','thursday','friday','saturday','sunday'] as $day) {
   $row = $settings['hours'][$day]??[];
-  echo '<fieldset><legend>'.esc_html(ucfirst($day)).'</legend><label><input type="checkbox" name="noir_studio[hours]['.esc_attr($day).'][closed]" value="1" '.checked($row['closed']??false,true,false).'>'.esc_html__('Closed','noir-studio').'</label> ';
+  echo '<fieldset><legend>'.esc_html($day_labels[$day]).'</legend><label><input type="checkbox" name="noir_studio[hours]['.esc_attr($day).'][closed]" value="1" '.checked($row['closed']??false,true,false).'>'.esc_html__('Closed','noir-studio').'</label> ';
   foreach (['open','close'] as $key) {
-   echo '<label>'.esc_html(ucfirst($key)).' <input type="time" name="noir_studio[hours]['.esc_attr($day).']['.esc_attr($key).']" value="'.esc_attr($row[$key]??'').'"></label> ';
+   echo '<label>'.esc_html($time_labels[$key]).' <input type="time" name="noir_studio[hours]['.esc_attr($day).']['.esc_attr($key).']" value="'.esc_attr($row[$key]??'').'"></label> ';
   }
   echo '</fieldset>';
  }
  echo '<h2>'.esc_html__('Native page assignments','noir-studio').'</h2>';
  foreach (['home','services','gallery','contact'] as $role) {
-  echo '<p><label>'.esc_html(ucfirst($role)).' ';
+  echo '<p><label>'.esc_html($page_labels[$role]).' ';
   wp_dropdown_pages(['name'=>"noir_studio[pages][$role]",'selected'=>$settings['pages'][$role]??0,'show_option_none'=>__('Choose published page','noir-studio'),'post_status'=>'publish']);
   echo '</label></p>';
  }
- foreach (['privacy','terms'] as $key) { noir_contact_input("noir_studio[$key]",ucfirst($key).' — published page ID or HTTPS URL',$settings[$key]??'',2048); }
+ foreach (['privacy','terms'] as $key) { noir_admin_text_input("noir_studio[$key]",$legal_labels[$key],$settings[$key]??'',2048); }
  submit_button();
  echo '</form></div>';
 }

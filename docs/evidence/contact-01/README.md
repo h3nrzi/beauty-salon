@@ -14,7 +14,9 @@ axe-core **4.11.1** found **zero WCAG 2 A/AA and 2.1 A/AA violations** in all 12
 
 `tests/contact-wordpress.php` passed Editor REST saves, oversized/blank/unknown/malformed input rejection, preservation of last valid content, Unicode and literal backslash preservation, native metadata revision creation/restoration, native meta-box POST saves, invalid nonce rejection, actionable admin feedback and anonymous denial.
 
-`tests/studio-wordpress.php` passed Administrator saves, Editor first-create/update denial, invalid email/timezone/phone/description/HTTPS credentials rejection, reversed hours and unknown nested property rejection, unpublished page rejection, shared phone/description propagation over real HTTP to header/Contact/footer, and native/explicit HTTPS legal/directions rendering. Temporary test destinations and option changes were restored; none remain as production configuration.
+`tests/studio-wordpress.php` passed Administrator saves, Editor first-create/update denial, invalid email/timezone/phone/description/HTTPS credentials rejection, reversed hours and unknown nested property rejection, unpublished page rejection, shared phone/description propagation over real HTTP to header/Contact/footer, and native/explicit HTTPS legal/directions rendering. Native Contact title/slug renaming also preserves the assigned template and shared-data identity. Temporary test destinations and option changes were restored; none remain as production configuration.
+
+`tests/plugin-fallback-wordpress.php` passed actual HTTP after plugin deactivation: Contact responds 200, saved telephone/email actions and Contact anchor survive, submission remains unavailable, and plugin activation is restored. This is a targeted fallback regression check, not complete Ticket 07 recovery evidence.
 
 PHP syntax checks passed for all project-owned PHP/fixture/test files; JS syntax checks passed. There is no TypeScript typecheck target in this PHP/vanilla JS slice.
 

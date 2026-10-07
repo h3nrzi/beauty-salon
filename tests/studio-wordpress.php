@@ -38,12 +38,17 @@ try {
  $change=$settings;$change['pages']['home']=3;update_option('noir_studio',$change);
  studio_check(get_option('noir_studio')==$settings,'Unpublished native page rejected');
  // Render over HTTP to prove shared settings reach independently served public requests.
- $contact_url = home_url('/contact/');
+ $contact_url = get_permalink($old['pages']['contact']??0);
  $change=$settings;$change['phone_label']='Studio test number';$change['phone_dial']='+13105550123';$change['description']='Shared Studio propagation check';
  update_option('noir_studio',$change);
  $html=wp_remote_retrieve_body(wp_remote_get($contact_url,['timeout'=>10]));
  studio_check(substr_count($html,'Studio test number')>=3 && substr_count($html,'Shared Studio propagation check')===2,'Shared phone and description propagate to header, Contact and footer');
  studio_check(str_contains($html,'https://example.org/terms') && str_contains($html,'https://example.org/directions') && str_contains($html,get_permalink($pages['home'])),'Explicit HTTPS and native legal/directions destinations render');
+
+ foreach ($fixture['sections'] as $section=>$value) { update_post_meta($pages['contact'],'_noir_contact_'.$section,wp_slash($value)); }
+ wp_update_post(['ID'=>$pages['contact'],'post_title'=>'Renamed native Contact','post_name'=>'renamed-contact-'.wp_generate_password(8,false)]);
+ $html=wp_remote_retrieve_body(wp_remote_get(get_permalink($pages['contact']),['timeout'=>10]));
+ studio_check(str_contains($html,'Contact &amp; Appointment Request') && str_contains($html,'Studio test number'),'Renamed native Contact preserves template and shared page identity');
 } finally {
  wp_set_current_user($admin);delete_option('noir_studio');
  if ($old!==false) { update_option('noir_studio',$old); }

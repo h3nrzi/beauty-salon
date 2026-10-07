@@ -17,9 +17,29 @@ add_action('admin_notices',function() {
   echo '<div class="notice notice-error"><p>'.esc_html__('NOIR requires the NOIR Studio plugin. Activate it to restore Contact content and shared Studio settings.','noir-auto-detailing').'</p></div>';
  }
 });
-function noir_theme_studio() { return function_exists('noir_studio_settings') ? noir_studio_settings() : []; }
-function noir_theme_page_url($role) { return function_exists('noir_page_url') ? noir_page_url($role) : ''; }
-function noir_theme_destination($value) { return function_exists('noir_destination') ? noir_destination($value) : ''; }
+// Read persisted public facts through Core even when the required plugin is unavailable.
+function noir_theme_studio() {
+ $settings = get_option('noir_studio',[]);
+ if (!is_array($settings)) { return []; }
+ foreach (['phone','direct'] as $prefix) {
+  $dial = $settings[$prefix.'_dial']??'';
+  $label = $settings[$prefix.'_label']??'';
+  if (!is_string($dial) || !preg_match('/^\+?[0-9]{7,15}$/D',$dial) || !is_string($label)) {
+   unset($settings[$prefix.'_dial'],$settings[$prefix.'_label']);
+  }
+ }
+ if (!isset($settings['email']) || !is_string($settings['email']) || !is_email($settings['email']) || preg_match('/[\r\n]/',$settings['email'])) { unset($settings['email']); }
+ return $settings;
+}
+function noir_theme_page_url($role) {
+ $id = noir_theme_studio()['pages'][$role]??0;
+ return is_numeric($id) && get_post_type((int)$id)==='page' && get_post_status((int)$id)==='publish' ? get_permalink((int)$id) : '';
+}
+function noir_theme_destination($value) {
+ if (function_exists('noir_destination')) { return noir_destination($value); }
+ if (is_numeric($value) && get_post_type((int)$value)==='page' && get_post_status((int)$value)==='publish') { return get_permalink((int)$value); }
+ return is_string($value) && filter_var($value,FILTER_VALIDATE_URL) && wp_parse_url($value,PHP_URL_SCHEME)==='https' && !wp_parse_url($value,PHP_URL_USER) && !wp_parse_url($value,PHP_URL_PASS) ? $value : '';
+}
 function noir_icon($name) {
  $allowed = ['person','menu','verified','call','mail','location_on','verified_user','coffee','shield','info'];
  if (!in_array($name,$allowed,true)) { return; }
