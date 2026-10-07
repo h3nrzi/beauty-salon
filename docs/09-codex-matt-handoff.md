@@ -51,21 +51,32 @@ Do not treat generated HTML as production architecture.
 
 ## MATT sequence
 
-Run the MATT methodology in this order:
+The repo-level Matt setup is complete.
 
-1. `/to-spec`
-2. review/approve the specification
-3. `/to-tickets`
-4. review/approve implementation tickets
-5. implementation
+Run the engineering workflow in this order:
 
-Do not skip the specification phase.
+1. `/grill-with-docs`
+2. resolve and document engineering decisions
+3. create/update `GLOSSARY.md` and relevant ADRs as needed
+4. `/to-spec`
+5. review/approve the specification
+6. `/to-tickets`
+7. review/approve implementation tickets
+8. `/implement` ticket-by-ticket
+9. `/code-review`
+10. `/retro`
+
+Do not jump directly from handoff to `/to-spec`.
+
+For this pilot, `/to-spec` should synthesize decisions that have already been made during grilling; it should not be used as the place where unresolved architecture/product-engineering choices are first decided.
 
 ---
 
-## Specification questions that must be resolved
+## Engineering decisions to resolve during /grill-with-docs
 
-The WordPress spec should explicitly decide:
+Resolve these before `/to-spec`.
+
+The final WordPress spec should record the resulting decisions:
 
 ### Theme model
 
