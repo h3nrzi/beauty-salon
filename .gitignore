@@ -133,3 +133,6 @@ coverage/
 playwright-report/
 test-results/
 .phpunit.result.cache
+# Project-owned plugin (ADR 0004).
+!wordpress/app/public/wp-content/plugins/noir-studio/
+!wordpress/app/public/wp-content/plugins/noir-studio/**

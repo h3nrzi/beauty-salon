@@ -1,0 +1,13 @@
+{
+  "name": "noir-wordpress-pilot-checks",
+  "private": true,
+  "scripts": {
+    "test:browser": "node tests/contact-browser.cjs",
+    "check": "node --check tests/contact-browser.cjs && node --check wordpress/app/public/wp-content/themes/noir-auto-detailing/assets/navigation.js"
+  },
+  "devDependencies": {
+    "axe-core": "4.11.1",
+    "playwright": "1.62.1",
+    "prettier": "3.8.1"
+  }
+}
