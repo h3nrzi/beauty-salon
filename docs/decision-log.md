@@ -78,3 +78,20 @@ A final content-consistency pass is required before design freeze.
 This establishes a workflow rule:
 
 > Never freeze a Stitch handoff based only on DESIGN.md or the main screen. Audit the actual exported pages and repeated shared content.
+
+
+## D-009 — Freeze Stitch v3 and move residual cleanup to engineering
+
+**Status:** Accepted
+
+Stitch v3 is the frozen design baseline.
+
+The final pass reduced flagged legacy terminology from 56 instances in v2 to 9 in v3 while preserving the approved visual system.
+
+A few content inconsistencies remain, including isolated legacy terminology and one extra "Custom Consultation" service option. These are deterministic content/implementation corrections and do not justify another generative design pass.
+
+Workflow rule established:
+
+> Stop iterating in Stitch when the remaining differences are deterministic content or implementation cleanup rather than unresolved UI/UX decisions.
+
+The next phase is Codex + MATT specification, not direct HTML-to-PHP conversion.
