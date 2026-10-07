@@ -63,3 +63,18 @@ Rationale:
 Pilot 01 will not implement live slot selection, automatic appointment confirmation, payment, customer accounts, or appointment management.
 
 The contact form collects an appointment request. The business confirms it later.
+
+
+## D-008 — v2 is accepted as the visual direction, but not frozen
+
+**Status:** Accepted
+
+Stitch v2 materially improved copy density and restored the appointment form to the intended lead-generation shape without damaging the approved visual system.
+
+However, the actual exported HTML still contains stale ultra-luxury terminology in shared footer content and secondary sections, even though the v2 design-system document claims that terminology was replaced.
+
+A final content-consistency pass is required before design freeze.
+
+This establishes a workflow rule:
+
+> Never freeze a Stitch handoff based only on DESIGN.md or the main screen. Audit the actual exported pages and repeated shared content.
