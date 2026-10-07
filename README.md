@@ -41,8 +41,8 @@ The main output of this repository is not only the finished WordPress site. It i
 
 ## Current status
 
-**Phase 1 — Stitch design**
+**Phase 1 — Stitch design / refinement**
 
 Pilot product: **NOIR Auto Detailing**.
 
-The product definition, four-page sitemap, design brief, and Stitch Prompt v1 are ready. Next: run the prompt in Stitch and iterate the generated UI before exporting HTML/CSS.
+Stitch export v1 has been received and audited. The visual system is strong, but product copy, information density, and appointment-form scope need one refinement pass before the Codex/MATT handoff. Next: run `docs/05-stitch-refinement-prompt-v2.md`, export v2, compare, and freeze the approved visual baseline.
