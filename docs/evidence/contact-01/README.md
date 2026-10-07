@@ -36,8 +36,10 @@ Corrections visible against v3:
 - Heading semantics now follow H1/H2/H3; mobile links are visible without JS, focus is visible, and the person icon is decorative. Links and controls have usable targets; no motion is essential.
 - Native WordPress footer Service menus currently target the published Services page; Ticket 02 will provide canonical detailed sections.
 
-## Remaining acceptance prerequisites
+## Owner clarification and Ticket 01 acceptance
 
-**Privacy, terms and directions:** owner-approved real destinations have not been supplied. The Administrator screen reports these omissions, public markup omits missing links, and this ticket retains `needs-info`. Tests used disposable explicit destinations solely to verify configuration/rendering. No fabricated legal content or substitute production destination is present.
+**Ticket 01 is complete and accepted** following the owner clarification on 2026-10-07. Administrator-configurable Privacy/Terms destinations and validation remain implemented. Actual Privacy/Terms destinations are unavailable and remain unresolved **Ticket 07 production-acceptance prerequisites**; their absence does not block Ticket 01 or Tickets 02–06. The Administrator diagnostic remains, and public markup omits unavailable legal links. No legal pages, legal copy or substitute legal destinations have been created.
+
+**Directions:** tracked fixture `contact-v3-2` and the local Studio option now use the existing address, 9460 Wilshire Blvd, Beverly Hills, CA 90212, as a normal [external directions destination](https://www.google.com/maps/dir/?api=1&destination=9460+Wilshire+Blvd%2C+Beverly+Hills%2C+CA+90212). The URL follows the [Google Maps directions-link documentation](https://developers.google.com/maps/documentation/urls/get-started#directions); it is an ordinary link with no API key, embedded map, API integration or map plugin. Targeted live verification and screenshots are recorded in `destinations-clarification.json` and `directions-chrome-{375,1440}.png`. Original multi-browser screenshots above predate this Directions configuration; their integration/accessibility results are retained unchanged.
 
 Ticket 05 owns actual Appointment Request submission. Ticket 07 owns complete reproducible bootstrap, broad dependency/recovery evidence and consolidated browser/screen-reader/performance acceptance. This slice adds no independent importer or submission storage.

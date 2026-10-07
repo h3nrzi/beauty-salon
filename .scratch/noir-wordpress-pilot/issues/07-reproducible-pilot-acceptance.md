@@ -18,3 +18,9 @@
 - [ ] Retain local mail-capture evidence and prove actual receipt through the configured real transport in a real inbox with personal test data redacted. Mail API acceptance alone does not satisfy delivery acceptance.
 - [ ] Run the specification's fixed production-like HTTPS performance profile, with pinned Lighthouse/actual Chrome, cold browser storage/cache, warmed server, documented runtime/hardware/cache behavior and the exact mobile viewport/throttling settings. Retain five runs per page, LCP-element evidence and medians: LCP at most 2.5 seconds and CLS at most 0.1 for every page. Local development measurements alone are insufficient; measured exceptions require review.
 - [ ] Deliver reproducible setup/evidence instructions and resolve only defects blocking the approved acceptance contract. Do not add product pages, CPTs, APIs, frameworks, request-management features, deployment infrastructure or new architecture.
+
+## Production-acceptance prerequisites
+
+2026-10-07 — Owner clarification: **actual Privacy Policy and Terms of Service destinations remain unresolved and are owned by this ticket**. Obtain owner-supplied published native page IDs or explicit HTTPS destinations, configure them through the existing Administrator settings, and verify reachable destinations before production acceptance. Do not fabricate legal pages/copy or substitute Home/test URLs. Their absence does not block completion of Ticket 01 or Tickets 02–06. This records a prerequisite only; no Ticket 07 implementation is performed here.
+
+The existing Beverly Hills address has a normal external Directions link in the Contact baseline fixture and Studio settings; it requires no map embed, API integration or map plugin.

@@ -54,5 +54,6 @@
     "standards_unresolved": 0,
     "spec_code_defects_unresolved": 0
   },
-  "acceptance": "pending owner-approved privacy, terms and directions destinations"
+  "acceptance": "Ticket 01 complete and accepted under owner clarification; unresolved actual Privacy/Terms destinations are Ticket 07 production-acceptance prerequisites and do not block Tickets 02\u201306",
+  "clarification_evidence": "destinations-clarification.json"
 }

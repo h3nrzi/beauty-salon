@@ -19,6 +19,6 @@ Initial finding:
 
 Recheck: resolved; no new relevant defect. No scope creep found. Actual submission, full bootstrap and consolidated certification remain their assigned later tickets.
 
-Missing owner-approved privacy/terms/directions destinations remain a configuration prerequisite, explicitly recorded by the issue's `needs-info` status. No substitute production URL or policy text is present.
+Owner clarification (2026-10-07) supersedes the initial `needs-info` gate: Ticket 01 is complete and accepted. Directions is configured to the existing Beverly Hills address. Actual Privacy/Terms destinations remain unresolved Ticket 07 production-acceptance prerequisites and do not block Tickets 01–06. Configuration/validation remains implemented; no legal content or substitute legal destination is present.
 
-Findings: Standards 2 initially, 0 unresolved; Spec 1 initially, 0 unresolved code defects, with real-destination acceptance still pending.
+Findings: Standards 2 initially, 0 unresolved; Spec 1 initially, 0 unresolved code defects, with actual Privacy/Terms destinations still pending for Ticket 07 production acceptance.

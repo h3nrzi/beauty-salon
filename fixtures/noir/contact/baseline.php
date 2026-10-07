@@ -1,7 +1,7 @@
 <?php
 // Frozen v3 Contact copy; setup is explicit, never activation-driven.
 return [
- 'version'=>'contact-v3-1',
+ 'version'=>'contact-v3-2',
  'sections'=>[
   'intro'=>['eyebrow'=>'Appointments & Studio','heading'=>'Contact & Appointment Request','body'=>'Request an appointment for your vehicle or get in touch with our detailing specialists.'],
   'response'=>['eyebrow'=>'','heading'=>'Prompt Response Guarantee','body'=>'We review all appointment requests promptly and will contact you within 1 business day to confirm availability and discuss service recommendations.'],
@@ -24,7 +24,7 @@ return [
   'phone_label'=>'+1 (800) 492-NOIR','phone_dial'=>'+18004926647',
   'direct_label'=>'(310) 882-9014','direct_dial'=>'+13108829014',
   'email'=>'studio@noirautodetailing.com','timezone'=>'America/Los_Angeles',
-  'status'=>'Studio: Accepting Appointments','directions'=>'','privacy'=>'','terms'=>'',
+  'status'=>'Studio: Accepting Appointments','directions'=>'https://www.google.com/maps/dir/?api=1&destination=9460+Wilshire+Blvd%2C+Beverly+Hills%2C+CA+90212','privacy'=>'','terms'=>'',
   'hours'=>[
    'monday'=>['closed'=>false,'open'=>'08:00','close'=>'18:00'],
    'tuesday'=>['closed'=>false,'open'=>'08:00','close'=>'18:00'],
