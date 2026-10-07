@@ -41,6 +41,8 @@ The main output of this repository is not only the finished WordPress site. It i
 
 ## Current status
 
-**Phase 0 — Repository and experiment setup**
+**Phase 1 — Stitch design**
 
-Next: choose the pilot product/domain and define the four-page sitemap before writing the first Stitch prompt.
+Pilot product: **NOIR Auto Detailing**.
+
+The product definition, four-page sitemap, design brief, and Stitch Prompt v1 are ready. Next: run the prompt in Stitch and iterate the generated UI before exporting HTML/CSS.
