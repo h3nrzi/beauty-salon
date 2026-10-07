@@ -95,3 +95,38 @@ Workflow rule established:
 > Stop iterating in Stitch when the remaining differences are deterministic content or implementation cleanup rather than unresolved UI/UX decisions.
 
 The next phase is Codex + MATT specification, not direct HTML-to-PHP conversion.
+
+
+## D-010 — Use grilling before specification
+
+**Status:** Accepted
+
+Matt Pocock skills are installed and `/setup-matt-pocock-skills` is complete.
+
+This repo uses:
+
+- local Markdown issue tracking under `.scratch/`
+- single-context domain documentation with root `GLOSSARY.md`
+- ADRs under `docs/adr/`
+
+The engineering workflow is:
+
+```text
+/setup-matt-pocock-skills ✅
+        ↓
+/grill-with-docs
+        ↓
+resolved engineering decisions + domain docs/ADRs
+        ↓
+/to-spec
+        ↓
+/to-tickets
+        ↓
+/implement
+        ↓
+/code-review
+        ↓
+/retro
+```
+
+Rationale: unresolved WordPress architecture and implementation choices should be settled during grilling. `/to-spec` should synthesize those decisions into an implementation specification rather than becoming the first place decisions are made.
