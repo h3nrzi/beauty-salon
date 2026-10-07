@@ -2,8 +2,8 @@
   "name": "noir-wordpress-pilot-checks",
   "private": true,
   "scripts": {
-    "test:browser": "node tests/contact-browser.cjs",
-    "check": "node --check tests/contact-browser.cjs && node --check wordpress/app/public/wp-content/themes/noir-auto-detailing/assets/navigation.js"
+    "test:browser": "node tests/contact-browser.cjs && node tests/services-browser.cjs",
+    "check": "node --check tests/contact-browser.cjs && node --check wordpress/app/public/wp-content/themes/noir-auto-detailing/assets/navigation.js && node --check tests/services-browser.cjs && node --check wordpress/app/public/wp-content/themes/noir-auto-detailing/assets/comparison.js"
   },
   "devDependencies": {
     "axe-core": "4.11.1",

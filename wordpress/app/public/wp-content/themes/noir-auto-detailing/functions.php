@@ -41,7 +41,7 @@ function noir_theme_destination($value) {
  return is_string($value) && filter_var($value,FILTER_VALIDATE_URL) && wp_parse_url($value,PHP_URL_SCHEME)==='https' && !wp_parse_url($value,PHP_URL_USER) && !wp_parse_url($value,PHP_URL_PASS) ? $value : '';
 }
 function noir_icon($name) {
- $allowed = ['person','menu','verified','call','mail','location_on','verified_user','coffee','shield','info'];
+ $allowed = ['person','menu','verified','call','mail','location_on','verified_user','coffee','shield','info','search','local_car_wash','auto_fix_high'];
  if (!in_array($name,$allowed,true)) { return; }
  echo '<img class="icon" src="'.esc_url(get_template_directory_uri().'/assets/icons/'.$name.'.svg').'" width="24" height="24" alt="" aria-hidden="true">';
 }
@@ -93,3 +93,37 @@ function noir_hours() {
  }
  echo '</dl>';
 }
+
+function noir_section_heading($section) {
+ echo '<div class="section-heading"><div><p class="eyebrow">'.esc_html($section['eyebrow']).'</p><h2>'.esc_html($section['heading']).'</h2></div><p class="muted">'.esc_html($section['body']).'</p></div>';
+}
+add_action('wp_enqueue_scripts',function() {
+ if (is_page_template('page-services.php')) { wp_enqueue_script('noir-comparison',get_template_directory_uri().'/assets/comparison.js',[],filemtime(get_template_directory().'/assets/comparison.js'),['in_footer'=>true,'strategy'=>'defer']); }
+});
+// Footer service items stay native page-reference menu items, mapped to immutable identities.
+add_filter('wp_nav_menu_objects',function($items,$args) {
+ if (($args->theme_location??'')!=='footer_services' || !function_exists('noir_service_links')) { return $items; }
+ $result = [];
+ foreach ($items as $item) {
+  $identity = get_post_meta($item->ID,'_noir_service_ref',true);
+  if (!$identity) { continue; }
+  $service = noir_service($identity);
+  if (!$service) { continue; }
+  $item->title = $service['title'];
+  $item->url = noir_service_links($identity)['detail'];
+  $result[] = $item;
+ }
+ usort($result,function($a,$b) { return noir_service(get_post_meta($a->ID,'_noir_service_ref',true))['order']<=>noir_service(get_post_meta($b->ID,'_noir_service_ref',true))['order']; });
+ return $result;
+},10,2);
+add_action('wp_nav_menu_item_custom_fields',function($item_id,$item) {
+ if (!function_exists('noir_service_ids')) { return; }
+ echo '<p><label>'.esc_html__('Service reference (footer Service links)','noir-auto-detailing').' <select name="noir_service_ref['.(int)$item_id.']"><option value="">'.esc_html__('None','noir-auto-detailing').'</option>';
+ foreach (noir_service_ids() as $id) { echo '<option value="'.esc_attr($id).'" '.selected(get_post_meta($item_id,'_noir_service_ref',true),$id,false).'>'.esc_html($id).'</option>'; }
+ echo '</select></label></p>';
+},10,2);
+add_action('wp_update_nav_menu_item',function($menu_id,$item_id) {
+ if (!current_user_can('edit_theme_options') || !function_exists('noir_service_ids') || !isset($_POST['noir_service_ref'][$item_id],$_POST['update-nav-menu-nonce']) || !is_string($_POST['update-nav-menu-nonce']) || !wp_verify_nonce(wp_unslash($_POST['update-nav-menu-nonce']),'update-nav_menu')) { return; }
+ $identity = wp_unslash($_POST['noir_service_ref'][$item_id]);
+ if (is_string($identity) && ($identity==='' || in_array($identity,noir_service_ids(),true))) { update_post_meta($item_id,'_noir_service_ref',$identity); }
+},10,2);

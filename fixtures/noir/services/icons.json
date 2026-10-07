@@ -1,0 +1,23 @@
+[
+  {
+    "file": "search.svg",
+    "source_url": "https://raw.githubusercontent.com/google/material-design-icons/master/src/action/search/materialicons/24px.svg",
+    "license": "Apache-2.0; assets/icons/LICENSE",
+    "sha256": "f16197680221f55f11f20464a1dacbe32f0b6377135bb41395857c54b8ae5917",
+    "modification": "Set icon fill to the approved Champagne accent."
+  },
+  {
+    "file": "local_car_wash.svg",
+    "source_url": "https://raw.githubusercontent.com/google/material-design-icons/master/src/maps/local_car_wash/materialicons/24px.svg",
+    "license": "Apache-2.0; assets/icons/LICENSE",
+    "sha256": "152b125738e61b27da7f087155063b8e80cadf9389d4be7dac38beed57adcc7a",
+    "modification": "Set icon fill to the approved Champagne accent."
+  },
+  {
+    "file": "auto_fix_high.svg",
+    "source_url": "https://raw.githubusercontent.com/google/material-design-icons/master/src/image/auto_fix_high/materialicons/24px.svg",
+    "license": "Apache-2.0; assets/icons/LICENSE",
+    "sha256": "66a197cd67a588ffd5c578fc6683bdada91e9bfd72a13905125943328e884cb0",
+    "modification": "Set icon fill to the approved Champagne accent."
+  }
+]

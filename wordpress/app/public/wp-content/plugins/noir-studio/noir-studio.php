@@ -11,3 +11,5 @@ defined('ABSPATH') || exit;
 require_once __DIR__ . '/includes/fields.php';
 require_once __DIR__ . '/includes/contact.php';
 require_once __DIR__ . '/includes/settings.php';
+require_once __DIR__ . '/includes/services.php';
+require_once __DIR__ . '/includes/services-page.php';

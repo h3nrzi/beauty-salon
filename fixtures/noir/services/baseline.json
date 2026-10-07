@@ -1,0 +1,230 @@
+{
+  "version": "services-v3-1",
+  "services": [
+    {
+      "service_id": "exterior-detail",
+      "title": "Exterior Detail",
+      "image": "exterior-detail",
+      "facts": {
+        "order": 0,
+        "short_description": "",
+        "description": "Thorough exterior cleansing and chemical decontamination designed to safely remove road grime, tar, and embedded metallic fallout without marring clear coat surfaces.",
+        "eyebrow": "EXTERIOR PRESERVATION",
+        "badge": "SYNTHETIC SEALANT INCLUDED",
+        "inclusions": [
+          "Gentle multi-bucket hand wash",
+          "Chemical iron & tar decontamination",
+          "Clay bar surface treatment",
+          "Wheel barrels & caliper cleanse",
+          "Tire nourishment & satin dressing",
+          "Synthetic sealant protection"
+        ],
+        "price": 35000,
+        "duration": "~4\u20136 hours",
+        "protection": "Synthetic sealant included"
+      }
+    },
+    {
+      "service_id": "interior-detail",
+      "title": "Interior Detail",
+      "image": "interior-detail",
+      "facts": {
+        "order": 1,
+        "short_description": "",
+        "description": "Comprehensive cabin rejuvenation treating leather, Alcantara, carpets, and trim surfaces to restore original matte aesthetics and an immaculate cabin environment.",
+        "eyebrow": "CABIN CARE & SANITATION",
+        "badge": "DEEP REFRESH",
+        "inclusions": [
+          "Deep vacuum & compressed air purge",
+          "Steam cleaning & sanitation",
+          "Delicate leather cleanse & nourishment",
+          "Fabric & floor extraction",
+          "Streak-free interior glass polish",
+          "Matte UV dashboard protection"
+        ],
+        "price": 45000,
+        "duration": "~5\u20137 hours",
+        "protection": null
+      }
+    },
+    {
+      "service_id": "full-detail",
+      "title": "Full Detail",
+      "image": "full-detail",
+      "facts": {
+        "order": 2,
+        "short_description": "",
+        "description": "The complete multi-surface overhaul bringing exterior and interior together into showroom condition, combined with dedicated engine compartment care and light gloss enhancement.",
+        "eyebrow": "POPULAR SELECTION",
+        "badge": "COMPLETE RESTORATION",
+        "inclusions": [
+          "Complete exterior decontamination wash",
+          "Full interior steam clean & leather care",
+          "Engine bay detail & dress",
+          "Light single-stage gloss polish",
+          "Door jambs & sill deep cleaning",
+          "6-Month ceramic sealant protection"
+        ],
+        "price": 75000,
+        "duration": "1\u20132 days",
+        "protection": "6-month ceramic sealant"
+      }
+    },
+    {
+      "service_id": "paint-correction",
+      "title": "Paint Correction",
+      "image": "paint-correction",
+      "facts": {
+        "order": 3,
+        "short_description": "",
+        "description": "Multi-stage machine compounding and polishing to eliminate 85\u201395% of swirl marks, light scratches, and oxidation while safely preserving factory clearcoat depth.",
+        "eyebrow": "SWIRL & SCRATCH RESTORATION",
+        "badge": "85% \u2013 95% DEFECT REMOVAL",
+        "inclusions": [
+          "Digital paint depth gauge safety audit",
+          "Rotary & dual-action compound leveling",
+          "Fine jeweling polish for mirror clarity",
+          "85% to 95% swirl & haze elimination",
+          "Isopropyl alcohol wipe-down verification",
+          "High-intensity lighting inspection"
+        ],
+        "price": 95000,
+        "duration": "2\u20133 days",
+        "protection": null
+      }
+    },
+    {
+      "service_id": "ceramic-coating",
+      "title": "Ceramic Coating",
+      "image": "ceramic-coating",
+      "facts": {
+        "order": 4,
+        "short_description": "",
+        "description": "Intensive single or multi-stage prep polish followed by professional 3 to 5-year hydrophobic ceramic coating applied to painted surfaces, wheel faces, and windshield with infrared heat curing.",
+        "eyebrow": "NANO-CERAMIC PROTECTION",
+        "badge": "3 TO 5-YEAR PROTECTION",
+        "inclusions": [
+          "Intensive prep polish baseline",
+          "Professional 3 to 5-year ceramic coating",
+          "Wheel face & brake caliper protection",
+          "Windshield hydrophobic treatment",
+          "Short-wave infrared thermal curing",
+          "Warranty documentation & care guide"
+        ],
+        "price": 140000,
+        "duration": "2\u20133 days",
+        "protection": "3\u20135-year protection"
+      }
+    }
+  ],
+  "sections": {
+    "intro": {
+      "eyebrow": "STUDIO PACKAGES // 2025",
+      "heading": "STUDIO SERVICES & PACKAGES",
+      "body": "Precision paint correction, ceramic coatings, and detailing services performed by experienced specialists in Beverly Hills."
+    },
+    "details": {
+      "eyebrow": "DETAILED SERVICES",
+      "heading": "PRECISION DETAILING PACKAGES",
+      "body": "Each vehicle receives an initial paint condition assessment, followed by meticulous preparation, correction, and surface protection."
+    },
+    "metrics": [
+      {
+        "title": "Paint Thickness Preservation",
+        "value": "> 96%",
+        "caption": "Factory Clearcoat Kept",
+        "body": "We prioritize micro-jeweling over heavy cutting to preserve long-term resale value."
+      },
+      {
+        "title": "Contact Water Angle",
+        "value": "115\u00b0",
+        "caption": "Superhydrophobic Tension",
+        "body": "Instant bead evacuation with minimal sheeting drag, preventing hard-water mineral deposition."
+      },
+      {
+        "title": "Studio Lighting CRI",
+        "value": "98 CRI",
+        "caption": "Full Spectrum True Daylight",
+        "body": "Eliminates optical blindspots, revealing true pigment dispersion and faint micro-scratches."
+      },
+      {
+        "title": "Thermal Curing Cycle",
+        "value": "60 Min",
+        "caption": "Per Panel at 65\u00b0C IR",
+        "body": "Short-wave infrared catalysts force deeper molecular cross-linking for instant road readiness."
+      }
+    ],
+    "process": {
+      "eyebrow": "HOW WE WORK",
+      "heading": "The 4-Step Detailing Process",
+      "body": "A proven, repeatable workflow designed to protect your vehicle's factory finishes and deliver lasting results.",
+      "items": [
+        {
+          "title": "Consultation & Inspection",
+          "body": "Thorough evaluation of paint depth, wear patterns, substrate conditions, and customer expectations.",
+          "icon": "search"
+        },
+        {
+          "title": "Decontamination Wash",
+          "body": "Safe multi-stage wash eliminating road grime, iron fallout, and tar without marring the paint surface.",
+          "icon": "local_car_wash"
+        },
+        {
+          "title": "Correction & Polishing",
+          "body": "Precision machine polishing to eliminate swirls, level imperfections, and restore deep mirror reflections.",
+          "icon": "auto_fix_high"
+        },
+        {
+          "title": "Protection & Delivery",
+          "body": "Application of ceramic coatings or sealants followed by controlled curing and a thorough client handover.",
+          "icon": "verified_user"
+        }
+      ]
+    },
+    "comparison": {
+      "eyebrow": "STUDIO COMPARISON",
+      "heading": "STUDIO DETAILING VS DEALERSHIP WASH",
+      "body": "Dealership washes and automated tunnels often create swirl marks and use temporary fillers. NOIR focuses on true optical clarity through precision dual-action machine polishing.",
+      "before_title": "Ordinary Dealership Prep",
+      "before_body": "Silicone glaze filler \u2022 2-4 washes lifespan",
+      "after_title": "NOIR MULTI-STAGE PAINT CORRECTION",
+      "after_body": "Permanent physical clear leveling \u2022 9H SiC Armor",
+      "before_image": "comparison-before",
+      "after_image": "comparison-after",
+      "before_label": "BEFORE // FACTORY ORANGE PEEL & MARRING",
+      "after_label": "AFTER // NOIR LEVEL 2 JEWELING"
+    },
+    "faq": {
+      "eyebrow": "STUDIO STANDARDS",
+      "heading": "FREQUENTLY ASKED QUESTIONS",
+      "body": "Transparency is foundational to automotive preservation. Consult our technical clarifications on warranties, exotic paintwork, and custody handoffs.",
+      "items": [
+        {
+          "question": "What is the difference between polishing and paint correction?",
+          "answer": "Polishing enhances gloss and cleans up light oxidation or hazing. Paint correction is a multi-step compounding process that removes microscopic clearcoat imperfections, permanently eliminating 85% to 95% of swirls, scratches, and etching instead of merely masking them."
+        },
+        {
+          "question": "How long does a ceramic coating last?",
+          "answer": "Our ceramic coatings typically last 3 to 5 years depending on the chosen tier, storage conditions, and routine maintenance. Because the coating bonds directly with your vehicle's clearcoat, it provides durable hydrophobic protection and UV resistance throughout its lifespan."
+        },
+        {
+          "question": "Do you work on matte or satin finishes and PPF?",
+          "answer": "Yes. Matte, satin finishes, and Paint Protection Film require specific non-abrasive techniques and dedicated coatings that protect surfaces without altering their natural finish or adding unwanted gloss."
+        },
+        {
+          "question": "How long will my vehicle be at the studio?",
+          "answer": "Standalone exterior or interior details typically take 4 to 7 hours and are completed same-day. Multi-stage paint correction and ceramic coating packages require 2 to 3 days to allow for precision polishing passes and proper infrared curing before handover."
+        },
+        {
+          "question": "How do I maintain my car after detailing?",
+          "answer": "We recommend regular two-bucket hand washes using pH-neutral automotive shampoo, avoiding automated brush car washes, and visiting us for seasonal decontaminating maintenance washes to keep coatings performing optimally."
+        }
+      ]
+    },
+    "final": {
+      "eyebrow": "CONSULTATIONS & APPOINTMENT REQUESTS",
+      "heading": "HAVE A QUESTION OR CUSTOM PROJECT?",
+      "body": "Contact our specialists for recommendations or request an appointment today."
+    }
+  }
+}

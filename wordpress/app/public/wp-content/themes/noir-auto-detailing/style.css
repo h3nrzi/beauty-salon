@@ -817,3 +817,488 @@ main:focus {
     scroll-behavior: auto !important;
   }
 }
+
+/* Services: frozen v3 composition, native attachment images and disclosures. */
+.services-intro {
+  background: var(--lowest);
+  padding-block: 64px;
+}
+.services-intro h1 {
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  max-width: 1000px;
+}
+.services-intro .lead {
+  max-width: 680px;
+  margin-top: 16px;
+  font-size: 16px;
+  line-height: 26px;
+}
+.service-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 32px;
+}
+.service-index a {
+  background: #2a2a2a;
+  padding: 10px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  min-height: 44px;
+}
+.services-section {
+  padding-block: 64px;
+}
+.section-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 64px;
+}
+.section-heading h2 {
+  font-size: 32px;
+  line-height: 40px;
+  text-transform: uppercase;
+}
+.section-heading > p {
+  max-width: 448px;
+}
+.services-stack {
+  display: grid;
+  gap: 32px;
+}
+.service-card {
+  background: var(--lowest);
+  display: grid;
+  overflow: hidden;
+}
+.service-image {
+  min-height: 340px;
+  position: relative;
+}
+.service-image img {
+  display: block;
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+}
+.service-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+}
+.service-content h3 {
+  font:
+    600 32px/40px Syne,
+    sans-serif;
+  text-transform: uppercase;
+}
+.service-content p {
+  margin-top: 4px;
+}
+.service-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+}
+.service-badges span {
+  background: #2a2a2a;
+  padding: 4px 8px;
+  text-transform: uppercase;
+}
+.service-badges .badge {
+  color: var(--primary);
+  background: rgba(233, 193, 118, 0.1);
+}
+.service-inclusions {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 4px 16px;
+  margin-top: 12px;
+}
+.service-inclusions li {
+  display: flex;
+  align-items: start;
+  gap: 6px;
+}
+.service-inclusions span {
+  color: var(--primary);
+}
+.service-action {
+  background: var(--low);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 16px;
+  margin-top: auto;
+}
+.service-action .button {
+  width: 100%;
+}
+.service-facts {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+.service-facts dt {
+  text-transform: uppercase;
+}
+.service-facts dd {
+  font-weight: 600;
+}
+.service-facts .price {
+  font:
+    700 24px/32px Syne,
+    sans-serif;
+  color: var(--primary);
+}
+.service-facts > div + div {
+  border-left: 1px solid #353534;
+  padding-left: 24px;
+}
+.services-metrics {
+  background: var(--low);
+}
+.metric-grid,
+.process-grid {
+  display: grid;
+  gap: 24px;
+}
+.metric-grid article {
+  background: var(--container);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.metric-grid h2 {
+  font:
+    500 18px/26px Inter,
+    sans-serif;
+  text-transform: uppercase;
+}
+.metric-value {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.metric-value svg {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  color: var(--primary);
+}
+.metric-value strong {
+  font:
+    700 24px/32px Syne,
+    sans-serif;
+}
+.services-process,
+.services-faq {
+  background: var(--lowest);
+}
+.process-grid {
+  list-style: none;
+  padding: 0;
+}
+.process-grid li {
+  background: var(--container);
+  padding: 32px;
+}
+.step-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+.step-top > span {
+  font:
+    700 72px/1 Syne,
+    sans-serif;
+  color: #9a8f80;
+}
+.step-top .icon {
+  margin-top: 4px;
+}
+.process-grid h3 {
+  font-size: 18px;
+  line-height: 26px;
+  text-transform: uppercase;
+}
+.process-grid .muted {
+  margin-top: 8px;
+}
+.comparison-panel {
+  background: var(--lowest);
+  padding: 24px;
+  display: grid;
+  gap: 32px;
+  align-items: center;
+}
+.comparison-panel .section-heading {
+  margin-bottom: 16px;
+}
+.comparison-note {
+  background: var(--container);
+  padding: 12px;
+  margin-top: 8px;
+}
+.comparison-note h3 {
+  text-transform: uppercase;
+}
+.comparison-note.after {
+  background: #2a2a2a;
+}
+.comparison-note.after h3 {
+  color: var(--primary);
+}
+.comparison {
+  min-width: 0;
+}
+.comparison-images {
+  display: grid;
+  gap: 16px;
+}
+.comparison figure {
+  margin: 0;
+  position: relative;
+  min-width: 0;
+}
+.comparison figure img {
+  display: block;
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+}
+.comparison figcaption {
+  background: var(--lowest);
+  padding: 8px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.comparison-after figcaption {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+.comparison-enhanced .comparison-images {
+  display: block;
+  position: relative;
+  height: 380px;
+  --reveal: inherit;
+}
+.comparison-enhanced figure {
+  position: absolute;
+  inset: 0;
+}
+.comparison-enhanced .comparison-after {
+  clip-path: inset(0 calc(100% - var(--reveal)) 0 0);
+}
+.comparison-enhanced .comparison-after::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--reveal);
+  width: 2px;
+  background: var(--primary);
+  transform: translateX(-2px);
+}
+.comparison-enhanced figcaption {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  max-width: calc(100% - 32px);
+}
+.comparison-enhanced .comparison-before figcaption {
+  left: auto;
+  right: 16px;
+}
+.comparison-control {
+  padding-top: 8px;
+}
+.comparison-control label {
+  font-size: 12px;
+  display: block;
+}
+.comparison-control input {
+  width: 100%;
+  min-height: 44px;
+  accent-color: var(--primary);
+  touch-action: pan-y;
+}
+.faq-grid {
+  display: grid;
+  gap: 32px;
+}
+.faq-grid .section-heading {
+  margin-bottom: 32px;
+}
+.faq-assistance {
+  background: var(--container);
+  padding: 16px;
+  display: grid;
+  gap: 12px;
+}
+.faq-assistance h3 {
+  text-transform: uppercase;
+}
+.faq-assistance a {
+  color: var(--primary);
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+.faq-list details {
+  margin-bottom: 4px;
+  background: var(--container);
+}
+.faq-list summary {
+  padding: 24px;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.faq-list details p {
+  padding: 0 24px 32px;
+}
+summary:focus-visible,
+input[type="range"]:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+.services-final {
+  background: var(--container);
+}
+.final-grid {
+  display: grid;
+  gap: 32px;
+  align-items: center;
+}
+.final-grid .section-heading {
+  margin-bottom: 0;
+}
+.final-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+.final-actions > a:not(.button) {
+  background: #2a2a2a;
+  padding: 16px 24px;
+}
+@media (min-width: 640px) {
+  .service-action {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .service-action .button {
+    width: auto;
+  }
+  .comparison figure img,
+  .comparison-enhanced .comparison-images {
+    height: 460px;
+  }
+}
+@media (min-width: 768px) {
+  .service-content {
+    padding: 32px;
+    gap: 32px;
+  }
+  .service-inclusions,
+  .metric-grid,
+  .process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .section-heading {
+    flex-direction: row;
+    align-items: end;
+    justify-content: space-between;
+    gap: 32px;
+  }
+  .section-heading > div {
+    min-width: 0;
+  }
+  .section-heading > p {
+    width: 35%;
+    flex-shrink: 0;
+  }
+  .section-heading h2 {
+    font-size: 48px;
+    line-height: 54px;
+  }
+  .service-card {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  }
+  .service-image img {
+    height: 100%;
+    position: absolute;
+    inset: 0;
+  }
+  .service-content {
+    padding: 64px;
+  }
+  .service-card:is(#service-interior-detail, #service-ceramic-coating) {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  }
+  .service-card:is(#service-interior-detail, #service-ceramic-coating)
+    .service-image {
+    order: 2;
+  }
+  .metric-grid,
+  .process-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .comparison-panel {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    padding: 32px;
+  }
+  .comparison-panel .section-heading,
+  .faq-grid .section-heading,
+  .final-grid .section-heading {
+    flex-direction: column;
+    align-items: start;
+    gap: 16px;
+  }
+  .comparison-panel .section-heading h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .comparison-panel .section-heading > p,
+  .faq-grid .section-heading > p,
+  .final-grid .section-heading > p {
+    width: 100%;
+  }
+  .faq-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    gap: 64px;
+  }
+  .final-grid {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  }
+}
+.service-protection {
+  color: var(--primary);
+  padding-top: 8px;
+}
+
+.services-main p.eyebrow {
+  background: transparent;
+  padding: 0;
+  margin-bottom: 4px;
+}

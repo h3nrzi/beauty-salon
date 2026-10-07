@@ -14,11 +14,13 @@ function noir_normalize_text($value) {
  return $value;
 }
 function noir_validate_fields($value, $schema, $name) {
+ if (in_array($schema['type'],['array','object'],true) && !is_array($value)) { return new WP_Error('noir_structure',sprintf(__('%s must use structured fields.','noir-studio'),$name)); }
+ if ($schema['type']==='array' && array_values($value)!==$value) { return new WP_Error('noir_collection',sprintf(__('%s must be an ordered list.','noir-studio'),$name)); }
  $valid = rest_validate_value_from_schema($value,$schema,$name);
- if ($schema['type']==='string' && is_string($value) && wp_check_invalid_utf8($value)!==$value) { return new WP_Error('noir_encoding',__('Use valid UTF-8 text.','noir-studio')); }
+ if (is_string($value) && ($schema['type']==='string' || (is_array($schema['type']) && in_array('string',$schema['type'],true))) && wp_check_invalid_utf8($value)!==$value) { return new WP_Error('noir_encoding',__('Use valid UTF-8 text.','noir-studio')); }
  if (is_wp_error($valid)) { return $valid; }
  // Whitespace-only required strings are not meaningful editorial content.
- if ($schema['type']==='string' && !empty($schema['minLength']) && trim($value)==='') {
+ if (is_string($value) && !empty($schema['minLength']) && trim($value)==='') {
   return new WP_Error('noir_empty',sprintf(__('%s must contain text.','noir-studio'),$name));
  }
  if ($schema['type']==='object') {

@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-07T20:20:46.117679+00:00",
+  "results": [
+    {
+      "command": "npm run check",
+      "exit_code": 0,
+      "stdout": "\n> check\n> node --check tests/contact-browser.cjs && node --check wordpress/app/public/wp-content/themes/noir-auto-detailing/assets/navigation.js && node --check tests/services-browser.cjs && node --check wordpress/app/public/wp-content/themes/noir-auto-detailing/assets/comparison.js\n\n",
+      "stderr": ""
+    },
+    {
+      "command": "/tmp/noir-ticket02/wp eval-file tests/contact-wordpress.php",
+      "exit_code": 0,
+      "stdout": "PASS: Editor saves bounded Contact content through REST\nPASS: Oversize heading rejected\nPASS: Invalid save retains last valid content\nPASS: Empty or unknown editorial fields rejected with actionable REST feedback\nPASS: Empty or unknown editorial fields rejected with actionable REST feedback\nPASS: Malformed collection row rejected without fatal error\nPASS: Unicode and literal backslashes round-trip through native metadata\nPASS: Only one unslashing pass\nPASS: Native revision created for Contact metadata\nPASS: Native revision restores editorial metadata\nPASS: Editor saves native Contact meta box with nonce\nPASS: Invalid meta-box POST retains previous content\nPASS: Invalid meta-box POST provides actionable admin notice\nPASS: Invalid nonce cannot change Contact metadata\nPASS: Anonymous visitor cannot edit Contact\n",
+      "stderr": ""
+    },
+    {
+      "command": "/tmp/noir-ticket02/wp eval-file tests/studio-wordpress.php",
+      "exit_code": 0,
+      "stdout": "PASS: Editor cannot create shared settings on first save\nPASS: Administrator saves shared baseline\nPASS: Editor cannot change shared settings\nPASS: Invalid email retains all valid settings\nPASS: Invalid timezone retains all valid settings\nPASS: Invalid phone_dial retains all valid settings\nPASS: Invalid directions retains all valid settings\nPASS: Invalid description retains all valid settings\nPASS: Invalid privacy retains all valid settings\nPASS: Hours cannot close before opening\nPASS: Unknown nested hours properties rejected\nPASS: Unpublished native page rejected\nPASS: Shared phone and description propagate to header, Contact and footer\nPASS: Explicit HTTPS and native legal/directions destinations render\nPASS: Renamed native Contact preserves template and shared page identity\n",
+      "stderr": ""
+    },
+    {
+      "command": "/tmp/noir-ticket02/wp eval-file tests/plugin-fallback-wordpress.php",
+      "exit_code": 0,
+      "stdout": "PASS: Plugin absence does not fatal on Contact\nPASS: Saved public phone/email remain usable without plugin\nPASS: Native Contact anchor remains available without plugin\nPASS: Plugin absence cannot enable request submission\n",
+      "stderr": ""
+    },
+    {
+      "command": "/tmp/noir-ticket02/wp eval-file tests/services-wordpress.php",
+      "exit_code": 0,
+      "stdout": "PASS: Services are registered for native editing\nPASS: Local baseline has exactly five Services\nPASS: Editor can edit and publish Services\nPASS: Editor cannot change operational settings\nPASS: No Service management privileges for author\nPASS: No Service management privileges for contributor\nPASS: No Service management privileges for subscriber\nPASS: Anonymous cannot edit a Service\nPASS: Editor native save keeps Unicode and one unslashing pass\nPASS: Canonical price and title propagate to Services index, card and native footer\nPASS: Canonical duration and optional protection appear in Services\nPASS: Title and slug rename preserve section and request identities\nPASS: Invalid order retains all previous Service facts and title\nPASS: Invalid short_description retains all previous Service facts and title\nPASS: Invalid description retains all previous Service facts and title\nPASS: Invalid eyebrow retains all previous Service facts and title\nPASS: Invalid badge retains all previous Service facts and title\nPASS: Invalid inclusions retains all previous Service facts and title\nPASS: Invalid price retains all previous Service facts and title\nPASS: Invalid duration retains all previous Service facts and title\nPASS: Invalid protection retains all previous Service facts and title\nPASS: Malformed, markup, blank and Unicode bound+1 saves rejected\nPASS: Malformed, markup, blank and Unicode bound+1 saves rejected\nPASS: Malformed, markup, blank and Unicode bound+1 saves rejected\nPASS: Malformed, markup, blank and Unicode bound+1 saves rejected\nPASS: Unknown properties, numeric strings, oversize inclusions and empty optional facts rejected\nPASS: Unknown properties, numeric strings, oversize inclusions and empty optional facts rejected\nPASS: Unknown properties, numeric strings, oversize inclusions and empty optional facts rejected\nPASS: Unknown properties, numeric strings, oversize inclusions and empty optional facts rejected\nPASS: Unknown properties, numeric strings, oversize inclusions and empty optional facts rejected\nPASS: Native title bound+1 retains valid title\nPASS: Immutable identity cannot change\nPASS: Forged nonce cannot save Service facts\nPASS: Stable identity cannot be deleted\nPASS: Duplicate identity rejected, including drafts\nPASS: Sixth identity rejected\nPASS: Invalid writes also rejected at native metadata boundary\nPASS: Native Service revision restores facts and native title\nPASS: Native revision restores primary Service attachment\nPASS: Draft absent from cards, index, footer and Contact choices\nPASS: Invalid Service missing required media excluded\nPASS: Trashed Service excluded\nPASS: Editor saves Services sections through native page REST boundary\nPASS: FAQ answer bound+1 rejects full section\nPASS: Native revision restores FAQ collection and copy\nPASS: Editor native Services meta box saves fixed sections\nPASS: Incomplete comparison pair keeps labelled single image with no empty control\nPASS: Native page revision restores comparison attachment references\nPASS: Assigned Contact rename updates request permalink\nPASS: No independent public Service content at /?noir_service=renamed-service\nPASS: No independent public Service content at /?post_type=noir_service\nPASS: No independent public Service content at /?post_type=noir_service&feed=rss2\nPASS: No independent public Service content at /?post_type=noir_service&p=76\nPASS: No independent public Service content at /noir_service/renamed-service/\nPASS: No independent public Service content at /wp-json/wp/v2/noir_service\nPASS: No independent public Service content at /?s=Exterior+renamed\nTicket 02 WordPress checks complete.\n",
+      "stderr": ""
+    },
+    {
+      "command": "node tests/contact-browser.cjs",
+      "exit_code": 1,
+      "stdout": "PASS chrome 375px: navigation, keyboard, no-JS, local assets, reflow\nPASS chrome 768px: navigation, keyboard, no-JS, local assets, reflow\nPASS chrome 1024px: navigation, keyboard, no-JS, local assets, reflow\nPASS chrome 1440px: navigation, keyboard, no-JS, local assets, reflow\nPASS firefox 375px: navigation, keyboard, no-JS, local assets, reflow\nPASS firefox 768px: navigation, keyboard, no-JS, local assets, reflow\nPASS firefox 1024px: navigation, keyboard, no-JS, local assets, reflow\nPASS firefox 1440px: navigation, keyboard, no-JS, local assets, reflow\n",
+      "stderr": "page.evaluate: Execution context was destroyed, most likely because of a navigation\n    at /Users/hossein/Local Sites/stitch-wp-pilot/tests/contact-browser.cjs:120:42 {\n  log: [],\n  name: 'Error'\n}\n"
+    }
+  ]
+}

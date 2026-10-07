@@ -1,0 +1,57 @@
+PASS: Services are registered for native editing
+PASS: Local baseline has exactly five Services
+PASS: Editor can edit and publish Services
+PASS: Editor cannot change operational settings
+PASS: No Service management privileges for author
+PASS: No Service management privileges for contributor
+PASS: No Service management privileges for subscriber
+PASS: Anonymous cannot edit a Service
+PASS: Editor native save keeps Unicode and one unslashing pass
+PASS: Canonical price and title propagate to Services index, card and native footer
+PASS: Canonical duration and optional protection appear in Services
+PASS: Title and slug rename preserve section and request identities
+PASS: Invalid order retains all previous Service facts and title
+PASS: Invalid short_description retains all previous Service facts and title
+PASS: Invalid description retains all previous Service facts and title
+PASS: Invalid eyebrow retains all previous Service facts and title
+PASS: Invalid badge retains all previous Service facts and title
+PASS: Invalid inclusions retains all previous Service facts and title
+PASS: Invalid price retains all previous Service facts and title
+PASS: Invalid duration retains all previous Service facts and title
+PASS: Invalid protection retains all previous Service facts and title
+PASS: Malformed, markup, blank and Unicode bound+1 saves rejected
+PASS: Malformed, markup, blank and Unicode bound+1 saves rejected
+PASS: Malformed, markup, blank and Unicode bound+1 saves rejected
+PASS: Malformed, markup, blank and Unicode bound+1 saves rejected
+PASS: Unknown properties, numeric strings, oversize inclusions and empty optional facts rejected
+PASS: Unknown properties, numeric strings, oversize inclusions and empty optional facts rejected
+PASS: Unknown properties, numeric strings, oversize inclusions and empty optional facts rejected
+PASS: Unknown properties, numeric strings, oversize inclusions and empty optional facts rejected
+PASS: Unknown properties, numeric strings, oversize inclusions and empty optional facts rejected
+PASS: Native title bound+1 retains valid title
+PASS: Immutable identity cannot change
+PASS: Forged nonce cannot save Service facts
+PASS: Stable identity cannot be deleted
+PASS: Duplicate identity rejected, including drafts
+PASS: Sixth identity rejected
+PASS: Invalid writes also rejected at native metadata boundary
+PASS: Native Service revision restores facts and native title
+PASS: Native revision restores primary Service attachment
+PASS: Draft absent from cards, index, footer and Contact choices
+PASS: Invalid Service missing required media excluded
+PASS: Trashed Service excluded
+PASS: Editor saves Services sections through native page REST boundary
+PASS: FAQ answer bound+1 rejects full section
+PASS: Native revision restores FAQ collection and copy
+PASS: Editor native Services meta box saves fixed sections
+PASS: Incomplete comparison pair keeps labelled single image with no empty control
+PASS: Native page revision restores comparison attachment references
+PASS: Assigned Contact rename updates request permalink
+PASS: No independent public Service content at /?noir_service=renamed-service
+PASS: No independent public Service content at /?post_type=noir_service
+PASS: No independent public Service content at /?post_type=noir_service&feed=rss2
+PASS: No independent public Service content at /?post_type=noir_service&p=76
+PASS: No independent public Service content at /noir_service/renamed-service/
+PASS: No independent public Service content at /wp-json/wp/v2/noir_service
+PASS: No independent public Service content at /?s=Exterior+renamed
+Ticket 02 WordPress checks complete.

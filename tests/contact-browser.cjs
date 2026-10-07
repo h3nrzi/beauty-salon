@@ -114,6 +114,10 @@ const output = process.env.NOIR_EVIDENCE_DIR || "docs/evidence/contact-01";
           );
           await page.setViewportSize({ width, height: 1000 });
         }
+        // Audit/capture a fresh baseline after keyboard hash navigation and viewport changes.
+        // WebKit can replace its execution context while settling those history entries.
+        await page.goto(url);
+        await page.evaluate(() => document.fonts.ready);
         await page.addScriptTag({
           path: require.resolve("axe-core/axe.min.js"),
         });
