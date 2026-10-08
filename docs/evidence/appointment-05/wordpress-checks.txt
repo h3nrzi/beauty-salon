@@ -44,8 +44,10 @@ PASS: Configured Studio timezone controls date boundary
 PASS: Native logged-in route accepts the correctly bound nonce before configuration failure
 PASS: Logged-in route enforces native nonce protection
 PASS: A logged-in identity cannot borrow an anonymous issued token
+PASS: Public POST response renders without an admin toolbar or PHP diagnostics
 PASS: Generic transport rejection is uncertain, with no success or safe-retry promise
 PASS: Uncertain attempt does not retry transport on sequential replay
+PASS: Plugin fallback preserves an accessible correction form without a theme renderer
 PASS: Positive transport acceptance produces 303 PRG
 PASS: Bound recorded receipt displays honest accepted-for-sending wording
 PASS: Receipt cannot be borrowed without the visitor binding

@@ -60,7 +60,7 @@ function noir_request_issue() {
   $_COOKIE['noir_visitor']=$cookie;
  }
  $token = bin2hex(random_bytes(32));
- $state = ['visitor'=>noir_request_visitor(),'user'=>get_current_user_id(),'expires'=>time()+3600,'status'=>'issued'];
+ $state = ['visitor'=>noir_request_visitor(),'user'=>noir_request_digest('user-binding',(string)get_current_user_id()),'expires'=>time()+3600,'status'=>'issued'];
  if (!set_transient('noir_request_'.noir_request_digest('token',$token),$state,7200)) { return false; }
  wp_schedule_single_event(time()+7200,'noir_request_cleanup',[noir_request_digest('token',$token)]);
  $interest=isset($_GET['service']) && is_string($_GET['service']) ? wp_unslash($_GET['service']) : '';
@@ -72,7 +72,7 @@ function noir_request_receipt_valid() {
  $payload = noir_request_verified('receipt',$_COOKIE['noir_receipt']??'');
  if (!preg_match('/^([a-f0-9]{64})\.([0-9]{10})$/D',$payload,$parts) || (int)$parts[2]<=time()) { return false; }
  $state = get_transient('noir_request_'.$parts[1]);
- return is_array($state) && ($state['status']??'')==='accepted' && hash_equals($state['visitor'],noir_request_visitor()) && $state['user']===get_current_user_id();
+ return is_array($state) && ($state['status']??'')==='accepted' && hash_equals($state['visitor'],noir_request_visitor()) && $state['user']===noir_request_digest('user-binding',(string)get_current_user_id());
 }
 add_action('template_redirect',function() {
  if (get_queried_object_id()!==(int)(noir_studio_settings()['pages']['contact']??0)) { return; }
@@ -179,7 +179,7 @@ function noir_handle_appointment() {
  $token=wp_unslash($_POST['submission_token']);
  $state=noir_request_state($token);
  $visitor=noir_request_visitor();
- if (!$visitor || !is_array($state) || ($state['status']!=='accepted' && $state['expires']<=time()) || !hash_equals($state['visitor'],$visitor) || $state['user']!==get_current_user_id() || !wp_verify_nonce(wp_unslash($_POST['_noir_nonce']),noir_request_nonce_action($token)) || wp_unslash($_POST['website'])!=='') {
+ if (!$visitor || !is_array($state) || ($state['status']!=='accepted' && $state['expires']<=time()) || !hash_equals($state['visitor'],$visitor) || $state['user']!==noir_request_digest('user-binding',(string)get_current_user_id()) || !wp_verify_nonce(wp_unslash($_POST['_noir_nonce']),noir_request_nonce_action($token)) || wp_unslash($_POST['website'])!=='') {
   noir_request_security_failure();
  }
  if ($state['status']==='accepted') { noir_request_redirect($token); }
