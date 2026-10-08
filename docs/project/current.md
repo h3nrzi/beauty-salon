@@ -29,7 +29,7 @@
 - Manager scope: All appointments, services, specialists, salon hours, schedules, breaks, time off, cancel/reschedule/reassign
 - Specialist scope: Own appointments; view details; mark Completed / No-show
 - Stitch brief: Draft with approved working brand/visual direction — `docs/project/stitch-brief.md`
-- Home + initial design-system baseline: Frozen as `references/ara-home-soft-editorial-v1/README.md`; whole-product visual baseline/export audit still pending
+- Home + initial design-system baseline: Frozen as `references/ara-home-soft-editorial-v1/README.md`\n- Services baseline: Frozen as `references/ara-services-soft-editorial-v1/README.md`; whole-product visual baseline/export audit still pending
 - Engineering handoff: Pending
 - MATT configuration confirmed once: Pending
 - Relevant decisions / glossary / ADRs: Pending
@@ -38,7 +38,7 @@
 - Local implementation gate and evidence: Pending
 - Human acceptance gate: Owner h3nrzi; pending design/implementation evidence
 - Production-release gate: Pending
-- Blockers / capability gaps: Home visual uncertainty is resolved; known copy/token/legal-placeholder cleanup is deterministic and deferred to export audit/engineering handoff
-- Next action: Run `docs/project/stitch-prompts/04-services-page.md` using the frozen Home/design-system reference, then review Services mobile + desktop.
+- Blockers / capability gaps: Home and Services visual uncertainty is resolved; known content/policy/token cleanup is deterministic and deferred to export audit/engineering handoff
+- Next action: Run `docs/project/stitch-prompts/05-specialists-page.md` using the frozen Home + Services references, then review Specialists mobile + desktop.
 
 Replace pending entries with links to existing artifacts as work progresses.
