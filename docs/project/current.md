@@ -45,8 +45,8 @@
 - Production-release gate: Pending
 - Booking iteration 01: Visual direction accepted but not frozen
 - Booking iteration 02: Required edge states and desktop evidence added; freeze blocked by stale-slot/desktop contract issues
-- Booking iteration 03: Mobile contract improved and stale-slot alternatives are unselected, but CTA is still active; desktop remains a non-canonical giant-page flow with residual scope drift
-- Blockers / capability gaps: Public discovery pages through Contact are frozen; Booking needs only freeze evidence for disabled stale-slot CTA + canonical staged desktop flow
-- Next action: Run `docs/project/stitch-prompts/12-booking-freeze-evidence.md`; review only corrected stale-slot initial state and desktop stages 1–5 + desktop success, then freeze Booking if compliant.
+- Booking iteration 03: Mobile contract improved; freeze still pending\n- Booking iteration 04: Desktop stages 1–5 + success are now structurally acceptable; only stale-slot initial state remains blocked because 11:30 is still preselected
+- Blockers / capability gaps: Public discovery pages through Contact are frozen; Booking has one remaining visual-state blocker: stale-slot recovery must begin with zero replacement-time preselection
+- Next action: Run `docs/project/stitch-prompts/13-stale-slot-initial-state-patch.md`; review only that one screen, then freeze Booking if no replacement time is preselected and Continue is disabled.
 
 Replace pending entries with links to existing artifacts as work progresses.
