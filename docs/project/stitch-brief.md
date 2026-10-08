@@ -30,6 +30,26 @@ Discover salon/services
 - Persian typography and RTL composition must feel native, not mirrored from an LTR layout.
 - Booking clarity and trust matter more than decorative density.
 
+## Brand and visual direction
+
+**Working brand name:** آرا
+
+**Selected direction:** Soft Editorial.
+
+Visual character:
+
+- calm, feminine, modern and premium without feeling distant;
+- editorial composition with generous whitespace;
+- warm ivory / off-white / light taupe foundation;
+- restrained warm accent such as muted terracotta or rose-brown;
+- soft, natural photography with realistic salon/beauty details rather than glossy stock clichés;
+- Persian typography should feel refined and readable, with stronger editorial display treatment for headings and a highly legible UI style for booking flows;
+- card borders, shadows and decoration should be subtle;
+- medium radii are acceptable, but avoid turning the interface into a dense rounded-card SaaS dashboard;
+- marketing pages may feel expressive and editorial, while Booking and My Appointments remain calm, obvious and task-focused.
+
+The visual system must feel like one product across editorial marketing pages and application flows.
+
 ## Responsive priority
 
 Booking and My Appointments are mobile-first.
