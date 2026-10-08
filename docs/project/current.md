@@ -38,7 +38,7 @@
 - Local implementation gate and evidence: Pending
 - Human acceptance gate: Owner h3nrzi; pending design/implementation evidence
 - Production-release gate: Pending
-- Blockers / capability gaps: Public discovery pages through Contact are visually established; known content/policy/media/token/responsive-evidence cleanup is deterministic and deferred to export audit/engineering handoff
-- Next action: Run `docs/project/stitch-prompts/09-booking-flow.md` using the frozen public references, then review the mobile-first Booking flow and required recovery/empty/success states.
+- Booking iteration 01: Visual direction accepted but not frozen; 24-hour cutoff, stale-slot behavior, missing empty states, scope-copy drift and desktop parity require one focused completion pass\n- Blockers / capability gaps: Public discovery pages through Contact are frozen; Booking still needs required state completeness and desktop evidence before freeze
+- Next action: Run `docs/project/stitch-prompts/10-booking-completion.md` against the existing Booking design, then review mobile + desktop core screens plus stale-slot / no-eligible-specialist / no-availability states.
 
 Replace pending entries with links to existing artifacts as work progresses.
