@@ -1,0 +1,11 @@
+# Ticket 05 evidence
+
+Review baseline: `3d6896e812a12dfc90e080528415da9bb1e4bf2e`. Local WordPress 7.1.3, PHP 8.2.29, nginx 1.26.1. This evidence covers the normal request path; Ticket 06 must complete reliability certification before final acceptance.
+
+`browser-results.json` records exact browser versions, widths, JavaScript mode and capture checks. Error and accepted screenshots use synthetic customer data. Automated axe checks apply to JS contexts; no-JS contexts independently submit/correct/redirect/refresh the ordinary form. Playwright WebKit does not certify actual Safari. Manual screen-reader/zoom and human parity review remain pending.
+
+Local Mailpit captures verify one configured recipient, a site-controlled sender, optional customer Reply-To, all normalized fields, request time/timezone, plain text, and no CC/BCC/attachments. The Local sendmail wrapper initially added a mailhog recovery recipient; the temporary test environment now connects directly to Mailpit SMTP. No raw captured mail is committed. This proves local transport acceptance, not a real inbox receipt. The temporary mu-plugin is removed after checks and production mail remains unconfigured unless the operator supplies it separately.
+
+The initial HTTP tracer failed because Contact only rendered a disabled preview, then passed after ordinary form issuance. Server validation's tracer failed before the POST controller existed, then passed. Browser harness investigation found Playwright's no-JS smooth-scroll stability problem and an axe run that stalls when scripting is disabled: reduced motion and JS-only axe avoid those harness limitations while no-JS submission stays independently tested. Receipt-security test initially inherited the HTTP client's merged request cookies; it now isolates the receipt cookie to genuinely test foreign visitor rejection.
+
+Setup and boundaries: `docs/appointment-slice.md`. Full syntax/WordPress/browser regression results and two-axis review are recorded alongside this file after completion. Concurrency, throttle, storage failure, capacity and crash/late-outcome certification are intentionally unclaimed and belong to Ticket 06.

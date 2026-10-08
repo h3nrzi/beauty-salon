@@ -115,7 +115,7 @@ const projects = [
           await destination.goto(appointment);
           assert.equal(
             await destination
-              .locator('input[name="service-preview"]:checked')
+              .locator('input[name="service_id"]:checked')
               .getAttribute("value"),
             id,
           );

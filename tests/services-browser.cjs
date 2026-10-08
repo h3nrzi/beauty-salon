@@ -310,7 +310,7 @@ const titles = [
           await page.goto(link);
           assert.equal(
             await page
-              .locator('input[name="service-preview"]:checked')
+              .locator('input[name="service_id"]:checked')
               .inputValue(),
             new URL(link).searchParams.get("service"),
           );
@@ -318,7 +318,7 @@ const titles = [
         await page.goto(new URL("/contact/?service=unavailable", url).href);
         assert.equal(
           await page
-            .locator('input[name="service-preview"]:checked')
+            .locator('input[name="service_id"]:checked')
             .inputValue(),
           "exterior-detail",
         );

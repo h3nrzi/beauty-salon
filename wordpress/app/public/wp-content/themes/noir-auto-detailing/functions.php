@@ -123,3 +123,18 @@ add_filter('wp_nav_menu_objects',function($items,$args) {
 add_action('wp_enqueue_scripts',function() {
  if (is_page_template('page-gallery.php')) { wp_enqueue_script('noir-gallery',get_template_directory_uri().'/assets/gallery.js',[],filemtime(get_template_directory().'/assets/gallery.js'),['in_footer'=>true,'strategy'=>'defer']); }
 });
+
+add_action('noir_appointment_response',function() {
+ $id=(int)(noir_theme_studio()['pages']['contact']??0);
+ if (!$id || get_post_status($id)!=='publish') {
+  get_header(); echo '<main id="main-content"><h1>Appointment Request</h1>'; noir_appointment_form(); echo '</main>'; get_footer(); return;
+ }
+ $GLOBALS['wp_query']=new WP_Query(['page_id'=>$id]);
+ $GLOBALS['wp_the_query']=$GLOBALS['wp_query'];
+ $GLOBALS['post']=get_post($id);
+ setup_postdata($GLOBALS['post']);
+ include get_template_directory().'/page-contact.php';
+});
+add_action('wp_enqueue_scripts',function() {
+ if (is_page_template('page-contact.php')) { wp_enqueue_script('noir-appointment',get_template_directory_uri().'/assets/appointment.js',[],filemtime(get_template_directory().'/assets/appointment.js'),['in_footer'=>true,'strategy'=>'defer']); }
+});

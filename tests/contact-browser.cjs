@@ -57,7 +57,7 @@ const output = process.env.NOIR_EVIDENCE_DIR || "docs/evidence/contact-01";
           await page.locator('a[href^="mailto:"]').first().getAttribute("href"),
           "mailto:studio@noirautodetailing.com",
         );
-        assert(await page.locator("#appointment-unavailable").isVisible());
+        assert(await page.locator(".appointment-form button[type=submit]").isVisible());
         assert(
           await page.evaluate(
             () => document.documentElement.scrollWidth <= innerWidth,

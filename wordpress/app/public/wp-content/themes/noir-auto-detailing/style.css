@@ -1996,3 +1996,11 @@ input[type="range"]:focus-visible {
     margin-top: 0;
   }
 }
+
+.appointment-form .field { margin-block: 1.25rem; }
+.appointment-form .service-choices { margin-block: 1.5rem; }
+.request-errors, .request-status { border: 1px solid var(--champagne, #c5a059); padding: 1.25rem; margin-block: 1rem; }
+.request-errors ul { padding-left: 1.25rem; }
+.field-error { color: #f0ba9c; margin-block: .5rem; }
+.appointment-form [aria-invalid="true"] { border-color: #f0ba9c; }
+.appointment-form button { width: 100%; }

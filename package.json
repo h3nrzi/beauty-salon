@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "test:browser": "node tests/contact-browser.cjs && node tests/services-browser.cjs && node tests/gallery-browser.cjs && node tests/home-browser.cjs",
-    "check": "node --check tests/contact-browser.cjs && node --check wordpress/app/public/wp-content/themes/noir-auto-detailing/assets/navigation.js && node --check tests/services-browser.cjs && node --check wordpress/app/public/wp-content/themes/noir-auto-detailing/assets/comparison.js && node --check tests/gallery-browser.cjs && node --check wordpress/app/public/wp-content/themes/noir-auto-detailing/assets/gallery.js && node --check tests/home-browser.cjs"
+    "check": "node --check tests/contact-browser.cjs && node --check wordpress/app/public/wp-content/themes/noir-auto-detailing/assets/navigation.js && node --check tests/services-browser.cjs && node --check wordpress/app/public/wp-content/themes/noir-auto-detailing/assets/comparison.js && node --check tests/gallery-browser.cjs && node --check wordpress/app/public/wp-content/themes/noir-auto-detailing/assets/gallery.js && node --check tests/home-browser.cjs && node --check tests/appointment-browser.cjs && node --check wordpress/app/public/wp-content/themes/noir-auto-detailing/assets/appointment.js",
+    "test:appointment": "node tests/appointment-browser.cjs"
   },
   "devDependencies": {
     "axe-core": "4.11.1",
