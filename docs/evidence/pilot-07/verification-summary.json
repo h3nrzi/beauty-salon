@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-08",
+  "scope": "local implementation acceptance; human and production gates unresolved",
+  "bootstrapCasesPassed": 14,
+  "nativeSuitesPassed": [
+    "studio",
+    "contact",
+    "services",
+    "gallery",
+    "home",
+    "plugin-fallback",
+    "appointment",
+    "appointment-delivery",
+    "appointment-reliability"
+  ],
+  "pageEngineWidthCombinationsPassed": 48,
+  "appointmentEngineWidthJsCombinationsPassed": 24,
+  "actualTransport": "Local SMTP into Mailpit only",
+  "supplementalCombinationsPassed": 12,
+  "postRegressionDrift": [],
+  "postRegressionConflicts": [],
+  "unresolvedAcceptanceBlockers": 25,
+  "mailTestFixtureRemoved": true,
+  "runnerExitStatus": 0,
+  "interruptedRunsRetained": true,
+  "outstandingHuman": [
+    "actual Safari/full stable-browser matrix",
+    "screen reader",
+    "actual text zoom and 400% reflow",
+    "visual/content/operator sign-off"
+  ],
+  "outstandingProduction": [
+    "final reachable Privacy/Terms destinations",
+    "cleared photographic rights/quality",
+    "production HTTPS runtime/storage/cache/cookies",
+    "real inbox delivery",
+    "external cron retention verification",
+    "fixed five-run HTTPS Lighthouse profile"
+  ]
+}

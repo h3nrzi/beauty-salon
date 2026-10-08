@@ -1,0 +1,4 @@
+
+> check
+> node --check tests/contact-browser.cjs && node --check wordpress/app/public/wp-content/themes/noir-auto-detailing/assets/navigation.js && node --check tests/services-browser.cjs && node --check wordpress/app/public/wp-content/themes/noir-auto-detailing/assets/comparison.js && node --check tests/gallery-browser.cjs && node --check wordpress/app/public/wp-content/themes/noir-auto-detailing/assets/gallery.js && node --check tests/home-browser.cjs && node --check tests/appointment-browser.cjs && node --check wordpress/app/public/wp-content/themes/noir-auto-detailing/assets/appointment.js && node --check tests/appointment-reliability-browser.cjs && node --check tests/pilot-browser.cjs
+

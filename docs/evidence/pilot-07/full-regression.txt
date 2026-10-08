@@ -1,0 +1,404 @@
+
+> test:pilot
+> bash tests/run-pilot-checks.sh
+
+PASS: dry-run makes no editorial changes
+PASS: fresh setup creates four native pages, five Services, eight Projects and assignments
+PASS: repeat import preserves edits and conflicting assignments without duplicate media/menus
+PASS: dry/import report identifies editorial drift and assignment conflicts
+PASS: explicit reset restores baseline, preserving unrelated content and environment options
+PASS: missing baseline metadata is filled; intentional editorial emptiness is preserved
+PASS: late asset checksum failure aborts before mutation
+PASS: duplicate fixture identities abort before mutation
+PASS: temporary media cannot pass production import
+PASS: bootstrap requires Administrator authority
+PASS: native menu editorial drift is reported and preserved
+PASS: shared settings backup/restore uses validated native option operations
+PASS: re-import recreates deleted baseline page and repairs its role mapping
+PASS: import preserves Contact template drift; explicit reset restores it
+PASS: Editor cannot create shared settings on first save
+PASS: Administrator saves shared baseline
+PASS: Editor cannot change shared settings
+PASS: Invalid email retains all valid settings
+PASS: Invalid timezone retains all valid settings
+PASS: Invalid phone_dial retains all valid settings
+PASS: Invalid directions retains all valid settings
+PASS: Invalid description retains all valid settings
+PASS: Invalid privacy retains all valid settings
+PASS: Hours cannot close before opening
+PASS: Unknown nested hours properties rejected
+PASS: Unpublished native page rejected
+PASS: Shared phone and description propagate to header, Contact and footer
+PASS: Explicit HTTPS and native legal/directions destinations render
+PASS: Renamed native Contact preserves template and shared page identity
+PASS: Editor saves bounded Contact content through REST
+PASS: Oversize heading rejected
+PASS: Invalid save retains last valid content
+PASS: Empty or unknown editorial fields rejected with actionable REST feedback
+PASS: Empty or unknown editorial fields rejected with actionable REST feedback
+PASS: Malformed collection row rejected without fatal error
+PASS: Unicode and literal backslashes round-trip through native metadata
+PASS: Only one unslashing pass
+PASS: Native revision created for Contact metadata
+PASS: Native revision restores editorial metadata
+PASS: Editor saves native Contact meta box with nonce
+PASS: Invalid meta-box POST retains previous content
+PASS: Invalid meta-box POST provides actionable admin notice
+PASS: Invalid nonce cannot change Contact metadata
+PASS: Anonymous visitor cannot edit Contact
+PASS: Services are registered for native editing
+PASS: Local baseline has exactly five Services
+PASS: Editor can edit and publish Services
+PASS: Editor cannot change operational settings
+PASS: No Service management privileges for author
+PASS: No Service management privileges for contributor
+PASS: No Service management privileges for subscriber
+PASS: Anonymous cannot edit a Service
+PASS: Editor native save keeps Unicode and one unslashing pass
+PASS: Canonical price and title propagate to Services index, card and native footer
+PASS: Canonical duration and optional protection appear in Services
+PASS: Title and slug rename preserve section and request identities
+PASS: Invalid order retains all previous Service facts and title
+PASS: Invalid short_description retains all previous Service facts and title
+PASS: Invalid description retains all previous Service facts and title
+PASS: Invalid eyebrow retains all previous Service facts and title
+PASS: Invalid badge retains all previous Service facts and title
+PASS: Invalid inclusions retains all previous Service facts and title
+PASS: Invalid price retains all previous Service facts and title
+PASS: Invalid duration retains all previous Service facts and title
+PASS: Invalid protection retains all previous Service facts and title
+PASS: Malformed, markup, blank and Unicode bound+1 saves rejected
+PASS: Malformed, markup, blank and Unicode bound+1 saves rejected
+PASS: Malformed, markup, blank and Unicode bound+1 saves rejected
+PASS: Malformed, markup, blank and Unicode bound+1 saves rejected
+PASS: Unknown properties, numeric strings, oversize inclusions and empty optional facts rejected
+PASS: Unknown properties, numeric strings, oversize inclusions and empty optional facts rejected
+PASS: Unknown properties, numeric strings, oversize inclusions and empty optional facts rejected
+PASS: Unknown properties, numeric strings, oversize inclusions and empty optional facts rejected
+PASS: Unknown properties, numeric strings, oversize inclusions and empty optional facts rejected
+PASS: Native title bound+1 retains valid title
+PASS: Immutable identity cannot change
+PASS: Forged nonce cannot save Service facts
+PASS: Stable identity cannot be deleted
+PASS: Duplicate identity rejected, including drafts
+PASS: Sixth identity rejected
+PASS: Invalid writes also rejected at native metadata boundary
+PASS: Native Service revision restores facts and native title
+PASS: Native revision restores primary Service attachment
+PASS: Draft absent from cards, index, footer and Contact choices
+PASS: Invalid Service missing required media excluded
+PASS: Trashed Service excluded
+PASS: Editor saves Services sections through native page REST boundary
+PASS: FAQ answer bound+1 rejects full section
+PASS: Native revision restores FAQ collection and copy
+PASS: Editor native Services meta box saves fixed sections
+PASS: Incomplete comparison pair keeps labelled single image with no empty control
+PASS: Native page revision restores comparison attachment references
+PASS: Assigned Contact rename updates request permalink
+PASS: No independent public Service content at /?noir_service=renamed-service
+PASS: No independent public Service content at /?post_type=noir_service
+PASS: No independent public Service content at /?post_type=noir_service&feed=rss2
+PASS: No independent public Service content at /?post_type=noir_service&p=76
+PASS: No independent public Service content at /noir_service/renamed-service/
+PASS: No independent public Service content at /wp-json/wp/v2/noir_service
+PASS: No independent public Service content at /?s=Exterior+renamed
+Ticket 02 WordPress checks complete.
+PASS: Projects are registered for native editing
+PASS: Local Media Library has image prerequisites for disposable probes
+PASS: Project management permissions: administrator
+PASS: Project management permissions: editor
+PASS: Project management permissions: author
+PASS: Project management permissions: contributor
+PASS: Project management permissions: subscriber
+PASS: Anonymous cannot manage Projects
+PASS: Editor may maintain eight equipment entries with bounded values and local icons
+PASS: Native Editor save generates a stable Project identity
+PASS: Native Editor save persists canonical facts
+PASS: Native rows preserve valid literal zero text
+PASS: Editor saves ordered placements through native page REST
+PASS: Published canonical work resolves through a Gallery placement
+PASS: Native rename preserves references and propagates Unicode canonical vehicle/work
+PASS: Invalid vehicle retains facts and native title
+PASS: Invalid finish retains facts and native title
+PASS: Invalid work retains facts and native title
+PASS: Invalid facts retains facts and native title
+PASS: Invalid memberships retains facts and native title
+PASS: Invalid comparison retains facts and native title
+PASS: Forged native nonce retains prior title/facts
+PASS: Malformed, unknown, markup and duplicate membership metadata is rejected
+PASS: Malformed, unknown, markup and duplicate membership metadata is rejected
+PASS: Malformed, unknown, markup and duplicate membership metadata is rejected
+PASS: Malformed, unknown, markup and duplicate membership metadata is rejected
+PASS: Malformed, unknown, markup and duplicate membership metadata is rejected
+PASS: Malformed, unknown, markup and duplicate membership metadata is rejected
+PASS: Project identity cannot change or be deleted
+PASS: Duplicate identity including draft is rejected
+PASS: Invalid identity format is rejected
+PASS: Invalid identity format is rejected
+PASS: Invalid identity format is rejected
+PASS: Native revision restores Project title, facts, comparison and Featured image
+PASS: Native Gallery meta box saves contextual media and copy
+PASS: Native Gallery revision restores placement references, copy and imagery
+PASS: Duplicate/unknown/oversize placements rejected through REST
+PASS: Duplicate/unknown/oversize placements rejected through REST
+PASS: Duplicate/unknown/oversize placements rejected through REST
+PASS: Duplicate/unknown/oversize placements rejected through REST
+PASS: Author cannot change Gallery placements through REST
+PASS: Anonymous page API excludes contextual Project references
+PASS: Draft Project is excluded from Gallery
+PASS: Missing required image excludes Project
+PASS: Unavailable optional comparison image degrades to labelled single figure
+PASS: Native placement row order controls all six public Project positions
+PASS: Native Gallery revision restores the full baseline placement order
+PASS: No independent public Project exposure at /?noir_project=renamed-project
+PASS: No independent public Project exposure at /?post_type=noir_project
+PASS: No independent public Project exposure at /?post_type=noir_project&feed=rss2
+PASS: No independent public Project exposure at /?post_type=noir_project&p=738
+PASS: No independent public Project exposure at /noir_project/renamed-project/
+PASS: No independent public Project exposure at /wp-json/wp/v2/noir_project
+PASS: No independent public Project exposure at /?s=Completed+probe
+Ticket 03 native WordPress probe checks complete.
+PASS: Native page REST accepts fixed Home hero
+PASS: Saved Home hero appears through public HTTP
+PASS: Native Editor save propagates Home Unicode content
+PASS: Editor can update fixed hero through REST
+PASS: Native Home revision restores hero through HTTP
+PASS: Native revision restores Home hero media and Testimonial collection
+PASS: Out-of-range/oversized/unknown Testimonial fields are rejected
+PASS: Out-of-range/oversized/unknown Testimonial fields are rejected
+PASS: Out-of-range/oversized/unknown Testimonial fields are rejected
+PASS: Unicode heading bound enforced
+PASS: Editorial markup is rejected
+PASS: Forged native nonce preserves Home content
+PASS: author cannot edit Home sections
+PASS: subscriber cannot edit Home sections
+PASS: Anonymous page REST hides Home editorial metadata
+PASS: Canonical Service edits propagate across Home and Services
+PASS: Service detail/preselection links retain stable identity after rename
+PASS: Draft featured Service omitted
+PASS: Single shared Porsche work edit propagates to Home and Gallery
+PASS: Native row order controls Home placements
+PASS: Reordered Porsche preserves configured comparison images and control
+PASS: Native revision restores ordered references, contextual copy and media
+PASS: Duplicate/unknown/oversized Project references rejected
+PASS: Duplicate/unknown/oversized Project references rejected
+PASS: Duplicate/unknown/oversized Project references rejected
+PASS: Featured Service reference bounds rejected
+PASS: Duplicate featured Service reference rejected
+PASS: Editor can omit optional Home collections
+PASS: Empty collection omits home-testimonials
+PASS: Empty collection omits home-trust
+PASS: Empty collection omits home-benefits
+PASS: Empty collection omits home-services
+PASS: Empty collection omits home-projects
+PASS: Empty collection omits comparison-control
+PASS: Cleared native rows omit optional featured Services and Testimonials
+Ticket 04 native WordPress checks complete.
+PASS: Plugin absence does not fatal on Contact
+PASS: Saved public phone/email remain usable without plugin
+PASS: Native Contact anchor remains available without plugin
+PASS: Plugin absence cannot enable request submission
+PASS: Plugin absence leaves an explicit Home fallback and configured public contact
+PASS: Contact issues an ordinary anonymous POST form
+PASS: Invalid request returns 422 without JavaScript
+PASS: Validation exposes linked summary and associated errors
+PASS: Safe values preserve Unicode and literal backslashes without executing markup
+PASS: Policy rejects name boundary/shape/control
+PASS: Policy rejects phone boundary/shape/control
+PASS: Policy rejects phone boundary/shape/control
+PASS: Policy rejects email boundary/shape/control
+PASS: Policy rejects vehicle boundary/shape/control
+PASS: Policy rejects service_id boundary/shape/control
+PASS: Policy rejects preferred_date boundary/shape/control
+PASS: Policy rejects preferred_date boundary/shape/control
+PASS: Policy rejects notes boundary/shape/control
+PASS: Policy rejects name boundary/shape/control
+PASS: Policy rejects name boundary/shape/control
+PASS: Policy rejects notes boundary/shape/control
+PASS: Policy rejects name boundary/shape/control
+PASS: Policy accepts name at its specified boundary
+PASS: Policy accepts phone at its specified boundary
+PASS: Policy accepts vehicle at its specified boundary
+PASS: Policy accepts notes at its specified boundary
+PASS: Policy accepts preferred_date at its specified boundary
+PASS: Today and valid leap date accepted without availability rules
+PASS: Today and valid leap date accepted without availability rules
+PASS: Notes normalize CRLF and preserve normal whitespace
+PASS: Malformed UTF-8 rejected without reflection
+PASS: Missing explicit transport configuration returns safe 503 and permits explicit retry
+PASS: Definite pre-acceptance failure preserves safe values
+PASS: Security rejects website without reflecting customer fields
+PASS: Security rejects _noir_nonce without reflecting customer fields
+PASS: Security rejects submission_token without reflecting customer fields
+PASS: Missing visitor cookie fails with direct-contact guidance
+PASS: GET cannot submit
+PASS: Guessed success URL cannot claim acceptance
+PASS: Contact and status responses prevent shared caching
+PASS: 32 KiB body limit fails without reflecting values
+PASS: Array field shape rejected through real HTTP
+PASS: Malformed UTF-8 rejected through real HTTP
+PASS: A Service withdrawn after form issuance cannot be requested
+PASS: Unavailable preselection cannot fabricate an option
+PASS: Studio date differs from UTC across midnight
+PASS: Studio date survives DST transition
+PASS: Configured Studio timezone controls date boundary
+PASS: Native logged-in route accepts the correctly bound nonce before configuration failure
+PASS: Logged-in route enforces native nonce protection
+PASS: A logged-in identity cannot borrow an anonymous issued token
+PASS: Public POST response renders without an admin toolbar or PHP diagnostics
+PASS: Contact issues an ordinary anonymous POST form
+PASS: Invalid request returns 422 without JavaScript
+PASS: Validation exposes linked summary and associated errors
+PASS: Safe values preserve Unicode and literal backslashes without executing markup
+PASS: Policy rejects name boundary/shape/control
+PASS: Policy rejects phone boundary/shape/control
+PASS: Policy rejects phone boundary/shape/control
+PASS: Policy rejects email boundary/shape/control
+PASS: Policy rejects vehicle boundary/shape/control
+PASS: Policy rejects service_id boundary/shape/control
+PASS: Policy rejects preferred_date boundary/shape/control
+PASS: Policy rejects preferred_date boundary/shape/control
+PASS: Policy rejects notes boundary/shape/control
+PASS: Policy rejects name boundary/shape/control
+PASS: Policy rejects name boundary/shape/control
+PASS: Policy rejects notes boundary/shape/control
+PASS: Policy rejects name boundary/shape/control
+PASS: Policy accepts name at its specified boundary
+PASS: Policy accepts phone at its specified boundary
+PASS: Policy accepts vehicle at its specified boundary
+PASS: Policy accepts notes at its specified boundary
+PASS: Policy accepts preferred_date at its specified boundary
+PASS: Today and valid leap date accepted without availability rules
+PASS: Today and valid leap date accepted without availability rules
+PASS: Notes normalize CRLF and preserve normal whitespace
+PASS: Malformed UTF-8 rejected without reflection
+PASS: Missing explicit transport configuration returns safe 503 and permits explicit retry
+PASS: Definite pre-acceptance failure preserves safe values
+PASS: Security rejects website without reflecting customer fields
+PASS: Security rejects _noir_nonce without reflecting customer fields
+PASS: Security rejects submission_token without reflecting customer fields
+PASS: Missing visitor cookie fails with direct-contact guidance
+PASS: GET cannot submit
+PASS: Guessed success URL cannot claim acceptance
+PASS: Contact and status responses prevent shared caching
+PASS: 32 KiB body limit fails without reflecting values
+PASS: Array field shape rejected through real HTTP
+PASS: Malformed UTF-8 rejected through real HTTP
+PASS: A Service withdrawn after form issuance cannot be requested
+PASS: Unavailable preselection cannot fabricate an option
+PASS: Studio date differs from UTC across midnight
+PASS: Studio date survives DST transition
+PASS: Configured Studio timezone controls date boundary
+PASS: Native logged-in route accepts the correctly bound nonce before configuration failure
+PASS: Logged-in route enforces native nonce protection
+PASS: A logged-in identity cannot borrow an anonymous issued token
+PASS: Public POST response renders without an admin toolbar or PHP diagnostics
+PASS: Generic transport rejection is uncertain, with no success or safe-retry promise
+PASS: Uncertain attempt does not retry transport on sequential replay
+PASS: Plugin fallback preserves an accessible correction form without a theme renderer
+PASS: Positive transport acceptance produces 303 PRG
+PASS: Bound recorded receipt displays honest accepted-for-sending wording
+PASS: Receipt cannot be borrowed without the visitor binding
+PASS: Altered receipt cannot claim success
+PASS: Accepted sequential replay returns authenticated PRG
+PASS: Concurrent issuance is network-limited across cleared cookies and forged proxy headers
+PASS: Issuance throttling returns 429 and Retry-After
+PASS: Rejected issuance cannot grow token state
+PASS: Public Contact issues a bound no-store form
+PASS: Form is isolated from shared caching
+PASS: Eight simultaneous valid POSTs invoke transport at most once
+PASS: Concurrency uses independent PHP worker processes
+PASS: In-progress duplicates get pending direct-contact guidance without a retry form
+PASS: Recorded acceptance displays only with the bound receipt, with no-store
+PASS: Another visitor cannot borrow the receipt
+PASS: Authenticated accepted replay never resends
+PASS: Public Contact issues a bound no-store form
+PASS: Form is isolated from shared caching
+PASS: Client timeout leaves the original transport worker active
+PASS: Timeout replay receives pending direct-contact guidance
+PASS: Only recorded acceptance by the original timed-out worker permits success
+PASS: Public Contact issues a bound no-store form
+PASS: Form is isolated from shared caching
+PASS: uncertain: non-success and replay remain uncertain without a retry form
+PASS: Public Contact issues a bound no-store form
+PASS: Form is isolated from shared caching
+PASS: exception: non-success and replay remain uncertain without a retry form
+PASS: Public Contact issues a bound no-store form
+PASS: Form is isolated from shared caching
+PASS: crash: non-success and replay remain uncertain without a retry form
+PASS: Public Contact issues a bound no-store form
+PASS: Form is isolated from shared caching
+PASS: record-failure: non-success and replay remain uncertain without a retry form
+PASS: Public Contact issues a bound no-store form
+PASS: Form is isolated from shared caching
+PASS: Proven pre-send failure permits only an explicit retry
+PASS: Later explicit retry after proven non-acceptance is safe
+PASS: Public Contact issues a bound no-store form
+PASS: Form is isolated from shared caching
+PASS: Expired issued token cannot send
+PASS: Concurrent invalid POSTs are throttled and cannot create issuance state
+PASS: Public Contact issues a bound no-store form
+PASS: Form is isolated from shared caching
+PASS: Lost storage connection fails closed before transport
+PASS: Unavailable exclusive lock refuses new work
+PASS: Public Contact issues a bound no-store form
+PASS: Form is isolated from shared caching
+PASS: Database write refusal fails closed before any send
+PASS: Failed issuance storage cannot publish a usable form
+PASS: Post-send acceptance write failure leaves protective processing state and never claims success
+PASS: Explicitly trusted proxy resolves clients while global issuance remains bounded concurrently: {"200":120,"429":30}
+PASS: Public Contact issues a bound no-store form
+PASS: Form is isolated from shared caching
+PASS: Visitor issuance limit is atomic under concurrent requests
+PASS: Accepted setup for concurrent authenticated replay throttling
+PASS: Valid concurrent accepted replay is throttled without additional transport
+PASS: Public Contact issues a bound no-store form
+PASS: Form is isolated from shared caching
+PASS: Cleanup during a slow sender never reopens or resurrects permission or late acceptance
+PASS: Removed token stays invalid after the original worker finishes
+PASS: Public Contact issues a bound no-store form
+PASS: Form is isolated from shared caching
+PASS: Hard token capacity refuses issuance without state growth
+PASS: Scheduled cleanup actually removes expired token and abuse state
+PASS: Admission resumes after effective cleanup
+PASS: Abuse-state capacity refuses new identities without growth
+PASS: Cleanup removes capacity-filling abuse state
+PASS: Operational storage excludes Synthetic reliability customer
+PASS: Operational storage excludes Synthetic vehicle
+PASS: Operational storage excludes 127.0.0.1
+PASS: Operational storage excludes 203.0.113.
+PASS: Operational storage excludes submission_token
+PASS: Operational storage excludes _noir_nonce
+PASS: Operational storage excludes studio@example.test
+PASS: no-JS uncertain and throttled responses preserve accessible direct-contact guidance
+PASS: JS uncertain and throttled responses preserve accessible direct-contact guidance
+PASS: Real browser uncertainty and throttling work with and without JavaScript
+PASS: Unrelated public pages remain cacheable
+
+> check
+> node --check tests/contact-browser.cjs && node --check wordpress/app/public/wp-content/themes/noir-auto-detailing/assets/navigation.js && node --check tests/services-browser.cjs && node --check wordpress/app/public/wp-content/themes/noir-auto-detailing/assets/comparison.js && node --check tests/gallery-browser.cjs && node --check wordpress/app/public/wp-content/themes/noir-auto-detailing/assets/gallery.js && node --check tests/home-browser.cjs && node --check tests/appointment-browser.cjs && node --check wordpress/app/public/wp-content/themes/noir-auto-detailing/assets/appointment.js && node --check tests/appointment-reliability-browser.cjs && node --check tests/pilot-browser.cjs
+
+PASS chrome 375px: navigation, keyboard, no-JS, local assets, reflow
+PASS chrome 768px: navigation, keyboard, no-JS, local assets, reflow
+PASS chrome 1024px: navigation, keyboard, no-JS, local assets, reflow
+PASS chrome 1440px: navigation, keyboard, no-JS, local assets, reflow
+PASS firefox 375px: navigation, keyboard, no-JS, local assets, reflow
+PASS firefox 768px: navigation, keyboard, no-JS, local assets, reflow
+PASS firefox 1024px: navigation, keyboard, no-JS, local assets, reflow
+PASS firefox 1440px: navigation, keyboard, no-JS, local assets, reflow
+PASS webkit 375px: navigation, keyboard, no-JS, local assets, reflow
+PASS webkit 768px: navigation, keyboard, no-JS, local assets, reflow
+PASS webkit 1024px: navigation, keyboard, no-JS, local assets, reflow
+PASS webkit 1440px: navigation, keyboard, no-JS, local assets, reflow
+PASS chrome 375px: canonical facts, native footer, links/preselection, independent FAQ, keyboard/pointer/touch comparison, images, axe, no-JS
+PASS chrome 768px: canonical facts, native footer, links/preselection, independent FAQ, keyboard/pointer/touch comparison, images, axe, no-JS
+PASS chrome 1024px: canonical facts, native footer, links/preselection, independent FAQ, keyboard/pointer/touch comparison, images, axe, no-JS
+PASS chrome 1440px: canonical facts, native footer, links/preselection, independent FAQ, keyboard/pointer/touch comparison, images, axe, no-JS
+Error: ENOSPC: no space left on device, open '/tmp/noir07-final-evidence/services/axe-firefox-375.json'
+    at Object.writeFileSync (node:fs:2914:20)
+    at /Users/hossein/Local Sites/stitch-wp-pilot/tests/services-browser.cjs:286:12 {
+  errno: -28,
+  code: 'ENOSPC',
+  syscall: 'open',
+  path: '/tmp/noir07-final-evidence/services/axe-firefox-375.json'
+}

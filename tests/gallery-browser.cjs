@@ -211,13 +211,6 @@ const filters = {
           );
           await cdp.detach();
         }
-        const detail = page.getByRole("link", { name: "View Project Details" });
-        const destination = new URL(await detail.getAttribute("href"));
-        assert.equal(destination.pathname, new URL(url).pathname);
-        assert.equal(destination.hash, "#project-" + ids[0]);
-        await detail.click();
-        assert.equal(new URL(page.url()).hash, destination.hash);
-        assert.equal(await page.locator('a[href="#"]').count(), 0);
         // Allow each lazy image to remain in view until WebKit starts its request.
         // Racing through long cards can leave offscreen native lazy requests deferred.
         for (const image of await page.locator(".gallery-main img").all()) {
@@ -343,6 +336,17 @@ const filters = {
           path: path.join(output, `gallery-${name}-${width}.png`),
           fullPage: true,
         });
+        // Validate the rendered document before following its native anchor.
+        const detail = page.getByRole("link", { name: "View Project Details" });
+        const destination = new URL(await detail.getAttribute("href"));
+        assert.equal(destination.pathname, new URL(url).pathname);
+        assert.equal(destination.hash, "#project-" + ids[0]);
+        await Promise.all([
+          page.waitForURL(destination.href, { waitUntil: "load" }),
+          detail.click(),
+        ]);
+        assert.equal(new URL(page.url()).hash, destination.hash);
+        assert.equal(await page.locator('a[href="#"]').count(), 0);
         assert.deepEqual(errors, []);
         assert.deepEqual(remote, []);
         await context.close();

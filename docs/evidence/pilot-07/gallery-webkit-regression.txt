@@ -1,0 +1,4 @@
+PASS webkit 375px: exact filters/count/reset/focus, comparison keyboard/pointer/touch, images, axe, no-JS and partial scripts
+PASS webkit 768px: exact filters/count/reset/focus, comparison keyboard/pointer/touch, images, axe, no-JS and partial scripts
+PASS webkit 1024px: exact filters/count/reset/focus, comparison keyboard/pointer/touch, images, axe, no-JS and partial scripts
+PASS webkit 1440px: exact filters/count/reset/focus, comparison keyboard/pointer/touch, images, axe, no-JS and partial scripts

@@ -50,15 +50,22 @@ for suite in studio contact services gallery home plugin-fallback appointment ap
 done
 npm run check
 checks_evidence="${NOIR_EVIDENCE_DIR:-docs/evidence/pilot-07}"
+IFS=',' read -r -a page_browsers <<< "${NOIR_BROWSER:-chrome,firefox,webkit}"
 for suite in contact services gallery home; do
- reset_ledger
- NOIR_EVIDENCE_DIR="$checks_evidence/$suite" node "tests/$suite-browser.cjs"
+ for browser in "${page_browsers[@]}"; do
+  reset_ledger
+  NOIR_BROWSER="$browser" NOIR_EVIDENCE_DIR="$checks_evidence/$suite" node "tests/$suite-browser.cjs"
+ done
 done
 reset_ledger
 mkdir -p "$(dirname "$fixture")" "$(dirname "$mode")"
 cp tests/fixtures/appointment-mail-environment.php "$fixture"
 printf '%s\n' accepted > "$mode"
-NOIR_MAILPIT_URL="${NOIR_MAILPIT_URL:-http://127.0.0.1:10005}" NOIR_BROWSER="${NOIR_APPOINTMENT_BROWSERS:-chrome,firefox,webkit}" NOIR_EVIDENCE_DIR="$checks_evidence/appointment" npm run test:appointment
+IFS=',' read -r -a appointment_browsers <<< "${NOIR_APPOINTMENT_BROWSERS:-chrome,firefox,webkit}"
+for browser in "${appointment_browsers[@]}"; do
+ reset_ledger
+ NOIR_MAILPIT_URL="${NOIR_MAILPIT_URL:-http://127.0.0.1:10005}" NOIR_BROWSER="$browser" NOIR_EVIDENCE_DIR="$checks_evidence/appointment/$browser" npm run test:appointment
+done
 
 reset_ledger
 NOIR_EVIDENCE_DIR="$checks_evidence/supplemental" node tests/pilot-browser.cjs
