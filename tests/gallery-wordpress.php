@@ -13,6 +13,7 @@ noir_gallery_check(post_type_exists('noir_project'),'Projects are registered for
 $admin=get_users(['role'=>'administrator','number'=>1])[0]->ID;
 $page=(int)get_option('noir_studio')['pages']['gallery'];
 $original=get_post_meta($page,'_noir_gallery_placements',true);
+$equipment=get_post_meta($page,'_noir_gallery_equipment',true);
 $had_placements=metadata_exists('post',$page,'_noir_gallery_placements');
 $users=[]; $temporary=[];
 $attachments=get_posts(['post_type'=>'attachment','post_status'=>'inherit','posts_per_page'=>2,'post_mime_type'=>'image']);
@@ -32,11 +33,18 @@ try {
  }
  wp_set_current_user(0);noir_gallery_check(!current_user_can('edit_post',$id),'Anonymous cannot manage Projects');
  wp_set_current_user($users['editor']);
+ $eight=$equipment; $eight['items']=array_fill(0,8,['title'=>'Inspection','body'=>'Controlled lighting','value'=>'5000K','icon'=>'light-mode']);
+ $equipment_request=new WP_REST_Request('POST','/wp/v2/pages/'.$page);$equipment_request->set_param('meta',['_noir_gallery_equipment'=>$eight]);
+ noir_gallery_check(rest_do_request($equipment_request)->get_status()===200,'Editor may maintain eight equipment entries with bounded values and local icons');
+ update_post_meta($page,'_noir_gallery_equipment',wp_slash($equipment));
  $_POST=['noir_project_nonce'=>wp_create_nonce('noir_project_save'),'noir_project'=>wp_slash($facts)];
  wp_update_post(['ID'=>$id,'post_title'=>'Completed probe','post_status'=>'publish']);
  $identity=get_post_meta($id,'_noir_project_id',true);
  noir_gallery_check(str_starts_with($identity,'project-'),'Native Editor save generates a stable Project identity');
  noir_gallery_check(get_post_meta($id,'_noir_project_facts',true)===$facts,'Native Editor save persists canonical facts');
+ $zero=$facts;$zero['facts']=[['label'=>'0','value'=>'0']];$_POST['noir_project']=wp_slash($zero);wp_update_post(['ID'=>$id]);
+ noir_gallery_check(get_post_meta($id,'_noir_project_facts',true)['facts']===$zero['facts'],'Native rows preserve valid literal zero text');
+ $_POST['noir_project']=wp_slash($facts);wp_update_post(['ID'=>$id]);
  $_POST=[];
  $placements=[['project_id'=>$identity,'teaser'=>'Contextual teaser','eyebrow'=>'Completed work','image'=>0,'comparison'=>['before_image'=>0,'after_image'=>0,'before_label'=>'Before','after_label'=>'After']]];
  $request=new WP_REST_Request('POST','/wp/v2/pages/'.$page);$request->set_param('meta',['_noir_gallery_placements'=>$placements]);
@@ -83,6 +91,16 @@ try {
  // A media deletion after a complete valid save leaves the surviving optional figure.
  wp_update_post(['ID'=>$other,'post_status'=>'trash']);
  $html=noir_gallery_http(get_permalink($page));noir_gallery_check(str_contains($html,'comparison-before') && !str_contains($html,'comparison-control'),'Unavailable optional comparison image degrades to labelled single figure');wp_update_post(['ID'=>$other,'post_status'=>'inherit']);
+ if (is_array($original) && count($original)===6) {
+  update_post_meta($page,'_noir_gallery_placements',wp_slash($original));wp_save_post_revision($page);$ordered_revision=array_key_first(wp_get_post_revisions($page));
+  $_POST=['noir_gallery_nonce'=>wp_create_nonce('noir_gallery_save'),'noir_gallery'=>wp_slash(['placements'=>array_reverse($original)])];wp_update_post(['ID'=>$page]);$_POST=[];
+  preg_match_all('/<article id="project-([^" ]+)"/',noir_gallery_http(get_permalink($page)),$matches);
+  noir_gallery_check($matches[1]===array_reverse(array_column($original,'project_id')),'Native placement row order controls all six public Project positions');
+  wp_restore_post_revision($ordered_revision);preg_match_all('/<article id="project-([^" ]+)"/',noir_gallery_http(get_permalink($page)),$matches);
+  noir_gallery_check($matches[1]===array_column($original,'project_id'),'Native Gallery revision restores the full baseline placement order');
+  // Probe route restrictions below still use one Project so unrelated baseline copy cannot mask leakage.
+  update_post_meta($page,'_noir_gallery_placements',wp_slash($placements));
+ }
  foreach (['/?noir_project=renamed-project','/?post_type=noir_project','/?post_type=noir_project&feed=rss2','/?post_type=noir_project&p='.$id,'/noir_project/renamed-project/','/wp-json/wp/v2/noir_project','/?s=Completed+probe'] as $route) {
   $html=noir_gallery_http(home_url($route));noir_gallery_check(!str_contains($html,'Completed work — public probe') && !str_contains($html,'id="project-'.$identity.'"'),'No independent public Project exposure at '.$route);
  }
@@ -90,6 +108,7 @@ try {
 } finally {
  $_POST=[];wp_set_current_user($admin);
  wp_update_post(['ID'=>$other,'post_status'=>'inherit']);
+ update_post_meta($page,'_noir_gallery_equipment',wp_slash($equipment));
  if ($had_placements) { update_post_meta($page,'_noir_gallery_placements',wp_slash($original)); } else { delete_post_meta($page,'_noir_gallery_placements'); }
  foreach ($temporary as $id) { wp_delete_post($id,true); }
  require_once ABSPATH.'wp-admin/includes/user.php';foreach ($users as $user) { wp_delete_user($user); }

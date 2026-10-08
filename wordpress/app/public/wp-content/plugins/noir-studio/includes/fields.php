@@ -56,7 +56,7 @@ function noir_editorial_label($key) {
   'before_label'=>__('Before label','noir-studio'),'after_label'=>__('After label','noir-studio'),'memberships'=>__('Gallery memberships (exact values)','noir-studio'),
   'project_id'=>__('Stable Project reference','noir-studio'),'teaser'=>__('Contextual teaser','noir-studio'),'eyebrow'=>__('Eyebrow','noir-studio'),
   'image'=>__('Contextual image attachment ID (0 uses canonical image)','noir-studio'),'heading'=>__('Heading','noir-studio'),'body'=>__('Body','noir-studio'),
-  'items'=>__('Items','noir-studio'),'title'=>__('Title','noir-studio'),'intro'=>__('Introduction','noir-studio'),'equipment'=>__('Studio equipment','noir-studio'),'final'=>__('Final CTA','noir-studio'),'placements'=>__('Ordered Project placements','noir-studio'),
+  'icon'=>__('Local decorative icon','noir-studio'),'items'=>__('Items','noir-studio'),'title'=>__('Title','noir-studio'),'intro'=>__('Introduction','noir-studio'),'equipment'=>__('Studio equipment','noir-studio'),'final'=>__('Final CTA','noir-studio'),'placements'=>__('Ordered Project placements','noir-studio'),
  ];
  return $labels[$key]??$key;
 }
@@ -75,6 +75,10 @@ function noir_editorial_fields($name,$schema,$value,$label) {
    echo '<details'.($i<count((array)$value)?' open':'').'><summary>'.esc_html(sprintf(__('Row %d','noir-studio'),$i+1)).'</summary>';
    noir_editorial_fields($name.'['.$i.']',$schema['items'],$value[$i]??[],sprintf(__('Row %d','noir-studio'),$i+1)); echo '</details>';
   }
+ } elseif (isset($schema['enum'])) {
+  echo '<p><label>'.esc_html($label).' <select name="'.esc_attr($name).'">';
+  foreach ($schema['enum'] as $option) { echo '<option value="'.esc_attr($option).'" '.selected($value,$option,false).'>'.esc_html($option ?: __('None','noir-studio')).'</option>'; }
+  echo '</select></label></p>';
  } elseif ($schema['type']==='integer') {
   echo '<p><label>'.esc_html($label).' <input type="number" min="0" step="1" name="'.esc_attr($name).'" value="'.esc_attr($value??0).'"></label></p>';
  } else {
@@ -86,9 +90,11 @@ function noir_editorial_fields($name,$schema,$value,$label) {
 function noir_editorial_row_empty($row) {
  if (!is_array($row)) { return false; }
  foreach ($row as $key=>$value) {
+  if ($key==='icon' && is_string($value) && in_array($value,['','light-mode','water','polisher','climate'],true)) { continue; }
   if (in_array($key,['before_label','after_label'],true)) { continue; }
   if (is_array($value)) { if (!noir_editorial_row_empty($value)) { return false; } }
-  elseif (!is_string($value) || (trim($value)!=='' && $value!=='0')) { return false; }
+  elseif (in_array($key,['image','before_image','after_image'],true)) { if ($value!=='0' && $value!==0) { return false; } }
+  elseif (!is_string($value) || trim($value)!=='') { return false; }
  }
  return true;
 }

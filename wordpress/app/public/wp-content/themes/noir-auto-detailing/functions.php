@@ -41,7 +41,7 @@ function noir_theme_destination($value) {
  return is_string($value) && filter_var($value,FILTER_VALIDATE_URL) && wp_parse_url($value,PHP_URL_SCHEME)==='https' && !wp_parse_url($value,PHP_URL_USER) && !wp_parse_url($value,PHP_URL_PASS) ? $value : '';
 }
 function noir_icon($name) {
- $allowed = ['person','menu','verified','call','mail','location_on','verified_user','coffee','shield','info','search','local_car_wash','auto_fix_high'];
+ $allowed = ['person','menu','verified','call','mail','location_on','verified_user','coffee','shield','info','search','local_car_wash','auto_fix_high','light-mode','water','polisher','climate'];
  if (!in_array($name,$allowed,true)) { return; }
  echo '<img class="icon" src="'.esc_url(get_template_directory_uri().'/assets/icons/'.$name.'.svg').'" width="24" height="24" alt="" aria-hidden="true">';
 }

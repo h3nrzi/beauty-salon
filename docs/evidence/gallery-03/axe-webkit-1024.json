@@ -1,0 +1,462 @@
+{
+  "violations": [],
+  "incomplete": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "tags": [
+        "cat.color",
+        "wcag2aa",
+        "wcag143",
+        "TTv5",
+        "TT13.c",
+        "EN-301-549",
+        "EN-9.1.4.3",
+        "ACT",
+        "RGAAv4",
+        "RGAA-3.2.1"
+      ],
+      "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI",
+      "nodes": [
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "normal",
+                "messageKey": "elmPartiallyObscured",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [
+                {
+                  "html": "<header class=\"site-header\">",
+                  "target": [
+                    "header"
+                  ]
+                },
+                {
+                  "html": "<article id=\"project-bmw-m3-touring\" data-project=\"\" data-memberships=\"full-detail paint-correction\" class=\"project-card\">",
+                  "target": [
+                    "#project-bmw-m3-touring"
+                  ]
+                }
+              ],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because it's partially obscured by another element"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<a href=\"http://wordpress.local/contact/\">Contact</a>",
+          "target": [
+            "#menu-item-17 > a"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "8.3pt (11px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because it is overlapped by another element"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<figcaption>Before</figcaption>",
+          "target": [
+            ".comparison-before > figcaption"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "fontSize": "8.3pt (11px)",
+                "fontWeight": "normal",
+                "messageKey": "pseudoContent",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [
+                {
+                  "html": "<figure class=\"comparison-after\">",
+                  "target": [
+                    ".comparison-after"
+                  ]
+                }
+              ],
+              "impact": "serious",
+              "message": "Element's background color could not be determined due to a pseudo element"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<figcaption>After</figcaption>",
+          "target": [
+            ".comparison-after > figcaption"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "8.3pt (11px)",
+                "fontWeight": "normal",
+                "messageKey": "imgNode",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [
+                {
+                  "html": "<p class=\"project-image-eyebrow small-label\">Ceramic Coating</p>",
+                  "target": [
+                    "#project-ferrari-f8-tributo > .project-visual > .project-image-eyebrow.small-label"
+                  ]
+                },
+                {
+                  "html": "<img width=\"512\" height=\"279\" src=\"http://wordpress.loc...\" class=\"attachment-large siz...\" alt=\"Ferrari F8 Tributo i...\" sizes=\"auto, (min-width: 76...\" loading=\"lazy\" fetchpriority=\"auto\" decoding=\"async\" srcset=\"http://wordpress.loc...\">",
+                  "target": [
+                    "#project-ferrari-f8-tributo > .project-visual > .attachment-large[loading=\"lazy\"][fetchpriority=\"auto\"]"
+                  ]
+                }
+              ],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because element contains an image node"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<p class=\"project-image-eyebrow small-label\">Ceramic Coating</p>",
+          "target": [
+            "#project-ferrari-f8-tributo > .project-visual > .project-image-eyebrow.small-label"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "8.3pt (11px)",
+                "fontWeight": "normal",
+                "messageKey": "imgNode",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [
+                {
+                  "html": "<p class=\"project-finish small-label\">Rosso Corsa</p>",
+                  "target": [
+                    "#project-ferrari-f8-tributo > .project-visual > .project-finish.small-label"
+                  ]
+                },
+                {
+                  "html": "<img width=\"512\" height=\"279\" src=\"http://wordpress.loc...\" class=\"attachment-large siz...\" alt=\"Ferrari F8 Tributo i...\" sizes=\"auto, (min-width: 76...\" loading=\"lazy\" fetchpriority=\"auto\" decoding=\"async\" srcset=\"http://wordpress.loc...\">",
+                  "target": [
+                    "#project-ferrari-f8-tributo > .project-visual > .attachment-large[loading=\"lazy\"][fetchpriority=\"auto\"]"
+                  ]
+                }
+              ],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because element contains an image node"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<p class=\"project-finish small-label\">Rosso Corsa</p>",
+          "target": [
+            "#project-ferrari-f8-tributo > .project-visual > .project-finish.small-label"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "8.3pt (11px)",
+                "fontWeight": "normal",
+                "messageKey": "imgNode",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [
+                {
+                  "html": "<p class=\"project-image-eyebrow small-label\">Matte Finish Protection</p>",
+                  "target": [
+                    "#project-aston-martin-dbs-superleggera > .project-visual > .project-image-eyebrow.small-label"
+                  ]
+                },
+                {
+                  "html": "<img width=\"512\" height=\"279\" src=\"http://wordpress.loc...\" class=\"attachment-large siz...\" alt=\"Aston Martin DBS Sup...\" sizes=\"auto, (min-width: 76...\" loading=\"lazy\" fetchpriority=\"auto\" decoding=\"async\" srcset=\"http://wordpress.loc...\">",
+                  "target": [
+                    "#project-aston-martin-dbs-superleggera > .project-visual > .attachment-large[loading=\"lazy\"][fetchpriority=\"auto\"]"
+                  ]
+                }
+              ],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because element contains an image node"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<p class=\"project-image-eyebrow small-label\">Matte Finish Protection</p>",
+          "target": [
+            "#project-aston-martin-dbs-superleggera > .project-visual > .project-image-eyebrow.small-label"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "8.3pt (11px)",
+                "fontWeight": "normal",
+                "messageKey": "imgNode",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [
+                {
+                  "html": "<p class=\"project-finish small-label\">Satin Xenon Grey</p>",
+                  "target": [
+                    "#project-aston-martin-dbs-superleggera > .project-visual > .project-finish.small-label"
+                  ]
+                },
+                {
+                  "html": "<img width=\"512\" height=\"279\" src=\"http://wordpress.loc...\" class=\"attachment-large siz...\" alt=\"Aston Martin DBS Sup...\" sizes=\"auto, (min-width: 76...\" loading=\"lazy\" fetchpriority=\"auto\" decoding=\"async\" srcset=\"http://wordpress.loc...\">",
+                  "target": [
+                    "#project-aston-martin-dbs-superleggera > .project-visual > .attachment-large[loading=\"lazy\"][fetchpriority=\"auto\"]"
+                  ]
+                }
+              ],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because element contains an image node"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<p class=\"project-finish small-label\">Satin Xenon Grey</p>",
+          "target": [
+            "#project-aston-martin-dbs-superleggera > .project-visual > .project-finish.small-label"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "8.3pt (11px)",
+                "fontWeight": "normal",
+                "messageKey": "imgNode",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [
+                {
+                  "html": "<p class=\"project-image-caption small-label\">Single-Stage Nitrocellulose Lacquer • Hand Jewelers Polish</p>",
+                  "target": [
+                    ".project-image-caption"
+                  ]
+                },
+                {
+                  "html": "<img width=\"512\" height=\"279\" src=\"http://wordpress.loc...\" class=\"attachment-large siz...\" alt=\"Extreme macro close-...\" sizes=\"auto, (min-width: 10...\" loading=\"lazy\" fetchpriority=\"auto\" decoding=\"async\" srcset=\"http://wordpress.loc...\">",
+                  "target": [
+                    "#project-mercedes-benz-300sl-1955 > .project-visual > .attachment-large[loading=\"lazy\"][fetchpriority=\"auto\"]"
+                  ]
+                }
+              ],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because element contains an image node"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<p class=\"project-image-caption small-label\">Single-Stage Nitrocellulose Lacquer • Hand Jewelers Polish</p>",
+          "target": [
+            ".project-image-caption"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "8.3pt (11px)",
+                "fontWeight": "normal",
+                "messageKey": "imgNode",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [
+                {
+                  "html": "<p class=\"project-image-eyebrow small-label\">Full Detail &amp; Leather</p>",
+                  "target": [
+                    "#project-bmw-m3-touring > .project-visual > .project-image-eyebrow.small-label"
+                  ]
+                },
+                {
+                  "html": "<img width=\"512\" height=\"279\" src=\"http://wordpress.loc...\" class=\"attachment-large siz...\" alt=\"BMW M3 Touring in de...\" sizes=\"auto, (min-width: 76...\" loading=\"lazy\" fetchpriority=\"auto\" decoding=\"async\" srcset=\"http://wordpress.loc...\">",
+                  "target": [
+                    "#project-bmw-m3-touring > .project-visual > .attachment-large[loading=\"lazy\"][fetchpriority=\"auto\"]"
+                  ]
+                }
+              ],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because element contains an image node"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<p class=\"project-image-eyebrow small-label\">Full Detail &amp; Leather</p>",
+          "target": [
+            "#project-bmw-m3-touring > .project-visual > .project-image-eyebrow.small-label"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "8.3pt (11px)",
+                "fontWeight": "normal",
+                "messageKey": "imgNode",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [
+                {
+                  "html": "<p class=\"project-finish small-label\">Isle of Man Green</p>",
+                  "target": [
+                    "#project-bmw-m3-touring > .project-visual > .project-finish.small-label"
+                  ]
+                },
+                {
+                  "html": "<img width=\"512\" height=\"279\" src=\"http://wordpress.loc...\" class=\"attachment-large siz...\" alt=\"BMW M3 Touring in de...\" sizes=\"auto, (min-width: 76...\" loading=\"lazy\" fetchpriority=\"auto\" decoding=\"async\" srcset=\"http://wordpress.loc...\">",
+                  "target": [
+                    "#project-bmw-m3-touring > .project-visual > .attachment-large[loading=\"lazy\"][fetchpriority=\"auto\"]"
+                  ]
+                }
+              ],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because element contains an image node"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<p class=\"project-finish small-label\">Isle of Man Green</p>",
+          "target": [
+            "#project-bmw-m3-touring > .project-visual > .project-finish.small-label"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "8.3pt (11px)",
+                "fontWeight": "normal",
+                "messageKey": "imgNode",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [
+                {
+                  "html": "<p class=\"project-image-eyebrow small-label\">PPF &amp; Ceramic Protection</p>",
+                  "target": [
+                    "#project-lamborghini-huracan-sto > .project-visual > .project-image-eyebrow.small-label"
+                  ]
+                },
+                {
+                  "html": "<img width=\"512\" height=\"279\" src=\"http://wordpress.loc...\" class=\"attachment-large siz...\" alt=\"Lamborghini Huracan ...\" sizes=\"auto, (min-width: 76...\" loading=\"lazy\" fetchpriority=\"auto\" decoding=\"async\" srcset=\"http://wordpress.loc...\">",
+                  "target": [
+                    "#project-lamborghini-huracan-sto > .project-visual > .attachment-large[loading=\"lazy\"][fetchpriority=\"auto\"]"
+                  ]
+                }
+              ],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because element contains an image node"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<p class=\"project-image-eyebrow small-label\">PPF &amp; Ceramic Protection</p>",
+          "target": [
+            "#project-lamborghini-huracan-sto > .project-visual > .project-image-eyebrow.small-label"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "8.3pt (11px)",
+                "fontWeight": "normal",
+                "messageKey": "imgNode",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [
+                {
+                  "html": "<p class=\"project-finish small-label\">Viola Pasifae</p>",
+                  "target": [
+                    "#project-lamborghini-huracan-sto > .project-visual > .project-finish.small-label"
+                  ]
+                },
+                {
+                  "html": "<img width=\"512\" height=\"279\" src=\"http://wordpress.loc...\" class=\"attachment-large siz...\" alt=\"Lamborghini Huracan ...\" sizes=\"auto, (min-width: 76...\" loading=\"lazy\" fetchpriority=\"auto\" decoding=\"async\" srcset=\"http://wordpress.loc...\">",
+                  "target": [
+                    "#project-lamborghini-huracan-sto > .project-visual > .attachment-large[loading=\"lazy\"][fetchpriority=\"auto\"]"
+                  ]
+                }
+              ],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because element contains an image node"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<p class=\"project-finish small-label\">Viola Pasifae</p>",
+          "target": [
+            "#project-lamborghini-huracan-sto > .project-visual > .project-finish.small-label"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+        }
+      ]
+    }
+  ]
+}

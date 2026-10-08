@@ -298,19 +298,27 @@
       "items": [
         {
           "title": "Daylight-Balanced Lighting",
-          "body": "5000K high-CRI inspection lights reveal true surface condition without misleading shadows."
+          "body": "5000K high-CRI inspection lights reveal true surface condition without misleading shadows.",
+          "value": "",
+          "icon": "light-mode"
         },
         {
           "title": "De-Ionized Pure Water",
-          "body": "Spot-free filtration ensures zero mineral residue during washing and prep stages."
+          "body": "Spot-free filtration ensures zero mineral residue during washing and prep stages.",
+          "value": "",
+          "icon": "water"
         },
         {
           "title": "Dual-Action Polishers",
-          "body": "Rupes and Flex precision polishers for safe, hologram-free paint correction."
+          "body": "Rupes and Flex precision polishers for safe, hologram-free paint correction.",
+          "value": "",
+          "icon": "polisher"
         },
         {
           "title": "Climate-Controlled Bays",
-          "body": "Optimal temperature and humidity for proper ceramic coating bonding and clear curing."
+          "body": "Optimal temperature and humidity for proper ceramic coating bonding and clear curing.",
+          "value": "",
+          "icon": "climate"
         }
       ]
     },

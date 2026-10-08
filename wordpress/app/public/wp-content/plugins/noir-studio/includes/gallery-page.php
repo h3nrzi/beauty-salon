@@ -10,7 +10,7 @@ function noir_project_placement_schema($context) {
 function noir_gallery_page_schemas() {
  $section=['eyebrow'=>noir_text_schema(0,80),'heading'=>noir_text_schema(1,180),'body'=>noir_text_schema(0,2000)];
  return ['intro'=>noir_object_schema($section),'placements'=>noir_project_placement_schema('gallery'),
-  'equipment'=>noir_object_schema($section+['items'=>['type'=>'array','maxItems'=>4,'items'=>noir_object_schema(['title'=>noir_text_schema(1,120),'body'=>noir_text_schema(0,500)])]]),
+  'equipment'=>noir_object_schema($section+['items'=>['type'=>'array','maxItems'=>8,'items'=>noir_object_schema(['title'=>noir_text_schema(1,120),'body'=>noir_text_schema(0,500),'value'=>noir_text_schema(0,100),'icon'=>['type'=>'string','enum'=>['','light-mode','water','polisher','climate']]])]]),
   'final'=>noir_object_schema($section)];
 }
 function noir_project_reference_exists($identity) {
@@ -42,10 +42,17 @@ add_action('init',function() {
    'sanitize_callback'=>'noir_normalize_text','auth_callback'=>function($allowed,$key,$post_id) use ($template) { return get_page_template_slug($post_id)===$template && current_user_can('edit_post',$post_id) && current_user_can('edit_others_pages'); }]);
  }
 });
+function noir_validate_gallery_metadata($key,$value) {
+ if ($key==='_noir_home_placements') { return noir_validate_placements(noir_normalize_text($value),'home'); }
+ $prefix='_noir_gallery_';
+ if (str_starts_with($key,$prefix)) {
+  $name=substr($key,strlen($prefix));
+  if (isset(noir_gallery_page_schemas()[$name])) { return noir_validate_gallery_section(noir_normalize_text($value),$name); }
+ }
+ return null;
+}
 function noir_guard_gallery_meta($check,$post_id,$key,$value) {
- if ($key==='_noir_home_placements') { $valid=noir_validate_placements($value,'home'); }
- elseif (str_starts_with($key,'_noir_gallery_') && isset(noir_gallery_page_schemas()[substr($key,14)])) { $valid=noir_validate_gallery_section($value,substr($key,14)); }
- else { return $check; }
+ $valid=noir_validate_gallery_metadata($key,$value);
  if (is_wp_error($valid)) { noir_contact_error($valid->get_error_message().' '.__('Previous content was kept.','noir-studio')); return false; }
  return $check;
 }
@@ -54,9 +61,7 @@ add_filter('update_post_metadata','noir_guard_gallery_meta',10,4);
 add_filter('rest_pre_insert_page',function($prepared,$request) {
  $meta=$request->get_param('meta'); if (!is_array($meta)) { return $prepared; }
  foreach ($meta as $key=>$value) {
-  if ($key==='_noir_home_placements') { $valid=noir_validate_placements(noir_normalize_text($value),'home'); }
-  elseif (str_starts_with($key,'_noir_gallery_') && isset(noir_gallery_page_schemas()[substr($key,14)])) { $valid=noir_validate_gallery_section(noir_normalize_text($value),substr($key,14)); }
-  else { continue; }
+  $valid=noir_validate_gallery_metadata($key,$value);
   if (is_wp_error($valid)) { return new WP_Error('noir_gallery_invalid',$valid->get_error_message(),['status'=>400]); }
  }
  return $prepared;

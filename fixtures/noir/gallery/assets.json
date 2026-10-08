@@ -6,7 +6,7 @@
       "original_reference": "https://lh3.googleusercontent.com/aida-public/AB6AXuB4A7nGnbXHwBmHW8xa3DjU9MGtZ1gA7xIMflqq_I0G4fab3mDrYkVyN9jC-8pF3WBSteXso-J_rqd9EFO_ZsCSUqXqZpY6NaYslaOKD8L1nb7KhJoAkVx-5tBCmNCcAys5Rb9In9_9oRP0Uff8kvXDvjyFKGUpIyPikyBo9UO_xR8DG-w1H04_Jo_YGCZZ_58YuG8yItN-KpcWqHf-H3C7slCpPBH_J_9el3UfMv4",
       "source": "media/porsche-gallery-after.jpg",
       "rights_status": "not-yet-rights-cleared",
-      "rights_evidence": "Frozen v3 export is a visual reference, not evidence of usage rights. Local prototype use awaits owner authorization. Production requires verified rights or approved replacement under Ticket 07.",
+      "rights_evidence": "Owner authorized temporary local prototype/reference use on 2026-10-08 in the Ticket 03 implementation chat. This is not production usage-rights evidence. Verify rights or replace with approved owned/licensed media before production acceptance under Ticket 07.",
       "alt": "Flawless mirror gloss finish on Porsche 911 GT3 in Jet Black Metallic under cleanroom geometric studio hex lights, showroom perfection with pristine wet reflection and high depth",
       "decorative": false,
       "crop": "object-fit: cover",
@@ -17,15 +17,18 @@
       "usage": [
         "gallery:porsche-911-gt3-992"
       ],
-      "sha256": null,
-      "dimensions": null
+      "sha256": "cc79f068117bd46dfdedb1075ef078533d08a557035692bb19a3d71e340461d1",
+      "dimensions": [
+        512,
+        279
+      ]
     },
     {
       "role": "porsche-gallery-before",
       "original_reference": "https://lh3.googleusercontent.com/aida-public/AB6AXuCuTAMPn8bIKS2IO3_Zcs1jQoszS7uI6eQNp5VtCZvHg5pb8qxVILC2cjB8Nhn8XxnkQObsRbJlvVAuUcgwf34dQHO6EFtur7-J8sVHrYRd1Wmmf7ywk6R1MWOfSqRvAFsAbITE7jRXduTnb_-1ZimOHG01Da7H44eBPPhEJFJKf_VytWYwR8Pi8-stJVaPvPXCj0AYZEvhOHcP6Pk5HFMXO8smCluEdJId1JxZxyw",
       "source": "media/porsche-gallery-before.jpg",
       "rights_status": "not-yet-rights-cleared",
-      "rights_evidence": "Frozen v3 export is a visual reference, not evidence of usage rights. Local prototype use awaits owner authorization. Production requires verified rights or approved replacement under Ticket 07.",
+      "rights_evidence": "Owner authorized temporary local prototype/reference use on 2026-10-08 in the Ticket 03 implementation chat. This is not production usage-rights evidence. Verify rights or replace with approved owned/licensed media before production acceptance under Ticket 07.",
       "alt": "Microswirls and heavy spiderweb scratches on Jet Black Metallic Porsche 911 GT3 paint prior to corrective staging under intense harsh tungsten inspection lights",
       "decorative": false,
       "crop": "object-fit: cover",
@@ -36,15 +39,18 @@
       "usage": [
         "gallery:porsche-911-gt3-992"
       ],
-      "sha256": null,
-      "dimensions": null
+      "sha256": "45bbec18a8d4de1425afc7728c526a1789d319defde3531b87ab2c0dcb49242b",
+      "dimensions": [
+        512,
+        279
+      ]
     },
     {
       "role": "ferrari-f8-tributo",
       "original_reference": "https://lh3.googleusercontent.com/aida-public/AB6AXuBvYTft08uHZF6_3gi_b4osPOkvggBfzI72dxJNdF5p1yAwbspKRjZVRRUi--5fPdAL7y-uAqaYQXPrRLBtwUayWAL_Tmx4C4WAZDUmy537RF7mvLSHoGy9u7bX2BNcLJRbGu8Hh7x8wCrFtCzHC2AjVepHvyAIxWmTwMSqw9awDi6AmrS2Zs2UlDCOJQz3DvHv9LGmLRNLISVUHc_dWp6DHzW4JZTezb7G-943neE",
       "source": "media/ferrari-f8-tributo.jpg",
       "rights_status": "not-yet-rights-cleared",
-      "rights_evidence": "Frozen v3 export is a visual reference, not evidence of usage rights. Local prototype use awaits owner authorization. Production requires verified rights or approved replacement under Ticket 07.",
+      "rights_evidence": "Owner authorized temporary local prototype/reference use on 2026-10-08 in the Ticket 03 implementation chat. This is not production usage-rights evidence. Verify rights or replace with approved owned/licensed media before production acceptance under Ticket 07.",
       "alt": "Ferrari F8 Tributo in gleaming Rosso Corsa red captured at three quarter angle inside dark minimalist studio with hyper-glossy wet reflections on body panels and yellow brake calipers",
       "decorative": false,
       "crop": "object-fit: cover",
@@ -55,15 +61,18 @@
       "usage": [
         "gallery:ferrari-f8-tributo"
       ],
-      "sha256": null,
-      "dimensions": null
+      "sha256": "c3136f80d58f66318bd0e653618e1aaeef4b17c8d5bf401dcd713a6f681dc778",
+      "dimensions": [
+        512,
+        279
+      ]
     },
     {
       "role": "aston-martin-dbs-superleggera",
       "original_reference": "https://lh3.googleusercontent.com/aida-public/AB6AXuBftNXx4ygOPbI3oIF_nHLBOUiKQXL7tfMM2rXTq9UQCqhwS1fIoAbOrk42avSpHZSGOzyjCE6cofyHOVKO3ELLtX9V_OdKgJifdpLSTbtKmsldkRuiRCkBfiw68AIeBsks33TkJaz9AuUMvzCWvYS57SMqS0uQ7M5H280WSApAZ1RPpw-NFjAcdN3njz6vMFiW3CYcsHIXIPFZ4VzoqarJNPvtEoJk31zMM0ym2wI",
       "source": "media/aston-martin-dbs-superleggera.jpg",
       "rights_status": "not-yet-rights-cleared",
-      "rights_evidence": "Frozen v3 export is a visual reference, not evidence of usage rights. Local prototype use awaits owner authorization. Production requires verified rights or approved replacement under Ticket 07.",
+      "rights_evidence": "Owner authorized temporary local prototype/reference use on 2026-10-08 in the Ticket 03 implementation chat. This is not production usage-rights evidence. Verify rights or replace with approved owned/licensed media before production acceptance under Ticket 07.",
       "alt": "Aston Martin DBS Superleggera in stealth Satin Xenon Grey under directional studio overhead lighting showing silky matte sheen and carbon fiber aerodynamic splitters without glossy hot spots",
       "decorative": false,
       "crop": "object-fit: cover",
@@ -74,15 +83,18 @@
       "usage": [
         "gallery:aston-martin-dbs-superleggera"
       ],
-      "sha256": null,
-      "dimensions": null
+      "sha256": "f885571ef8299102bfff26c0667f33b66716f2a1ae9f640861bbf73208dda5e3",
+      "dimensions": [
+        512,
+        279
+      ]
     },
     {
       "role": "mercedes-benz-300sl-1955",
       "original_reference": "https://lh3.googleusercontent.com/aida-public/AB6AXuCZn800E4HhNqNtIF2cgIajgxiixucnwl89yEtfVAvpAUnNeGc_7foZfw-rqd8VUQL21p3uPoT8AdDajQ1_d-teiSw9c2isNv0ge9oig6DwbBkCGrB8IibLdCPTWTVlEjXpSMVxwXsX5FYTVtSFoApf2NgRLEPqpmqHHbcHIJNk-TYC83ZyXledPtr6Cn07xCnMaTREfw2IeaUJ_pIDDNPVm78NNPEU4urA4VIjXfA",
       "source": "media/mercedes-benz-300sl-1955.jpg",
       "rights_status": "not-yet-rights-cleared",
-      "rights_evidence": "Frozen v3 export is a visual reference, not evidence of usage rights. Local prototype use awaits owner authorization. Production requires verified rights or approved replacement under Ticket 07.",
+      "rights_evidence": "Owner authorized temporary local prototype/reference use on 2026-10-08 in the Ticket 03 implementation chat. This is not production usage-rights evidence. Verify rights or replace with approved owned/licensed media before production acceptance under Ticket 07.",
       "alt": "Extreme macro close-up photography of vintage 1955 Mercedes-Benz 300SL Gullwing curved fender silver lacquer showing deep vintage metallic flake clarity and pure hand polished reflection without micro scratches",
       "decorative": false,
       "crop": "object-fit: cover",
@@ -93,15 +105,18 @@
       "usage": [
         "gallery:mercedes-benz-300sl-1955"
       ],
-      "sha256": null,
-      "dimensions": null
+      "sha256": "5c6b908cf45ddcc7ff811281ac8cf1b480638dea3539d6a2ef07630c84637704",
+      "dimensions": [
+        512,
+        279
+      ]
     },
     {
       "role": "bmw-m3-touring",
       "original_reference": "https://lh3.googleusercontent.com/aida-public/AB6AXuB0GMZg1r_Cme2FyYG-jM0_5tem_i-pYZ2RY1yic_k3E57Aa1lC0eDj3t7og3S9x50BVoPSrRA4bZqWuorFp-JmD54dcA7SQgz9vuiK22b-Z9g_rCbsIqE6M9w-lPhn8Mp1DfuN9n-K8GOvBxrrcFD1xM_IhznoMS_NA_QJrw4oDsI7MmtBal0vK7DXmNDr0eyrQ2IXnXLK4Hdp-sx9HxpLafHgm08gKj9lxsxVTX0",
       "source": "media/bmw-m3-touring.jpg",
       "rights_status": "not-yet-rights-cleared",
-      "rights_evidence": "Frozen v3 export is a visual reference, not evidence of usage rights. Local prototype use awaits owner authorization. Production requires verified rights or approved replacement under Ticket 07.",
+      "rights_evidence": "Owner authorized temporary local prototype/reference use on 2026-10-08 in the Ticket 03 implementation chat. This is not production usage-rights evidence. Verify rights or replace with approved owned/licensed media before production acceptance under Ticket 07.",
       "alt": "BMW M3 Touring in deep Isle of Man Green metallic parked inside precision detailing bay with reflections of ambient LED light tubes across sculpted hood lines and rear diffuser",
       "decorative": false,
       "crop": "object-fit: cover",
@@ -112,15 +127,18 @@
       "usage": [
         "gallery:bmw-m3-touring"
       ],
-      "sha256": null,
-      "dimensions": null
+      "sha256": "3257df144fff6d814d1f634b98bc091106f830ad0781cb8666d226117f0bb97d",
+      "dimensions": [
+        512,
+        279
+      ]
     },
     {
       "role": "lamborghini-huracan-sto",
       "original_reference": "https://lh3.googleusercontent.com/aida-public/AB6AXuDMYPXf_Ls1tjxeocxHUWkApOF9d7IGkfYtaNsftszkbKmb-r8TRJhLsh2tSEaMRnSf9osvxkVTU5iQCf6E974zdmtysu0KIaNkOr1b1ib_sTDd-Eo3hx42GEGawNhtTNkwmlNdpSCeDqqIr4bV9GaMKCtgArhC1pFvs2ARYULejELFKkWnGfksD4kZfLHlnHstOzd6vHb_F8f3EWandCgsN196IFxy1V8DD0RWNtk",
       "source": "media/lamborghini-huracan-sto.jpg",
       "rights_status": "not-yet-rights-cleared",
-      "rights_evidence": "Frozen v3 export is a visual reference, not evidence of usage rights. Local prototype use awaits owner authorization. Production requires verified rights or approved replacement under Ticket 07.",
+      "rights_evidence": "Owner authorized temporary local prototype/reference use on 2026-10-08 in the Ticket 03 implementation chat. This is not production usage-rights evidence. Verify rights or replace with approved owned/licensed media before production acceptance under Ticket 07.",
       "alt": "Lamborghini Huracan STO in brilliant Viola Pasifae purple and contrast Arancio accents in clean room detailing garage, displaying glossy carbon fiber rear wing and aerodynamic roof scoop",
       "decorative": false,
       "crop": "object-fit: cover",
@@ -131,8 +149,11 @@
       "usage": [
         "gallery:lamborghini-huracan-sto"
       ],
-      "sha256": null,
-      "dimensions": null
+      "sha256": "b19711301b0881ae1e718f0817499170826c001766af6cf013f4df10841f131d",
+      "dimensions": [
+        512,
+        279
+      ]
     }
   ]
 }
