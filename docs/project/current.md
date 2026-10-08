@@ -38,7 +38,7 @@
 - Local implementation gate and evidence: Pending
 - Human acceptance gate: Owner h3nrzi; pending design/implementation evidence
 - Production-release gate: Pending
-- Blockers / capability gaps: Home iteration 01 has product/copy/mobile-navigation mismatches; visual direction itself is accepted
-- Next action: Run `docs/project/stitch-prompts/02-home-refinement.md` against the existing Stitch Home, then review refined mobile + desktop before any baseline freeze.
+- Blockers / capability gaps: Home refinement is close, but desktop/mobile copy/navigation parity, Persian display typography, placeholder/legal treatment and realistic mobile evidence still need one final consistency pass
+- Next action: Run `docs/project/stitch-prompts/03-home-final-consistency.md`, export realistic desktop + mobile evidence, then decide whether to freeze Home/design-system baseline.
 
 Replace pending entries with links to existing artifacts as work progresses.
