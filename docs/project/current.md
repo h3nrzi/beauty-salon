@@ -4,6 +4,7 @@
 - Owner: Pending confirmation
 - Phase: Product definition
 - Product definition and scope approval: Pending
+- Product direction: Single-salon Beauty Booking Platform with a real appointment-booking flow
 - Frozen baseline and audit: Pending
 - Engineering handoff: Pending
 - MATT configuration confirmed once: Pending
@@ -13,7 +14,7 @@
 - Local implementation gate and evidence: Pending
 - Human acceptance gate, owner and evidence: Pending
 - Production-release gate, owner and evidence: Pending
-- Blockers / capability gaps: To be determined
-- Next action: Define and agree product scope before Stitch generation.
+- Blockers / capability gaps: Product scope still being defined
+- Next action: Resolve the target salon, booking identity, appointment-management scope and public/operational journeys before scope freeze.
 
 Replace pending entries with links to existing artifacts as work progresses.
