@@ -4,7 +4,7 @@
 
 **Blocked by:** 05 — Submit a validated Appointment Request end-to-end.
 
-**Status:** ready-for-human
+**Status:** accepted
 
 - [x] Short-lived throttling limits submissions and token issuance, remains effective under concurrent requests and cookie clearing, and prevents unbounded abuse-state growth. Honor forwarded addresses only for explicitly trusted proxies. Persist only scoped keyed digests and necessary operational counters/timestamps, never customer fields, raw IPs, mail payloads or request bodies. Document simple pilot-appropriate limits/windows; throttled responses use 429 and Retry-After.
 - [x] One token cannot cause multiple sends; simultaneous valid POSTs using that token invoke transport at most once. Establish exclusive permission across independent workers using the smallest supported WordPress solution that proves the property. No database engine, custom table, SQL claim or locking design is mandated. Fail closed before sending if required safeguards or storage cannot reliably establish exclusivity.
@@ -24,3 +24,7 @@ Independent concurrent HTTP/FPM tests cover duplicate exclusion, visitor/network
 Implementation and operational contract: `docs/appointment-slice.md`. Repeatable full checks: `npm run test:pilot` from the configured Local WP-CLI shell. Standards and Spec code-review axes found no actionable defects. See `docs/evidence/appointment-06/results.md` for final verification.
 
 Deployment boundary: an external WP-Cron runner every five minutes is required for bounded idle physical deletion. Its deployment setup/verification belongs to Ticket 07; traffic-driven WP-Cron alone cannot certify idle retention. The hard state bound, token invalidation, duplicate exclusion and fail-closed storage behavior do not depend on that scheduler.
+
+## Comments
+
+2026-10-08 — Owner explicitly confirmed that all tickets are approved ("همشون تاییدن"). Local implementation and human sign-off are accepted; this supersedes earlier pending-human status/comments. No additional manual test execution or production evidence is asserted. Final legal destinations, media rights, real HTTPS/inbox/performance and deployed cron verification remain unresolved production prerequisites in Ticket 07.

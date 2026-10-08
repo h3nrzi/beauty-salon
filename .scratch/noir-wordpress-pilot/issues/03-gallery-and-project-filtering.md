@@ -4,7 +4,7 @@
 
 **Blocked by:** 01 — Contact the Studio through Contact and shared navigation.
 
-**Status:** ready-for-human
+**Status:** accepted
 
 - [x] Match the six Gallery placements, order, vehicle/work facts, equipment section and CTA from the approved baseline. Preserve exact exported memberships; do not infer memberships or Services from prose. Porsche is one shared record; the Gallery Aston Martin DBS is distinct from Home's DB12.
 - [x] Editors and Administrators can maintain Project facts, owned images, complete comparison pairs and ordered contextual placements through bounded native editing. Stable identities survive renaming; invalid saves and incomplete optional content degrade as specified. Lower roles cannot manage records.
@@ -21,3 +21,5 @@
 The owner explicitly authorized local copies of the seven frozen Gallery photographs **only as temporary prototype/reference media** on 2026-10-08. Their status is **not-yet-rights-cleared**. This supersedes the owned-media portion of the slice criterion for the local prototype; Ticket 07 must verify rights or replace the photographs with approved owned/licensed sources before production acceptance. Asset hashes/dimensions/rights/source/attachment mapping are tracked; there is no independent importer or runtime hotlink.
 
 `ready-for-human` records pending human acceptance. Automated/focused slice evidence is complete; human visual parity approval, manual screen-reader/zoom checks and the complete actual Safari matrix are not claimed. Safari 26.1 rendering/filter/reset/anchor smoke is recorded separately. Consolidated production/browser/accessibility acceptance, full fresh import/drift/reset and media rights remain Ticket 07. Home-only Projects and Home placement editing remain Ticket 04.
+
+2026-10-08 — Owner explicitly confirmed that all tickets are approved ("همشون تاییدن"). Local implementation and human sign-off are accepted; this supersedes earlier pending-human status/comments. No additional manual test execution or production evidence is asserted. Final legal destinations, media rights, real HTTPS/inbox/performance and deployed cron verification remain unresolved production prerequisites in Ticket 07.

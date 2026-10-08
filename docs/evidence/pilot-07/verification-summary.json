@@ -1,6 +1,6 @@
 {
   "date": "2026-10-08",
-  "scope": "local implementation acceptance; human and production gates unresolved",
+  "scope": "owner-accepted local implementation; production gates unresolved",
   "bootstrapCasesPassed": 14,
   "nativeSuitesPassed": [
     "studio",
@@ -23,12 +23,6 @@
   "mailTestFixtureRemoved": true,
   "runnerExitStatus": 0,
   "interruptedRunsRetained": true,
-  "outstandingHuman": [
-    "actual Safari/full stable-browser matrix",
-    "screen reader",
-    "actual text zoom and 400% reflow",
-    "visual/content/operator sign-off"
-  ],
   "outstandingProduction": [
     "final reachable Privacy/Terms destinations",
     "cleared photographic rights/quality",
@@ -36,5 +30,18 @@
     "real inbox delivery",
     "external cron retention verification",
     "fixed five-run HTTPS Lighthouse profile"
-  ]
+  ],
+  "ownerHumanAcceptance": {
+    "status": "approved",
+    "date": "2026-10-08",
+    "source": "explicit owner confirmation in this chat",
+    "newManualMeasurementsClaimed": false
+  },
+  "unperformedManualChecks": [
+    "actual Safari/full stable-browser matrix",
+    "screen reader",
+    "actual text zoom and 400% reflow",
+    "visual/content/operator sign-off"
+  ],
+  "outstandingHuman": []
 }

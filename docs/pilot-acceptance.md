@@ -73,6 +73,8 @@ Local mail evidence uses actual SMTP into Mailpit, while reliability race checks
 
 ## Acceptance matrix and retained evidence
 
+2026-10-08 — The owner explicitly approved all seven tickets and the local pilot. Human sign-off is recorded in their issue comments. The matrix below preserves evidence limitations: this approval adds no actual Safari/stable Firefox, screen-reader or browser-zoom measurements and does not resolve production prerequisites.
+
 | Contract | Automated/local evidence | Outstanding acceptance |
 | --- | --- | --- |
 | Four native routes, menu current state, CTA/anchors and stable references | Contact/Services/Gallery/Home native and browser suites; exact Home/Gallery order; no anonymous CPT routes/API/search/feed exposure | Real published legal destinations and reachability |

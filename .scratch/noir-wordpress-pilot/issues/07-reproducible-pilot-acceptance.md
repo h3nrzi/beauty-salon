@@ -4,9 +4,11 @@
 
 **Blocked by:** 04 — Discover the Studio through the complete Home page; 06 — Harden Appointment Request against replay, concurrency and uncertain delivery.
 
-**Status:** ready-for-human
+**Status:** accepted
 
-Checkboxes track the owner's approved split between completed local implementation, human acceptance and production prerequisites. Checked local items do not certify production acceptance. Evidence: [`../../../docs/pilot-acceptance.md`](../../../docs/pilot-acceptance.md) and [`../../../docs/evidence/pilot-07/verification-summary.json`](../../../docs/evidence/pilot-07/verification-summary.json).
+**Acceptance scope:** Local implementation and owner human sign-off. Production release remains gated by the unchecked prerequisites below.
+
+Checkboxes track completed local implementation, explicit owner human acceptance and unresolved production prerequisites. Checked local items do not certify production acceptance. Evidence: [`../../../docs/pilot-acceptance.md`](../../../docs/pilot-acceptance.md) and [`../../../docs/evidence/pilot-07/verification-summary.json`](../../../docs/evidence/pilot-07/verification-summary.json).
 
 ## Completed automated/local implementation
 
@@ -22,12 +24,14 @@ Checkboxes track the owner's approved split between completed local implementati
 - [x] Retain actual local SMTP Mailpit capture evidence: 24 form combinations across three engines, four widths and JS/no-JS passed. Mailpit does not prove real inbox delivery.
 - [x] Deliver reproducible setup/evidence instructions and resolve only defects blocking the approved local acceptance contract. Do not add product pages, CPTs, APIs, frameworks, request-management features, deployment infrastructure or new architecture. Syntax and independent Standards/Spec reviews passed; post-regression dry-run has no drift/conflicts.
 
-## Human/manual acceptance still required
+## Owner human acceptance — approved
 
-- [ ] Complete current stable Chrome/Firefox and actual Safari acceptance at all four widths; retain browser/OS versions. Installed-engine checks above do not replace the missing stable Firefox/actual Safari matrix.
-- [ ] Complete manual keyboard/screen-reader, contrast, actual 200% text zoom and 400% reflow acceptance, recording screen-reader/browser versions. Automated axe and 320px reflow probes do not replace these checks.
-- [ ] Approve all four frozen screenshot/HTML comparisons at desktop/tablet/mobile, including geometry, typography, canonical copy, image subjects/crops and justified deviations.
-- [ ] Complete the maintainer/editor walkthrough and human sign-off on native editing, revision recovery and shared-settings backup/restore.
+2026-10-08 — The owner explicitly approved all tickets in this chat. This records human acceptance of the local implementation and available evidence; it adds no new browser, screen-reader or zoom measurements.
+
+- [x] Owner accepts the installed-browser matrix and its documented limits. Complete actual Safari/current stable Firefox measurements remain unperformed; approval does not certify those measurements.
+- [x] Owner accepts the available accessibility/interaction evidence and its documented limits. Manual screen-reader, actual 200% text zoom and 400% browser zoom results are not newly claimed.
+- [x] Owner approves the four-page visual implementation, retained screenshot/HTML comparisons and documented deviations for the local pilot.
+- [x] Owner approves native editing, revision recovery and shared-settings backup/restore for the local pilot.
 
 ## Production-only acceptance still required
 
@@ -53,3 +57,5 @@ The existing Beverly Hills address has a normal external Directions link in the 
 2026-10-08 — Final local verification completed across retained segments: 14 bootstrap cases, all nine native suites, 48 page/engine/width combinations, 24 JS/no-JS appointment combinations with actual local SMTP into Mailpit and 12 supplemental reflow/reduced-motion/download-failure probes passed. Syntax and both independent review axes passed. Post-regression dry-run reports no drift/conflicts; temporary mail fixture removed. Interrupted disk/rate-window/WebKit harness runs remain labelled as failures in the evidence index. Manual and production gates above remain unresolved; status stays `ready-for-human`.
 
 2026-10-08 — Checklist correction after owner feedback: the earlier decision to leave every original combined criterion unchecked obscured completed local work. Split the checklist into completed automated/local items, outstanding human/manual acceptance and outstanding production-only acceptance, preserving all remaining gates. This supersedes the earlier comment about leaving all original checkboxes unchecked; status remains `ready-for-human`.
+
+2026-10-08 — Owner explicitly confirmed that all tickets are approved ("همشون تاییدن"). Local implementation and human sign-off are accepted; this supersedes earlier pending-human status/comments. No additional manual test execution or production evidence is asserted. Final legal destinations, media rights, real HTTPS/inbox/performance and deployed cron verification remain unresolved production prerequisites in Ticket 07.

@@ -24,3 +24,5 @@ The interruption logs are preserved as failures, not represented as successful r
 Native Safari 26.1 on macOS 26.1 exposed Home's real content, comparisons, stable discovery links, baseline hours and accessible review ratings through its AX tree. Responsive-mode interaction encountered a CUA capture failure and disabled developer controls. Full Safari widths/keyboard/touch/no-JavaScript acceptance remains pending.
 
 `verification-summary.json` consolidates the completed local checks and outstanding gates. `post-regression-baseline-report.json` confirms zero drift/conflicts after cleanup, with the same 25 unresolved rights/legal/real-mail blockers. The temporary mail fixture and mode file were absent after the successful EXIT cleanup. No credentials, actual customer fields or real inbox evidence are included.
+
+2026-10-08 — Owner approved all seven tickets and local human acceptance. Earlier pending-human statements describe the evidence at capture time and are superseded as approval status. Unperformed manual measurements remain unperformed; all production prerequisites remain open.
