@@ -17,6 +17,12 @@ try {
  appointment_check(wp_remote_retrieve_response_code($response)===503 && str_contains(wp_remote_retrieve_body($response),'outcome is uncertain') && !str_contains(wp_remote_retrieve_body($response),'Nothing was sent'),'Generic transport rejection is uncertain, with no success or safe-retry promise');
  $response=appointment_post($form+$valid,$cookies);
  appointment_check(wp_remote_retrieve_response_code($response)===503 && str_contains(wp_remote_retrieve_body($response),'pending or uncertain'),'Uncertain attempt does not retry transport on sequential replay');
+ file_put_contents($mode_file,'fallback');
+ [$fallback_form,$fallback_cookies]=appointment_form($url);
+ $fallback_values=$valid; $fallback_values['phone']='123';
+ $fallback=appointment_post($fallback_form+$fallback_values,$fallback_cookies);
+ $fallback_html=wp_remote_retrieve_body($fallback);
+ appointment_check(wp_remote_retrieve_response_code($fallback)===422 && str_contains($fallback_html,'value="حسین"') && str_contains($fallback_html,'href="#request-phone"') && !str_contains($fallback_html,'contact-main'),'Plugin fallback preserves an accessible correction form without a theme renderer');
  file_put_contents($mode_file,'accepted');
  [$form,$cookies]=appointment_form($url);
  $response=appointment_post($form+$valid,$cookies);

@@ -127,7 +127,7 @@ add_action('wp_enqueue_scripts',function() {
 add_action('noir_appointment_response',function() {
  $id=(int)(noir_theme_studio()['pages']['contact']??0);
  if (!$id || get_post_status($id)!=='publish') {
-  get_header(); echo '<main id="main-content"><h1>Appointment Request</h1>'; noir_appointment_form(); echo '</main>'; get_footer(); return;
+  get_header(); echo '<main id="main-content"><h1>'.esc_html__('Appointment Request','noir-auto-detailing').'</h1>'; get_template_part('template-parts/appointment'); echo '</main>'; get_footer(); return;
  }
  $GLOBALS['wp_query']=new WP_Query(['page_id'=>$id]);
  $GLOBALS['wp_the_query']=$GLOBALS['wp_query'];

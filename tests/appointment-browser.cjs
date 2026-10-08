@@ -31,6 +31,8 @@ async function captured() { return (await (await fetch(mailpit + '/api/v1/messag
      assert.equal(await page.locator('[name=vehicle]').inputValue(),'Fixture vehicle');
      assert.equal(await page.locator('[name=phone]').getAttribute('aria-invalid'),'true');
      assert(await page.locator('#request-errors').isVisible());
+     assert(!/Warning:|Fatal error:/.test(await page.locator('body').innerText()));
+     assert.equal(await page.locator('#wpadminbar').count(),0);
      if (javaScriptEnabled) {
       await page.waitForFunction(()=>document.activeElement?.id==='request-errors');
       await page.locator('#request-errors a[href="#request-phone"]').click();

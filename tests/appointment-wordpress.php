@@ -102,3 +102,7 @@ try {
 } finally {
  require_once ABSPATH.'wp-admin/includes/user.php';wp_delete_user($subscriber);
 }
+[$form,$cookies]=appointment_form($url);
+$invalid=$form+$valid; $invalid['phone']='123';
+$response=appointment_post($invalid,$cookies);
+appointment_check(!preg_match('/Warning:|Fatal error:|<div id="wpadminbar"/',wp_remote_retrieve_body($response)),'Public POST response renders without an admin toolbar or PHP diagnostics');

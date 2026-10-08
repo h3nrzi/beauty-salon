@@ -2,6 +2,10 @@
 // Temporary Local-only fixture, removed by the harness; no submission store.
 if (!defined('ABSPATH') || wp_get_environment_type()!=='local') { return; }
 $mode=is_readable('/tmp/noir-ticket05/mail-mode') ? trim((string)file_get_contents('/tmp/noir-ticket05/mail-mode')) : 'off';
+if ($mode==='fallback') {
+ add_action('after_setup_theme',function() { remove_all_actions('noir_appointment_response'); });
+ return;
+}
 if (!in_array($mode,['accepted','uncertain'],true)) { return; }
 define('NOIR_MAIL_READY',true);
 define('NOIR_MAIL_RECIPIENT','studio@example.test');
