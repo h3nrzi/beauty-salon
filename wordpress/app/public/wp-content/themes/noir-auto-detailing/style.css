@@ -37,6 +37,7 @@ Text Domain: noir-auto-detailing
   box-sizing: border-box;
 }
 html {
+  scroll-behavior: smooth;
   scroll-padding-top: 100px;
 }
 body {
