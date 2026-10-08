@@ -38,7 +38,7 @@
 - Local implementation gate and evidence: Pending
 - Human acceptance gate: Owner h3nrzi; pending design/implementation evidence
 - Production-release gate: Pending
-- Booking iteration 01: Visual direction accepted but not frozen; 24-hour cutoff, stale-slot behavior, missing empty states, scope-copy drift and desktop parity require one focused completion pass\n- Blockers / capability gaps: Public discovery pages through Contact are frozen; Booking still needs required state completeness and desktop evidence before freeze
-- Next action: Run `docs/project/stitch-prompts/10-booking-completion.md` against the existing Booking design, then review mobile + desktop core screens plus stale-slot / no-eligible-specialist / no-availability states.
+- Booking iteration 01: Visual direction accepted but not frozen\n- Booking iteration 02: Required edge states and desktop evidence added; freeze still blocked by stale-slot auto-selection, desktop flow divergence and residual scope/content drift\n- Blockers / capability gaps: Public discovery pages through Contact are frozen; Booking still needs one final product-contract correction pass before freeze
+- Next action: Run `docs/project/stitch-prompts/11-booking-final-contract-correction.md`, then review exact product-contract compliance and freeze Booking if no blocking mismatch remains.
 
 Replace pending entries with links to existing artifacts as work progresses.
