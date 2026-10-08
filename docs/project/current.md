@@ -38,7 +38,7 @@
 - Local implementation gate and evidence: Pending
 - Human acceptance gate: Owner h3nrzi; pending design/implementation evidence
 - Production-release gate: Pending
-- Blockers / capability gaps: Stitch visual baseline is not yet approved
-- Next action: Run `docs/project/stitch-prompts/01-home-design-system.md` in Stitch, review the first Home/design-system exploration, and iterate without changing product scope.
+- Blockers / capability gaps: Home iteration 01 has product/copy/mobile-navigation mismatches; visual direction itself is accepted
+- Next action: Run `docs/project/stitch-prompts/02-home-refinement.md` against the existing Stitch Home, then review refined mobile + desktop before any baseline freeze.
 
 Replace pending entries with links to existing artifacts as work progresses.
