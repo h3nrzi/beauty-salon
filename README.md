@@ -41,8 +41,6 @@ The main output of this repository is not only the finished WordPress site. It i
 
 ## Current status
 
-**Phase 2 — Engineering handoff / Codex + MATT**
+The four-page NOIR pilot is implemented as a classic theme and project-owned plugin. Explicit reproducible bootstrap, safe repeat imports, scoped reset and local acceptance checks are documented in [pilot acceptance](docs/pilot-acceptance.md). The full local regression runner is `npm run test:pilot`, using a configured disposable Local WP-CLI runtime.
 
-Pilot product: **NOIR Auto Detailing**.
-
-Stitch v3 is the frozen design baseline. Remaining issues are deterministic copy/implementation cleanup and are documented for engineering. Frozen Stitch v3 references and WordPress 7.1.3 are now present in the repository. WordPress Core is treated as immutable upstream code. Matt Pocock skills are installed and `/setup-matt-pocock-skills` is complete. The local issue tracker is `.scratch/`, with single-context domain docs via `GLOSSARY.md` and `docs/adr/`. Next: open Codex at the repository root and run `/grill-with-docs` to resolve the remaining WordPress engineering decisions before `/to-spec`.
+Production acceptance remains pending actual legal destinations, cleared photography, configured real inbox delivery, production HTTPS/performance evidence and manual browser/accessibility/visual sign-off. See `.scratch/noir-wordpress-pilot/issues/07-reproducible-pilot-acceptance.md` and the evidence index in `docs/evidence/pilot-07/`.

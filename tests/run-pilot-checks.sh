@@ -43,17 +43,22 @@ cleanup() {
 }
 trap cleanup EXIT
 reset_ledger() { run_wp option delete noir_request_ledger >/dev/null 2>&1 || true; }
+NOIR_WP_BIN="$wp_bin" bash tests/bootstrap-cli.sh
 for suite in studio contact services gallery home plugin-fallback appointment appointment-delivery appointment-reliability; do
  reset_ledger
  run_wp eval-file "tests/$suite-wordpress.php"
 done
 npm run check
+checks_evidence="${NOIR_EVIDENCE_DIR:-docs/evidence/pilot-07}"
 for suite in contact services gallery home; do
  reset_ledger
- node "tests/$suite-browser.cjs"
+ NOIR_EVIDENCE_DIR="$checks_evidence/$suite" node "tests/$suite-browser.cjs"
 done
 reset_ledger
 mkdir -p "$(dirname "$fixture")" "$(dirname "$mode")"
 cp tests/fixtures/appointment-mail-environment.php "$fixture"
 printf '%s\n' accepted > "$mode"
-NOIR_MAILPIT_URL="${NOIR_MAILPIT_URL:-http://127.0.0.1:10005}" NOIR_BROWSER="${NOIR_APPOINTMENT_BROWSERS:-chrome,firefox,webkit}" npm run test:appointment
+NOIR_MAILPIT_URL="${NOIR_MAILPIT_URL:-http://127.0.0.1:10005}" NOIR_BROWSER="${NOIR_APPOINTMENT_BROWSERS:-chrome,firefox,webkit}" NOIR_EVIDENCE_DIR="$checks_evidence/appointment" npm run test:appointment
+
+reset_ledger
+NOIR_EVIDENCE_DIR="$checks_evidence/supplemental" node tests/pilot-browser.cjs

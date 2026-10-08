@@ -3,9 +3,11 @@
   "private": true,
   "scripts": {
     "test:browser": "node tests/contact-browser.cjs && node tests/services-browser.cjs && node tests/gallery-browser.cjs && node tests/home-browser.cjs",
-    "check": "node --check tests/contact-browser.cjs && node --check wordpress/app/public/wp-content/themes/noir-auto-detailing/assets/navigation.js && node --check tests/services-browser.cjs && node --check wordpress/app/public/wp-content/themes/noir-auto-detailing/assets/comparison.js && node --check tests/gallery-browser.cjs && node --check wordpress/app/public/wp-content/themes/noir-auto-detailing/assets/gallery.js && node --check tests/home-browser.cjs && node --check tests/appointment-browser.cjs && node --check wordpress/app/public/wp-content/themes/noir-auto-detailing/assets/appointment.js && node --check tests/appointment-reliability-browser.cjs",
+    "check": "node --check tests/contact-browser.cjs && node --check wordpress/app/public/wp-content/themes/noir-auto-detailing/assets/navigation.js && node --check tests/services-browser.cjs && node --check wordpress/app/public/wp-content/themes/noir-auto-detailing/assets/comparison.js && node --check tests/gallery-browser.cjs && node --check wordpress/app/public/wp-content/themes/noir-auto-detailing/assets/gallery.js && node --check tests/home-browser.cjs && node --check tests/appointment-browser.cjs && node --check wordpress/app/public/wp-content/themes/noir-auto-detailing/assets/appointment.js && node --check tests/appointment-reliability-browser.cjs && node --check tests/pilot-browser.cjs",
     "test:appointment": "node tests/appointment-browser.cjs",
-    "test:pilot": "bash tests/run-pilot-checks.sh"
+    "test:pilot": "bash tests/run-pilot-checks.sh",
+    "test:bootstrap": "bash tests/bootstrap-cli.sh",
+    "test:pilot-browser": "node tests/pilot-browser.cjs"
   },
   "devDependencies": {
     "axe-core": "4.11.1",

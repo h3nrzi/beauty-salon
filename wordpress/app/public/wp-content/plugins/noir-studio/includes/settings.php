@@ -12,7 +12,7 @@ function noir_studio_fields() {
  ];
 }
 function noir_studio_error($message) { return new WP_Error('noir_studio_invalid',$message); }
-function noir_validate_studio($input) {
+function noir_validate_studio_facts($input) {
  if (!is_array($input)) { return noir_studio_error(__('Settings must be structured fields.','noir-studio')); }
  $allowed = array_merge(array_keys(noir_studio_fields()),['address','hours','pages','privacy','terms']);
  if (array_diff(array_keys($input),$allowed)) { return noir_studio_error(__('Remove unknown Studio settings.','noir-studio')); }
@@ -57,6 +57,11 @@ function noir_validate_studio($input) {
   if ($row['close']<=$row['open']) { return noir_studio_error($day.': '.__('closing time must be later than opening time.','noir-studio')); }
   $clean['hours'][$day] = ['closed'=>false,'open'=>$row['open'],'close'=>$row['close']];
  }
+ return $clean;
+}
+function noir_validate_studio($input) {
+ $clean=noir_validate_studio_facts($input);
+ if (is_wp_error($clean)) { return $clean; }
  if (!isset($input['pages']) || !is_array($input['pages']) || array_diff(array_keys($input['pages']),['home','services','gallery','contact'])) { return noir_studio_error(__('Use only the four native product page roles.','noir-studio')); }
  foreach (['home','services','gallery','contact'] as $role) {
   $id = $input['pages'][$role] ?? 0;
@@ -151,4 +156,29 @@ add_action('admin_notices',function() {
   if (empty($settings[$key]) || !noir_destination($settings[$key])) { $missing[] = $key; }
  }
  if ($missing) { echo '<div class="notice notice-warning"><p>'.esc_html__('NOIR setup incomplete. Configure before acceptance: ','noir-studio').esc_html(implode(', ',$missing)).' <a href="'.esc_url(admin_url('options-general.php?page=noir-studio')).'">'.esc_html__('Studio settings','noir-studio').'</a></p></div>'; }
+});
+
+// Read-only operational diagnostics; provenance stays outside editorial revisions.
+function noir_pilot_prerequisites() {
+ $missing=[]; $state=(array)get_option('noir_bootstrap',[]);
+ if (empty($state['versions'])) { $missing[]='bootstrap:not-recorded'; }
+ foreach ($state['records']??[] as $key=>$id) {
+  [$kind,$identity]=explode(':',$key,2);
+  if ($kind==='page') {
+   if (!noir_published_page($id) || get_page_template_slug($id)!=='page-'.$identity.'.php') { $missing[]='content:'.$key; }
+  } elseif (!call_user_func('noir_'.$kind,$identity)) { $missing[]='content:'.$key; }
+ }
+ foreach ($state['assets']??[] as $key=>$id) {
+  $file=get_attached_file($id); $provenance=$state['asset_provenance'][$key]??[];
+  if (!noir_image_valid((int)$id) || !$file || !is_readable($file) || hash_file('sha256',$file)!==($provenance['sha256']??'')) { $missing[]='media:'.$key; }
+  if (($provenance['rights_status']??'')!=='cleared') { $missing[]='rights:'.$key; }
+ }
+ foreach (['privacy','terms'] as $legal) { if (!noir_destination(noir_studio_settings()[$legal]??'')) { $missing[]='legal:'.$legal; } }
+ if (!noir_request_mail_configuration()) { $missing[]='mail:configuration'; }
+ return $missing;
+}
+add_action('admin_notices',function() {
+ if (!current_user_can('manage_options')) { return; }
+ $missing=noir_pilot_prerequisites();
+ if ($missing) { echo '<div class="notice notice-warning"><p>'.esc_html__('NOIR production acceptance prerequisites remain unresolved: ','noir-studio').esc_html(implode(', ',$missing)).'</p></div>'; }
 });

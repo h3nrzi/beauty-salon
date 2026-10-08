@@ -4,7 +4,7 @@
 
 **Blocked by:** 04 — Discover the Studio through the complete Home page; 06 — Harden Appointment Request against replay, concurrency and uncertain delivery.
 
-**Status:** ready-for-agent
+**Status:** ready-for-human
 
 - [ ] Complete one simple project-owned explicit bootstrap/import process using the slice fixtures/media rather than duplicating or redesigning importers. Track fixture versions, stable identities, attachment checksums, asset roles/crops/alternatives and usage-rights evidence outside generated runtime uploads. Activation never seeds or overwrites demo/editorial content.
 - [ ] A fresh setup recreates the four pages, templates/front-page assignment, native menus, five Services, eight distinct Projects with exact Home/Gallery placements, fixed page collections and approved owned media. Validate fixtures, duplicate identities, required assets and setup inputs before mutation; provide a dry-run report.
@@ -24,3 +24,9 @@
 2026-10-07 — Owner clarification: **actual Privacy Policy and Terms of Service destinations remain unresolved and are owned by this ticket**. Obtain owner-supplied published native page IDs or explicit HTTPS destinations, configure them through the existing Administrator settings, and verify reachable destinations before production acceptance. Do not fabricate legal pages/copy or substitute Home/test URLs. Their absence does not block completion of Ticket 01 or Tickets 02–06. This records a prerequisite only; no Ticket 07 implementation is performed here.
 
 The existing Beverly Hills address has a normal external Directions link in the Contact baseline fixture and Studio settings; it requires no map embed, API integration or map plugin.
+
+## Comments
+
+2026-10-08 — Owner clarified that no real production HTTPS runtime, final legal destinations or real inbox verification is available. Complete all feasible local bootstrap, drift/reset/fresh reproduction, recovery/permissions, regression, Mailpit, browser/accessibility and asset/network checks. Preserve temporary media status; do not fabricate legal destinations, production measurements or scheduler infrastructure. Record remaining manual and production prerequisites separately.
+
+2026-10-08 — Implemented the single explicit `wp noir bootstrap` command over existing slice fixtures/assets. Local import adopts stable records and reuses 22 matching attachments; dry-run/preflight, preservation/drift/conflicts, missing baseline metadata, scoped reset, separate provenance, Administrator diagnostics and isolated fresh WordPress acceptance checks are included. Instructions and consolidated evidence matrix: `docs/pilot-acceptance.md`; retained local evidence: `docs/evidence/pilot-07/`. Scoped local reset resolved previous weekday-hours drift. Production rights, actual legal destinations, real inbox receipt, deployed cron verification and fixed HTTPS performance remain unresolved. Final manual actual Safari/stable Firefox/screen-reader/text-zoom/visual sign-off is still required. The original complete-production checkboxes remain unchecked pending those gates.

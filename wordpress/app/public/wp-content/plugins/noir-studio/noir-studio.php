@@ -2,7 +2,7 @@
 /**
  * Plugin Name: NOIR Studio
  * Description: Canonical Studio content, shared settings and validated Appointment Requests.
- * Version: 0.3.0
+ * Version: 0.4.0
  * Requires at least: 6.4
  * Requires PHP: 8.0
  * Text Domain: noir-studio
@@ -18,3 +18,5 @@ require_once __DIR__ . '/includes/gallery-page.php';
 require_once __DIR__ . '/includes/home-page.php';
 
 require_once __DIR__ . '/includes/appointment.php';
+
+if (defined('WP_CLI') && WP_CLI) { require_once __DIR__ . '/includes/bootstrap.php'; }
