@@ -25,7 +25,7 @@ Recorded deviations:
 - Restore the intro/detail/comparison/FAQ text missing from the exported screenshot using its frozen HTML, as required by the specification.
 - Keep canonical Paint Correction at 2–3 days, stable Service anchors and query values, and shared Contact-derived address/hours/footer identity.
 - Add a small labelled canonical protection fact when supplied, so edits to that native fact are visible without interpreting free-text inclusions/badges.
-- Use an explicitly labelled visible native range below the comparison image rather than the export's invisible full-image input. This makes pointer/touch operation discoverable and keyboard focus visible; the image split/crop remains aligned.
+- At this review baseline, use an explicitly labelled visible native range below the comparison image rather than the export's invisible full-image input. This placement was subsequently superseded by the owner-requested [on-image handle correction](../services-ui-fixes/README.md), retaining an accessible label and visible keyboard focus.
 - Replace script-dependent FAQ buttons with native independent `details`/`summary`, preserving the first-open state and no-JavaScript disclosure.
 - Use readable process numerals and locally licensed process icons. Keep dated “2025” editorial copy; runtime footer year is native.
 - Normalize residual “resale provenance” to “resale value” and closing “bookings” to “Appointment Requests”. No additional service or commercial claim is added.

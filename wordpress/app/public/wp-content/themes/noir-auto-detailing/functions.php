@@ -109,6 +109,11 @@ add_filter('wp_nav_menu_objects',function($items,$args) {
   if (!$reference) { continue; }
   $item->title = $reference['title'];
   $item->url = $reference['url'];
+  // Section jump links share a page, but are not separate current pages.
+  $item->current = false;
+  $item->current_item_parent = false;
+  $item->current_item_ancestor = false;
+  $item->classes = array_values(array_filter((array)$item->classes,function($class) { return !preg_match('/^current[-_]/',$class); }));
   $result[] = ['item'=>$item,'order'=>$reference['order']];
  }
  usort($result,function($a,$b) { return $a['order']<=>$b['order']; });

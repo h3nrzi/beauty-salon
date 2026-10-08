@@ -100,10 +100,20 @@ const titles = [
         const range = page.getByRole("slider", {
           name: "Before and after comparison — reveal after image",
         });
+        const imageBounds = await page
+          .locator(".comparison-images")
+          .boundingBox();
+        const rangeBounds = await range.boundingBox();
+        assert(
+          rangeBounds.y >= imageBounds.y &&
+            rangeBounds.y + rangeBounds.height <=
+              imageBounds.y + imageBounds.height,
+          "Comparison control overlays the image",
+        );
         await range.focus();
         assert.equal(await range.inputValue(), "50");
         await page.keyboard.press("ArrowRight");
-        assert.equal(await range.inputValue(), "51");
+        assert.equal(await range.inputValue(), "49");
         await page.keyboard.press("Home");
         assert.equal(await range.inputValue(), "0");
         await page.keyboard.press("End");
@@ -112,22 +122,39 @@ const titles = [
           await range.getAttribute("aria-valuetext"),
           "100% after image revealed",
         );
+        await range.scrollIntoViewIfNeeded();
         const box = await range.boundingBox();
         await page.touchscreen.tap(
           box.x + box.width / 4,
           box.y + box.height / 2,
         );
         assert(
-          Number(await range.inputValue()) < 40 &&
-            Number(await range.inputValue()) > 10,
+          Number(await range.inputValue()) > 60 &&
+            Number(await range.inputValue()) < 90,
           "Touch changes native range",
         );
         await range.click({
           position: { x: box.width * 0.75, y: box.height / 2 },
         });
         assert(
-          Number(await range.inputValue()) > 60,
+          Number(await range.inputValue()) < 40,
           "Pointer changes native range",
+        );
+        await range.fill("50");
+        await range.dispatchEvent("input");
+        await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
+        await page.mouse.down();
+        await page.mouse.move(
+          box.x + box.width * 0.75,
+          box.y + box.height / 2,
+          {
+            steps: 5,
+          },
+        );
+        await page.mouse.up();
+        assert(
+          Number(await range.inputValue()) < 40,
+          "Dragging the handle reveals the image",
         );
         await range.focus();
         await page.keyboard.press("Home");
@@ -156,6 +183,31 @@ const titles = [
           exact: true,
         });
         assert.deepEqual(await footer.locator("a").allTextContents(), titles);
+        assert.equal(
+          await footer.locator('[aria-current="page"]').count(),
+          0,
+          "Service section links do not all claim to be the current page",
+        );
+        const footerNav = page.getByRole("navigation", {
+          name: "Footer navigation",
+        });
+        assert.equal(
+          await footerNav.locator('[aria-current="page"]').textContent(),
+          "Services",
+          "Real page navigation retains current state",
+        );
+        const request = footerNav.getByRole("link", {
+          name: "Request Appointment",
+        });
+        const neutral = footerNav.getByRole("link", {
+          name: "Home",
+          exact: true,
+        });
+        assert.equal(
+          await request.evaluate((e) => getComputedStyle(e).color),
+          await neutral.evaluate((e) => getComputedStyle(e).color),
+          "Footer appointment link uses the ordinary link color",
+        );
         for (let i = 0; i < 5; i++)
           assert.equal(
             new URL(await footer.locator("a").nth(i).getAttribute("href")).hash,

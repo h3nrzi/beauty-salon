@@ -128,10 +128,20 @@ const filters = {
         const range = page.getByRole("slider", {
           name: "Before and after comparison — reveal after image",
         });
+        const imageBounds = await page
+          .locator(".comparison-images")
+          .boundingBox();
+        const rangeBounds = await range.boundingBox();
+        assert(
+          rangeBounds.y >= imageBounds.y &&
+            rangeBounds.y + rangeBounds.height <=
+              imageBounds.y + imageBounds.height,
+          "Shared comparison control stays over Gallery images",
+        );
         await range.focus();
         assert.equal(await range.inputValue(), "50");
         await page.keyboard.press("ArrowRight");
-        assert.equal(await range.inputValue(), "51");
+        assert.equal(await range.inputValue(), "49");
         await page.keyboard.press("Home");
         assert.equal(await range.inputValue(), "0");
         await page.keyboard.press("End");
@@ -140,21 +150,22 @@ const filters = {
           await range.getAttribute("aria-valuetext"),
           "100% after image revealed",
         );
+        await range.scrollIntoViewIfNeeded();
         let box = await range.boundingBox();
         await page.touchscreen.tap(
           box.x + box.width / 4,
           box.y + box.height / 2,
         );
         assert(
-          Number(await range.inputValue()) > 10 &&
-            Number(await range.inputValue()) < 40,
+          Number(await range.inputValue()) > 60 &&
+            Number(await range.inputValue()) < 90,
           "Touch changes native range",
         );
         await range.click({
           position: { x: box.width * 0.75, y: box.height / 2 },
         });
         assert(
-          Number(await range.inputValue()) > 60,
+          Number(await range.inputValue()) < 40,
           "Pointer changes native range",
         );
         await range.fill("50");
