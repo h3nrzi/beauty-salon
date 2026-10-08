@@ -1,0 +1,194 @@
+[
+  {
+    "engine": "chrome",
+    "version": "155.0.8059.39",
+    "width": 375,
+    "javaScriptEnabled": true,
+    "axeViolations": 0,
+    "mailCaptured": true
+  },
+  {
+    "engine": "chrome",
+    "version": "155.0.8059.39",
+    "width": 768,
+    "javaScriptEnabled": true,
+    "axeViolations": 0,
+    "mailCaptured": true
+  },
+  {
+    "engine": "chrome",
+    "version": "155.0.8059.39",
+    "width": 1024,
+    "javaScriptEnabled": true,
+    "axeViolations": 0,
+    "mailCaptured": true
+  },
+  {
+    "engine": "chrome",
+    "version": "155.0.8059.39",
+    "width": 1440,
+    "javaScriptEnabled": true,
+    "axeViolations": 0,
+    "mailCaptured": true
+  },
+  {
+    "engine": "chrome",
+    "version": "155.0.8059.39",
+    "width": 375,
+    "javaScriptEnabled": false,
+    "axeViolations": null,
+    "mailCaptured": true
+  },
+  {
+    "engine": "chrome",
+    "version": "155.0.8059.39",
+    "width": 768,
+    "javaScriptEnabled": false,
+    "axeViolations": null,
+    "mailCaptured": true
+  },
+  {
+    "engine": "chrome",
+    "version": "155.0.8059.39",
+    "width": 1024,
+    "javaScriptEnabled": false,
+    "axeViolations": null,
+    "mailCaptured": true
+  },
+  {
+    "engine": "chrome",
+    "version": "155.0.8059.39",
+    "width": 1440,
+    "javaScriptEnabled": false,
+    "axeViolations": null,
+    "mailCaptured": true
+  },
+  {
+    "engine": "firefox",
+    "version": "153.0",
+    "width": 375,
+    "javaScriptEnabled": true,
+    "axeViolations": 0,
+    "mailCaptured": true
+  },
+  {
+    "engine": "firefox",
+    "version": "153.0",
+    "width": 768,
+    "javaScriptEnabled": true,
+    "axeViolations": 0,
+    "mailCaptured": true
+  },
+  {
+    "engine": "firefox",
+    "version": "153.0",
+    "width": 1024,
+    "javaScriptEnabled": true,
+    "axeViolations": 0,
+    "mailCaptured": true
+  },
+  {
+    "engine": "firefox",
+    "version": "153.0",
+    "width": 1440,
+    "javaScriptEnabled": true,
+    "axeViolations": 0,
+    "mailCaptured": true
+  },
+  {
+    "engine": "firefox",
+    "version": "153.0",
+    "width": 375,
+    "javaScriptEnabled": false,
+    "axeViolations": null,
+    "mailCaptured": true
+  },
+  {
+    "engine": "firefox",
+    "version": "153.0",
+    "width": 768,
+    "javaScriptEnabled": false,
+    "axeViolations": null,
+    "mailCaptured": true
+  },
+  {
+    "engine": "firefox",
+    "version": "153.0",
+    "width": 1024,
+    "javaScriptEnabled": false,
+    "axeViolations": null,
+    "mailCaptured": true
+  },
+  {
+    "engine": "firefox",
+    "version": "153.0",
+    "width": 1440,
+    "javaScriptEnabled": false,
+    "axeViolations": null,
+    "mailCaptured": true
+  },
+  {
+    "engine": "webkit",
+    "version": "26.5",
+    "width": 375,
+    "javaScriptEnabled": true,
+    "axeViolations": 0,
+    "mailCaptured": true
+  },
+  {
+    "engine": "webkit",
+    "version": "26.5",
+    "width": 768,
+    "javaScriptEnabled": true,
+    "axeViolations": 0,
+    "mailCaptured": true
+  },
+  {
+    "engine": "webkit",
+    "version": "26.5",
+    "width": 1024,
+    "javaScriptEnabled": true,
+    "axeViolations": 0,
+    "mailCaptured": true
+  },
+  {
+    "engine": "webkit",
+    "version": "26.5",
+    "width": 1440,
+    "javaScriptEnabled": true,
+    "axeViolations": 0,
+    "mailCaptured": true
+  },
+  {
+    "engine": "webkit",
+    "version": "26.5",
+    "width": 375,
+    "javaScriptEnabled": false,
+    "axeViolations": null,
+    "mailCaptured": true
+  },
+  {
+    "engine": "webkit",
+    "version": "26.5",
+    "width": 768,
+    "javaScriptEnabled": false,
+    "axeViolations": null,
+    "mailCaptured": true
+  },
+  {
+    "engine": "webkit",
+    "version": "26.5",
+    "width": 1024,
+    "javaScriptEnabled": false,
+    "axeViolations": null,
+    "mailCaptured": true
+  },
+  {
+    "engine": "webkit",
+    "version": "26.5",
+    "width": 1440,
+    "javaScriptEnabled": false,
+    "axeViolations": null,
+    "mailCaptured": true
+  }
+]

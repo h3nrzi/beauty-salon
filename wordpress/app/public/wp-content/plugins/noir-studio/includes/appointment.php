@@ -1,6 +1,7 @@
 <?php
 /** Project-owned Appointment Request HTTP boundary. Customer values live only in this response. */
 defined('ABSPATH') || exit;
+require_once __DIR__.'/appointment-reliability.php';
 
 function noir_request_digest($scope,$value) {
  return hash_hmac('sha256',$scope.'|'.$value,wp_salt('auth'));
@@ -32,7 +33,9 @@ function noir_request_uncached() {
 }
 function noir_request_state($token) {
  if (!is_string($token) || !preg_match('/^[a-f0-9]{64}$/D',$token)) { return false; }
- return get_transient('noir_request_'.noir_request_digest('token',$token));
+ $digest=noir_request_digest('token',$token);
+ $result=noir_request_store(function(&$ledger,$now) use ($digest) { return ['state'=>$ledger['tokens'][$digest]??false]; });
+ return $result ? $result['state'] : false;
 }
 function noir_request_today($timestamp=null) {
  $zone = noir_studio_settings()['timezone']??'America/Los_Angeles';
@@ -60,9 +63,18 @@ function noir_request_issue() {
   $_COOKIE['noir_visitor']=$cookie;
  }
  $token = bin2hex(random_bytes(32));
- $state = ['visitor'=>noir_request_visitor(),'user'=>noir_request_digest('user-binding',(string)get_current_user_id()),'expires'=>time()+3600,'status'=>'issued'];
- if (!set_transient('noir_request_'.noir_request_digest('token',$token),$state,7200)) { return false; }
- wp_schedule_single_event(time()+7200,'noir_request_cleanup',[noir_request_digest('token',$token)]);
+ $network=noir_request_network();
+ if (!$network) { noir_request_operational_failure(false); }
+ $visitor=noir_request_visitor();
+ $digest=noir_request_digest('token',$token);
+ $outcome=noir_request_store(function(&$ledger,$now) use ($network,$visitor,$digest) {
+  $allow=noir_request_allow($ledger,$now,'issue',$network,$visitor);
+  if ($allow['code']!==200) { return $allow; }
+  if (count($ledger['tokens'])>=768) { return ['code'=>429,'retry'=>600]; }
+  $ledger['tokens'][$digest]=['visitor'=>$visitor,'user'=>noir_request_digest('user-binding',(string)get_current_user_id()),'expires'=>$now+1200,'retain_until'=>$now+3600,'status'=>'issued'];
+  return ['code'=>200];
+ });
+ if (!$outcome || $outcome['code']!==200) { noir_request_operational_failure($outcome); }
  $interest=isset($_GET['service']) && is_string($_GET['service']) ? wp_unslash($_GET['service']) : '';
  $choices=noir_services();
  $selected=noir_service($interest) ? $interest : ($choices[0]['service_id']??'');
@@ -71,7 +83,8 @@ function noir_request_issue() {
 function noir_request_receipt_valid() {
  $payload = noir_request_verified('receipt',$_COOKIE['noir_receipt']??'');
  if (!preg_match('/^([a-f0-9]{64})\.([0-9]{10})$/D',$payload,$parts) || (int)$parts[2]<=time()) { return false; }
- $state = get_transient('noir_request_'.$parts[1]);
+ $result=noir_request_store(function(&$ledger,$now) use ($parts) { return ['state'=>$ledger['tokens'][$parts[1]]??false]; });
+ $state=$result ? $result['state'] : false;
  return is_array($state) && ($state['status']??'')==='accepted' && hash_equals($state['visitor'],noir_request_visitor()) && $state['user']===noir_request_digest('user-binding',(string)get_current_user_id());
 }
 add_action('template_redirect',function() {
@@ -144,7 +157,7 @@ function noir_request_response($code,$view) {
  exit;
 }
 function noir_request_security_failure() {
- noir_request_response(403,['message'=>__('This form expired or could not be verified. Enable cookies and open a fresh Contact form, or contact the Studio directly.','noir-studio'),'values'=>[],'errors'=>[]]);
+ noir_request_response(403,['message'=>__('This form expired or could not be verified. If you already submitted it, contact the Studio to verify the outcome. Do not resubmit. Otherwise enable cookies and open a fresh Contact form.','noir-studio'),'values'=>[],'errors'=>[]]);
 }
 function noir_request_mail_configuration() {
  if (!defined('NOIR_MAIL_READY') || NOIR_MAIL_READY!==true) { return false; }
@@ -169,6 +182,10 @@ function noir_handle_appointment() {
   header('Allow: POST');
   noir_request_response(405,['message'=>__('Use the Contact form to submit an Appointment Request.','noir-studio')]);
  }
+ $network=noir_request_network();
+ if (!$network) { noir_request_operational_failure(false); }
+ $allow=noir_request_store(function(&$ledger,$now) use ($network) { return noir_request_allow($ledger,$now,'submit',$network,noir_request_visitor()); });
+ if (!$allow || $allow['code']!==200) { noir_request_operational_failure($allow); }
  $body=file_get_contents('php://input',false,null,0,32769);
  if ((int)($_SERVER['CONTENT_LENGTH']??0)>32768 || strlen($body)>32768) {
   noir_request_response(422,['message'=>__('The form is too large. Open a fresh form and use shorter text.','noir-studio')]);
@@ -179,7 +196,7 @@ function noir_handle_appointment() {
  $token=wp_unslash($_POST['submission_token']);
  $state=noir_request_state($token);
  $visitor=noir_request_visitor();
- if (!$visitor || !is_array($state) || ($state['status']!=='accepted' && $state['expires']<=time()) || !hash_equals($state['visitor'],$visitor) || $state['user']!==noir_request_digest('user-binding',(string)get_current_user_id()) || !wp_verify_nonce(wp_unslash($_POST['_noir_nonce']),noir_request_nonce_action($token)) || wp_unslash($_POST['website'])!=='') {
+ if (!$visitor || !is_array($state) || ($state['status']==='issued' && $state['expires']<=time()) || !hash_equals($state['visitor'],$visitor) || $state['user']!==noir_request_digest('user-binding',(string)get_current_user_id()) || !wp_verify_nonce(wp_unslash($_POST['_noir_nonce']),noir_request_nonce_action($token)) || wp_unslash($_POST['website'])!=='') {
   noir_request_security_failure();
  }
  if ($state['status']==='accepted') { noir_request_redirect($token); }
@@ -199,15 +216,20 @@ function noir_handle_appointment() {
  $service=noir_service($view['values']['service_id']);
  if (!$service) { $view['errors']['service_id']=__('Choose a currently available Service.','noir-studio'); noir_request_response(422,$view); }
  $digest=noir_request_digest('token',$token);
- // Unique option insertion gives the normal path one attempt; Ticket 06 certifies all failure/concurrency boundaries.
- if (!add_option('noir_request_claim_'.$digest,time()+7200,'',false)) {
-  noir_request_response(503,['message'=>__('The sending outcome is pending or uncertain. Contact the Studio to verify it. Do not resubmit this request.','noir-studio')]);
- }
- wp_schedule_single_event(time()+7200,'noir_request_cleanup',[$digest]);
- $state['status']='processing';
- if (!set_transient('noir_request_'.$digest,$state,7200)) {
-  noir_request_response(503,['message'=>__('Sending could not be safely started. Contact the Studio directly.','noir-studio')]);
- }
+ // Re-read and consume permission under the same database mutex as issuance/cleanup.
+ $claim=noir_request_store(function(&$ledger,$now) use ($digest,$state) {
+  $current=$ledger['tokens'][$digest]??false;
+  if (!$current || $current['expires']<=$now && $current['status']==='issued') { return ['code'=>403]; }
+  if ($current['visitor']!==$state['visitor'] || $current['user']!==$state['user']) { return ['code'=>403]; }
+  if ($current['status']==='accepted') { return ['code'=>303]; }
+  if ($current['status']!=='issued') { return ['code'=>503]; }
+  $ledger['tokens'][$digest]['status']='processing';
+  return ['code'=>200];
+ });
+ if (!$claim) { noir_request_operational_failure(false); }
+ if ($claim['code']===403) { noir_request_security_failure(); }
+ if ($claim['code']===303) { noir_request_redirect($token); }
+ if ($claim['code']!==200) { noir_request_pending(); }
  $zone=noir_studio_settings()['timezone']??'America/Los_Angeles';
  $body="Appointment Request — not confirmed\n\n";
  foreach (noir_request_fields() as $key=>$field) {
@@ -220,10 +242,13 @@ function noir_handle_appointment() {
  if ($view['values']['email']!=='') { $headers[]='Reply-To: '.$view['values']['email']; }
  try { $accepted=wp_mail($configuration['to'],'NOIR Appointment Request',$body,$headers,[]); }
  catch (Throwable $error) { $accepted=false; }
- if ($accepted===true) {
-  $state['status']='accepted';
-  if (set_transient('noir_request_'.$digest,$state,7200) && (get_transient('noir_request_'.$digest)['status']??'')==='accepted') { noir_request_redirect($token); }
- }
+ $record=noir_request_store(function(&$ledger,$now) use ($digest,$accepted) {
+  // Never recreate an expired/removed claim, including after a very slow sender.
+  if (($ledger['tokens'][$digest]['status']??'')!=='processing') { return ['code'=>503]; }
+  $ledger['tokens'][$digest]['status']=$accepted===true ? 'accepted' : 'uncertain';
+  return ['code'=>$accepted===true ? 303 : 503];
+ });
+ if ($record && $record['code']===303) { noir_request_redirect($token); }
  // Generic wp_mail failure cannot establish that the remote transport did not accept mail.
  noir_request_response(503,['message'=>__('The sending outcome is uncertain. Contact the Studio to verify your request. Do not resubmit this request.','noir-studio')]);
 }
