@@ -18,6 +18,7 @@ PASS: Service detail/preselection links retain stable identity after rename
 PASS: Draft featured Service omitted
 PASS: Single shared Porsche work edit propagates to Home and Gallery
 PASS: Native row order controls Home placements
+PASS: Reordered Porsche preserves configured comparison images and control
 PASS: Native revision restores ordered references, contextual copy and media
 PASS: Duplicate/unknown/oversized Project references rejected
 PASS: Duplicate/unknown/oversized Project references rejected

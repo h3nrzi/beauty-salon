@@ -1,0 +1,314 @@
+[
+  {
+    "command": [
+      "npm",
+      "run",
+      "check"
+    ],
+    "exit_code": 0,
+    "output": "\n> check\n> node --check tests/contact-browser.cjs && node --check wordpress/app/public/wp-content/themes/noir-auto-detailing/assets/navigation.js && node --check tests/services-browser.cjs && node --check wordpress/app/public/wp-content/themes/noir-auto-detailing/assets/comparison.js && node --check tests/gallery-browser.cjs && node --check wordpress/app/public/wp-content/themes/noir-auto-detailing/assets/gallery.js && node --check tests/home-browser.cjs\n\n"
+  },
+  {
+    "command": [
+      "/Users/hossein/Library/Application Support/Local/lightning-services/php-8.2.29+0/bin/darwin-arm64/bin/php",
+      "-d",
+      "mysqli.default_socket=/Users/hossein/Library/Application Support/Local/run/u-TUKzSLZ/mysql/mysqld.sock",
+      "/Applications/Local.app/Contents/Resources/extraResources/bin/wp-cli/wp-cli.phar",
+      "--path=wordpress/app/public",
+      "eval-file",
+      "tests/contact-wordpress.php"
+    ],
+    "exit_code": 0,
+    "output": "PASS: Editor saves bounded Contact content through REST\nPASS: Oversize heading rejected\nPASS: Invalid save retains last valid content\nPASS: Empty or unknown editorial fields rejected with actionable REST feedback\nPASS: Empty or unknown editorial fields rejected with actionable REST feedback\nPASS: Malformed collection row rejected without fatal error\nPASS: Unicode and literal backslashes round-trip through native metadata\nPASS: Only one unslashing pass\nPASS: Native revision created for Contact metadata\nPASS: Native revision restores editorial metadata\nPASS: Editor saves native Contact meta box with nonce\nPASS: Invalid meta-box POST retains previous content\nPASS: Invalid meta-box POST provides actionable admin notice\nPASS: Invalid nonce cannot change Contact metadata\nPASS: Anonymous visitor cannot edit Contact\n"
+  },
+  {
+    "command": [
+      "/Users/hossein/Library/Application Support/Local/lightning-services/php-8.2.29+0/bin/darwin-arm64/bin/php",
+      "-d",
+      "mysqli.default_socket=/Users/hossein/Library/Application Support/Local/run/u-TUKzSLZ/mysql/mysqld.sock",
+      "/Applications/Local.app/Contents/Resources/extraResources/bin/wp-cli/wp-cli.phar",
+      "--path=wordpress/app/public",
+      "eval-file",
+      "tests/studio-wordpress.php"
+    ],
+    "exit_code": 0,
+    "output": "PASS: Editor cannot create shared settings on first save\nPASS: Administrator saves shared baseline\nPASS: Editor cannot change shared settings\nPASS: Invalid email retains all valid settings\nPASS: Invalid timezone retains all valid settings\nPASS: Invalid phone_dial retains all valid settings\nPASS: Invalid directions retains all valid settings\nPASS: Invalid description retains all valid settings\nPASS: Invalid privacy retains all valid settings\nPASS: Hours cannot close before opening\nPASS: Unknown nested hours properties rejected\nPASS: Unpublished native page rejected\nPASS: Shared phone and description propagate to header, Contact and footer\nPASS: Explicit HTTPS and native legal/directions destinations render\nPASS: Renamed native Contact preserves template and shared page identity\n"
+  },
+  {
+    "command": [
+      "/Users/hossein/Library/Application Support/Local/lightning-services/php-8.2.29+0/bin/darwin-arm64/bin/php",
+      "-d",
+      "mysqli.default_socket=/Users/hossein/Library/Application Support/Local/run/u-TUKzSLZ/mysql/mysqld.sock",
+      "/Applications/Local.app/Contents/Resources/extraResources/bin/wp-cli/wp-cli.phar",
+      "--path=wordpress/app/public",
+      "eval-file",
+      "tests/services-wordpress.php"
+    ],
+    "exit_code": 0,
+    "output": "PASS: Services are registered for native editing\nPASS: Local baseline has exactly five Services\nPASS: Editor can edit and publish Services\nPASS: Editor cannot change operational settings\nPASS: No Service management privileges for author\nPASS: No Service management privileges for contributor\nPASS: No Service management privileges for subscriber\nPASS: Anonymous cannot edit a Service\nPASS: Editor native save keeps Unicode and one unslashing pass\nPASS: Canonical price and title propagate to Services index, card and native footer\nPASS: Canonical duration and optional protection appear in Services\nPASS: Title and slug rename preserve section and request identities\nPASS: Invalid order retains all previous Service facts and title\nPASS: Invalid short_description retains all previous Service facts and title\nPASS: Invalid description retains all previous Service facts and title\nPASS: Invalid eyebrow retains all previous Service facts and title\nPASS: Invalid badge retains all previous Service facts and title\nPASS: Invalid inclusions retains all previous Service facts and title\nPASS: Invalid price retains all previous Service facts and title\nPASS: Invalid duration retains all previous Service facts and title\nPASS: Invalid protection retains all previous Service facts and title\nPASS: Malformed, markup, blank and Unicode bound+1 saves rejected\nPASS: Malformed, markup, blank and Unicode bound+1 saves rejected\nPASS: Malformed, markup, blank and Unicode bound+1 saves rejected\nPASS: Malformed, markup, blank and Unicode bound+1 saves rejected\nPASS: Unknown properties, numeric strings, oversize inclusions and empty optional facts rejected\nPASS: Unknown properties, numeric strings, oversize inclusions and empty optional facts rejected\nPASS: Unknown properties, numeric strings, oversize inclusions and empty optional facts rejected\nPASS: Unknown properties, numeric strings, oversize inclusions and empty optional facts rejected\nPASS: Unknown properties, numeric strings, oversize inclusions and empty optional facts rejected\nPASS: Native title bound+1 retains valid title\nPASS: Immutable identity cannot change\nPASS: Forged nonce cannot save Service facts\nPASS: Stable identity cannot be deleted\nPASS: Duplicate identity rejected, including drafts\nPASS: Sixth identity rejected\nPASS: Invalid writes also rejected at native metadata boundary\nPASS: Native Service revision restores facts and native title\nPASS: Native revision restores primary Service attachment\nPASS: Draft absent from cards, index, footer and Contact choices\nPASS: Invalid Service missing required media excluded\nPASS: Trashed Service excluded\nPASS: Editor saves Services sections through native page REST boundary\nPASS: FAQ answer bound+1 rejects full section\nPASS: Native revision restores FAQ collection and copy\nPASS: Editor native Services meta box saves fixed sections\nPASS: Incomplete comparison pair keeps labelled single image with no empty control\nPASS: Native page revision restores comparison attachment references\nPASS: Assigned Contact rename updates request permalink\nPASS: No independent public Service content at /?noir_service=renamed-service\nPASS: No independent public Service content at /?post_type=noir_service\nPASS: No independent public Service content at /?post_type=noir_service&feed=rss2\nPASS: No independent public Service content at /?post_type=noir_service&p=76\nPASS: No independent public Service content at /noir_service/renamed-service/\nPASS: No independent public Service content at /wp-json/wp/v2/noir_service\nPASS: No independent public Service content at /?s=Exterior+renamed\nTicket 02 WordPress checks complete.\n"
+  },
+  {
+    "command": [
+      "/Users/hossein/Library/Application Support/Local/lightning-services/php-8.2.29+0/bin/darwin-arm64/bin/php",
+      "-d",
+      "mysqli.default_socket=/Users/hossein/Library/Application Support/Local/run/u-TUKzSLZ/mysql/mysqld.sock",
+      "/Applications/Local.app/Contents/Resources/extraResources/bin/wp-cli/wp-cli.phar",
+      "--path=wordpress/app/public",
+      "eval-file",
+      "tests/gallery-wordpress.php"
+    ],
+    "exit_code": 0,
+    "output": "PASS: Projects are registered for native editing\nPASS: Local Media Library has image prerequisites for disposable probes\nPASS: Project management permissions: administrator\nPASS: Project management permissions: editor\nPASS: Project management permissions: author\nPASS: Project management permissions: contributor\nPASS: Project management permissions: subscriber\nPASS: Anonymous cannot manage Projects\nPASS: Editor may maintain eight equipment entries with bounded values and local icons\nPASS: Native Editor save generates a stable Project identity\nPASS: Native Editor save persists canonical facts\nPASS: Native rows preserve valid literal zero text\nPASS: Editor saves ordered placements through native page REST\nPASS: Published canonical work resolves through a Gallery placement\nPASS: Native rename preserves references and propagates Unicode canonical vehicle/work\nPASS: Invalid vehicle retains facts and native title\nPASS: Invalid finish retains facts and native title\nPASS: Invalid work retains facts and native title\nPASS: Invalid facts retains facts and native title\nPASS: Invalid memberships retains facts and native title\nPASS: Invalid comparison retains facts and native title\nPASS: Forged native nonce retains prior title/facts\nPASS: Malformed, unknown, markup and duplicate membership metadata is rejected\nPASS: Malformed, unknown, markup and duplicate membership metadata is rejected\nPASS: Malformed, unknown, markup and duplicate membership metadata is rejected\nPASS: Malformed, unknown, markup and duplicate membership metadata is rejected\nPASS: Malformed, unknown, markup and duplicate membership metadata is rejected\nPASS: Malformed, unknown, markup and duplicate membership metadata is rejected\nPASS: Project identity cannot change or be deleted\nPASS: Duplicate identity including draft is rejected\nPASS: Invalid identity format is rejected\nPASS: Invalid identity format is rejected\nPASS: Invalid identity format is rejected\nPASS: Native revision restores Project title, facts, comparison and Featured image\nPASS: Native Gallery meta box saves contextual media and copy\nPASS: Native Gallery revision restores placement references, copy and imagery\nPASS: Duplicate/unknown/oversize placements rejected through REST\nPASS: Duplicate/unknown/oversize placements rejected through REST\nPASS: Duplicate/unknown/oversize placements rejected through REST\nPASS: Duplicate/unknown/oversize placements rejected through REST\nPASS: Author cannot change Gallery placements through REST\nPASS: Anonymous page API excludes contextual Project references\nPASS: Draft Project is excluded from Gallery\nPASS: Missing required image excludes Project\nPASS: Unavailable optional comparison image degrades to labelled single figure\nPASS: Native placement row order controls all six public Project positions\nPASS: Native Gallery revision restores the full baseline placement order\nPASS: No independent public Project exposure at /?noir_project=renamed-project\nPASS: No independent public Project exposure at /?post_type=noir_project\nPASS: No independent public Project exposure at /?post_type=noir_project&feed=rss2\nPASS: No independent public Project exposure at /?post_type=noir_project&p=482\nPASS: No independent public Project exposure at /noir_project/renamed-project/\nPASS: No independent public Project exposure at /wp-json/wp/v2/noir_project\nPASS: No independent public Project exposure at /?s=Completed+probe\nTicket 03 native WordPress probe checks complete.\n"
+  },
+  {
+    "command": [
+      "/Users/hossein/Library/Application Support/Local/lightning-services/php-8.2.29+0/bin/darwin-arm64/bin/php",
+      "-d",
+      "mysqli.default_socket=/Users/hossein/Library/Application Support/Local/run/u-TUKzSLZ/mysql/mysqld.sock",
+      "/Applications/Local.app/Contents/Resources/extraResources/bin/wp-cli/wp-cli.phar",
+      "--path=wordpress/app/public",
+      "eval-file",
+      "tests/home-wordpress.php"
+    ],
+    "exit_code": 0,
+    "output": "PASS: Native page REST accepts fixed Home hero\nPASS: Saved Home hero appears through public HTTP\nPASS: Native Editor save propagates Home Unicode content\nPASS: Editor can update fixed hero through REST\nPASS: Native Home revision restores hero through HTTP\nPASS: Native revision restores Home hero media and Testimonial collection\nPASS: Out-of-range/oversized/unknown Testimonial fields are rejected\nPASS: Out-of-range/oversized/unknown Testimonial fields are rejected\nPASS: Out-of-range/oversized/unknown Testimonial fields are rejected\nPASS: Unicode heading bound enforced\nPASS: Editorial markup is rejected\nPASS: Forged native nonce preserves Home content\nPASS: author cannot edit Home sections\nPASS: subscriber cannot edit Home sections\nPASS: Anonymous page REST hides Home editorial metadata\nPASS: Canonical Service edits propagate across Home and Services\nPASS: Service detail/preselection links retain stable identity after rename\nPASS: Draft featured Service omitted\nPASS: Single shared Porsche work edit propagates to Home and Gallery\nPASS: Native row order controls Home placements\nPASS: Reordered Porsche preserves configured comparison images and control\nPASS: Native revision restores ordered references, contextual copy and media\nPASS: Duplicate/unknown/oversized Project references rejected\nPASS: Duplicate/unknown/oversized Project references rejected\nPASS: Duplicate/unknown/oversized Project references rejected\nPASS: Featured Service reference bounds rejected\nPASS: Duplicate featured Service reference rejected\nPASS: Editor can omit optional Home collections\nPASS: Empty collection omits home-testimonials\nPASS: Empty collection omits home-trust\nPASS: Empty collection omits home-benefits\nPASS: Empty collection omits home-services\nPASS: Empty collection omits home-projects\nPASS: Empty collection omits comparison-control\nPASS: Cleared native rows omit optional featured Services and Testimonials\nTicket 04 native WordPress checks complete.\n"
+  },
+  {
+    "command": [
+      "/Users/hossein/Library/Application Support/Local/lightning-services/php-8.2.29+0/bin/darwin-arm64/bin/php",
+      "-d",
+      "mysqli.default_socket=/Users/hossein/Library/Application Support/Local/run/u-TUKzSLZ/mysql/mysqld.sock",
+      "/Applications/Local.app/Contents/Resources/extraResources/bin/wp-cli/wp-cli.phar",
+      "--path=wordpress/app/public",
+      "eval-file",
+      "tests/plugin-fallback-wordpress.php"
+    ],
+    "exit_code": 0,
+    "output": "PASS: Plugin absence does not fatal on Contact\nPASS: Saved public phone/email remain usable without plugin\nPASS: Native Contact anchor remains available without plugin\nPASS: Plugin absence cannot enable request submission\nPASS: Plugin absence leaves an explicit Home fallback and configured public contact\n"
+  },
+  {
+    "command": [
+      "php",
+      "-l",
+      "wordpress/app/public/wp-content/plugins/noir-studio/includes/contact.php"
+    ],
+    "exit_code": 0,
+    "output": "No syntax errors detected in wordpress/app/public/wp-content/plugins/noir-studio/includes/contact.php\n"
+  },
+  {
+    "command": [
+      "php",
+      "-l",
+      "wordpress/app/public/wp-content/plugins/noir-studio/includes/fields.php"
+    ],
+    "exit_code": 0,
+    "output": "No syntax errors detected in wordpress/app/public/wp-content/plugins/noir-studio/includes/fields.php\n"
+  },
+  {
+    "command": [
+      "php",
+      "-l",
+      "wordpress/app/public/wp-content/plugins/noir-studio/includes/gallery-page.php"
+    ],
+    "exit_code": 0,
+    "output": "No syntax errors detected in wordpress/app/public/wp-content/plugins/noir-studio/includes/gallery-page.php\n"
+  },
+  {
+    "command": [
+      "php",
+      "-l",
+      "wordpress/app/public/wp-content/plugins/noir-studio/includes/home-page.php"
+    ],
+    "exit_code": 0,
+    "output": "No syntax errors detected in wordpress/app/public/wp-content/plugins/noir-studio/includes/home-page.php\n"
+  },
+  {
+    "command": [
+      "php",
+      "-l",
+      "wordpress/app/public/wp-content/plugins/noir-studio/includes/projects.php"
+    ],
+    "exit_code": 0,
+    "output": "No syntax errors detected in wordpress/app/public/wp-content/plugins/noir-studio/includes/projects.php\n"
+  },
+  {
+    "command": [
+      "php",
+      "-l",
+      "wordpress/app/public/wp-content/plugins/noir-studio/includes/services-page.php"
+    ],
+    "exit_code": 0,
+    "output": "No syntax errors detected in wordpress/app/public/wp-content/plugins/noir-studio/includes/services-page.php\n"
+  },
+  {
+    "command": [
+      "php",
+      "-l",
+      "wordpress/app/public/wp-content/plugins/noir-studio/includes/services.php"
+    ],
+    "exit_code": 0,
+    "output": "No syntax errors detected in wordpress/app/public/wp-content/plugins/noir-studio/includes/services.php\n"
+  },
+  {
+    "command": [
+      "php",
+      "-l",
+      "wordpress/app/public/wp-content/plugins/noir-studio/includes/settings.php"
+    ],
+    "exit_code": 0,
+    "output": "No syntax errors detected in wordpress/app/public/wp-content/plugins/noir-studio/includes/settings.php\n"
+  },
+  {
+    "command": [
+      "php",
+      "-l",
+      "wordpress/app/public/wp-content/plugins/noir-studio/noir-studio.php"
+    ],
+    "exit_code": 0,
+    "output": "No syntax errors detected in wordpress/app/public/wp-content/plugins/noir-studio/noir-studio.php\n"
+  },
+  {
+    "command": [
+      "php",
+      "-l",
+      "wordpress/app/public/wp-content/themes/noir-auto-detailing/footer.php"
+    ],
+    "exit_code": 0,
+    "output": "No syntax errors detected in wordpress/app/public/wp-content/themes/noir-auto-detailing/footer.php\n"
+  },
+  {
+    "command": [
+      "php",
+      "-l",
+      "wordpress/app/public/wp-content/themes/noir-auto-detailing/functions.php"
+    ],
+    "exit_code": 0,
+    "output": "No syntax errors detected in wordpress/app/public/wp-content/themes/noir-auto-detailing/functions.php\n"
+  },
+  {
+    "command": [
+      "php",
+      "-l",
+      "wordpress/app/public/wp-content/themes/noir-auto-detailing/header.php"
+    ],
+    "exit_code": 0,
+    "output": "No syntax errors detected in wordpress/app/public/wp-content/themes/noir-auto-detailing/header.php\n"
+  },
+  {
+    "command": [
+      "php",
+      "-l",
+      "wordpress/app/public/wp-content/themes/noir-auto-detailing/index.php"
+    ],
+    "exit_code": 0,
+    "output": "No syntax errors detected in wordpress/app/public/wp-content/themes/noir-auto-detailing/index.php\n"
+  },
+  {
+    "command": [
+      "php",
+      "-l",
+      "wordpress/app/public/wp-content/themes/noir-auto-detailing/page-contact.php"
+    ],
+    "exit_code": 0,
+    "output": "No syntax errors detected in wordpress/app/public/wp-content/themes/noir-auto-detailing/page-contact.php\n"
+  },
+  {
+    "command": [
+      "php",
+      "-l",
+      "wordpress/app/public/wp-content/themes/noir-auto-detailing/page-gallery.php"
+    ],
+    "exit_code": 0,
+    "output": "No syntax errors detected in wordpress/app/public/wp-content/themes/noir-auto-detailing/page-gallery.php\n"
+  },
+  {
+    "command": [
+      "php",
+      "-l",
+      "wordpress/app/public/wp-content/themes/noir-auto-detailing/page-home.php"
+    ],
+    "exit_code": 0,
+    "output": "No syntax errors detected in wordpress/app/public/wp-content/themes/noir-auto-detailing/page-home.php\n"
+  },
+  {
+    "command": [
+      "php",
+      "-l",
+      "wordpress/app/public/wp-content/themes/noir-auto-detailing/page-services.php"
+    ],
+    "exit_code": 0,
+    "output": "No syntax errors detected in wordpress/app/public/wp-content/themes/noir-auto-detailing/page-services.php\n"
+  },
+  {
+    "command": [
+      "php",
+      "-l",
+      "wordpress/app/public/wp-content/themes/noir-auto-detailing/template-parts/appointment.php"
+    ],
+    "exit_code": 0,
+    "output": "No syntax errors detected in wordpress/app/public/wp-content/themes/noir-auto-detailing/template-parts/appointment.php\n"
+  },
+  {
+    "command": [
+      "php",
+      "-l",
+      "wordpress/app/public/wp-content/themes/noir-auto-detailing/template-parts/comparison.php"
+    ],
+    "exit_code": 0,
+    "output": "No syntax errors detected in wordpress/app/public/wp-content/themes/noir-auto-detailing/template-parts/comparison.php\n"
+  },
+  {
+    "command": [
+      "php",
+      "-l",
+      "wordpress/app/public/wp-content/themes/noir-auto-detailing/template-parts/home-benefit.php"
+    ],
+    "exit_code": 0,
+    "output": "No syntax errors detected in wordpress/app/public/wp-content/themes/noir-auto-detailing/template-parts/home-benefit.php\n"
+  },
+  {
+    "command": [
+      "php",
+      "-l",
+      "wordpress/app/public/wp-content/themes/noir-auto-detailing/template-parts/home-project.php"
+    ],
+    "exit_code": 0,
+    "output": "No syntax errors detected in wordpress/app/public/wp-content/themes/noir-auto-detailing/template-parts/home-project.php\n"
+  },
+  {
+    "command": [
+      "php",
+      "-l",
+      "wordpress/app/public/wp-content/themes/noir-auto-detailing/template-parts/project.php"
+    ],
+    "exit_code": 0,
+    "output": "No syntax errors detected in wordpress/app/public/wp-content/themes/noir-auto-detailing/template-parts/project.php\n"
+  },
+  {
+    "command": [
+      "php",
+      "-l",
+      "wordpress/app/public/wp-content/themes/noir-auto-detailing/template-parts/service-facts.php"
+    ],
+    "exit_code": 0,
+    "output": "No syntax errors detected in wordpress/app/public/wp-content/themes/noir-auto-detailing/template-parts/service-facts.php\n"
+  },
+  {
+    "command": [
+      "php",
+      "-l",
+      "wordpress/app/public/wp-content/themes/noir-auto-detailing/template-parts/service.php"
+    ],
+    "exit_code": 0,
+    "output": "No syntax errors detected in wordpress/app/public/wp-content/themes/noir-auto-detailing/template-parts/service.php\n"
+  },
+  {
+    "command": [
+      "npm",
+      "run",
+      "test:browser"
+    ],
+    "exit_code": 0,
+    "output": "\n> test:browser\n> node tests/contact-browser.cjs && node tests/services-browser.cjs && node tests/gallery-browser.cjs && node tests/home-browser.cjs\n\nPASS chrome 375px: navigation, keyboard, no-JS, local assets, reflow\nPASS chrome 768px: navigation, keyboard, no-JS, local assets, reflow\nPASS chrome 1024px: navigation, keyboard, no-JS, local assets, reflow\nPASS chrome 1440px: navigation, keyboard, no-JS, local assets, reflow\nPASS chrome 375px: canonical facts, native footer, links/preselection, independent FAQ, keyboard/pointer/touch comparison, images, axe, no-JS\nPASS chrome 768px: canonical facts, native footer, links/preselection, independent FAQ, keyboard/pointer/touch comparison, images, axe, no-JS\nPASS chrome 1024px: canonical facts, native footer, links/preselection, independent FAQ, keyboard/pointer/touch comparison, images, axe, no-JS\nPASS chrome 1440px: canonical facts, native footer, links/preselection, independent FAQ, keyboard/pointer/touch comparison, images, axe, no-JS\nPASS chrome 375px: exact filters/count/reset/focus, comparison keyboard/pointer/touch, images, axe, no-JS and partial scripts\nPASS chrome 768px: exact filters/count/reset/focus, comparison keyboard/pointer/touch, images, axe, no-JS and partial scripts\nPASS chrome 1024px: exact filters/count/reset/focus, comparison keyboard/pointer/touch, images, axe, no-JS and partial scripts\nPASS chrome 1440px: exact filters/count/reset/focus, comparison keyboard/pointer/touch, images, axe, no-JS and partial scripts\nPASS chrome 375px: Home order, canonical facts, CTA destinations/preselection, keyboard/touch, geometry, responsive local media, axe, no-JS and partial enhancement\nPASS chrome 768px: Home order, canonical facts, CTA destinations/preselection, keyboard/touch, geometry, responsive local media, axe, no-JS and partial enhancement\nPASS chrome 1024px: Home order, canonical facts, CTA destinations/preselection, keyboard/touch, geometry, responsive local media, axe, no-JS and partial enhancement\nPASS chrome 1440px: Home order, canonical facts, CTA destinations/preselection, keyboard/touch, geometry, responsive local media, axe, no-JS and partial enhancement\n"
+  }
+]

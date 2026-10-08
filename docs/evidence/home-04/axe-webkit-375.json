@@ -1,0 +1,476 @@
+{
+  "violations": [],
+  "incomplete": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "tags": [
+        "cat.color",
+        "wcag2aa",
+        "wcag143",
+        "TTv5",
+        "TT13.c",
+        "EN-301-549",
+        "EN-9.1.4.3",
+        "ACT",
+        "RGAAv4",
+        "RGAA-3.2.1"
+      ],
+      "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI",
+      "nodes": [
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "18.0pt (24px)",
+                "fontWeight": "normal",
+                "messageKey": "elmPartiallyObscured",
+                "expectedContrastRatio": "3:1"
+              },
+              "relatedNodes": [
+                {
+                  "html": "<header class=\"site-header\">",
+                  "target": [
+                    "header"
+                  ]
+                },
+                {
+                  "html": "<article>",
+                  "target": [
+                    ".home-benefit-grid > article:nth-child(1)"
+                  ]
+                }
+              ],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because it's partially obscured by another element"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<span>NOIR</span>",
+          "target": [
+            ".header-inner > .identity[href$=\"wordpress.local/\"] > span"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "messageKey": "nonBmp"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element content contains only non-text characters"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<span aria-hidden=\"true\">→</span>",
+          "target": [
+            ".secondary > span[aria-hidden=\"true\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "8.3pt (11px)",
+                "fontWeight": "normal",
+                "messageKey": "imgNode",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [
+                {
+                  "html": "<figcaption class=\"small-label\"><img class=\"icon\" src=\"http://wordpress.local/wp-content/themes/noir-auto-detailing/assets/icons/verified.svg\" width=\"24\" height=\"24\" alt=\"\" aria-hidden=\"true\">Certified Studio Application</figcaption>",
+                  "target": [
+                    ".home-hero-image > figcaption"
+                  ]
+                },
+                {
+                  "html": "<img width=\"512\" height=\"279\" src=\"http://wordpress.loc...\" class=\"attachment-large siz...\" alt=\"Editorial close-up o...\" sizes=\"(min-width: 1440px) ...\" loading=\"eager\" fetchpriority=\"high\" decoding=\"async\" srcset=\"http://wordpress.loc...\">",
+                  "target": [
+                    "img[loading=\"eager\"]"
+                  ]
+                }
+              ],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because element contains an image node"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<figcaption class=\"small-label\"><img class=\"icon\" src=\"http://wordpress.local/wp-content/themes/noir-auto-detailing/assets/icons/verified.svg\" width=\"24\" height=\"24\" alt=\"\" aria-hidden=\"true\">Certified Studio Application</figcaption>",
+          "target": [
+            ".home-hero-image > figcaption"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "8.3pt (11px)",
+                "fontWeight": "normal",
+                "messageKey": "imgNode",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [
+                {
+                  "html": "<p class=\"small-label accent\">Level 1 &amp; 2</p>",
+                  "target": [
+                    "article[data-home-service=\"paint-correction\"] > .home-service-image > .accent.small-label"
+                  ]
+                },
+                {
+                  "html": "<img width=\"512\" height=\"286\" src=\"http://wordpress.loc...\" class=\"attachment-large siz...\" alt=\"Macro detailing phot...\" sizes=\"auto, (min-width: 14...\" loading=\"lazy\" fetchpriority=\"auto\" decoding=\"async\" srcset=\"http://wordpress.loc...\">",
+                  "target": [
+                    ".home-service-image > img[height=\"286\"][loading=\"lazy\"][fetchpriority=\"auto\"]"
+                  ]
+                }
+              ],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because element contains an image node"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<p class=\"small-label accent\">Level 1 &amp; 2</p>",
+          "target": [
+            "article[data-home-service=\"paint-correction\"] > .home-service-image > .accent.small-label"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "messageKey": "nonBmp"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element content contains only non-text characters"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<span aria-hidden=\"true\">→</span>",
+          "target": [
+            "article[data-home-service=\"paint-correction\"] > .home-service-content > .home-service-links > .text-link:nth-child(1) > span[aria-hidden=\"true\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "8.3pt (11px)",
+                "fontWeight": "normal",
+                "messageKey": "imgNode",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [
+                {
+                  "html": "<p class=\"small-label accent\">Protection</p>",
+                  "target": [
+                    "article[data-home-service=\"ceramic-coating\"] > .home-service-image > .accent.small-label"
+                  ]
+                },
+                {
+                  "html": "<img width=\"512\" height=\"279\" src=\"http://wordpress.loc...\" class=\"attachment-large siz...\" alt=\"Laboratory clean roo...\" sizes=\"auto, (min-width: 14...\" loading=\"lazy\" fetchpriority=\"auto\" decoding=\"async\" srcset=\"http://wordpress.loc...\">",
+                  "target": [
+                    "article[data-home-service=\"ceramic-coating\"] > .home-service-image > img[height=\"279\"][loading=\"lazy\"][fetchpriority=\"auto\"]"
+                  ]
+                }
+              ],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because element contains an image node"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<p class=\"small-label accent\">Protection</p>",
+          "target": [
+            "article[data-home-service=\"ceramic-coating\"] > .home-service-image > .accent.small-label"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "messageKey": "nonBmp"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element content contains only non-text characters"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<span aria-hidden=\"true\">→</span>",
+          "target": [
+            "article[data-home-service=\"ceramic-coating\"] > .home-service-content > .home-service-links > .text-link:nth-child(1) > span[aria-hidden=\"true\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "8.3pt (11px)",
+                "fontWeight": "normal",
+                "messageKey": "imgNode",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [
+                {
+                  "html": "<p class=\"small-label accent\">Complete Detail</p>",
+                  "target": [
+                    "article[data-home-service=\"full-detail\"] > .home-service-image > .accent.small-label"
+                  ]
+                },
+                {
+                  "html": "<img width=\"512\" height=\"279\" src=\"http://wordpress.loc...\" class=\"attachment-large siz...\" alt=\"Artisan leather cond...\" sizes=\"auto, (min-width: 14...\" loading=\"lazy\" fetchpriority=\"auto\" decoding=\"async\" srcset=\"http://wordpress.loc...\">",
+                  "target": [
+                    "article[data-home-service=\"full-detail\"] > .home-service-image > img[height=\"279\"][loading=\"lazy\"][fetchpriority=\"auto\"]"
+                  ]
+                }
+              ],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because element contains an image node"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<p class=\"small-label accent\">Complete Detail</p>",
+          "target": [
+            "article[data-home-service=\"full-detail\"] > .home-service-image > .accent.small-label"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "messageKey": "nonBmp"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element content contains only non-text characters"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<span aria-hidden=\"true\">→</span>",
+          "target": [
+            "article[data-home-service=\"full-detail\"] > .home-service-content > .home-service-links > .text-link:nth-child(1) > span[aria-hidden=\"true\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "8.3pt (11px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because it is overlapped by another element"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<figcaption>Before</figcaption>",
+          "target": [
+            ".comparison-before > figcaption"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "8.3pt (11px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because it is overlapped by another element"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<figcaption>After</figcaption>",
+          "target": [
+            ".comparison-after > figcaption"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "messageKey": "nonBmp"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element content contains only non-text characters"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<span aria-hidden=\"true\"> →</span>",
+          "target": [
+            "#project-porsche-911-gt3-992 > .home-project-content > .text-link > span[aria-hidden=\"true\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "messageKey": "nonBmp"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element content contains only non-text characters"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<span aria-hidden=\"true\"> →</span>",
+          "target": [
+            "#project-aston-martin-db12 > .home-project-content > .text-link > span[aria-hidden=\"true\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "messageKey": "nonBmp"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element content contains only non-text characters"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<span aria-hidden=\"true\"> →</span>",
+          "target": [
+            "#project-range-rover-sv > .home-project-content > .text-link > span[aria-hidden=\"true\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "messageKey": "nonBmp"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element content contains only non-text characters"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<span aria-hidden=\"true\">★★★★★</span>",
+          "target": [
+            "figure:nth-child(1) > .home-rating > span[aria-hidden=\"true\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "messageKey": "nonBmp"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element content contains only non-text characters"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<span aria-hidden=\"true\">★★★★★</span>",
+          "target": [
+            "figure:nth-child(2) > .home-rating > span[aria-hidden=\"true\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "messageKey": "nonBmp"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element content contains only non-text characters"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<span aria-hidden=\"true\">★★★★★</span>",
+          "target": [
+            "figure:nth-child(3) > .home-rating > span[aria-hidden=\"true\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+        }
+      ]
+    }
+  ]
+}
