@@ -10,8 +10,8 @@ Primary customer outcome:
 
 ```text
 Discover salon/services
-→ choose a service
-→ choose a specialist
+→ choose one or more services
+→ choose a specific specialist or any available specialist
 → choose a date and available time
 → identify/verify the customer when needed
 → confirm the appointment
@@ -31,19 +31,26 @@ Owner and final acceptance owner: Pending confirmation.
 - Customers can begin browsing and the booking journey without signing in.
 - Customer identity/verification may be requested at the point needed to complete a real booking; implementation is deliberately undecided.
 - Sign-in is required for the customer's appointment-management area.
-- Booking involves:
-  - service;
-  - specialist;
-  - date;
-  - available time;
-  - customer identification/verification;
-  - appointment confirmation.
+- One booking can contain multiple services.
+- The booking flow uses this product order:
+  - select one or more services;
+  - choose a specific specialist or “any available specialist”;
+  - choose a date and an actually available time;
+  - identify/verify the customer;
+  - confirm the appointment.
 - Customers can:
   - view upcoming appointments;
   - cancel an appointment;
   - reschedule an appointment;
   - view appointment history.
 - Payment is not collected online in the first release; payment happens at the salon.
+
+### Confirmed booking-window rules
+
+- Customers can book up to **90 days** in advance.
+- Same-day bookings require at least **60 minutes** of lead time.
+- Availability must respect the selected service set and specialist choice. The detailed slot/duration rules are still to be defined.
+- Choosing “any available specialist” is a supported customer path, not a fallback error state.
 
 ### Confirmed salon operations
 
@@ -73,11 +80,10 @@ The exact staff roles, permissions and operational actions still need product de
 ### Still to define
 
 - Exact public pages and discovery journeys.
-- Service selection rules, including whether one booking can contain one or multiple services.
-- Specialist-selection behavior, including whether “any available specialist” is allowed.
-- Booking horizon, minimum lead time and slot behavior.
+- How multi-service duration and specialist eligibility affect slot availability.
 - Cancellation and rescheduling policy.
 - Customer identity/sign-in product experience.
+- Whether customers can book for another person.
 - Appointment states visible to customers and staff.
 - Staff/admin operational actions and permission boundaries.
 - What happens when availability changes during booking.
@@ -93,7 +99,10 @@ Known product constraints:
 - Browsing and starting a booking should not require an account.
 - Appointment management belongs to an authenticated customer experience.
 - No online payment dependency is required for v1.
-- Booking availability must eventually reflect real salon/service/specialist working constraints; the exact business rules are still pending.
+- A booking may include multiple services.
+- Customers may select a specific specialist or any available specialist.
+- Booking horizon is 90 days and same-day lead time is 60 minutes.
+- Booking availability must eventually reflect real salon/service/specialist working constraints; the detailed business rules are still pending.
 - Customer and appointment information introduces privacy expectations that must be defined before engineering specification.
 
 Pending:
@@ -120,6 +129,6 @@ Status: **Not approved yet.**
 
 Confirmed direction:
 
-**Single women's salon + public discovery + real booking + authenticated appointment management + core salon operations + pay at salon.**
+**Single women's salon + public discovery + multi-service real booking + specific/any specialist choice + 90-day horizon + 60-minute same-day lead + authenticated appointment management + core salon operations + pay at salon.**
 
 The remaining product questions must be resolved before scope freeze and before generating the Stitch brief.
