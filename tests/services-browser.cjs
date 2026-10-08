@@ -100,10 +100,19 @@ const titles = [
         const range = page.getByRole("slider", {
           name: "Before and after comparison — reveal after image",
         });
-        const imageBounds = await page
-          .locator(".comparison-images")
-          .boundingBox();
-        const rangeBounds = await range.boundingBox();
+        // Read both rectangles in one frame: smooth scrolling after FAQ focus
+        // must not make separate viewport snapshots appear misaligned.
+        const { imageBounds, rangeBounds } = await range.evaluate((input) => {
+          const image = input
+            .closest("[data-comparison]")
+            .querySelector(".comparison-images")
+            .getBoundingClientRect();
+          const control = input.getBoundingClientRect();
+          return {
+            imageBounds: { y: image.y, height: image.height },
+            rangeBounds: { y: control.y, height: control.height },
+          };
+        });
         assert(
           rangeBounds.y >= imageBounds.y &&
             rangeBounds.y + rangeBounds.height <=

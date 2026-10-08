@@ -1,0 +1,252 @@
+{
+  "fixture_version": 1,
+  "projects": [
+    {
+      "project_id": "aston-martin-db12",
+      "title": "Aston Martin DB12",
+      "image": "aston-martin-db12",
+      "facts": {
+        "vehicle": "Aston Martin DB12",
+        "finish": "",
+        "work": "Precision edge-tucked paint protection film and specialized matte ceramic topcoat protection.",
+        "facts": [
+          {
+            "label": "Treatment",
+            "value": "Full Front End Protection"
+          },
+          {
+            "label": "Duration",
+            "value": "2 Days"
+          }
+        ],
+        "comparison": {
+          "before_image": 0,
+          "after_image": 0,
+          "before_label": "Before",
+          "after_label": "After"
+        },
+        "memberships": []
+      }
+    },
+    {
+      "project_id": "range-rover-sv",
+      "title": "Range Rover SV",
+      "image": "range-rover-sv",
+      "facts": {
+        "vehicle": "Range Rover SV",
+        "finish": "",
+        "work": "Deep aniline leather cleansing, fabric protection, and natural matte hydration treatment.",
+        "facts": [
+          {
+            "label": "Treatment",
+            "value": "Interior Deep Conditioning"
+          },
+          {
+            "label": "Duration",
+            "value": "1.5 Days"
+          }
+        ],
+        "comparison": {
+          "before_image": 0,
+          "after_image": 0,
+          "before_label": "Before",
+          "after_label": "After"
+        },
+        "memberships": []
+      }
+    }
+  ],
+  "sections": {
+    "hero": {
+      "eyebrow": "Professional Automotive Detailing • Beverly Hills",
+      "heading": "The Art of",
+      "body": "Specialized paint correction, ceramic coatings, and precision detailing for performance, luxury, and classic vehicles.",
+      "accent": "Automotive",
+      "ending": "Preservation.",
+      "image": "hero",
+      "badge": "Beverly Hills Studio • Licensed & Insured",
+      "caption": "Certified Studio Application",
+      "meta": "Precision Paint Correction • Ceramic Coatings • Los Angeles, CA"
+    },
+    "trust": [
+      {
+        "title": "Studio Experience",
+        "body": "",
+        "value": "10+ Years",
+        "icon": ""
+      },
+      {
+        "title": "Certified Installers",
+        "body": "",
+        "value": "Certified",
+        "icon": ""
+      },
+      {
+        "title": "Facility & Garage Coverage",
+        "body": "",
+        "value": "Fully Insured",
+        "icon": ""
+      },
+      {
+        "title": "Dedicated Lead Specialist",
+        "body": "",
+        "value": "1-on-1 Care",
+        "icon": ""
+      }
+    ],
+    "philosophy": {
+      "eyebrow": "Our Standard",
+      "heading": "Precision Detailing.",
+      "body": "We combine meticulous hand detailing and thorough chemical decontamination with multi-stage paint leveling to restore true gloss.",
+      "accent": "Uncompromising Care.",
+      "secondary": "Every vehicle is treated with lasting ceramic protection and paint refinement without temporary silicone fillers or cosmetic shortcuts.",
+      "items": [
+        {
+          "title": "Paint Depth Analysis",
+          "body": "Non-invasive digital gauge readings confirm clear coat safety before any machine compounding begins.",
+          "value": "",
+          "icon": "polisher"
+        },
+        {
+          "title": "Studio Lighting",
+          "body": "High-CRI inspection arrays expose micro-marring and swirls for true surface defect identification.",
+          "value": "",
+          "icon": "light-mode"
+        },
+        {
+          "title": "True Correction",
+          "body": "Lasting optical clarity and refined finish—never masked with temporary glazes, silicones, or quick waxes.",
+          "value": "",
+          "icon": "verified"
+        }
+      ]
+    },
+    "services": {
+      "eyebrow": "Featured Services",
+      "heading": "Studio Offerings",
+      "body": "Tailored detailing packages performed in a clean, climate-controlled studio environment.",
+      "items": [
+        {
+          "service_id": "paint-correction",
+          "teaser": "Multi-stage swirl and defect eradication using staged foam and microfiber passes to restore high-gloss mirror clarity.",
+          "badge": "Level 1 & 2",
+          "scope": "Swirl & Scratch Removal",
+          "image": "paint-correction-home"
+        },
+        {
+          "service_id": "ceramic-coating",
+          "teaser": "Long-term hydrophobic surface protection guarding against UV fading, environmental etching, and road chemicals.",
+          "badge": "Protection",
+          "scope": "",
+          "image": "ceramic-coating-home"
+        },
+        {
+          "service_id": "full-detail",
+          "teaser": "Complete deep cleanse, steam sanitation, leather conditioning, decontamination wash, and paint gloss enhancement.",
+          "badge": "Complete Detail",
+          "scope": "Deep Clean & Protect",
+          "image": "full-detail-home"
+        }
+      ]
+    },
+    "projects": {
+      "eyebrow": "Selected Projects",
+      "heading": "Selected Case Studies",
+      "body": "Compare Before and After to examine the completed work."
+    },
+    "placements": [
+      {
+        "project_id": "porsche-911-gt3-992",
+        "teaser": "",
+        "eyebrow": "Project Showcase",
+        "image": "porsche-home-after",
+        "comparison": {
+          "before_image": "porsche-home-before",
+          "after_image": "porsche-home-after",
+          "before_label": "Before",
+          "after_label": "After"
+        }
+      },
+      {
+        "project_id": "aston-martin-db12",
+        "teaser": "Satin PPF Cleanse",
+        "eyebrow": "Full Front End Protection",
+        "image": 0,
+        "comparison": {
+          "before_image": 0,
+          "after_image": 0,
+          "before_label": "Before",
+          "after_label": "After"
+        }
+      },
+      {
+        "project_id": "range-rover-sv",
+        "teaser": "Full Interior & Leather Care",
+        "eyebrow": "Interior Deep Conditioning",
+        "image": 0,
+        "comparison": {
+          "before_image": 0,
+          "after_image": 0,
+          "before_label": "Before",
+          "after_label": "After"
+        }
+      }
+    ],
+    "benefits": [
+      {
+        "title": "Comprehensive Insurance",
+        "body": "Full commercial garage keepers insurance covering your vehicle at every stage while in our studio.",
+        "value": "",
+        "icon": "shield"
+      },
+      {
+        "title": "Climate-Controlled Studio",
+        "body": "Dust-filtered indoor bays maintain controlled temperature and humidity for uniform ceramic coating curing.",
+        "value": "",
+        "icon": "climate"
+      },
+      {
+        "title": "Dedicated Lead Detailer",
+        "body": "Direct communication and 1-on-1 vehicle handling with certified master detailers—no rushed handoffs.",
+        "value": "",
+        "icon": "person"
+      },
+      {
+        "title": "Premium Products & Coatings",
+        "body": "We utilize only verified, professional-grade ceramic formulas, compounds, and microfiber media.",
+        "value": "",
+        "icon": "verified"
+      }
+    ],
+    "testimonials": {
+      "eyebrow": "Client Reviews",
+      "heading": "Client Testimonials",
+      "body": "",
+      "items": [
+        {
+          "quote": "The attention to detail on my GT3 RS was exceptional. The paint depth readings and transparent walkthrough before starting gave me total peace of mind.",
+          "author": "Julian Vance",
+          "attribution": "2023 Porsche GT3 RS Owner",
+          "rating": 5
+        },
+        {
+          "quote": "Brought in our 1974 Dino with delicate single-stage paint. The NOIR team respected the original clear and delivered a stunning gloss without removing excess paint.",
+          "author": "Alessandro M.",
+          "attribution": "1974 Ferrari Dino 246 GT Owner",
+          "rating": 5
+        },
+        {
+          "quote": "Our G63 sees daily road grime and mountain trips. Two years after their ceramic coating package, washing it is effortless and the finish looks brand new.",
+          "author": "Marcus Sterling",
+          "attribution": "Mercedes-AMG G63 Owner",
+          "rating": 5
+        }
+      ]
+    },
+    "final": {
+      "eyebrow": "Get In Touch",
+      "heading": "Ready to Protect Your Vehicle?",
+      "body": "Request an appointment or discuss your vehicle with our team. We treat every vehicle with undivided attention and expert care."
+    }
+  }
+}

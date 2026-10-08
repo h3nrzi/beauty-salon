@@ -1,0 +1,35 @@
+PASS: Native page REST accepts fixed Home hero
+PASS: Saved Home hero appears through public HTTP
+PASS: Native Editor save propagates Home Unicode content
+PASS: Editor can update fixed hero through REST
+PASS: Native Home revision restores hero through HTTP
+PASS: Native revision restores Home hero media and Testimonial collection
+PASS: Out-of-range/oversized/unknown Testimonial fields are rejected
+PASS: Out-of-range/oversized/unknown Testimonial fields are rejected
+PASS: Out-of-range/oversized/unknown Testimonial fields are rejected
+PASS: Unicode heading bound enforced
+PASS: Editorial markup is rejected
+PASS: Forged native nonce preserves Home content
+PASS: author cannot edit Home sections
+PASS: subscriber cannot edit Home sections
+PASS: Anonymous page REST hides Home editorial metadata
+PASS: Canonical Service edits propagate across Home and Services
+PASS: Service detail/preselection links retain stable identity after rename
+PASS: Draft featured Service omitted
+PASS: Single shared Porsche work edit propagates to Home and Gallery
+PASS: Native row order controls Home placements
+PASS: Native revision restores ordered references, contextual copy and media
+PASS: Duplicate/unknown/oversized Project references rejected
+PASS: Duplicate/unknown/oversized Project references rejected
+PASS: Duplicate/unknown/oversized Project references rejected
+PASS: Featured Service reference bounds rejected
+PASS: Duplicate featured Service reference rejected
+PASS: Editor can omit optional Home collections
+PASS: Empty collection omits home-testimonials
+PASS: Empty collection omits home-trust
+PASS: Empty collection omits home-benefits
+PASS: Empty collection omits home-services
+PASS: Empty collection omits home-projects
+PASS: Empty collection omits comparison-control
+PASS: Cleared native rows omit optional featured Services and Testimonials
+Ticket 04 native WordPress checks complete.

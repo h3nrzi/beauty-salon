@@ -98,7 +98,7 @@ function noir_section_heading($section) {
  echo '<div class="section-heading"><div><p class="eyebrow">'.esc_html($section['eyebrow']).'</p><h2>'.esc_html($section['heading']).'</h2></div><p class="muted">'.esc_html($section['body']).'</p></div>';
 }
 add_action('wp_enqueue_scripts',function() {
- if (is_page_template(['page-services.php','page-gallery.php'])) { wp_enqueue_script('noir-comparison',get_template_directory_uri().'/assets/comparison.js',[],filemtime(get_template_directory().'/assets/comparison.js'),['in_footer'=>true,'strategy'=>'defer']); }
+ if (is_page_template(['page-services.php','page-gallery.php','page-home.php'])) { wp_enqueue_script('noir-comparison',get_template_directory_uri().'/assets/comparison.js',[],filemtime(get_template_directory().'/assets/comparison.js'),['in_footer'=>true,'strategy'=>'defer']); }
 });
 // Present validated native menu references supplied by the plugin.
 add_filter('wp_nav_menu_objects',function($items,$args) {

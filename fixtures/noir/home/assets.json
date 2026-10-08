@@ -1,0 +1,141 @@
+{
+  "fixture_version": 1,
+  "assets": [
+    {
+      "asset_id": "hero",
+      "source": "media/hero.jpg",
+      "original_reference": "https://lh3.googleusercontent.com/aida-public/AB6AXuBN6NK7R7yKRBIseCXDJ1Qt38qBO9nESUmF0uwLDT79Fq-lvdnq8jcVLUCnrbDEkbvakyggnAfYvSv_L8hYRYHqZYNyZzD8PappCqVGqYlV9glvFYeCapgpGpOYqLcwtVQF7DGmXQlSzHPziEP6kg1ND6roTKH8AH-eht9fRcoXZR8S_zKJKygyphH5UiiE46rI09Do0qWBqHAeEvcWprAoi-kAsnB4kxK9e4w2BtM",
+      "sha256": "9f31a286e34a8f7c494db935f77ceb64342cc282925eb391db576ab2a37931ab",
+      "width": 512,
+      "height": 279,
+      "alt": "Editorial close-up of a jet black Porsche 911 GT3 RS bonnet in a dark minimal automotive studio, sharp linear overhead white LED luminaire reflection highlighting flawless liquid gloss finish, champagne rim detail visible in background, deep charcoal shadows, high-contrast fine art automotive photography",
+      "decorative": false,
+      "crop": "object-fit: cover; centered; hero 5:4 desktop / 4:3 mobile; service 16:10; project fixed component geometry",
+      "focal_point": "50% 50%",
+      "usage": [
+        "Home hero"
+      ],
+      "rights_status": "not-yet-rights-cleared",
+      "rights_evidence": "Owner authorized frozen Home v3 images only for temporary local prototype in this chat on 2026-10-08. Production rights remain Ticket 07 prerequisite."
+    },
+    {
+      "asset_id": "paint-correction-home",
+      "source": "media/paint-correction-home.jpg",
+      "original_reference": "https://lh3.googleusercontent.com/aida-public/AB6AXuC5vJBT_dPB8fPUua2L8QYkVCYLtQPUEJweUXVCPa9HKwueDMA84-DgykgSsr5HsiHrlurtj4XgEB3pJ4JvhELle1ikd5cHiQC35jU514BQuLUovTlD3mNAFXbt7t_c679yHRH0gDxlQclUIjDzZbZ-v_VjKNQWRqS3GzNmDPn90IHDMcwmEVcI89Xq2ZyTC4EDWSGhykrsrEFfMpYF0OrK0qxZyb2vgjjzetlS5Bw",
+      "sha256": "3cd0790919b5211737a2d7edccd5b75acc73bb0e02e358efb556132b49716586",
+      "width": 512,
+      "height": 286,
+      "alt": "Macro detailing photograph of dual action rotary polisher head working on obsidian black car paintwork with precision compound droplet",
+      "decorative": false,
+      "crop": "object-fit: cover; centered; hero 5:4 desktop / 4:3 mobile; service 16:10; project fixed component geometry",
+      "focal_point": "50% 50%",
+      "usage": [
+        "Home paint-correction-home"
+      ],
+      "rights_status": "not-yet-rights-cleared",
+      "rights_evidence": "Owner authorized frozen Home v3 images only for temporary local prototype in this chat on 2026-10-08. Production rights remain Ticket 07 prerequisite."
+    },
+    {
+      "asset_id": "ceramic-coating-home",
+      "source": "media/ceramic-coating-home.jpg",
+      "original_reference": "https://lh3.googleusercontent.com/aida-public/AB6AXuDIcfp3gNWFkLbySoprJWt3zi0-dT8Qm8KAFlpiTt6iz5_9Pm1Tw_6dwqqT4B24L8iixHjE09Y9nrhtaPkP8s2FR44vH6fapMjBkxPkvQHvvSLjXU2QA9N7E-5KQGIiHAOKdoUmNexj_UPJVpOZzzxByeILFX3Xld3O0D2T3AJEzgqF0-cxGLwfGJ1DvNnnUwQj35JaZc826mTMFzK5YkjDgKp4F9S96E0Qnvx8GEM",
+      "sha256": "c810a542372f5e6a5bb534e00621871cc7a3bd505a7fd2c15a400595d36998cb",
+      "width": 512,
+      "height": 279,
+      "alt": "Laboratory clean room setting showing ceramic coating amber glass dropper bottle placing precision nanotech drops on carbon fiber vehicle fender",
+      "decorative": false,
+      "crop": "object-fit: cover; centered; hero 5:4 desktop / 4:3 mobile; service 16:10; project fixed component geometry",
+      "focal_point": "50% 50%",
+      "usage": [
+        "Home ceramic-coating-home"
+      ],
+      "rights_status": "not-yet-rights-cleared",
+      "rights_evidence": "Owner authorized frozen Home v3 images only for temporary local prototype in this chat on 2026-10-08. Production rights remain Ticket 07 prerequisite."
+    },
+    {
+      "asset_id": "full-detail-home",
+      "source": "media/full-detail-home.jpg",
+      "original_reference": "https://lh3.googleusercontent.com/aida-public/AB6AXuBketKKMDKMW1kPWvuVHScMJoocfi_OHAoAfG6rdhsFduSZnBu93hqGmOakwBV0RkrLa14v0FJZ_6KbkfwdgqoXX7c7xQevwfpcXojt77J1jZ7VJV1cXHI0N6KbEjI_tnLBkqu3A6JNo48rPqSsWwQzNJVBDyfzIIV42cPU3u17r9ldcpwoEAvJG9wb8xaIl7h2wNmgfrBpl8TViC7X5jAoJXfj6ML8eln8Ca3QqAc",
+      "sha256": "9437ff8d0c1a852232306a211d990473f8fbe8bf19f7da50c7c5cfdb69ee8c10",
+      "width": 512,
+      "height": 279,
+      "alt": "Artisan leather conditioning on vintage Ferrari cockpit, Connolly leather seats treated with natural balm",
+      "decorative": false,
+      "crop": "object-fit: cover; centered; hero 5:4 desktop / 4:3 mobile; service 16:10; project fixed component geometry",
+      "focal_point": "50% 50%",
+      "usage": [
+        "Home full-detail-home"
+      ],
+      "rights_status": "not-yet-rights-cleared",
+      "rights_evidence": "Owner authorized frozen Home v3 images only for temporary local prototype in this chat on 2026-10-08. Production rights remain Ticket 07 prerequisite."
+    },
+    {
+      "asset_id": "porsche-home-before",
+      "source": "media/porsche-home-before.jpg",
+      "original_reference": "https://lh3.googleusercontent.com/aida-public/AB6AXuCZfeJbIQBhOOAO2D8YBL_3DqhYhytw-GnJIs9GmZUryeRvvfDlR7eWDRemnfqXFPsWalomIzcwt2tolabfyCqEl_oFHr2Ix1vcV7Pu6YAqE_9dLhdeqR4s1ETo__5W0IZg3ABHHBmZBZYXVYj5-J_efXqEqYKGrxMgpUes4oQ1mJhId3wMy0nl1K1SblneSuazkzi19B22weoWtpTmeGs6s1QfTV4KsBTFgVa03Kg",
+      "sha256": "6b52ac99c6837f53e8913261ed0c083bf1e1798f6f85a2c5c660c864cb83d8e9",
+      "width": 512,
+      "height": 279,
+      "alt": "High-resolution close up of swirled spider-web scratched car door panel on a black Porsche 911 under harsh circular inspection light, showing heavy micro-marring and dull cloudy reflections",
+      "decorative": false,
+      "crop": "object-fit: cover; centered; hero 5:4 desktop / 4:3 mobile; service 16:10; project fixed component geometry",
+      "focal_point": "50% 50%",
+      "usage": [
+        "Home porsche-home-before"
+      ],
+      "rights_status": "not-yet-rights-cleared",
+      "rights_evidence": "Owner authorized frozen Home v3 images only for temporary local prototype in this chat on 2026-10-08. Production rights remain Ticket 07 prerequisite."
+    },
+    {
+      "asset_id": "porsche-home-after",
+      "source": "media/porsche-home-after.jpg",
+      "original_reference": "https://lh3.googleusercontent.com/aida-public/AB6AXuB-ZoRCyz2O5QyCZBMSVxT62T60ZFRExVRjQaQVfVditfah6Qfq5Bza53WhPEbaL_XUS-IEROMORSQiWxpmAL8LlEYYOjJermt00lQXCYiABndqK4vMixhacM-NFGuSFF1_Ki6WLoslUbO_pXe-oCdxHbAT5vXip3ZzAERy23XqCckttXJj-PJnLPemKxxHG4YKWwMZwswSjWlVfFYpU8XxzGclH1W227-GAVtgby8",
+      "sha256": "3abf459423a580d2817a3b1d5cce0e74a73cd9db906ea57c7743cf3a570b2bbf",
+      "width": 512,
+      "height": 279,
+      "alt": "Identical panel angle of jet black Porsche 911 after multi-stage precision paint correction, perfectly mirror-flat piano gloss finish with zero swirls or haze, reflecting sharp crisp studio lighting",
+      "decorative": false,
+      "crop": "object-fit: cover; centered; hero 5:4 desktop / 4:3 mobile; service 16:10; project fixed component geometry",
+      "focal_point": "50% 50%",
+      "usage": [
+        "Home porsche-home-after"
+      ],
+      "rights_status": "not-yet-rights-cleared",
+      "rights_evidence": "Owner authorized frozen Home v3 images only for temporary local prototype in this chat on 2026-10-08. Production rights remain Ticket 07 prerequisite."
+    },
+    {
+      "asset_id": "aston-martin-db12",
+      "source": "media/aston-martin-db12.jpg",
+      "original_reference": "https://lh3.googleusercontent.com/aida-public/AB6AXuCVvTt2_gVevujTQH43tpqa-wLhU_tFqhrIiG3RH86rB36qmkWYtldFj_nBORt-UWuWyRM_3x-HBktt5SFJCmlHRInmb06noPEOGcShb_PXlgM2afxXEiEIaRp4pOV72drUENTs_rnqC0V4JLbK71zBNwCPRIZ8uglmvAJksrTef3ZU-0pzRdoBq5crws9lC_KluKYkwD01Lc9lcEjpVjcBTdzCKm_bWcPsRoLSICE",
+      "sha256": "1cee109f9b42c0fab985b3819648488527f43877188f94e78bdc3f3adbbce38d",
+      "width": 512,
+      "height": 286,
+      "alt": "Aston Martin DB12 in satin titanium silver undergoing self-healing paint protection film application",
+      "decorative": false,
+      "crop": "object-fit: cover; centered; hero 5:4 desktop / 4:3 mobile; service 16:10; project fixed component geometry",
+      "focal_point": "50% 50%",
+      "usage": [
+        "Home aston-martin-db12"
+      ],
+      "rights_status": "not-yet-rights-cleared",
+      "rights_evidence": "Owner authorized frozen Home v3 images only for temporary local prototype in this chat on 2026-10-08. Production rights remain Ticket 07 prerequisite."
+    },
+    {
+      "asset_id": "range-rover-sv",
+      "source": "media/range-rover-sv.jpg",
+      "original_reference": "https://lh3.googleusercontent.com/aida-public/AB6AXuAcUCZmutreaOhEu1dNUY5RsstxNMzrO7cnb04Tf3hElG8JXeCaAjuJTMY_Zt1rxLUop_ayrPQW3rU0oJUIB0On8EaVjLCN1sSQraRFbBXZ7jO5NXtKZHFLWizsjjzoUvbCwLcv0_AZHs5F3WafbLy8HAFdKZXVtcoQ11QLueSJKeDEwCL3yIl_e80YSlI4N-juqSpiEMSY0tCYxEfIVxP7i613hyWoloWAcn_YNZA",
+      "sha256": "94bebf5870495d7254c30d29e8c1b2c01e6e0b03000c5387d1ba57f1dea64dfd",
+      "width": 512,
+      "height": 279,
+      "alt": "Interior revival detail of Range Rover SV ultra luxury cabin with cream semi-aniline leather",
+      "decorative": false,
+      "crop": "object-fit: cover; centered; hero 5:4 desktop / 4:3 mobile; service 16:10; project fixed component geometry",
+      "focal_point": "50% 50%",
+      "usage": [
+        "Home range-rover-sv"
+      ],
+      "rights_status": "not-yet-rights-cleared",
+      "rights_evidence": "Owner authorized frozen Home v3 images only for temporary local prototype in this chat on 2026-10-08. Production rights remain Ticket 07 prerequisite."
+    }
+  ]
+}

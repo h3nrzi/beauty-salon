@@ -16,4 +16,6 @@ try {
  fallback_check(str_contains($html,'tel:'.$studio['phone_dial']) && str_contains($html,'mailto:'.$studio['email']),'Saved public phone/email remain usable without plugin');
  fallback_check(str_contains($html,'#appointment-request'),'Native Contact anchor remains available without plugin');
  fallback_check(!str_contains($html,'type="submit"'),'Plugin absence cannot enable request submission');
+ $response=wp_remote_get(get_permalink($studio['pages']['home']),['timeout'=>10]);$html=wp_remote_retrieve_body($response);
+ fallback_check(wp_remote_retrieve_response_code($response)===200 && str_contains($html,'Home information is currently unavailable') && str_contains($html,'tel:'.$studio['phone_dial']),'Plugin absence leaves an explicit Home fallback and configured public contact');
 } finally {update_option('active_plugins',$active);}

@@ -35,15 +35,13 @@ function noir_validate_gallery_section($value,$name) {
 add_action('init',function() {
  $schemas=[];
  foreach (noir_gallery_page_schemas() as $name=>$schema) { $schemas['_noir_gallery_'.$name]=$schema; }
- $schemas['_noir_home_placements']=noir_project_placement_schema('home');
  foreach ($schemas as $key=>$schema) {
-  $template=$key==='_noir_home_placements'?'page-home.php':'page-gallery.php';
+  $template='page-gallery.php';
   register_post_meta('page',$key,['type'=>$schema['type'],'single'=>true,'revisions_enabled'=>true,'show_in_rest'=>['schema'=>$schema],
    'sanitize_callback'=>'noir_normalize_text','auth_callback'=>function($allowed,$key,$post_id) use ($template) { return get_page_template_slug($post_id)===$template && current_user_can('edit_post',$post_id) && current_user_can('edit_others_pages'); }]);
  }
 });
 function noir_validate_gallery_metadata($key,$value) {
- if ($key==='_noir_home_placements') { return noir_validate_placements(noir_normalize_text($value),'home'); }
  $prefix='_noir_gallery_';
  if (str_starts_with($key,$prefix)) {
   $name=substr($key,strlen($prefix));
@@ -70,7 +68,7 @@ add_filter('rest_pre_insert_page',function($prepared,$request) {
 add_filter('rest_prepare_page',function($response,$post) {
  if (!current_user_can('edit_post',$post->ID)) {
   $data=$response->get_data();
-  foreach (array_keys($data['meta']??[]) as $key) { if (str_starts_with($key,'_noir_gallery_') || $key==='_noir_home_placements') { unset($data['meta'][$key]); } }
+  foreach (array_keys($data['meta']??[]) as $key) { if (str_starts_with($key,'_noir_gallery_')) { unset($data['meta'][$key]); } }
   $response->set_data($data);
  }
  return $response;

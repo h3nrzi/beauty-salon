@@ -1,0 +1,2 @@
+<?php defined('ABSPATH') || exit; $item=$args['item']; ?>
+<article><?php if ($item['icon']) { noir_icon($item['icon']); } ?><h3><?php echo esc_html($item['title']); ?></h3><?php if ($item['body']!=='') : ?><p class="muted"><?php echo esc_html($item['body']); ?></p><?php endif; ?><?php if ($item['value']!=='') : ?><p class="accent"><?php echo esc_html($item['value']); ?></p><?php endif; ?></article>

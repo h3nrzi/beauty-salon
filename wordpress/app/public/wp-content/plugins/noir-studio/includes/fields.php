@@ -50,6 +50,7 @@ function noir_admin_text_input($name,$label,$value,$max,$multiline=false) {
 // Bounded native fields for the Project/Gallery schemas; no JSON or layout editing.
 function noir_editorial_label($key) {
  $labels=[
+  'hero'=>__('Hero','noir-studio'),'accent'=>__('Accent heading','noir-studio'),'ending'=>__('Heading ending','noir-studio'),'badge'=>__('Badge','noir-studio'),'caption'=>__('Image caption','noir-studio'),'meta'=>__('Studio context','noir-studio'),'trust'=>__('Trust indicators','noir-studio'),'philosophy'=>__('Studio philosophy','noir-studio'),'secondary'=>__('Second paragraph','noir-studio'),'services'=>__('Featured Services','noir-studio'),'service_id'=>__('Stable Service reference','noir-studio'),'scope'=>__('Contextual scope','noir-studio'),'projects'=>__('Selected Projects heading','noir-studio'),'benefits'=>__('Studio benefits','noir-studio'),'testimonials'=>__('Testimonials','noir-studio'),'quote'=>__('Quote','noir-studio'),'author'=>__('Author','noir-studio'),'attribution'=>__('Attribution','noir-studio'),'rating'=>__('Rating (1–5)','noir-studio'),
   'vehicle'=>__('Vehicle','noir-studio'),'finish'=>__('Finish / color','noir-studio'),'work'=>__('Work summary','noir-studio'),
   'facts'=>__('Ordered facts (up to 8)','noir-studio'),'label'=>__('Label','noir-studio'),'value'=>__('Value','noir-studio'),
   'comparison'=>__('Optional comparison','noir-studio'),'before_image'=>__('Before image attachment ID','noir-studio'),'after_image'=>__('After image attachment ID','noir-studio'),
@@ -77,10 +78,11 @@ function noir_editorial_fields($name,$schema,$value,$label) {
   }
  } elseif (isset($schema['enum'])) {
   echo '<p><label>'.esc_html($label).' <select name="'.esc_attr($name).'">';
+  if (!in_array('', $schema['enum'], true)) { echo '<option value="">'.esc_html__('None','noir-studio').'</option>'; }
   foreach ($schema['enum'] as $option) { echo '<option value="'.esc_attr($option).'" '.selected($value,$option,false).'>'.esc_html($option ?: __('None','noir-studio')).'</option>'; }
   echo '</select></label></p>';
  } elseif ($schema['type']==='integer') {
-  echo '<p><label>'.esc_html($label).' <input type="number" min="0" step="1" name="'.esc_attr($name).'" value="'.esc_attr($value??0).'"></label></p>';
+  echo '<p><label>'.esc_html($label).' <input type="number" min="'.(int)($schema['minimum']??0).'" step="1" name="'.esc_attr($name).'" value="'.esc_attr($value??(!empty($schema['minimum'])?'':0)).'"></label></p>';
  } else {
   if ($value===null && str_ends_with($name,'[before_label]')) { $value=__('Before','noir-studio'); }
   if ($value===null && str_ends_with($name,'[after_label]')) { $value=__('After','noir-studio'); }
@@ -90,9 +92,10 @@ function noir_editorial_fields($name,$schema,$value,$label) {
 function noir_editorial_row_empty($row) {
  if (!is_array($row)) { return false; }
  foreach ($row as $key=>$value) {
-  if ($key==='icon' && is_string($value) && in_array($value,['','light-mode','water','polisher','climate'],true)) { continue; }
+  if ($key==='icon' && is_string($value) && in_array($value,['','light-mode','water','polisher','climate','shield','verified','person','verified_user'],true)) { continue; }
   if (in_array($key,['before_label','after_label'],true)) { continue; }
   if (is_array($value)) { if (!noir_editorial_row_empty($value)) { return false; } }
+  elseif ($key==='rating' && ($value==='' || $value==='0' || $value===0)) { continue; }
   elseif (in_array($key,['image','before_image','after_image'],true)) { if ($value!=='0' && $value!==0) { return false; } }
   elseif (!is_string($value) || trim($value)!=='') { return false; }
  }
