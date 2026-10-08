@@ -2,7 +2,7 @@
 
 - Project name: Beauty Salon
 - Owner: h3nrzi
-- Phase: Stitch brief
+- Phase: Stitch iteration
 - Product definition and scope approval: Approved / frozen on 2026-10-08 — `docs/project/product-definition.md`
 - Product direction: Single women's salon with public discovery, real booking, authenticated appointment management and core salon operations
 - Locale: Persian / RTL
@@ -29,7 +29,7 @@
 - Manager scope: All appointments, services, specialists, salon hours, schedules, breaks, time off, cancel/reschedule/reassign
 - Specialist scope: Own appointments; view details; mark Completed / No-show
 - Stitch brief: Draft with approved working brand/visual direction — `docs/project/stitch-brief.md`
-- Frozen baseline and audit: Pending
+- Home + initial design-system baseline: Frozen as `references/ara-home-soft-editorial-v1/README.md`; whole-product visual baseline/export audit still pending
 - Engineering handoff: Pending
 - MATT configuration confirmed once: Pending
 - Relevant decisions / glossary / ADRs: Pending
@@ -38,7 +38,7 @@
 - Local implementation gate and evidence: Pending
 - Human acceptance gate: Owner h3nrzi; pending design/implementation evidence
 - Production-release gate: Pending
-- Blockers / capability gaps: Home refinement is close, but desktop/mobile copy/navigation parity, Persian display typography, placeholder/legal treatment and realistic mobile evidence still need one final consistency pass
-- Next action: Run `docs/project/stitch-prompts/03-home-final-consistency.md`, export realistic desktop + mobile evidence, then decide whether to freeze Home/design-system baseline.
+- Blockers / capability gaps: Home visual uncertainty is resolved; known copy/token/legal-placeholder cleanup is deterministic and deferred to export audit/engineering handoff
+- Next action: Run `docs/project/stitch-prompts/04-services-page.md` using the frozen Home/design-system reference, then review Services mobile + desktop.
 
 Replace pending entries with links to existing artifacts as work progresses.
