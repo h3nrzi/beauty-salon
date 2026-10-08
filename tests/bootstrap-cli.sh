@@ -95,6 +95,7 @@ cp -R fixtures/noir "$sandbox/bad-fixtures"
 printf 'tampered' >> "$sandbox/bad-fixtures/home/media/range-rover-sv.jpg"
 if wp_test noir bootstrap --user=bootstrap-admin --fixtures="$sandbox/bad-fixtures" --prototype > "$sandbox/invalid.log" 2>&1; then echo 'Invalid checksum was accepted' >&2; exit 1; fi
 [[ "$(wp_test eval 'echo wp_json_encode(wp_count_posts("attachment"))."/".wp_count_posts("nav_menu_item")->publish;')" == "$counts" ]]
+rg -q 'checksum mismatch: home:range-rover-sv' "$sandbox/invalid.log"
 echo 'PASS: late asset checksum failure aborts before mutation'
 python3 - "$sandbox/bad-fixtures" <<'PY'
 import json,pathlib,sys,shutil
@@ -102,6 +103,7 @@ p=pathlib.Path(sys.argv[1]); shutil.copyfile('fixtures/noir/home/media/range-rov
 f=p/'home/baseline.json'; r=json.loads(f.read_text()); r['projects'].append(r['projects'][0]); f.write_text(json.dumps(r))
 PY
 if wp_test noir bootstrap --user=bootstrap-admin --fixtures="$sandbox/bad-fixtures" --prototype > "$sandbox/duplicates.log" 2>&1; then echo 'Duplicate identity accepted' >&2; exit 1; fi
+rg -q 'Duplicate/empty record identity: project:' "$sandbox/duplicates.log"
 echo 'PASS: duplicate fixture identities abort before mutation'
 if wp_test noir bootstrap --user=bootstrap-admin --fixtures="$PWD/fixtures/noir" --dry-run > "$sandbox/rights.log" 2>&1; then echo 'Uncleared production media accepted' >&2; exit 1; fi
 echo 'PASS: temporary media cannot pass production import'
@@ -124,3 +126,14 @@ $s=noir_studio_settings();$s["phone_label"]="Synthetic recovery phone";update_op
 '
 wp_test --user=bootstrap-admin option update noir_studio "$(cat "$sandbox/studio-backup.json")" --format=json >/dev/null
 wp_test eval 'if (noir_studio_settings()["phone_label"]!=="+1 (800) 492-NOIR") { throw new RuntimeException("Shared settings restore failed"); } echo "PASS: shared settings backup/restore uses validated native option operations\n";'
+# Recovery must recreate a missing baseline page and preserve/report template drift.
+wp_test --user=bootstrap-admin eval '$id=noir_studio_settings()["pages"]["home"]; wp_delete_post($id,true);'
+wp_test "${args[@]}" > "$sandbox/deleted-page.json"
+wp_test eval '$s=noir_studio_settings();$state=get_option("noir_bootstrap");
+if (get_post_meta($state["menus"]["primary"]["items"]["home"],"_menu_item_object_id",true)!=$s["pages"]["home"]) { throw new RuntimeException("Missing menu reference not repaired"); }
+if (!noir_published_page($s["pages"]["home"])) { throw new RuntimeException("Missing page not recreated"); } echo "PASS: re-import recreates deleted baseline page and repairs its role mapping\n";'
+wp_test --user=bootstrap-admin eval '$id=noir_studio_settings()["pages"]["contact"]; update_post_meta($id,"_wp_page_template","page-home.php");'
+wp_test "${args[@]}" > "$sandbox/template-drift.json"
+wp_test eval 'if (get_page_template_slug(noir_studio_settings()["pages"]["contact"])!=="page-home.php") { throw new RuntimeException("Template edit overwritten"); }'
+wp_test "${args[@]}" --reset > "$sandbox/template-reset.json"
+wp_test eval 'if (get_page_template_slug(noir_studio_settings()["pages"]["contact"])!=="page-contact.php") { throw new RuntimeException("Reset did not restore template"); } echo "PASS: import preserves Contact template drift; explicit reset restores it\n";'

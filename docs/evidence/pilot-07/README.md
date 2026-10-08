@@ -2,7 +2,7 @@
 
 Date: 2026-10-08. Full procedure and acceptance matrix: [`../../pilot-acceptance.md`](../../pilot-acceptance.md).
 
-- `bootstrap-results.txt`: fresh native WordPress installation in isolated tables/uploads, dry-run, preservation/drift/conflicts, scoped reset, missing metadata versus intentional emptiness, invalid assets/duplicate identities, prototype-only media, Administrator restrictions, menu drift and native settings backup/restore.
+- `bootstrap-results.txt`: fresh native WordPress installation in isolated tables/uploads, dry-run, preservation/drift/conflicts, scoped reset, missing metadata versus intentional emptiness, invalid assets/duplicate identities, prototype-only media, Administrator restrictions, menu drift, native settings backup/restore, deleted-page recreation/native reference repair and Contact template drift/reset.
 - `local-import-report.json`: the preexisting local site was adopted without duplicates or overwritten edits; all 22 photographs reused their original native IDs. The report exposed the previous all-days-closed hours and one slug difference.
 - `local-reset-plan.json`: reported reset scope before restoring the fixture-owned baseline. Legal/mail/environment/appointment state and unrelated content are outside scope.
 - `local-baseline-report.json`: the restored local baseline has no remaining editorial drift or assignment conflict. Its 25 explicit blockers are 22 uncleared photographic roles, two absent legal destinations and unconfigured real mail readiness. It is not a production acceptance certificate.

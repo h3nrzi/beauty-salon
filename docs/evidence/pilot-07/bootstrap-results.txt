@@ -10,3 +10,5 @@ PASS: temporary media cannot pass production import
 PASS: bootstrap requires Administrator authority
 PASS: native menu editorial drift is reported and preserved
 PASS: shared settings backup/restore uses validated native option operations
+PASS: re-import recreates deleted baseline page and repairs its role mapping
+PASS: import preserves Contact template drift; explicit reset restores it

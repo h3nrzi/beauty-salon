@@ -3,6 +3,7 @@
 defined('ABSPATH') || exit;
 
 class Noir_Bootstrap_Command {
+ private const MENUS=['primary'=>'NOIR Primary','footer'=>'NOIR Footer','footer_services'=>'NOIR Services'];
  private $root;
  private $fixtures=[];
  private $assets=[];
@@ -39,7 +40,7 @@ class Noir_Bootstrap_Command {
    if ($prototype && !in_array(wp_get_environment_type(),['local','development'],true)) { throw new RuntimeException('--prototype is limited to local/development.'); }
    if (get_stylesheet()!=='noir-auto-detailing') { throw new RuntimeException('Activate the NOIR theme explicitly first.'); }
    $this->state=(array)get_option('noir_bootstrap',[]);
-   $this->load($prototype);
+   $this->load($prototype,isset($flags['reset']));
    $this->plan();
    $this->report['mode']=isset($flags['reset'])?'reset':'preserve';
    $this->report['scope']=['fixture_records'=>array_keys($this->records),'menus'=>['primary','footer','footer_services'],'assignments'=>['page templates','Studio page roles','static front page','menu locations'],'preserved'=>['unrelated content','legal destinations','mail configuration','environment secrets','appointment state']];
@@ -59,7 +60,7 @@ class Noir_Bootstrap_Command {
  private function valid($result,$label) {
   if (is_wp_error($result)) { throw new RuntimeException($label.': '.$result->get_error_message()); }
  }
- private function load($prototype) {
+ private function load($prototype,$reset) {
   $contact=$this->root.'/contact/baseline.php';
   if (!is_readable($contact)) { throw new RuntimeException('Missing Contact fixture.'); }
   $this->fixtures['contact']=require $contact;
@@ -71,12 +72,17 @@ class Noir_Bootstrap_Command {
    $this->report['versions'][$slice]=['version'=>$version,'sha256'=>hash_file('sha256',$this->root.'/'.$slice.'/baseline.'.($slice==='contact'?'php':'json'))];
   }
   // Presentation assets are tracked separately from editorial Media Library assets.
-  $project=dirname($this->root,2);
+  $theme_prefix='wordpress/app/public/wp-content/themes/noir-auto-detailing/';
   foreach ($this->json($this->root.'/contact/assets.json')['assets'] as $asset) {
-   $file=$project.'/'.$asset['file'];
-   if (!is_readable($file) || hash_file('sha256',$file)!==$asset['sha256'] || !is_readable($project.'/'.$asset['license_file'])) { throw new RuntimeException('Missing/changed local asset or license: '.$asset['file']); }
+   if (!str_starts_with($asset['file'],$theme_prefix) || !str_starts_with($asset['license_file'],$theme_prefix)) { throw new RuntimeException('Presentation asset must belong to the NOIR theme.'); }
+   $file=get_stylesheet_directory().'/'.substr($asset['file'],strlen($theme_prefix));
+   $license=get_stylesheet_directory().'/'.substr($asset['license_file'],strlen($theme_prefix));
+   if (!is_readable($file) || hash_file('sha256',$file)!==$asset['sha256'] || !is_readable($license)) { throw new RuntimeException('Missing/changed local asset or license: '.$asset['file']); }
   }
-  foreach ($this->json($this->root.'/services/icons.json') as $asset) {
+  $gallery_icons=$this->json($this->root.'/gallery/icons.json');
+  if (empty($gallery_icons['rights']) || empty($gallery_icons['license'])) { throw new RuntimeException('Missing Gallery icon rights.'); }
+  $icons=array_merge($this->json($this->root.'/services/icons.json'),array_map(function($asset) { return ['file'=>basename($asset['source']),'sha256'=>$asset['sha256']]; },$gallery_icons['assets']));
+  foreach ($icons as $asset) {
    $file=get_stylesheet_directory().'/assets/icons/'.$asset['file'];
    if (!is_readable($file) || hash_file('sha256',$file)!==$asset['sha256']) { throw new RuntimeException('Missing/changed Service icon: '.$asset['file']); }
   }
@@ -135,16 +141,18 @@ class Noir_Bootstrap_Command {
    }
    $this->records['page:'.$slice]=['type'=>'page','title'=>ucfirst($slice),'slug'=>$slice,'slice'=>$slice,'meta'=>$meta];
   }
-  // Validate shared facts before writing, using a synthetic page map only for the
-  // page-independent validation path; native page existence is checked in apply.
+  // Validate shared facts separately from native assignments, which can need repair.
   $this->valid(noir_validate_studio_facts($this->fixtures['contact']['studio']),'Studio fixture');
   $existing=noir_studio_settings();
   if ($existing) {
-   $this->valid(noir_validate_studio_facts($existing),'Existing Studio facts');
-   foreach ($existing['pages']??[] as $role=>$id) { if (!in_array($role,['home','services','gallery','contact'],true) || !noir_published_page($id)) { throw new RuntimeException('Invalid existing page assignment: '.$role); } }
+   if (!$reset) { $this->valid(noir_validate_studio_facts($existing),'Existing Studio facts'); }
+   foreach ($existing['pages']??[] as $role=>$id) {
+    if (!in_array($role,['home','services','gallery','contact'],true) || (!is_int($id) && !(is_string($id) && ctype_digit($id)))) { throw new RuntimeException('Invalid existing page assignment input: '.$role); }
+    if (get_post($id) && !noir_published_page($id)) { $this->report['acceptance_blockers'][]='unpublished-page:'.$role; }
+   }
    foreach (['privacy','terms'] as $legal) { if (!empty($existing[$legal]) && !noir_destination($existing[$legal])) { throw new RuntimeException('Invalid existing legal destination: '.$legal); } }
-   if (!empty($existing['pages']['contact']) && get_page_template_slug($existing['pages']['contact'])!=='page-contact.php') { throw new RuntimeException('Assign the native Contact template before import.'); }
-   if (count(array_unique($existing['pages']??[]))!==count($existing['pages']??[])) { throw new RuntimeException('Conflicting duplicate Studio page assignments.'); }
+   if (!empty($existing['pages']['contact']) && get_post($existing['pages']['contact']) && get_page_template_slug($existing['pages']['contact'])!=='page-contact.php') { $this->report['conflicts'][]='Contact template assignment'; }
+   if (count(array_unique($existing['pages']??[]))!==count($existing['pages']??[])) { $this->report['conflicts'][]='duplicate Studio page assignments'; }
   }
   foreach (['privacy','terms'] as $legal) { if (!noir_destination(noir_studio_settings()[$legal]??'')) { $this->report['acceptance_blockers'][]='legal:'.$legal; } }
   if (!noir_request_mail_configuration()) { $this->report['acceptance_blockers'][]='mail:configuration'; }
@@ -230,7 +238,7 @@ class Noir_Bootstrap_Command {
   $front=(int)get_option('page_on_front');
   if ($front && ($front!==$this->ids['page:home'] || get_option('show_on_front')!=='page')) { $this->report['conflicts'][]='static front page'; }
   $locations=get_nav_menu_locations();
-  foreach (['primary'=>'NOIR Primary','footer'=>'NOIR Footer','footer_services'=>'NOIR Services'] as $location=>$name) {
+  foreach (self::MENUS as $location=>$name) {
    $menu=$this->state['menus'][$location]['id']??0;
    if (!$menu) { $term=wp_get_nav_menu_object($name); $menu=$term?$term->term_id:0; }
    if (!empty($locations[$location]) && (int)$locations[$location]!== (int)$menu) { $this->report['conflicts'][]='menu location:'.$location; }
@@ -240,12 +248,7 @@ class Noir_Bootstrap_Command {
     $targets=$location==='footer_services'?noir_service_ids():['home','services','gallery','contact'];
     foreach ($targets as $position=>$target) {
      $service=$location==='footer_services'; $page=$this->ids['page:'.($service?'services':$target)];
-     $found=null;
-     foreach ($items as $item) {
-      if (($this->state['menus'][$location]['items'][$target]??0)===$item->ID ||
-       ($service && get_post_meta($item->ID,'_noir_service_ref',true)===$target) ||
-       (!$service && $item->object==='page' && (int)$item->object_id===$page)) { $found=$item; break; }
-     }
+     $found=$this->menu_item($location,$target,$page,$items);
      $title=$service?get_the_title($this->ids['service:'.$target]):'';
      if (!$found || $found->object!=='page' || (int)$found->object_id!==$page || (int)$found->menu_order!==$position+1 || get_post_field('post_title',$found->ID)!==$title) {
       $this->report['drift'][]='menu:'.$location.':'.$target;
@@ -305,33 +308,49 @@ class Noir_Bootstrap_Command {
   $settings=$old?:$this->fixtures['contact']['studio'];
   if ($reset) { $settings=array_replace($settings,$this->fixtures['contact']['studio']); foreach (['privacy','terms'] as $legal) { $settings[$legal]=$old[$legal]??''; } }
   foreach (['home','services','gallery','contact'] as $role) {
-   if ($reset || empty($settings['pages'][$role])) { $settings['pages'][$role]=$this->ids['page:'.$role]; }
+   if ($reset || empty($settings['pages'][$role]) || !get_post($settings['pages'][$role])) { $settings['pages'][$role]=$this->ids['page:'.$role]; }
   }
-  $this->valid(noir_validate_studio($settings),'Studio settings');
-  update_option('noir_studio',$settings);
-  if (noir_studio_settings()!=$settings) { throw new RuntimeException('Studio settings write failed.'); }
-  if ($reset || !(int)get_option('page_on_front')) { update_option('show_on_front','page'); update_option('page_on_front',$this->ids['page:home']); }
+  $valid=noir_validate_studio($settings);
+  if (is_wp_error($valid) && !$reset && $old) {
+   $this->report['conflicts'][]='Studio settings preserved: '.$valid->get_error_message();
+   $this->report['acceptance_blockers'][]='settings:assignments';
+  } else {
+   $this->valid($valid,'Studio settings');
+   update_option('noir_studio',$settings);
+   if (noir_studio_settings()!=$settings) { throw new RuntimeException('Studio settings write failed.'); }
+  }
+  if ($reset || !(int)get_option('page_on_front') || !get_post((int)get_option('page_on_front'))) { update_option('show_on_front','page'); update_option('page_on_front',$this->ids['page:home']); }
   $this->menus($reset);
   $this->state['versions']=$this->report['versions'];
   update_option('noir_bootstrap',$this->state,false);
   $this->report['native_ids']=$this->ids;
  }
+ private function menu_item($location,$target,$page,$items) {
+  $tracked=$this->state['menus'][$location]['items'][$target]??0;
+  foreach ($items as $item) { if ($item->ID===$tracked) { return $item; } }
+  foreach ($items as $item) {
+   if (($location==='footer_services' && get_post_meta($item->ID,'_noir_service_ref',true)===$target) ||
+    ($location!=='footer_services' && $item->object==='page' && (int)$item->object_id===$page)) { return $item; }
+  }
+  return null;
+ }
  private function menus($reset) {
   $locations=get_nav_menu_locations();
-  foreach (['primary'=>'NOIR Primary','footer'=>'NOIR Footer','footer_services'=>'NOIR Services'] as $location=>$name) {
+  foreach (self::MENUS as $location=>$name) {
    $id=$this->report['menus'][$location]['id'];
    if ($id && !wp_get_nav_menu_object($id)) { $id=0; }
    if (!$id) { $id=wp_create_nav_menu($name); $this->valid($id,$name); }
    $existing=wp_get_nav_menu_items($id)?:[];
    $targets=$location==='footer_services'?noir_service_ids():['home','services','gallery','contact'];
    foreach ($targets as $position=>$target) {
-    $item=$this->state['menus'][$location]['items'][$target]??0;
-    if ($item && (get_post_type($item)!=='nav_menu_item' || !has_term($id,'nav_menu',$item))) { $item=0; }
     $service=$location==='footer_services';
     $page=$this->ids['page:'.($service?'services':$target)];
-    if (!$item) { foreach ($existing as $candidate) {
-     if (($service && get_post_meta($candidate->ID,'_noir_service_ref',true)===$target) || (!$service && $candidate->object==='page' && (int)$candidate->object_id===$page)) { $item=$candidate->ID; break; }
-    } }
+    $found=$this->menu_item($location,$target,$page,$existing);
+    $item=$found?$found->ID:0;
+    if ($item && !$reset && get_post_meta($item,'_menu_item_object',true)==='page' && !get_post((int)get_post_meta($item,'_menu_item_object_id',true))) {
+     // Repair a missing native reference while preserving its human label/order.
+     $this->meta($item,'_menu_item_object_id',$page);
+    }
     if (!$item || $reset) {
      $data=['menu-item-status'=>'publish','menu-item-position'=>$position+1,'menu-item-type'=>'post_type','menu-item-object'=>'page','menu-item-object-id'=>$page];
      if ($service) { $data['menu-item-title']=get_the_title($this->ids['service:'.$target]); }
