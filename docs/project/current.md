@@ -6,7 +6,7 @@
 - Product definition and scope approval: Approved / frozen on 2026-10-08 — `docs/project/product-definition.md`
 - Product direction: Single women's salon with public discovery, real booking, authenticated appointment management and core salon operations
 - Locale: Persian / RTL
-- Brand direction: Modern, feminine, premium; light/neutral foundation with warm accent; avoid generic pink/gold beauty clichés
+- Brand: آرا — Soft Editorial; calm, feminine, modern, premium; warm ivory/taupe foundation with restrained warm accent
 - Responsive priority: Mobile-first Booking and My Appointments
 - Accessibility target: WCAG 2.2 AA for primary customer/staff flows
 - Media policy: Prototype/reference media allowed in Stitch; production requires explicit usage rights
@@ -28,7 +28,7 @@
 - Operational roles: Manager; Staff / Specialist
 - Manager scope: All appointments, services, specialists, salon hours, schedules, breaks, time off, cancel/reschedule/reassign
 - Specialist scope: Own appointments; view details; mark Completed / No-show
-- Stitch brief: Draft — `docs/project/stitch-brief.md`
+- Stitch brief: Draft with approved working brand/visual direction — `docs/project/stitch-brief.md`
 - Frozen baseline and audit: Pending
 - Engineering handoff: Pending
 - MATT configuration confirmed once: Pending
@@ -38,7 +38,7 @@
 - Local implementation gate and evidence: Pending
 - Human acceptance gate: Owner h3nrzi; pending design/implementation evidence
 - Production-release gate: Pending
-- Blockers / capability gaps: Visual identity details and Stitch baseline are not yet approved
-- Next action: Refine/approve the Stitch brief, then begin Stitch visual exploration without changing product scope.
+- Blockers / capability gaps: Stitch visual baseline is not yet approved
+- Next action: Run `docs/project/stitch-prompts/01-home-design-system.md` in Stitch, review the first Home/design-system exploration, and iterate without changing product scope.
 
 Replace pending entries with links to existing artifacts as work progresses.
