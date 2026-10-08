@@ -39,9 +39,15 @@
       "output": "\n> check\n> node --check tests/contact-browser.cjs && node --check wordpress/app/public/wp-content/themes/noir-auto-detailing/assets/navigation.js && node --check tests/services-browser.cjs && node --check wordpress/app/public/wp-content/themes/noir-auto-detailing/assets/comparison.js && node --check tests/gallery-browser.cjs && node --check wordpress/app/public/wp-content/themes/noir-auto-detailing/assets/gallery.js\n\n"
     },
     {
-      "check": "Full browser suite (Contact, Services, Gallery / Chrome)",
+      "check": "Full browser suite, final harness (Contact, Services, Gallery / Chrome)",
       "exit_code": 0,
       "output": "\n> test:browser\n> node tests/contact-browser.cjs && node tests/services-browser.cjs && node tests/gallery-browser.cjs\n\nPASS chrome 375px: navigation, keyboard, no-JS, local assets, reflow\nPASS chrome 768px: navigation, keyboard, no-JS, local assets, reflow\nPASS chrome 1024px: navigation, keyboard, no-JS, local assets, reflow\nPASS chrome 1440px: navigation, keyboard, no-JS, local assets, reflow\nPASS chrome 375px: canonical facts, native footer, links/preselection, independent FAQ, keyboard/pointer/touch comparison, images, axe, no-JS\nPASS chrome 768px: canonical facts, native footer, links/preselection, independent FAQ, keyboard/pointer/touch comparison, images, axe, no-JS\nPASS chrome 1024px: canonical facts, native footer, links/preselection, independent FAQ, keyboard/pointer/touch comparison, images, axe, no-JS\nPASS chrome 1440px: canonical facts, native footer, links/preselection, independent FAQ, keyboard/pointer/touch comparison, images, axe, no-JS\nPASS chrome 375px: exact filters/count/reset/focus, comparison keyboard/pointer/touch, images, axe, no-JS and partial scripts\nPASS chrome 768px: exact filters/count/reset/focus, comparison keyboard/pointer/touch, images, axe, no-JS and partial scripts\nPASS chrome 1024px: exact filters/count/reset/focus, comparison keyboard/pointer/touch, images, axe, no-JS and partial scripts\nPASS chrome 1440px: exact filters/count/reset/focus, comparison keyboard/pointer/touch, images, axe, no-JS and partial scripts\n"
     }
-  ]
+  ],
+  "gallery_multi_engine_follow_up": {
+    "chrome": "four widths passed; full final suite also passed",
+    "firefox": "four widths passed; browser-results-firefox.json retained",
+    "webkit": "four widths passed after waiting for each visible lazy image to load",
+    "actual_safari": "26.1 native smoke only; see safari-smoke.md"
+  }
 }

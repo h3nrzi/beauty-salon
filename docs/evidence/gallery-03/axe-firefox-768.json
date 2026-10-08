@@ -26,6 +26,44 @@
               "id": "color-contrast",
               "data": {
                 "contrastRatio": 0,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "normal",
+                "messageKey": "elmPartiallyObscured",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [
+                {
+                  "html": "<header class=\"site-header\">",
+                  "target": [
+                    "header"
+                  ]
+                },
+                {
+                  "html": "<article id=\"project-bmw-m3-touring\" data-project=\"\" data-memberships=\"full-detail paint-correction\" class=\"project-card\">",
+                  "target": [
+                    "#project-bmw-m3-touring"
+                  ]
+                }
+              ],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because it's partially obscured by another element"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<a href=\"tel:+18004926647\">+1 (800) 492-NOIR</a>",
+          "target": [
+            ".header-phone > a[href=\"tel:+18004926647\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
                 "fontSize": "8.3pt (11px)",
                 "fontWeight": "normal",
                 "messageKey": "bgOverlap",

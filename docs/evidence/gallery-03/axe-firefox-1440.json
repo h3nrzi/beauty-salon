@@ -28,31 +28,6 @@
                 "contrastRatio": 0,
                 "fontSize": "8.3pt (11px)",
                 "fontWeight": "normal",
-                "messageKey": "elmPartiallyObscuring",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element's background color could not be determined because it partially overlaps other elements"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": "serious",
-          "html": "<span class=\"studio-status\"><span class=\"dot\" aria-hidden=\"true\"></span>Studio: Accepting Appointments</span>",
-          "target": [
-            ".studio-status"
-          ],
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "8.3pt (11px)",
-                "fontWeight": "normal",
                 "messageKey": "bgOverlap",
                 "expectedContrastRatio": "4.5:1"
               },
