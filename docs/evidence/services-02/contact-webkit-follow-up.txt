@@ -1,4 +1,0 @@
-PASS webkit 375px: navigation, keyboard, no-JS, local assets, reflow
-PASS webkit 768px: navigation, keyboard, no-JS, local assets, reflow
-PASS webkit 1024px: navigation, keyboard, no-JS, local assets, reflow
-PASS webkit 1440px: navigation, keyboard, no-JS, local assets, reflow

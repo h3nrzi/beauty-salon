@@ -1,138 +1,38 @@
-# =========================================================
-# OS / Editor
-# =========================================================
-
+# OS and editor
 .DS_Store
 Thumbs.db
-
 .idea/
 .vscode/
 *.swp
 *.swo
 
-
-# =========================================================
-# Local environment / secrets
-# =========================================================
-
+# Local secrets
 .env
 .env.*
 !.env.example
-
 .envrc
+wp-config.php
 
-wordpress/.env
-wordpress/.env.*
-wordpress/.envrc
+# WordPress upstream installation and local runtime (source is wordpress/src/)
+/wordpress/*
+!/wordpress/src/
 
-wordpress/app/public/wp-config.php
-
-
-# =========================================================
-# Local WordPress runtime configuration
-# =========================================================
-
-wordpress/conf/
-
-
-# =========================================================
-# Logs
-# =========================================================
-
-wordpress/logs/
+# Runtime output wherever it occurs
+**/wp-content/uploads/
+**/wp-content/cache/
+**/wp-content/upgrade/
+**/wp-content/backup*/
+**/wp-content/ai1wm-backups/
+**/wp-content/wflogs/
 *.log
 
-
-# =========================================================
-# Local database/runtime data
-# =========================================================
-
-wordpress/mysql/
-wordpress/tmp/
-wordpress/run/
-
-
-# =========================================================
-# WordPress generated content
-# =========================================================
-
-wordpress/app/public/wp-content/uploads/
-wordpress/app/public/wp-content/cache/
-wordpress/app/public/wp-content/upgrade/
-wordpress/app/public/wp-content/backup*/
-wordpress/app/public/wp-content/backups/
-wordpress/app/public/wp-content/ai1wm-backups/
-wordpress/app/public/wp-content/wflogs/
-
-
-# =========================================================
-# WordPress plugins
-# Ignore installed plugins for Pilot 01.
-# Explicitly whitelist later if we decide to own a plugin.
-# =========================================================
-
-wordpress/app/public/wp-content/plugins/*
-!wordpress/app/public/wp-content/plugins/.gitkeep
-
-
-# =========================================================
-# WordPress themes
-# Ignore bundled/default themes.
-# Track only our project theme.
-# =========================================================
-
-wordpress/app/public/wp-content/themes/*
-
-!wordpress/app/public/wp-content/themes/noir-auto-detailing/
-!wordpress/app/public/wp-content/themes/noir-auto-detailing/**
-
-
-# =========================================================
-# WordPress generated / transient files
-# =========================================================
-
-wordpress/app/public/.htaccess
-wordpress/app/public/debug.log
-wordpress/app/public/local-xdebuginfo.php
-wordpress/app/public/local-phpinfo.php
-
-wordpress/app/public/wp-content/advanced-cache.php
-wordpress/app/public/wp-content/object-cache.php
-
-wordpress/app/public/wp-content/*.bak
-wordpress/app/public/wp-content/*.tmp
-
-
-# =========================================================
-# Node / frontend tooling
-# =========================================================
-
+# Dependencies and build/test output
 node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-
+vendor/
 dist/
 build/
 .cache/
-
-
-# =========================================================
-# PHP dependencies
-# =========================================================
-
-vendor/
-
-
-# =========================================================
-# Test / tooling output
-# =========================================================
-
 coverage/
 playwright-report/
 test-results/
 .phpunit.result.cache
-# Project-owned plugin (ADR 0004).
-!wordpress/app/public/wp-content/plugins/noir-studio/
-!wordpress/app/public/wp-content/plugins/noir-studio/**

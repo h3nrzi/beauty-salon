@@ -1,9 +1,0 @@
-<?php defined('ABSPATH') || exit; $service = $args['service']; $links = noir_service_links($service['service_id']); ?>
-<article class="service-card" id="service-<?php echo esc_attr($service['service_id']); ?>" aria-labelledby="title-<?php echo esc_attr($service['service_id']); ?>">
-<div class="service-image"><?php echo wp_get_attachment_image($service['image'],'large',false,['sizes'=>'(min-width: 1024px) 42vw, 100vw','loading'=>!empty($args['primary'])?'eager':'lazy','fetchpriority'=>!empty($args['primary'])?'high':'auto']); ?></div>
-<div class="service-content"><div class="service-badges"><?php foreach (['eyebrow','badge'] as $key) { if ($service[$key]!=='') { echo '<span class="small-label '.$key.'">'.esc_html($service[$key]).'</span>'; } } ?></div>
-<div><h3 id="title-<?php echo esc_attr($service['service_id']); ?>"><?php echo esc_html($service['title']); ?></h3><p class="muted"><?php echo esc_html($service['description']); ?></p><?php if ($service['protection']!==null) : ?><p class="service-protection small-label"><span class="muted"><?php esc_html_e('Protection: ','noir-auto-detailing'); ?></span><?php echo esc_html($service['protection']); ?></p><?php endif; ?></div>
-<div><h4 class="label muted"><?php esc_html_e('Package Inclusions:','noir-auto-detailing'); ?></h4><ul class="service-inclusions"><?php foreach ($service['inclusions'] as $inclusion) { echo '<li><span aria-hidden="true">✓</span>'.esc_html($inclusion).'</li>'; } ?></ul></div>
-<div class="service-action"><dl class="service-facts"><?php get_template_part('template-parts/service-facts',null,['service'=>$service]); ?></dl>
-<?php if ($links['appointment']) : ?><a class="button" href="<?php echo esc_url($links['appointment']); ?>"><?php esc_html_e('Request Appointment','noir-auto-detailing'); ?><span class="screen-reader-text"> — <?php echo esc_html($service['title']); ?></span><span aria-hidden="true"> →</span></a><?php endif; ?></div>
-</div></article>

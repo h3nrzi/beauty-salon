@@ -1,46 +1,52 @@
-# Stitch → WordPress Pilot
+# Stitch → WordPress Workflow Starter
 
-An experiment to build a small real WordPress product from a Google Stitch design/export, using Codex and the MATT methodology for the engineering phase.
+Clone this repository to define a new product, explore its visual design in
+Stitch, and engineer and accept a maintainable WordPress implementation using
+MATT. It contains workflow instructions and reusable agent skills. It starts
+without a product, selected architecture or runnable website.
 
-## Goal
+## Start a new project
 
-Validate a repeatable workflow:
+1. Read [WORKFLOW.md](WORKFLOW.md) and the [workspace map](docs/project/README.md).
+2. Copy [templates/project-state.md](templates/project-state.md) to
+   `docs/project/current.md` and [templates/product-definition.md](templates/product-definition.md)
+   to `docs/project/product-definition.md`. Fill in the product definition with
+   your owner: audience, outcomes, scope, editable content, constraints and exclusions.
+3. Agree scope before generating visuals. Follow the workflow through Stitch brief,
+   exploration, approved baseline freeze, actual-export audit and engineering handoff.
+4. Confirm the supplied MATT configuration once, grill unresolved decisions, then
+   approve a specification and tickets. Implement, review, reproduce, accept and
+   write a retrospective using the workflow's separate gates.
 
-```text
-Product Brief
-  → Google Stitch
-  → UI/UX iteration
-  → HTML/CSS export
-  → Codex + MATT
-  → WordPress theme
-  → QA
-  → Workflow retrospective
-```
-
-The main output of this repository is not only the finished WordPress site. It is also a documented, reusable workflow for future products.
-
-## Pilot constraints
-
-- Small service-business website
-- 3–4 primary pages
-- UI/UX completed in Google Stitch before WordPress implementation
-- Stitch HTML/CSS treated as design/reference input, not final production architecture
-- WordPress implementation should be a real maintainable theme
-- No page builder in the first pilot
-- Decisions, problems, and deviations are documented as they happen
+MATT supplies the engineering skills in [.agents/skills/](.agents/skills/).
+The tracker and domain conventions are already configured in [docs/agents/](docs/agents/issue-tracker.md).
+Project-specific architecture is decided during grilling/specification: theme model,
+content types, forms, storage, testing and deployment are not inherited defaults.
+There is no package installation or runtime provisioning step needed to begin
+product definition. Configure WordPress when engineering needs it, following the
+[runtime boundary](docs/agents/wordpress-runtime.md).
 
 ## Repository map
 
-- `docs/00-project-brief.md` — objective, scope, success criteria
-- `docs/01-experiment-plan.md` — phase-by-phase execution plan
-- `docs/decision-log.md` — decisions and rationale
-- `docs/workflow-draft.md` — evolving reusable workflow
-- `docs/retrospective.md` — lessons learned at the end of the pilot
-- `references/` — Stitch exports, screenshots, and other reference material
-- `wordpress/` — WordPress implementation once engineering begins
+| Workflow core — retain across projects | Purpose |
+| --- | --- |
+| `README.md`, `WORKFLOW.md`, `AGENTS.md` | Entry point, canonical process and agent navigation |
+| `.agents/skills/`, `skills-lock.json` | Reusable MATT skills and recorded provenance |
+| `docs/agents/` | Tracker, triage, domain and runtime conventions |
+| `templates/` | Small starting templates without product assumptions |
+| `.gitignore` | Runtime, secrets and generated-output boundary |
 
-## Current status
+| Project workspace — populate as work progresses | Purpose |
+| --- | --- |
+| `docs/project/` | Current state, product, brief, audit, handoff, runtime, acceptance and retrospective |
+| `references/<baseline-id>/` | Frozen approved Stitch exports and assets |
+| `docs/decision-log.md`, `GLOSSARY.md`, `docs/adr/` | Project decisions and vocabulary, created lazily |
+| `.scratch/<feature>/` | MATT specification and tickets |
+| `docs/evidence/<run-id>/` | Attributable, bounded verification evidence |
+| `wordpress/src/` | Project-owned source, populated after architecture decisions |
+| `tests/`, `fixtures/` | Project-specific checks and reproducible inputs when needed |
+| `wordpress/app/`, other local runtime paths | Ignored installation and local data; see runtime instructions |
 
-The four-page NOIR pilot is implemented as a classic theme and project-owned plugin. Explicit reproducible bootstrap, safe repeat imports, scoped reset and local acceptance checks are documented in [pilot acceptance](docs/pilot-acceptance.md). The full local regression runner is `npm run test:pilot`, using a configured disposable Local WP-CLI runtime.
-
-Production acceptance remains pending actual legal destinations, cleared photography, configured real inbox delivery, production HTTPS/performance evidence. The owner approved all seven local implementations and human sign-off on 2026-10-08; that approval does not add unperformed manual browser/accessibility measurements. See `.scratch/noir-wordpress-pilot/issues/07-reproducible-pilot-acceptance.md` and the evidence index in `docs/evidence/pilot-07/`.
+Only workspace navigation/placeholders are supplied. The [workspace map](docs/project/README.md)
+explains when to create each artifact. For the origin of the workflow, consult the
+optional [history note](docs/history.md).

@@ -1,5 +1,0 @@
-# Owned media with reproducible WordPress imports
-
-Editorial photography will use WordPress Media Library attachments, while presentation fonts and icons are packaged locally. Replacement photography with documented usage rights is acceptable when it preserves the intended subject, crop, composition, and visual character; remote Stitch assets are not a production dependency. A documented import process and asset manifest must recreate reference content because generated uploads remain untracked runtime data.
-
-Setup uses an explicit repeatable development/bootstrap import, never automatic demo-content seeding or overwriting on plugin activation. By default it creates missing baseline records, maps stable fixture identifiers, preserves human editorial changes, and reports drift or missing prerequisites; an explicit reset may intentionally restore the baseline. Track source fixture content, approved source assets, the manifest, useful checksums, and usage-rights/source documentation outside generated uploads. Missing required media, legal destinations, or mail configuration blocks acceptance; do not silently invent substitute production content.

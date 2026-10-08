@@ -1,4 +1,0 @@
-PASS: after user-binding state changed to HMAC, focused policy and real HTTP delivery/receipt/logged-in suite passed (wordpress-checks.txt).
-PASS: plugin PHP syntax after final user-binding change.
-PASS: absent optional email produces no Reply-To; one recipient; seven labelled fields; plain text; no CC/BCC/attachments (latest synthetic Local Mailpit capture).
-PASS: final mobile error screenshot visually inspected; no toolbar or PHP diagnostics.
