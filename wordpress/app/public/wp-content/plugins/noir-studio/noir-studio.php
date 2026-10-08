@@ -13,3 +13,5 @@ require_once __DIR__ . '/includes/contact.php';
 require_once __DIR__ . '/includes/settings.php';
 require_once __DIR__ . '/includes/services.php';
 require_once __DIR__ . '/includes/services-page.php';
+require_once __DIR__ . '/includes/projects.php';
+require_once __DIR__ . '/includes/gallery-page.php';

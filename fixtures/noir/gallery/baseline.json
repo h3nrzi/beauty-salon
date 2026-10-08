@@ -1,0 +1,323 @@
+{
+  "fixture_version": 1,
+  "projects": [
+    {
+      "project_id": "porsche-911-gt3-992",
+      "title": "Porsche 911 GT3 (992)",
+      "image": "porsche-gallery-after",
+      "facts": {
+        "vehicle": "Porsche 911 GT3 (992)",
+        "finish": "Jet Black Metallic",
+        "work": "Multi-stage paint correction to eliminate severe swirl marks and factory delivery haze, finished with a 5-year ceramic coating.",
+        "facts": [
+          {
+            "label": "Correction",
+            "value": "2-Stage"
+          },
+          {
+            "label": "Protection",
+            "value": "5-Year"
+          },
+          {
+            "label": "Duration",
+            "value": "3 Days"
+          },
+          {
+            "label": "Service Performed",
+            "value": "2-Stage Paint Correction + Ceramic Coating"
+          },
+          {
+            "label": "Protection Applied",
+            "value": "5-Year Ceramic Shield"
+          },
+          {
+            "label": "Timeframe",
+            "value": "3 Days Staging & Curing"
+          }
+        ],
+        "comparison": {
+          "before_image": "porsche-gallery-before",
+          "after_image": "porsche-gallery-after",
+          "before_label": "Before",
+          "after_label": "After"
+        },
+        "memberships": [
+          "paint-correction",
+          "exotic"
+        ]
+      }
+    },
+    {
+      "project_id": "ferrari-f8-tributo",
+      "title": "Ferrari F8 Tributo",
+      "image": "ferrari-f8-tributo",
+      "facts": {
+        "vehicle": "Ferrari F8 Tributo",
+        "finish": "Rosso Corsa",
+        "work": "Multi-year ceramic coating applied to bodywork, brake calipers, and wheel faces.",
+        "facts": [
+          {
+            "label": "Protection",
+            "value": "Hydrophobic Surface Seal"
+          },
+          {
+            "label": "Duration",
+            "value": "2 Days"
+          }
+        ],
+        "comparison": {
+          "before_image": 0,
+          "after_image": 0,
+          "before_label": "Before",
+          "after_label": "After"
+        },
+        "memberships": [
+          "ceramic",
+          "exotic"
+        ]
+      }
+    },
+    {
+      "project_id": "aston-martin-dbs-superleggera",
+      "title": "Aston Martin DBS Superleggera",
+      "image": "aston-martin-dbs-superleggera",
+      "facts": {
+        "vehicle": "Aston Martin DBS Superleggera",
+        "finish": "Satin Xenon Grey",
+        "work": "Specialized matte decontamination wash and dedicated satin ceramic coating preserving the factory satin sheen without added gloss.",
+        "facts": [
+          {
+            "label": "Protection",
+            "value": "Factory Satin Preserved"
+          },
+          {
+            "label": "Duration",
+            "value": "2 Days"
+          }
+        ],
+        "comparison": {
+          "before_image": 0,
+          "after_image": 0,
+          "before_label": "Before",
+          "after_label": "After"
+        },
+        "memberships": [
+          "paint-correction",
+          "ceramic",
+          "exotic"
+        ]
+      }
+    },
+    {
+      "project_id": "mercedes-benz-300sl-1955",
+      "title": "Mercedes-Benz 300SL",
+      "image": "mercedes-benz-300sl-1955",
+      "facts": {
+        "vehicle": "1955 Gullwing Coupe",
+        "finish": "DB180 Silver",
+        "work": "Classic Paint Preservation — Delicate single-stage hand polishing to safely enhance gloss and clarity while preserving original lacquer thickness.",
+        "facts": [
+          {
+            "label": "Preservation Method",
+            "value": "Hand Jewelers Polish"
+          },
+          {
+            "label": "Paint Safety",
+            "value": "Non-Destructive • Factory Paint Safe"
+          },
+          {
+            "label": "Staging",
+            "value": "Concourse Staging"
+          },
+          {
+            "label": "Portfolio",
+            "value": "Classics Portfolio"
+          },
+          {
+            "label": "Lacquer",
+            "value": "Single-Stage Nitrocellulose Lacquer • Hand Jewelers Polish"
+          }
+        ],
+        "comparison": {
+          "before_image": 0,
+          "after_image": 0,
+          "before_label": "Before",
+          "after_label": "After"
+        },
+        "memberships": [
+          "restoration",
+          "vintage"
+        ]
+      }
+    },
+    {
+      "project_id": "bmw-m3-touring",
+      "title": "BMW M3 Touring",
+      "image": "bmw-m3-touring",
+      "facts": {
+        "vehicle": "BMW M3 Touring",
+        "finish": "Isle of Man Green",
+        "work": "Full exterior decontamination with ceramic sealant, paired with deep interior leather cleansing and conditioning.",
+        "facts": [
+          {
+            "label": "Protection",
+            "value": "Conditioned Matte Finish Leather"
+          },
+          {
+            "label": "Duration",
+            "value": "1.5 Days"
+          }
+        ],
+        "comparison": {
+          "before_image": 0,
+          "after_image": 0,
+          "before_label": "Before",
+          "after_label": "After"
+        },
+        "memberships": [
+          "full-detail",
+          "paint-correction"
+        ]
+      }
+    },
+    {
+      "project_id": "lamborghini-huracan-sto",
+      "title": "Lamborghini Huracán STO",
+      "image": "lamborghini-huracan-sto",
+      "facts": {
+        "vehicle": "Lamborghini Huracán STO",
+        "finish": "Viola Pasifae",
+        "work": "Thorough decontamination wash and high-slickness ceramic protection designed for PPF and exposed carbon fiber.",
+        "facts": [
+          {
+            "label": "Protection",
+            "value": "PPF & Carbon Fiber Seal"
+          },
+          {
+            "label": "Duration",
+            "value": "2 Days"
+          }
+        ],
+        "comparison": {
+          "before_image": 0,
+          "after_image": 0,
+          "before_label": "Before",
+          "after_label": "After"
+        },
+        "memberships": [
+          "ceramic",
+          "exotic"
+        ]
+      }
+    }
+  ],
+  "sections": {
+    "intro": {
+      "eyebrow": "Portfolio Showcase",
+      "heading": "PORTFOLIO & RECENT WORK",
+      "body": "A showcase of paint correction, ceramic coatings, and bespoke detailing completed in our Beverly Hills studio."
+    },
+    "placements": [
+      {
+        "project_id": "porsche-911-gt3-992",
+        "teaser": "",
+        "eyebrow": "Featured Project",
+        "image": 0,
+        "comparison": {
+          "before_image": 0,
+          "after_image": 0,
+          "before_label": "Before",
+          "after_label": "After"
+        }
+      },
+      {
+        "project_id": "ferrari-f8-tributo",
+        "teaser": "Ceramic Coating & Wheel Protection",
+        "eyebrow": "Ceramic Coating",
+        "image": 0,
+        "comparison": {
+          "before_image": 0,
+          "after_image": 0,
+          "before_label": "Before",
+          "after_label": "After"
+        }
+      },
+      {
+        "project_id": "aston-martin-dbs-superleggera",
+        "teaser": "Matte Finish Protection",
+        "eyebrow": "Matte Finish Protection",
+        "image": 0,
+        "comparison": {
+          "before_image": 0,
+          "after_image": 0,
+          "before_label": "Before",
+          "after_label": "After"
+        }
+      },
+      {
+        "project_id": "mercedes-benz-300sl-1955",
+        "teaser": "",
+        "eyebrow": "Classic Preservation",
+        "image": 0,
+        "comparison": {
+          "before_image": 0,
+          "after_image": 0,
+          "before_label": "Before",
+          "after_label": "After"
+        }
+      },
+      {
+        "project_id": "bmw-m3-touring",
+        "teaser": "Full Detail & Leather Protection",
+        "eyebrow": "Full Detail & Leather",
+        "image": 0,
+        "comparison": {
+          "before_image": 0,
+          "after_image": 0,
+          "before_label": "Before",
+          "after_label": "After"
+        }
+      },
+      {
+        "project_id": "lamborghini-huracan-sto",
+        "teaser": "Track Wrap Cleansing & Coating",
+        "eyebrow": "PPF & Ceramic Protection",
+        "image": 0,
+        "comparison": {
+          "before_image": 0,
+          "after_image": 0,
+          "before_label": "Before",
+          "after_label": "After"
+        }
+      }
+    ],
+    "equipment": {
+      "eyebrow": "The Technical Discipline",
+      "heading": "STUDIO EQUIPMENT & STANDARDS",
+      "body": "",
+      "items": [
+        {
+          "title": "Daylight-Balanced Lighting",
+          "body": "5000K high-CRI inspection lights reveal true surface condition without misleading shadows."
+        },
+        {
+          "title": "De-Ionized Pure Water",
+          "body": "Spot-free filtration ensures zero mineral residue during washing and prep stages."
+        },
+        {
+          "title": "Dual-Action Polishers",
+          "body": "Rupes and Flex precision polishers for safe, hologram-free paint correction."
+        },
+        {
+          "title": "Climate-Controlled Bays",
+          "body": "Optimal temperature and humidity for proper ceramic coating bonding and clear curing."
+        }
+      ]
+    },
+    "final": {
+      "eyebrow": "Studio Appointments",
+      "heading": "READY TO RESTORE YOUR VEHICLE?",
+      "body": "Contact us today to discuss your vehicle or request an appointment."
+    }
+  }
+}

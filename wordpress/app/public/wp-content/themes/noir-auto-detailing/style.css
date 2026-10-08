@@ -1302,3 +1302,54 @@ input[type="range"]:focus-visible {
   padding: 0;
   margin-bottom: 4px;
 }
+
+/* Gallery keeps all work in document order before enhancement. */
+.gallery-intro { background: var(--lowest); padding: 64px 0 32px; }
+.gallery-intro h1 { font-size: 32px; line-height: 38px; margin: 8px 0; }
+.gallery-intro .lead { max-width: 580px; font-size: 14px; line-height: 22px; }
+.gallery-intro-heading { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.gallery-studio { align-self: end; }
+.gallery-studio > p:last-child { font-family: Syne, sans-serif; font-size: 24px; }
+.gallery-filters { display: flex; flex-wrap: wrap; gap: 4px; border-top: 1px solid var(--line); margin-top: 32px; padding-top: 16px; }
+.gallery-filters button { border: 0; background: var(--container); color: var(--muted); padding: 8px 16px; text-transform: uppercase; font-size: 12px; letter-spacing: .15em; cursor: pointer; }
+.gallery-filters button[aria-pressed="true"] { background: var(--primary); color: #412d00; font-weight: 600; }
+.gallery-count { margin-top: 12px; }
+.gallery-grid { display: grid; gap: 24px; }
+.project-card { background: var(--lowest); min-width: 0; display: flex; flex-direction: column; }
+.project-visual { position: relative; min-width: 0; }
+.project-visual > img { width: 100%; height: 320px; object-fit: cover; display: block; }
+.project-image-eyebrow, .project-finish { position: absolute; left: 16px; padding: 5px 8px; background: #0e0e0ee8; }
+.project-image-eyebrow { top: 16px; color: var(--primary); }
+.project-finish { bottom: 16px; }
+.project-content { display: flex; flex-direction: column; gap: 16px; padding: 32px; flex-grow: 1; }
+.project-content h2 { font-size: 24px; line-height: 32px; }
+.project-subtitle { color: var(--primary); font-size: 18px; line-height: 26px; }
+.project-facts { margin: auto 0 0; }
+.project-facts div { display: flex; justify-content: space-between; gap: 16px; padding: 8px 0; border-top: 1px solid var(--line); }
+.project-facts dt { color: var(--muted); }
+.project-facts dd { margin: 0; text-align: right; }
+.project-detail-link { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-top: 16px; }
+.project-wide .project-content { background: var(--low); }
+.project-wide h2 { font-size: 32px; line-height: 40px; }
+.project-wide .comparison-control { padding: 12px 16px; }
+.gallery-equipment { background: var(--lowest); }
+.gallery-equipment .section-heading h2 { font-size: 32px; line-height: 40px; }
+.equipment-grid { display: grid; gap: 24px; margin-top: 32px; }
+.equipment-grid article { background: var(--low); padding: 32px; }
+.equipment-grid h3 { font-family: Inter, sans-serif; font-size: 18px; line-height: 26px; margin-bottom: 8px; }
+@media (min-width: 768px) {
+ .gallery-grid, .equipment-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+ .project-wide { grid-column: 1 / -1; }
+}
+@media (min-width: 1024px) {
+ .gallery-intro h1 { font-size: 48px; line-height: 54px; }
+ .gallery-studio { text-align: right; }
+ .project-wide { display: grid; grid-template-columns: minmax(0,7fr) minmax(0,5fr); min-height: 560px; }
+ .project-wide .project-content { padding: 64px; }
+ .project-wide .comparison-enhanced .comparison-images { height: 500px; }
+ .project-wide .comparison figure img { height: 500px; }
+ .project-classic { grid-template-columns: minmax(0,4fr) minmax(0,8fr); min-height: 460px; }
+ .project-classic .project-visual { order: 2; }
+ .project-classic .project-visual > img { height: 100%; position: absolute; inset: 0; }
+ .equipment-grid { grid-template-columns: repeat(4,minmax(0,1fr)); }
+}
