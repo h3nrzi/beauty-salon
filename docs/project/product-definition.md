@@ -43,30 +43,54 @@ Owner and final acceptance owner: Pending confirmation.
   - cancel an appointment;
   - reschedule an appointment;
   - view appointment history.
+- In v1, customers book only for themselves; booking for another person is out of scope.
 - Payment is not collected online in the first release; payment happens at the salon.
 
-### Confirmed booking-window rules
+### Confirmed booking-window and appointment rules
 
 - Customers can book up to **90 days** in advance.
 - Same-day bookings require at least **60 minutes** of lead time.
 - Availability must respect the selected service set and specialist choice. The detailed slot/duration rules are still to be defined.
 - Choosing “any available specialist” is a supported customer path, not a fallback error state.
+- A successful booking is confirmed immediately; there is no manual salon approval step in v1.
+- Customer cancellation and rescheduling are allowed until **24 hours before** the appointment.
+- Inside the final 24 hours, customers cannot self-cancel or self-reschedule and must contact the salon.
+- Rescheduling changes only the appointment date/time. The selected services and assigned/selected specialist stay unchanged.
+- Changing services or specialist requires cancelling the existing appointment and creating a new booking.
+- Customer-visible lifecycle for v1 is centered on:
+  - Confirmed;
+  - Completed;
+  - Cancelled;
+  - No-show.
 
 ### Confirmed salon operations
 
-The first release includes only the operational core needed to run the booking product:
+The first release includes only the operational core needed to run the booking product.
 
-- manage appointments;
-- manage services;
-- manage specialists;
-- manage working hours / availability.
+Staff can:
 
-The exact staff roles, permissions and operational actions still need product definition. Do not infer an engineering model yet.
+- search and view appointments;
+- cancel an appointment;
+- reschedule an appointment;
+- reassign the specialist when the appointment remains valid for that specialist;
+- mark an appointment Completed;
+- mark an appointment No-show.
+
+The salon can also manage:
+
+- services;
+- specialists;
+- working hours / availability.
+
+CRM, complex internal notes, marketing workflows and broader salon-management capabilities remain outside v1.
+
+The exact staff roles/permission boundaries still need product definition. Do not infer an engineering model yet.
 
 ### Explicitly outside the first release
 
 - Marketplace or multiple salons.
 - Multiple branches.
+- Booking for another person.
 - Online deposits or full online payment.
 - Loyalty program.
 - Public reviews/ratings.
@@ -81,13 +105,13 @@ The exact staff roles, permissions and operational actions still need product de
 
 - Exact public pages and discovery journeys.
 - How multi-service duration and specialist eligibility affect slot availability.
-- Cancellation and rescheduling policy.
 - Customer identity/sign-in product experience.
-- Whether customers can book for another person.
-- Appointment states visible to customers and staff.
-- Staff/admin operational actions and permission boundaries.
+- Staff/admin role and permission boundaries.
 - What happens when availability changes during booking.
 - Language/locale and content/brand constraints.
+- Responsive/mobile expectations.
+- Accessibility target.
+- Asset ownership/rights.
 
 Do not choose WordPress architecture, content types, storage, authentication implementation, form infrastructure or other engineering details during this phase.
 
@@ -102,6 +126,10 @@ Known product constraints:
 - A booking may include multiple services.
 - Customers may select a specific specialist or any available specialist.
 - Booking horizon is 90 days and same-day lead time is 60 minutes.
+- Customer self-cancellation/self-rescheduling closes 24 hours before the appointment.
+- Rescheduling preserves the booked services and specialist; service/specialist changes require a new booking.
+- Booking for another person is not supported in v1.
+- Successful bookings are immediately confirmed.
 - Booking availability must eventually reflect real salon/service/specialist working constraints; the detailed business rules are still pending.
 - Customer and appointment information introduces privacy expectations that must be defined before engineering specification.
 
@@ -112,7 +140,8 @@ Pending:
 - Responsive/mobile expectations.
 - Accessibility target.
 - Asset ownership/rights.
-- Booking/cancellation/rescheduling policies.
+- Staff/admin role boundaries.
+- Availability-conflict behavior.
 - Operational acceptance expectations.
 
 Unknowns remain explicit until agreed.
@@ -129,6 +158,6 @@ Status: **Not approved yet.**
 
 Confirmed direction:
 
-**Single women's salon + public discovery + multi-service real booking + specific/any specialist choice + 90-day horizon + 60-minute same-day lead + authenticated appointment management + core salon operations + pay at salon.**
+**Single women's salon + public discovery + multi-service real booking + specific/any specialist choice + 90-day horizon + 60-minute same-day lead + immediate confirmation + 24-hour customer change cutoff + authenticated appointment management + core salon operations + pay at salon.**
 
 The remaining product questions must be resolved before scope freeze and before generating the Stitch brief.
