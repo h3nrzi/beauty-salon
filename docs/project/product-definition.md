@@ -20,7 +20,7 @@ Discover salon/services
 
 Business outcome: make discovering the salon and booking/managing a real appointment straightforward without turning the first release into a marketplace, payments product or full salon-management suite.
 
-Owner and final acceptance owner: Pending confirmation.
+Owner and final human acceptance owner: **h3nrzi**.
 
 ## Scope
 
@@ -197,15 +197,16 @@ CRM, complex internal notes, marketing workflows and broader salon-management ca
 - Customer mobile-number change flow.
 - Complex staff role hierarchies.
 
-### Still to define
+### Confirmed presentation and release constraints
 
-- Exact salon brand direction and content inputs.
-- Responsive/mobile priorities.
-- Accessibility target.
-- Asset ownership/rights.
-- Exact customer support/contact expectation inside the final 24-hour change window.
-- Privacy/release expectations for customer data and booking communications.
-- Final owner for product and human acceptance.
+- Brand direction: modern, feminine and premium without becoming theatrical or ultra-luxury.
+- Prefer a light/neutral visual foundation with a warm accent; avoid defaulting to stereotyped pink/gold beauty branding.
+- Booking and My Appointments are **mobile-first** product experiences.
+- Primary customer/staff flows target **WCAG 2.2 AA** accessibility.
+- Stitch/reference imagery may be used during design exploration, but production acceptance requires media with explicit approved usage rights.
+- Inside the final 24-hour change window, the customer sees a clear salon-contact path; v1 does not introduce an exceptional online override flow.
+- Collect/display only customer and appointment information necessary for the agreed product experience; detailed privacy/security implementation is deferred to engineering.
+- Production release must not silently claim unresolved legal/privacy, messaging/delivery or media-rights prerequisites as complete.
 
 Do not choose WordPress architecture, content types, storage, authentication implementation, SMS provider, form infrastructure or other engineering details during this phase.
 
@@ -236,17 +237,16 @@ Known product constraints:
 - Confirmed bookings retain their booking-time service prices.
 - Customer and appointment information introduces privacy expectations that must be defined before engineering specification.
 
-Pending:
+Confirmed final product constraints:
 
-- Brand direction and content inputs.
-- Responsive/mobile priorities.
-- Accessibility target.
-- Asset ownership/rights.
-- Customer support policy for locked appointments.
-- Operational acceptance expectations.
-- Final owner and human acceptance owner.
+- Modern/feminine/premium visual direction, avoiding generic beauty clichés.
+- Mobile-first Booking and My Appointments.
+- WCAG 2.2 AA target for primary customer/staff flows.
+- Prototype/reference media is allowed during Stitch exploration; production media requires explicit rights clearance.
+- Locked appointments direct customers to salon contact rather than a special online override.
+- Product owner and human acceptance owner: h3nrzi.
 
-Unknowns remain explicit until agreed.
+Remaining implementation/release details are intentionally deferred to later workflow stages rather than treated as open product scope.
 
 ## Acceptance planning
 
@@ -256,10 +256,10 @@ At this stage, product acceptance means the agreed customer journeys, pages, act
 
 ## Scope approval
 
-Status: **Not approved yet.**
+Status: **Approved / scope frozen — 2026-10-08.**
 
 Confirmed direction:
 
 **Single women's salon + Persian/RTL public discovery + real multi-service booking + mobile-centered identity + specific/any specialist choice + one-specialist consecutive service set + explicit pricing + salon/specialist availability + 90-day horizon + 60-minute same-day lead + immediate confirmation + stale-slot recovery + 24-hour customer change cutoff + authenticated appointment management + Manager/Staff core operations + pay at salon.**
 
-Only final brand/content, accessibility/responsive, asset-rights, customer-support and acceptance-owner decisions remain before scope freeze.
+Product scope is frozen. Changes after this point must be recorded explicitly as scope changes rather than silently introduced by Stitch or engineering.
