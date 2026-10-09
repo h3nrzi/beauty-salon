@@ -45,7 +45,8 @@
 - Human acceptance gate: Owner h3nrzi; pending design/implementation evidence
 - Production-release gate: Pending
 - Booking iterations 01–04: Completed; final stale-slot patch accepted
-- Blockers / capability gaps: Public discovery pages through Contact and Booking are frozen; known literal-content/media/token cleanup is deterministic and deferred to export audit/engineering handoff
+- Booking CTA helper consistency: Approved deterministic cleanup — «مرحله بعدی…» helper text stays below the primary CTA across all Booking stages; does not reopen Stitch baseline
+- Blockers / capability gaps: Public discovery pages through Contact and Booking are frozen; known literal-content/media/token/UI-consistency cleanup is deterministic and deferred to export audit/engineering handoff
 - Next action: Design My Appointments using the frozen public-page + Booking visual references.
 
 Replace pending entries with links to existing artifacts as work progresses.
