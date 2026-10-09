@@ -58,6 +58,7 @@
 - Manager Appointments iterations 01–07: Desktop completed and frozen as `references/ara-manager-appointments-desktop-v1/README.md`
 - Sequencing decision: Freeze Manager Appointments desktop first; mobile/tablet is intentionally deferred until desktop is complete
 - Manager Appointments desktop source: Organized at `references/manager-appointments-desktop/` with canonical English screen folders, `reference.html`, `screenshot.png`, root `design-system.md`, and preserved Stitch mapping
-- Next action: Design Manager Appointments mobile/tablet using the frozen desktop source as the visual/interaction reference.
+- Manager Appointments mobile/tablet iteration: Pending
+- Next action: Run `docs/project/stitch-prompts/24-manager-appointments-mobile-tablet.md` using the organized frozen desktop source, then review responsive operational states.
 
 Replace pending entries with links to existing artifacts as work progresses.
