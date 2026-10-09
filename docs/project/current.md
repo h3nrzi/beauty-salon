@@ -35,7 +35,8 @@
 - Gallery baseline: Frozen as `references/ara-gallery-soft-editorial-v1/README.md`
 - About baseline: Frozen as `references/ara-about-soft-editorial-v1/README.md`
 - Contact baseline: Frozen as `references/ara-contact-soft-editorial-v1/README.md`
-- Booking baseline: Frozen as `references/ara-booking-soft-editorial-v1/README.md`; whole-product visual baseline/export audit still pending
+- Booking baseline: Frozen as `references/ara-booking-soft-editorial-v1/README.md`
+- My Appointments baseline: Frozen as `references/ara-my-appointments-soft-editorial-v1/README.md`; whole-product visual baseline/export audit still pending
 - Engineering handoff: Pending
 - MATT configuration confirmed once: Pending
 - Relevant decisions / glossary / ADRs: Pending
@@ -48,7 +49,7 @@
 - Booking CTA helper consistency: Approved deterministic cleanup — «مرحله بعدی…» helper text stays below the primary CTA across all Booking stages; does not reopen Stitch baseline
 - Blockers / capability gaps: Public discovery pages through Contact and Booking are frozen; known literal-content/media/token/UI-consistency cleanup is deterministic and deferred to export audit/engineering handoff
 - My Appointments iteration 01: Visual direction accepted; baseline not frozen
-- My Appointments iteration 02: Mobile state coverage is now substantially complete; freeze remains blocked by missing desktop parity and residual contract/content drift
-- Next action: Run `docs/project/stitch-prompts/16-my-appointments-final-freeze.md`; review patched mobile states + required desktop screens, then freeze My Appointments if compliant.
+- My Appointments iterations 01–03: Completed; mobile + desktop visual/interaction baseline frozen as `references/ara-my-appointments-soft-editorial-v1/README.md`
+- Next action: Run `docs/project/stitch-prompts/17-manager-appointments.md` to design the Manager appointment-operations experience.
 
 Replace pending entries with links to existing artifacts as work progresses.
