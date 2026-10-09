@@ -75,3 +75,18 @@ During export audit / engineering handoff normalize all previously recorded drif
 Mobile and desktop visual intent is frozen.
 
 Final implementation acceptance must still verify realistic browser/device viewports, keyboard behavior, focus states, Persian/RTL rendering and all interactive states.
+
+
+## Deterministic UI consistency cleanup
+
+### Next-step helper consistency
+
+Across Booking stages, helper copy such as «مرحله بعدی…» must use one consistent placement.
+
+Approved implementation rule:
+
+- primary CTA remains the dominant action;
+- next-step helper text is always placed **below** the primary CTA;
+- helper text is RTL-aligned, visually secondary and uses consistent spacing;
+- do not alternate between side-by-side and below-button placement across stages;
+- this is an implementation/handoff cleanup and does not reopen the frozen Stitch baseline.
