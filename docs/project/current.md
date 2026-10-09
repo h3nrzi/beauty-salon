@@ -50,6 +50,7 @@
 - Blockers / capability gaps: Public discovery pages through Contact and Booking are frozen; known literal-content/media/token/UI-consistency cleanup is deterministic and deferred to export audit/engineering handoff
 - My Appointments iteration 01: Visual direction accepted; baseline not frozen
 - My Appointments iterations 01–03: Completed; mobile + desktop visual/interaction baseline frozen as `references/ara-my-appointments-soft-editorial-v1/README.md`
-- Next action: Run `docs/project/stitch-prompts/17-manager-appointments.md` to design the Manager appointment-operations experience.
+- Manager Appointments iteration 01: Visual direction accepted; baseline not frozen because mutation/conflict/mobile states are missing and the first pass contains scope drift (manual booking, unsupported statuses, payment/CRM/SMS/resource/analytics features)
+- Next action: Run `docs/project/stitch-prompts/18-manager-appointments-completion.md` against the existing Manager Appointments design, then review complete operational states for freeze.
 
 Replace pending entries with links to existing artifacts as work progresses.
