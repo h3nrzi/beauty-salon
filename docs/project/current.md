@@ -52,8 +52,9 @@
 - My Appointments iterations 01–03: Completed; mobile + desktop visual/interaction baseline frozen as `references/ara-my-appointments-soft-editorial-v1/README.md`
 - Manager Appointments iteration 01: Visual direction accepted; baseline not frozen
 - Manager Appointments iteration 02: Desktop operation-state coverage became substantially complete
-- Manager Appointments iteration 03: Desktop structure is now near-freeze; remaining work is desktop-only contract/content cleanup
+- Manager Appointments iteration 03: Desktop structure reached freeze-candidate coverage
+- Manager Appointments iteration 04: Desktop layouts/interactions are accepted; freeze still blocked only by residual semantic/content drift (payment/CRM/resource/SMS/clinical/technical wording and stale-grid duration labeling)
 - Sequencing decision: Freeze Manager Appointments desktop first; mobile/tablet is intentionally deferred until desktop is complete
-- Next action: Run `docs/project/stitch-prompts/20-manager-appointments-desktop-final-freeze.md`; review desktop-only corrected states and freeze the desktop baseline if compliant.
+- Next action: Run `docs/project/stitch-prompts/21-manager-appointments-desktop-semantic-cleanup.md`; review the same 13 desktop screens for semantic cleanup only, then freeze Desktop if compliant.
 
 Replace pending entries with links to existing artifacts as work progresses.
