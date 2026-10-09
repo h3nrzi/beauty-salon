@@ -47,7 +47,7 @@
 - Booking iterations 01–04: Completed; final stale-slot patch accepted
 - Booking CTA helper consistency: Approved deterministic cleanup — «مرحله بعدی…» helper text stays below the primary CTA across all Booking stages; does not reopen Stitch baseline
 - Blockers / capability gaps: Public discovery pages through Contact and Booking are frozen; known literal-content/media/token/UI-consistency cleanup is deterministic and deferred to export audit/engineering handoff
-- My Appointments iteration: Pending
-- Next action: Run `docs/project/stitch-prompts/14-my-appointments.md` using the frozen public-page + Booking references, then review mobile-first appointment management states.
+- My Appointments iteration 01: Visual direction accepted; baseline not frozen because desktop/history/historical-detail/success evidence is incomplete and literal content drifts from the frozen product contract
+- Next action: Run `docs/project/stitch-prompts/15-my-appointments-completion.md` against the existing design, then review complete mobile + desktop My Appointments states for freeze.
 
 Replace pending entries with links to existing artifacts as work progresses.
