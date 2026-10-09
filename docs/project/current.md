@@ -34,7 +34,8 @@
 - Specialists baseline: Frozen as `references/ara-specialists-soft-editorial-v1/README.md`
 - Gallery baseline: Frozen as `references/ara-gallery-soft-editorial-v1/README.md`
 - About baseline: Frozen as `references/ara-about-soft-editorial-v1/README.md`
-- Contact baseline: Frozen as `references/ara-contact-soft-editorial-v1/README.md`; whole-product visual baseline/export audit still pending
+- Contact baseline: Frozen as `references/ara-contact-soft-editorial-v1/README.md`
+- Booking baseline: Frozen as `references/ara-booking-soft-editorial-v1/README.md`; whole-product visual baseline/export audit still pending
 - Engineering handoff: Pending
 - MATT configuration confirmed once: Pending
 - Relevant decisions / glossary / ADRs: Pending
@@ -43,10 +44,8 @@
 - Local implementation gate and evidence: Pending
 - Human acceptance gate: Owner h3nrzi; pending design/implementation evidence
 - Production-release gate: Pending
-- Booking iteration 01: Visual direction accepted but not frozen
-- Booking iteration 02: Required edge states and desktop evidence added; freeze blocked by stale-slot/desktop contract issues
-- Booking iteration 03: Mobile contract improved; freeze still pending\n- Booking iteration 04: Desktop stages 1–5 + success are now structurally acceptable; only stale-slot initial state remains blocked because 11:30 is still preselected
-- Blockers / capability gaps: Public discovery pages through Contact are frozen; Booking has one remaining visual-state blocker: stale-slot recovery must begin with zero replacement-time preselection
-- Next action: Run `docs/project/stitch-prompts/13-stale-slot-initial-state-patch.md`; review only that one screen, then freeze Booking if no replacement time is preselected and Continue is disabled.
+- Booking iterations 01–04: Completed; final stale-slot patch accepted
+- Blockers / capability gaps: Public discovery pages through Contact and Booking are frozen; known literal-content/media/token cleanup is deterministic and deferred to export audit/engineering handoff
+- Next action: Design My Appointments using the frozen public-page + Booking visual references.
 
 Replace pending entries with links to existing artifacts as work progresses.
