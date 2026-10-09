@@ -1,73 +1,50 @@
-# Stitch Prompt 24 — Manager Appointments Mobile / Tablet
+# Stitch Prompt 24 — Manager Appointments responsive selection workflow
 
-Design the **Manager Appointments Mobile / Tablet** experience for آرا by adapting the **existing Manager Appointments desktop screens in this Stitch project**.
+This file is **not** a single prompt to paste into Stitch.
 
-Those existing desktop screens are the visual and interaction reference for this responsive pass.
+Stitch only receives reliable visual context from the screen(s) selected on the canvas. Therefore, Manager Appointments responsive work must be done in **small selected-screen batches**.
 
-Do **not** redesign the manager product.
+## Rule
 
-The goal is to create a compact responsive operational experience that preserves the same Manager Appointments product model without squeezing desktop tables into small screens.
+For each step below:
 
-## Visual reference
+1. select only the listed existing desktop screen(s) in Stitch;
+2. paste only that step's prompt;
+3. review the generated responsive screen(s);
+4. do not ask Stitch to infer unseen screens, GitHub files, repository paths, or product documentation.
 
-Continue from the **existing Manager Appointments desktop screens already present in this Stitch project**.
+Do not redesign the desktop baseline.
 
-Use those existing desktop screens as the visual and interaction reference for the responsive adaptation.
+Do not introduce new product capabilities.
 
-Do not assume access to GitHub, repository paths, local files, or engineering documentation.
+We will complete **Mobile first**. Tablet will be handled after the Mobile baseline is reviewed/frozen.
 
-Carry forward:
+---
 
-- visual hierarchy;
-- status-chip language;
-- appointment card/detail language;
-- destructive-action treatment;
-- reschedule/reassignment semantics;
-- conflict/recovery semantics;
-- Soft Editorial operational styling.
+# 24A — Mobile workspace + search/filter
 
-## Role and scope
+## Select in Stitch
 
-This experience is for **Manager**.
+Select these existing desktop screens:
 
-Manager may:
+- Manager Appointments workspace/list
+- Manager Appointments search/filter result
 
-- view all appointments;
-- search appointments;
-- open appointment details;
-- cancel appointments;
-- reschedule appointments;
-- reassign specialist when valid.
+## Paste this prompt
 
-Do not add:
+Adapt the selected Manager Appointments desktop screens into a **mobile experience around 390 CSS px**.
 
-- manual/new appointment creation;
-- CRM;
-- analytics;
-- payment/settlement management;
-- inventory;
-- payroll;
-- marketing;
-- role administration;
-- chair/station management;
-- print/receipt workflows.
+Preserve the selected screens' visual language, RTL hierarchy, status-chip treatment and operational tone.
 
-## Responsive targets
+Do not create a miniature desktop table.
 
-Design:
+Create:
 
-- **mobile** around 390 CSS px;
-- **tablet** around 768 CSS px.
+1. a mobile appointments workspace/list;
+2. a mobile search/filter result state;
+3. an open-filter state using a mobile-friendly sheet/drawer/expandable pattern.
 
-The interface must be operationally useful, not a miniature desktop dashboard.
-
-Do not horizontally compress the desktop table.
-
-## 1. Mobile / tablet appointments list
-
-Transform the desktop workspace into readable cards or compact rows.
-
-Each appointment should support:
+Appointment cards should prioritize:
 
 - time;
 - customer name;
@@ -77,20 +54,7 @@ Each appointment should support:
 - total duration;
 - status;
 - booked total price;
-- open-detail action.
-
-Statuses only:
-
-- تأییدشده
-- انجام‌شده
-- لغوشده
-- عدم حضور
-
-Do not add extra workflow/payment statuses.
-
-## 2. Search and filters
-
-Provide a compact mobile/tablet search/filter pattern.
+- open-details action.
 
 Search by:
 
@@ -104,17 +68,51 @@ Filters:
 - status;
 - specialist.
 
-On mobile, filters may use:
+Statuses only:
 
-- filter drawer;
-- bottom sheet;
-- compact expandable controls.
+- تأییدشده
+- انجام‌شده
+- لغوشده
+- عدم حضور
 
-Do not create a dense row of desktop dropdowns.
+Do not add:
 
-## 3. Appointment detail
+- manual/new appointment creation;
+- payment/settlement status;
+- CRM/loyalty;
+- analytics;
+- chair/resource management;
+- print actions.
 
-Create a mobile/tablet detail screen showing:
+Keep the Persian RTL UI touch-friendly with no horizontal overflow.
+
+Return only the mobile workspace/list, search/filter result and open-filter state.
+
+---
+
+# 24B — Mobile active detail + cancel
+
+## Select in Stitch
+
+Select these existing desktop screens:
+
+- active appointment detail
+- cancel confirmation
+- cancelled read-only detail
+
+## Paste this prompt
+
+Adapt the selected Manager Appointments desktop screens into a **mobile experience around 390 CSS px**.
+
+Preserve the same visual language and interaction semantics.
+
+Create:
+
+1. active appointment detail;
+2. cancel confirmation;
+3. cancelled read-only detail/result.
+
+Active detail should show:
 
 - reference ID;
 - customer name;
@@ -126,246 +124,209 @@ Create a mobile/tablet detail screen showing:
 - total duration;
 - booked total price;
 - status;
-- `پرداخت در سالن`.
+- «پرداخت در سالن».
 
-For Confirmed appointments, expose manager actions:
+For a Confirmed appointment, show manager actions:
 
 - جابه‌جایی زمان;
 - تغییر متخصص;
 - لغو نوبت.
 
-Do not show:
+Cancel confirmation must be clearly destructive and show the appointment identity before confirmation.
 
-- CRM;
-- loyalty;
-- rating;
+After cancellation:
+
+- status becomes لغوشده;
+- the appointment remains a read-only historical record;
+- no replacement booking is created.
+
+Do not add:
+
+- fees/refunds/credits;
 - payment status;
 - invoice;
+- CRM/loyalty;
 - chair/studio/resource assignment;
 - SMS guarantees.
 
-## 4. Manager cancel
+Return only these three mobile screens.
 
-Create compact mobile/tablet cancel confirmation.
+---
 
-Show:
+# 24C — Mobile reschedule flow
 
-- appointment identity;
-- customer;
-- services;
-- specialist;
-- date/time;
-- destructive confirmation.
+## Select in Stitch
 
-After success:
+Select these existing desktop screens:
 
-- status is Cancelled;
-- appointment becomes read-only history;
-- no replacement booking is created.
+- reschedule date/time
+- reschedule review
+- reschedule stale recovery
 
-No fee/refund/credit/payment logic.
+## Paste this prompt
 
-## 5. Manager reschedule
+Adapt the selected Manager Appointments reschedule screens into a **mobile flow around 390 CSS px**.
 
-Create a compact reschedule flow.
+Preserve the selected screens' visual language and the existing appointment summary.
+
+Create:
+
+1. reschedule date/time selection;
+2. reschedule review/confirmation;
+3. stale replacement recovery.
 
 Rules:
 
-- date/time only;
-- services unchanged;
-- specialist unchanged;
-- duration unchanged;
-- booked price unchanged;
-- appointment starts use the **30-minute grid**.
+- reschedule changes date/time only;
+- services remain unchanged;
+- specialist remains unchanged;
+- total duration remains unchanged;
+- booked price remains unchanged;
+- appointment starts use the 30-minute grid.
 
-Show:
+Date/time selection should show:
 
-- current date/time;
+- current appointment time;
 - replacement date;
 - available start times;
-- selected new time;
-- review/confirm.
+- explicit selected replacement.
 
-Do not change services or specialist here.
+Review should show:
 
-## 6. Reschedule stale recovery
+- زمان فعلی;
+- زمان جدید انتخاب‌شده;
+- unchanged services;
+- unchanged specialist;
+- unchanged total duration;
+- unchanged booked total price;
+- «پرداخت در سالن»;
+- final confirmation.
 
-If the chosen replacement becomes unavailable:
+If the selected replacement becomes unavailable:
 
 - original appointment remains unchanged;
 - lost replacement is shown unavailable;
-- fresh times are shown;
-- none selected initially;
-- Continue disabled until explicit selection.
+- show fresh available start times;
+- preselect none;
+- Continue remains disabled until the manager explicitly selects a new time.
 
-Do not silently choose another time.
+Do not auto-pick a replacement.
 
-## 7. Specialist reassignment
+Do not add approval workflows, SMS/calendar promises, payment state, HTTP/protocol/database terminology.
 
-Create compact reassignment screens.
+Return only these three mobile screens.
 
-Show:
+---
 
-- current specialist;
-- services;
-- unchanged date/time;
-- unchanged duration;
-- unchanged booked price;
-- eligible + available replacement specialists.
+# 24D — Mobile specialist reassignment + conflict
 
-A replacement specialist must:
+## Select in Stitch
 
-- perform all booked services;
-- be available for the full appointment interval.
+Select these existing desktop screens:
+
+- specialist reassignment
+- invalid/unavailable reassignment
+- concurrent-change conflict
+
+## Paste this prompt
+
+Adapt the selected Manager Appointments operational screens into a **mobile experience around 390 CSS px**.
+
+Create:
+
+1. specialist reassignment;
+2. invalid/unavailable reassignment;
+3. concurrent-change conflict recovery.
+
+For reassignment:
+
+- show current specialist;
+- show booked services;
+- date/time remain unchanged;
+- total duration remains unchanged;
+- booked total price remains unchanged;
+- show eligible and available replacement specialists;
+- require explicit manager selection and confirmation.
+
+A replacement specialist is valid only if they:
+
+- can perform all booked services;
+- are available for the full appointment interval.
 
 Do not change date/time or services.
 
-## 8. Invalid / unavailable reassignment
+Invalid/unavailable state should explain only:
 
-Create a clear compact state for:
+- specialist is not eligible for all booked services; or
+- specialist is not available for the full interval.
 
-- specialist not eligible for all booked services;
-- specialist unavailable for full appointment interval.
+For concurrent-change conflict, use product language only:
 
-Current appointment remains unchanged.
-
-Allow:
-
-- choose another specialist;
-- cancel reassignment.
-
-## 9. Concurrent-change conflict
-
-Create mobile/tablet conflict recovery using product language only:
-
-**«این نوبت از آخرین بازبینی شما تغییر کرده است. عملیات فعلی متوقف شد تا اطلاعات جدید بازنویسی نشود. آخرین وضعیت را بررسی کنید و در صورت نیاز دوباره اقدام کنید.»**
+«این نوبت از آخرین بازبینی شما تغییر کرده است. عملیات فعلی متوقف شد تا اطلاعات جدید بازنویسی نشود. آخرین وضعیت را بررسی کنید و در صورت نیاز دوباره اقدام کنید.»
 
 Actions:
 
 - review latest appointment;
 - return to appointments.
 
-Do not expose:
+Do not expose HTTP codes, ETag, version tokens, database terminology, ratings, certificates, CRM or finance.
 
-- HTTP codes;
-- ETag;
-- revision tokens;
-- database language.
+Return only these three mobile screens.
 
-## 10. Terminal appointment detail
+---
 
-Provide read-only compact examples for:
+# 24E — Mobile terminal-state details
 
-- Completed;
-- Cancelled;
-- No-show.
+## Select in Stitch
 
-Show only:
+Select these existing desktop screens:
+
+- Completed read-only detail
+- Cancelled read-only detail
+- No-show read-only detail
+
+## Paste this prompt
+
+Adapt the selected terminal Manager Appointments desktop screens into **mobile read-only detail screens around 390 CSS px**.
+
+Create one compact detail screen for each final state:
+
+- انجام‌شده;
+- لغوشده;
+- عدم حضور.
+
+Each should show only:
 
 - final status;
 - reference ID;
 - customer;
 - booked services;
 - specialist;
-- date/time;
-- duration;
+- historical date/time;
+- total duration;
 - booked total price.
 
-Do not expose reversible actions.
+Use «پرداخت در سالن» only if payment context is useful.
 
-## 11. Navigation
+Terminal states must not expose reversible manager actions.
 
-Adapt the Manager navigation for mobile/tablet.
+Do not add:
 
-Confirmed manager areas only:
-
-- نوبت‌ها
-- خدمات
-- متخصصان
-- ساعات کاری سالن
-- برنامه کاری متخصصان
-- زمان‌های استراحت
-- مرخصی‌ها
-
-Possible patterns:
-
-- drawer;
-- compact sidebar on tablet;
-- menu sheet on mobile.
-
-Do not create bottom navigation with unrelated product areas.
-
-## 12. Interaction priority
-
-Mobile/tablet should optimize for:
-
-- quick lookup;
-- reading appointment details;
-- focused operational actions;
-- clear destructive confirmations.
-
-Do not attempt to show every desktop column at once.
-
-## 13. Accessibility
-
-Target WCAG 2.2 AA.
-
-Show intent for:
-
-- visible focus;
-- touch-friendly controls;
-- status not color-only;
-- accessible filters;
-- destructive-action clarity;
-- readable Persian RTL;
-- no horizontal overflow;
-- dialogs/sheets with clear focus management.
-
-## 14. Content truth
-
-Use neutral fixture data.
-
-Do not introduce:
-
-- branches;
-- spa/clinic positioning;
-- ratings;
-- certificates;
+- payment settlement/accounting;
+- invoice/POS;
 - CRM/loyalty;
-- clinical/material claims;
-- SMS promises;
-- payment-state semantics;
-- mock business facts as approved data.
+- resource/chair/studio assignment;
+- print/receipt;
+- clinical/credential claims.
 
-## Required output
+Return only these three mobile screens.
 
-Return a **Manager Appointments Mobile / Tablet set** containing:
+---
 
-### Mobile
-- appointments list/search;
-- filters open state;
-- active appointment detail;
-- cancel confirmation/result;
-- reschedule selection/review;
-- stale reschedule recovery;
-- specialist reassignment;
-- invalid/unavailable reassignment;
-- concurrent-change conflict;
-- Completed detail;
-- Cancelled detail;
-- No-show detail.
+## Mobile freeze gate
 
-### Tablet
-Provide representative screens for:
-- appointments workspace/list;
-- search/filter;
-- active detail;
-- reschedule;
-- reassignment;
-- conflict/locked terminal state.
+After 24A–24E are reviewed and accepted, freeze Manager Appointments Mobile.
 
-Do not regenerate desktop screens.
+Then create a separate Tablet adaptation workflow using selected Desktop + frozen Mobile screens as references.
 
-Do not introduce new product capabilities.
-
-The result must feel like the responsive operational extension of the frozen Manager Appointments desktop baseline.
+Do not start Tablet before Mobile is accepted.
