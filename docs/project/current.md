@@ -54,8 +54,9 @@
 - Manager Appointments iteration 02: Desktop operation-state coverage became substantially complete
 - Manager Appointments iteration 03: Desktop structure reached freeze-candidate coverage
 - Manager Appointments iteration 04: Desktop layouts/interactions accepted; semantic cleanup attempted
-- Manager Appointments iteration 05: Most desktop structure remains accepted, but semantic cleanup was not applied consistently; only six targeted desktop screens still need patching
+- Manager Appointments iteration 05: Targeted desktop cleanup requested
+- Manager Appointments iteration 06: Most targeted cleanup succeeded; only Search/Filter manual-booking shortcut and Reschedule Review preapproval/notification wording remain before desktop freeze
 - Sequencing decision: Freeze Manager Appointments desktop first; mobile/tablet is intentionally deferred until desktop is complete
-- Next action: Run `docs/project/stitch-prompts/22-manager-appointments-targeted-desktop-patch.md`; review only the affected desktop screens, then freeze Manager Appointments Desktop if compliant.
+- Next action: Run `docs/project/stitch-prompts/23-manager-appointments-final-two-screen-patch.md`; review only Search/Filter + Reschedule Review, then freeze Manager Appointments Desktop if compliant.
 
 Replace pending entries with links to existing artifacts as work progresses.
