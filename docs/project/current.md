@@ -58,7 +58,9 @@
 - Manager Appointments iterations 01–07: Desktop completed and frozen as `references/ara-manager-appointments-desktop-v1/README.md`
 - Sequencing decision: Freeze Manager Appointments desktop first; mobile/tablet is intentionally deferred until desktop is complete
 - Manager Appointments desktop source: Organized at `references/manager-appointments-desktop/` with canonical English screen folders, `reference.html`, `screenshot.png`, root `design-system.md`, and preserved Stitch mapping
-- Manager Appointments mobile/tablet iteration: Pending
-- Next action: Run `docs/project/stitch-prompts/24-manager-appointments-mobile-tablet.md` using the organized frozen desktop source, then review responsive operational states.
+- Manager Appointments responsive iteration: Pending
+- Stitch constraint: Responsive generation is driven by explicitly selected canvas screens; prompts must not rely on unseen project/repository context
+- Responsive sequencing: Complete and freeze Mobile first in selected-screen batches; Tablet follows afterward
+- Next action: Run Step 24A in `docs/project/stitch-prompts/24-manager-appointments-mobile-tablet.md` by selecting the desktop workspace/list + search/filter screens in Stitch.
 
 Replace pending entries with links to existing artifacts as work progresses.
