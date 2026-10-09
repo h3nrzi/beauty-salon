@@ -29,11 +29,24 @@ SHA-256:
 | `_12` | `completed-read-only-detail` |
 | `_13` | `no-show-read-only-detail` |
 
-## Source integrity
+## Organized source
 
-The frozen reference accepts the paired `screen.png` + `code.html` artifacts for each screen.
+The frozen desktop source is now organized at:
 
-The raw Stitch folder names are temporary import identifiers. When the source is uploaded to GitHub, reorganize them using the canonical English names above while preserving traceability to this mapping.
+`references/manager-appointments-desktop/`
+
+Canonical structure:
+
+- `README.md` — source map and authority boundary
+- `design-system.md` — Stitch design-system export
+- `screens/<canonical-name>/reference.html` — HTML reference
+- `screens/<canonical-name>/screenshot.png` — visual reference
+
+The original Stitch folder mapping is preserved in the source README, so traceability back to `_1`–`_13` remains explicit.
+
+Source organization commit:
+
+`e136154a3c22d2addcc2b05f30bcb81a11b4035e`
 
 ## Accepted semantics
 
