@@ -51,7 +51,9 @@
 - My Appointments iteration 01: Visual direction accepted; baseline not frozen
 - My Appointments iterations 01–03: Completed; mobile + desktop visual/interaction baseline frozen as `references/ara-my-appointments-soft-editorial-v1/README.md`
 - Manager Appointments iteration 01: Visual direction accepted; baseline not frozen
-- Manager Appointments iteration 02: Desktop operation-state coverage is substantially complete; freeze remains blocked by missing compact responsive evidence, invalid 15-minute-offset reschedule starts, deposit/payment semantics and residual CRM/accounting/SMS/resource/implementation-detail drift
-- Next action: Run `docs/project/stitch-prompts/19-manager-appointments-final-freeze.md`; review corrected desktop states + compact mobile/tablet list/detail, then freeze Manager Appointments if compliant.
+- Manager Appointments iteration 02: Desktop operation-state coverage became substantially complete
+- Manager Appointments iteration 03: Desktop structure is now near-freeze; remaining work is desktop-only contract/content cleanup
+- Sequencing decision: Freeze Manager Appointments desktop first; mobile/tablet is intentionally deferred until desktop is complete
+- Next action: Run `docs/project/stitch-prompts/20-manager-appointments-desktop-final-freeze.md`; review desktop-only corrected states and freeze the desktop baseline if compliant.
 
 Replace pending entries with links to existing artifacts as work progresses.
