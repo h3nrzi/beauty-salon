@@ -1,22 +1,20 @@
 # Stitch Prompt 24 — Manager Appointments Mobile / Tablet
 
-Design the **Manager Appointments Mobile / Tablet** experience for آرا using the already frozen and organized desktop reference:
+Design the **Manager Appointments Mobile / Tablet** experience for آرا by adapting the **existing Manager Appointments desktop screens in this Stitch project**.
 
-`references/manager-appointments-desktop/`
-
-The desktop source is authoritative for visual language and interaction intent.
+Those existing desktop screens are the visual and interaction reference for this responsive pass.
 
 Do **not** redesign the manager product.
 
 The goal is to create a compact responsive operational experience that preserves the same Manager Appointments product model without squeezing desktop tables into small screens.
 
-## Source references
+## Visual reference
 
-Use the organized desktop source:
+Continue from the **existing Manager Appointments desktop screens already present in this Stitch project**.
 
-- `references/manager-appointments-desktop/README.md`
-- `references/manager-appointments-desktop/design-system.md`
-- `references/manager-appointments-desktop/screens/`
+Use those existing desktop screens as the visual and interaction reference for the responsive adaptation.
+
+Do not assume access to GitHub, repository paths, local files, or engineering documentation.
 
 Carry forward:
 
