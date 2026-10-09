@@ -55,8 +55,8 @@
 - Manager Appointments iteration 03: Desktop structure reached freeze-candidate coverage
 - Manager Appointments iteration 04: Desktop layouts/interactions accepted; semantic cleanup attempted
 - Manager Appointments iteration 05: Targeted desktop cleanup requested
-- Manager Appointments iteration 06: Most targeted cleanup succeeded; only Search/Filter manual-booking shortcut and Reschedule Review preapproval/notification wording remain before desktop freeze
+- Manager Appointments iterations 01–07: Desktop completed and frozen as `references/ara-manager-appointments-desktop-v1/README.md`
 - Sequencing decision: Freeze Manager Appointments desktop first; mobile/tablet is intentionally deferred until desktop is complete
-- Next action: Run `docs/project/stitch-prompts/23-manager-appointments-final-two-screen-patch.md`; review only Search/Filter + Reschedule Review, then freeze Manager Appointments Desktop if compliant.
+- Next action: Upload the raw frozen Manager Appointments desktop Stitch source to the repository without renaming; then rename/organize the source into canonical English folders/files using the frozen mapping. Mobile/tablet remains deferred until this source-organization step is complete.
 
 Replace pending entries with links to existing artifacts as work progresses.
