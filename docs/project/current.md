@@ -6,7 +6,7 @@
 - Product definition: Approved / scope frozen — `docs/project/product-definition.md`
 - Stitch brief: `docs/project/stitch-brief.md`
 - Stitch workflow: `docs/project/stitch-workflow-v2.md`
-- Active Stitch prompt: `docs/project/stitch-prompts/10-refine-specialists-default.md`
+- Active Stitch prompt: Pending old-version review for Specialists
 - Locale: Persian / RTL
 - Brand direction: آرا — Soft Editorial
 - Product direction: Single women's beauty salon with public discovery, real booking, customer appointment management and core salon operations
@@ -55,8 +55,11 @@ master placeholder baseline
 
 ## Next action
 
-Select the current Specialists baseline + frozen Home visual anchor in Stitch and run:
+Before refining Specialists, review the existing/old Specialists Stitch screen supplied by the product owner.
 
-`docs/project/stitch-prompts/10-refine-specialists-default.md`
+After that comparison:
+1. record what should be preserved/improved;
+2. update or replace the Specialists refinement prompt if needed;
+3. only then run the refinement in Stitch.
 
-Review and freeze Specialists default state before moving to Gallery.
+This old-version-first review is now required before starting every new page.
