@@ -63,7 +63,7 @@
 - Manager Appointments Mobile 24C: Reschedule flow completed and frozen
 - Stitch constraint: Responsive generation is driven by explicitly selected canvas screens; prompts must not rely on unseen project/repository context
 - Responsive sequencing: Complete and freeze Mobile first in selected-screen batches; Tablet follows afterward
-- Manager Appointments Mobile 24D: First reassignment/conflict pass reviewed; interaction model accepted, targeted semantic cleanup required before freeze
-- Next action: Select the three generated Mobile 24D screens in Stitch and run `docs/project/stitch-prompts/34-manager-appointments-mobile-24d-patch.md`; freeze 24D if compliant.
+- Manager Appointments Mobile 24D: Previous batch/patch rejected as a visual baseline due to accumulated design drift; reset required
+- Next action: Do not use the generated Mobile 24D screens. Run Step 35A in `docs/project/stitch-prompts/35-manager-appointments-mobile-24d-visual-reset.md` by selecting one frozen good Mobile anchor + the Desktop Specialist Reassignment screen.
 
 Replace pending entries with links to existing artifacts as work progresses.
