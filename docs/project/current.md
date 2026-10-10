@@ -60,9 +60,9 @@
 - Manager Appointments desktop source: Organized at `references/manager-appointments-desktop/` with canonical English screen folders, `reference.html`, `screenshot.png`, root `design-system.md`, and preserved Stitch mapping
 - Manager Appointments Mobile 24A: Workspace/search/filter completed and frozen
 - Manager Appointments Mobile 24B: Active detail + cancel flow completed and frozen
-- Manager Appointments Mobile 24C: First reschedule pass reviewed; interaction model accepted, targeted copy cleanup required before freeze
+- Manager Appointments Mobile 24C: Stale-recovery + review accepted; only the date/time-selection screen still needs two literal fixes before freeze
 - Stitch constraint: Responsive generation is driven by explicitly selected canvas screens; prompts must not rely on unseen project/repository context
 - Responsive sequencing: Complete and freeze Mobile first in selected-screen batches; Tablet follows afterward
-- Next action: Select the three generated Mobile 24C reschedule screens in Stitch and run `docs/project/stitch-prompts/31-manager-appointments-mobile-24c-patch.md`; freeze 24C if compliant.
+- Next action: Select only the Mobile 24C date/time-selection screen in Stitch and run `docs/project/stitch-prompts/32-manager-appointments-mobile-24c-final-screen-patch.md`; freeze 24C if the two remaining literals are corrected.
 
 Replace pending entries with links to existing artifacts as work progresses.
