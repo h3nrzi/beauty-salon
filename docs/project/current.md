@@ -6,7 +6,7 @@
 - Product definition: Approved / scope frozen — `docs/project/product-definition.md`
 - Stitch brief: `docs/project/stitch-brief.md`
 - Stitch workflow: `docs/project/stitch-workflow-v2.md`
-- Active Stitch prompt: `docs/project/stitch-prompts/16-about-final-patch.md`
+- Active Stitch prompt: `docs/project/stitch-prompts/18-refine-contact-default.md`
 - Locale: Persian / RTL
 - Brand direction: آرا — Soft Editorial
 - Product direction: Single women's beauty salon with public discovery, real booking, customer appointment management and core salon operations
@@ -46,18 +46,7 @@ master placeholder baseline
 
 - Whole-product placeholder inventory: Complete
 - Shared visual system: Frozen — `docs/project/stitch-design-system-v2.md`
-- Page refinement: Home + Services + Specialists + Gallery frozen; About structure accepted, final patch pending
-
-## Frozen pages
-
-- Home — desktop/default: Frozen — `docs/project/stitch-freezes/home-default-v2.md`
-- Services — desktop/default: Frozen — `docs/project/stitch-freezes/services-default-v2.md`
-
-## Frozen pages
-
-- Home — desktop/default: Frozen — `docs/project/stitch-freezes/home-default-v2.md`
-- Services — desktop/default: Frozen — `docs/project/stitch-freezes/services-default-v2.md`
-- Specialists — desktop/default: Frozen — `docs/project/stitch-freezes/specialists-default-v2.md`
+- Page refinement: Home + Services + Specialists + Gallery + About frozen; Contact next
 
 ## Frozen pages
 
@@ -65,18 +54,20 @@ master placeholder baseline
 - Services — desktop/default: Frozen — `docs/project/stitch-freezes/services-default-v2.md`
 - Specialists — desktop/default: Frozen — `docs/project/stitch-freezes/specialists-default-v2.md`
 - Gallery — desktop/default: Frozen — `docs/project/stitch-freezes/gallery-default-v2.md`
-
-## Frozen pages
-
-- Home — desktop/default: Frozen — `docs/project/stitch-freezes/home-default-v2.md`
-- Services — desktop/default: Frozen — `docs/project/stitch-freezes/services-default-v2.md`
-- Specialists — desktop/default: Frozen — `docs/project/stitch-freezes/specialists-default-v2.md`
-- Gallery — desktop/default: Frozen — `docs/project/stitch-freezes/gallery-default-v2.md`
+- About — desktop/default: Frozen — `docs/project/stitch-freezes/about-default-v2.md`
 
 ## Next action
 
-Select only the current refined About screen in Stitch and run:
+The old Contact version was already supplied earlier and has now been reviewed.
 
-`docs/project/stitch-prompts/16-about-final-patch.md`
+In Stitch select:
 
-If the duplicate footer and remaining absolute literals are corrected without visual drift, freeze About desktop/default.
+1. old Contact screen;
+2. frozen Home;
+3. frozen About.
+
+Run:
+
+`docs/project/stitch-prompts/18-refine-contact-default.md`
+
+Then compare the generated Contact page against the old version before freezing it.
