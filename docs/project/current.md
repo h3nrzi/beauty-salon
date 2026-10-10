@@ -6,7 +6,7 @@
 - Product definition: Approved / scope frozen — `docs/project/product-definition.md`
 - Stitch brief: `docs/project/stitch-brief.md`
 - Stitch workflow: `docs/project/stitch-workflow-v2.md`
-- Active Stitch prompt: `docs/project/stitch-prompts/21-refine-booking-default.md`
+- Active Stitch prompt: Pending old-version review for My Appointments
 - Locale: Persian / RTL
 - Brand direction: آرا — Soft Editorial
 - Product direction: Single women's beauty salon with public discovery, real booking, customer appointment management and core salon operations
@@ -46,7 +46,7 @@ master placeholder baseline
 
 - Whole-product placeholder inventory: Complete
 - Shared visual system: Frozen — `docs/project/stitch-design-system-v2.md`
-- Page refinement: Home + Services + Specialists + Gallery + About + Contact frozen; Booking next
+- Page refinement: Home + Services + Specialists + Gallery + About + Contact + Booking default frozen; My Appointments next
 
 ## Frozen pages
 
@@ -56,28 +56,10 @@ master placeholder baseline
 - Gallery — desktop/default: Frozen — `docs/project/stitch-freezes/gallery-default-v2.md`
 - About — desktop/default: Frozen — `docs/project/stitch-freezes/about-default-v2.md`
 - Contact — desktop/default: Frozen — `docs/project/stitch-freezes/contact-default-v2.md`
-
-## Frozen pages
-
-- Home — desktop/default: Frozen — `docs/project/stitch-freezes/home-default-v2.md`
-- Services — desktop/default: Frozen — `docs/project/stitch-freezes/services-default-v2.md`
-- Specialists — desktop/default: Frozen — `docs/project/stitch-freezes/specialists-default-v2.md`
-- Gallery — desktop/default: Frozen — `docs/project/stitch-freezes/gallery-default-v2.md`
-- About — desktop/default: Frozen — `docs/project/stitch-freezes/about-default-v2.md`
-- Contact — desktop/default: Frozen — `docs/project/stitch-freezes/contact-default-v2.md`
+- Booking service-selection — desktop/default: Frozen — `docs/project/stitch-freezes/booking-service-selection-default-v2.md`
 
 ## Next action
 
-Old Booking service-selection version reviewed and preserve/improve targets recorded.
+Before refining My Appointments, review the existing/old My Appointments Stitch screen supplied by the product owner.
 
-In Stitch select:
-
-1. old Booking service-selection screen;
-2. frozen Services;
-3. frozen Home.
-
-Run:
-
-`docs/project/stitch-prompts/21-refine-booking-default.md`
-
-Then compare the generated Booking page against the old version before freezing the default service-selection step.
+Do not write or run a My Appointments refinement prompt until the old version has been compared and its preserve/improve targets are recorded.
