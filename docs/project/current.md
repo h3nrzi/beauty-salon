@@ -6,7 +6,7 @@
 - Product definition: Approved / scope frozen — `docs/project/product-definition.md`
 - Stitch brief: `docs/project/stitch-brief.md`
 - Stitch workflow: `docs/project/stitch-workflow-v2.md`
-- Active Stitch prompt: `docs/project/stitch-prompts/36-master-placeholder-baseline-v2.md`
+- Active Stitch prompt: `docs/project/stitch-prompts/02-complete-placeholder-baseline.md`
 - Locale: Persian / RTL
 - Brand direction: آرا — Soft Editorial
 - Product direction: Single women's beauty salon with public discovery, real booking, customer appointment management and core salon operations
@@ -44,8 +44,10 @@ master placeholder baseline
 
 ## Next action
 
-Start from a clean Stitch project/canvas with no old screens selected and run:
+Review 01 found a coherent visual direction but an incomplete baseline: 15/16 screens exist, and Home / Gallery / About need desktop normalization.
 
-`docs/project/stitch-prompts/36-master-placeholder-baseline-v2.md`
+Run:
 
-Review the complete 16-screen placeholder family before refining any individual page or generating secondary states.
+`docs/project/stitch-prompts/02-complete-placeholder-baseline.md`
+
+using the selection instructions in that prompt. Do not begin page-by-page refinement until the whole 16-screen family is complete.
