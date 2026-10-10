@@ -59,9 +59,9 @@
 - Sequencing decision: Freeze Manager Appointments desktop first; mobile/tablet is intentionally deferred until desktop is complete
 - Manager Appointments desktop source: Organized at `references/manager-appointments-desktop/` with canonical English screen folders, `reference.html`, `screenshot.png`, root `design-system.md`, and preserved Stitch mapping
 - Manager Appointments Mobile 24A: Workspace/search/filter completed and frozen
-- Manager Appointments Mobile 24B: Semantic patch mostly correct in HTML, but export screenshot/HTML mismatch and same-appointment mobile inconsistency still block freeze
+- Manager Appointments Mobile 24B: Export synchronization and fixture consistency fixed; one cancel-success literal remains before freeze
 - Stitch constraint: Responsive generation is driven by explicitly selected canvas screens; prompts must not rely on unseen project/repository context
 - Responsive sequencing: Complete and freeze Mobile first in selected-screen batches; Tablet follows afterward
-- Next action: Select the same three Mobile 24B screens in Stitch and run `docs/project/stitch-prompts/28-manager-appointments-mobile-24b-export-sync.md`; verify screenshot/HTML consistency and freeze 24B if compliant.
+- Next action: Select only the Mobile 24B Cancel Confirmation screen in Stitch and run `docs/project/stitch-prompts/29-manager-appointments-mobile-24b-final-literal.md`; freeze 24B if the success copy is corrected.
 
 Replace pending entries with links to existing artifacts as work progresses.
