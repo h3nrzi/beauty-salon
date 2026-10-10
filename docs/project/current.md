@@ -6,7 +6,7 @@
 - Product definition: Approved / scope frozen — `docs/project/product-definition.md`
 - Stitch brief: `docs/project/stitch-brief.md`
 - Stitch workflow: `docs/project/stitch-workflow-v2.md`
-- Active Stitch prompt: Pending old-version review for My Appointments
+- Active Stitch prompt: `docs/project/stitch-prompts/23-booking-true-default-correction.md`
 - Locale: Persian / RTL
 - Brand direction: آرا — Soft Editorial
 - Product direction: Single women's beauty salon with public discovery, real booking, customer appointment management and core salon operations
@@ -46,7 +46,7 @@ master placeholder baseline
 
 - Whole-product placeholder inventory: Complete
 - Shared visual system: Frozen — `docs/project/stitch-design-system-v2.md`
-- Page refinement: Home + Services + Specialists + Gallery + About + Contact + Booking default frozen; My Appointments next
+- Page refinement: Home + Services + Specialists + Gallery + About + Contact frozen; Booking default re-opened after re-check
 
 ## Frozen pages
 
@@ -56,10 +56,15 @@ master placeholder baseline
 - Gallery — desktop/default: Frozen — `docs/project/stitch-freezes/gallery-default-v2.md`
 - About — desktop/default: Frozen — `docs/project/stitch-freezes/about-default-v2.md`
 - Contact — desktop/default: Frozen — `docs/project/stitch-freezes/contact-default-v2.md`
-- Booking service-selection — desktop/default: Frozen — `docs/project/stitch-freezes/booking-service-selection-default-v2.md`
+
+## Re-opened page
+
+- Booking service-selection — previous freeze revoked after Review 23
 
 ## Next action
 
-Before refining My Appointments, review the existing/old My Appointments Stitch screen supplied by the product owner.
+Select only the current Booking service-selection screen in Stitch and run:
 
-Do not write or run a My Appointments refinement prompt until the old version has been compared and its preserve/improve targets are recorded.
+`docs/project/stitch-prompts/23-booking-true-default-correction.md`
+
+Do not continue to My Appointments until Booking default is corrected and re-frozen.
