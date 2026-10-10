@@ -2,7 +2,7 @@
 
 - Project name: Beauty Salon
 - Owner: h3nrzi
-- Phase: Stitch iteration
+- Phase: Stitch baseline restart v2
 - Product definition and scope approval: Approved / frozen on 2026-10-08 — `docs/project/product-definition.md`
 - Product direction: Single women's salon with public discovery, real booking, authenticated appointment management and core salon operations
 - Locale: Persian / RTL
@@ -64,6 +64,10 @@
 - Stitch constraint: Responsive generation is driven by explicitly selected canvas screens; prompts must not rely on unseen project/repository context
 - Responsive sequencing: Complete and freeze Mobile first in selected-screen batches; Tablet follows afterward
 - Manager Appointments Mobile 24D: Previous batch/patch rejected as a visual baseline due to accumulated design drift; reset required
-- Next action: Do not use the generated Mobile 24D screens. Run Step 35A in `docs/project/stitch-prompts/35-manager-appointments-mobile-24d-visual-reset.md` by selecting one frozen good Mobile anchor + the Desktop Specialist Reassignment screen.
+- Next action: Start from a clean Stitch project/canvas with no old screens selected and run `docs/project/stitch-prompts/36-master-placeholder-baseline-v2.md`; review the whole 16-screen family before refining any individual page.
 
 Replace pending entries with links to existing artifacts as work progresses.
+
+- Stitch workflow v2: Active — placeholder-first whole-product baseline → visual-system freeze → page-by-page refinement → state families → responsive adaptation
+- Workflow doc: `docs/project/stitch-workflow-v2.md`
+- Previous Stitch visual baselines: retained as historical learning references; not authoritative for the v2 visual direction unless explicitly reused later
