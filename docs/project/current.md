@@ -6,7 +6,7 @@
 - Product definition: Approved / scope frozen — `docs/project/product-definition.md`
 - Stitch brief: `docs/project/stitch-brief.md`
 - Stitch workflow: `docs/project/stitch-workflow-v2.md`
-- Active Stitch prompt: `docs/project/stitch-prompts/12-refine-gallery-default.md`
+- Active Stitch prompt: `docs/project/stitch-prompts/13-gallery-final-patch.md`
 - Locale: Persian / RTL
 - Brand direction: آرا — Soft Editorial
 - Product direction: Single women's beauty salon with public discovery, real booking, customer appointment management and core salon operations
@@ -46,7 +46,7 @@ master placeholder baseline
 
 - Whole-product placeholder inventory: Complete
 - Shared visual system: Frozen — `docs/project/stitch-design-system-v2.md`
-- Page refinement: Home + Services + Specialists frozen; Gallery next
+- Page refinement: Home + Services + Specialists frozen; Gallery structure accepted, one final visual/content patch pending
 
 ## Frozen pages
 
@@ -61,16 +61,8 @@ master placeholder baseline
 
 ## Next action
 
-Old Gallery version reviewed and preserve/improve targets recorded.
+Select only the current refined Gallery screen in Stitch and run:
 
-In Stitch select:
+`docs/project/stitch-prompts/13-gallery-final-patch.md`
 
-1. old Gallery six-item screen;
-2. frozen Home;
-3. frozen Services.
-
-Run:
-
-`docs/project/stitch-prompts/12-refine-gallery-default.md`
-
-Then compare the generated Gallery against the old version before freezing it.
+If the broken portfolio image and stale footer literals are corrected without visual drift, freeze Gallery desktop/default.
