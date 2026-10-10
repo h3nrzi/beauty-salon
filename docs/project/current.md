@@ -6,7 +6,7 @@
 - Product definition: Approved / scope frozen — `docs/project/product-definition.md`
 - Stitch brief: `docs/project/stitch-brief.md`
 - Stitch workflow: `docs/project/stitch-workflow-v2.md`
-- Active Stitch prompt: `docs/project/stitch-prompts/07-regenerate-services-coverage-lock.md`
+- Active Stitch prompt: `docs/project/stitch-prompts/08-services-semantic-cleanup.md`
 - Locale: Persian / RTL
 - Brand direction: آرا — Soft Editorial
 - Product direction: Single women's beauty salon with public discovery, real booking, customer appointment management and core salon operations
@@ -46,7 +46,11 @@ master placeholder baseline
 
 - Whole-product placeholder inventory: Complete
 - Shared visual system: Frozen — `docs/project/stitch-design-system-v2.md`
-- Page refinement: Home frozen; first Services refinement rejected for excessive sparsity; regeneration pending
+- Page refinement: Home frozen; Services visual structure accepted; semantic cleanup pending
+
+## Frozen pages
+
+- Home — desktop/default: Frozen — `docs/project/stitch-freezes/home-default-v2.md`
 
 ## Frozen pages
 
@@ -58,15 +62,8 @@ master placeholder baseline
 
 ## Next action
 
-In Stitch select:
+Select only the current regenerated Services screen in Stitch and run:
 
-1. the original/before Services baseline with the full multi-card catalog;
-2. the frozen Home screen as the visual anchor.
+`docs/project/stitch-prompts/08-services-semantic-cleanup.md`
 
-Do not select the rejected sparse Services refinement.
-
-Run:
-
-`docs/project/stitch-prompts/07-regenerate-services-coverage-lock.md`
-
-Review the regenerated complete Services page before freezing it.
+If the semantic cleanup preserves the accepted six-card catalog, freeze Services desktop/default and continue to Specialists.
