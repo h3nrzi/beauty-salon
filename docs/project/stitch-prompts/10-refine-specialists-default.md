@@ -2,109 +2,115 @@
 
 Refine the **Specialists / متخصصان** page only.
 
-This is the next page-by-page default-state refinement after Home and Services were frozen.
+The old Specialists page has good catalog density and should be improved, not replaced with a sparse layout.
 
 ## What to select in Stitch
 
-Select:
+Select exactly:
 
-1. the current **Specialists / متخصصان** baseline screen;
+1. the current **old Specialists / متخصصان** screen with the six specialist cards;
 2. the frozen **Home / خانه** screen as the public visual anchor;
-3. optionally the frozen **Services / خدمات** screen if needed for card/metadata consistency.
+3. the frozen **Services / خدمات** screen for card/metadata consistency.
 
 Return **one Specialists screen only**.
 
-## Goal
+## Source roles
 
-Create a strong **desktop/default Specialists page** that feels like a direct continuation of the frozen public visual system.
+Use the selected **old Specialists** screen for:
 
-Do not create booking states, specialist-detail states, availability states, mobile/tablet variants or alternate versions yet.
+- six-card content density;
+- 3-column desktop grid;
+- portrait-led specialist cards;
+- eligible-service presentation;
+- direct specialist-booking CTA;
+- the existence of a top-level non-specific-specialist choice.
 
-## Visual continuity
+Use frozen **Home + Services** for:
 
-Carry forward:
+- visual system;
+- header/navigation;
+- typography;
+- spacing;
+- content width;
+- card styling;
+- buttons;
+- borders/radii/shadows;
+- footer.
 
-- Persian / RTL;
-- warm ivory/off-white canvas;
-- muted terracotta / rose-brown accent;
-- warm espresso text;
-- refined editorial headings;
-- restrained borders/shadows;
-- medium radii;
-- controlled whitespace;
-- natural portrait photography;
-- same public header/footer family;
-- same button hierarchy.
+Do not copy Home or Services page composition.
 
-Do not invent a new specialist-card design language.
+## Hard coverage requirement
 
-## Page purpose
+Keep a complete representative specialist catalog.
 
-The page should help customers:
+Show **6 specialist cards** in the default desktop view.
 
-- understand who the salon specialists are;
-- understand each specialist's neutral area of expertise;
-- see which services each specialist can perform;
-- start booking with a specific specialist;
-- understand that `هر متخصص در دسترس` is also a valid booking path.
+Prefer the current balanced 3-column × 2-row layout.
 
-## Required page structure
+Do not collapse the page into one featured specialist or leave large empty desktop areas.
 
-### 1. Page intro
+## 1. Page intro
 
 Use:
 
-- page title: `متخصصان سالن آرا`
+- title: `متخصصان سالن آرا`
 - concise neutral supporting copy.
+
+Good direction:
+
+**`متخصصان آرا و خدمات قابل ارائه هر یک را ببینید و برای رزرو، متخصص دلخواه خود را انتخاب کنید.`**
 
 Avoid:
 
-- ratings;
-- review counts;
-- senior/master hierarchy;
-- certificates;
+- health/medical claims;
+- rankings;
+- certifications;
 - years-of-experience claims;
-- clinical/medical credentials.
+- quality guarantees.
 
-### 2. “Any available specialist” option
+## 2. “Any available specialist” — first-class option
 
-Visually represent the product path:
+Preserve the top-level alternative to choosing a specific person, but correct its semantics.
+
+Use exactly:
 
 **`هر متخصص در دسترس`**
 
-This is a first-class booking option, not a fallback/error.
+Explain neutrally:
 
-Describe it neutrally:
+**`اگر متخصص مشخصی مدنظر ندارید، می‌توانید این گزینه را انتخاب کنید تا در ادامه رزرو، از میان متخصصان واجد شرایط و در دسترس برای خدمات انتخاب‌شده ادامه دهید.`**
 
-- the customer can continue without choosing a specific person;
-- an eligible available specialist can be assigned later by the booking flow.
+CTA may use:
 
-Do not describe it as:
+**`ادامه با هر متخصص در دسترس`**
 
-- first available;
-- fastest available;
-- best match;
-- auto-pick based on ratings.
+Do not use:
 
-### 3. Specialist profiles
+- `اولین متخصص در دسترس`
+- `اولین وقت خالی`
+- fastest/earliest available
+- best match
+- ratings-based assignment.
 
-Show a representative desktop set of specialist cards.
+## 3. Six specialist cards
 
-Each card should support:
+Each card should include:
 
 - portrait;
 - fictional name;
 - neutral expertise;
-- eligible services;
-- clear booking CTA.
+- `خدمات قابل ارائه`;
+- concise service chips;
+- `رزرو نوبت با این متخصص` CTA.
 
-Use neutral expertise labels such as:
+Use neutral expertise examples such as:
 
-- مو و استایل
+- کوتاهی و استایل مو
 - رنگ و لایت
 - مراقبت پوست
 - ناخن
 - مژه و ابرو
+- مراقبت و استایل مو
 
 Do not use:
 
@@ -113,62 +119,90 @@ Do not use:
 - `برترین`
 - ratings/stars
 - certificates
-- medical/clinical titles.
+- medical/clinical titles
+- public ranking.
 
-### 4. Eligible services
+## 4. Service wording
 
-Make the specialist/service relationship easy to understand.
+Replace:
 
-Use:
+- `خدمات مجاز`
 
-- concise service chips;
-- short eligible-service lists;
-- restrained metadata.
+with:
 
-Do not overload each card with schedule details or invented availability claims.
+**`خدمات قابل ارائه`**
 
-### 5. Booking CTA
+Use ordinary beauty-service names.
 
-Each specialist card should have a clear path to booking with that specialist.
+Avoid clinical/therapeutic language such as:
 
-Keep CTA language consistent with the frozen public system.
+- health-treatment positioning;
+- lymphatic treatment;
+- therapy/rehabilitation;
+- physiological claims;
+- medical-style terminology.
 
-Do not create actual availability/date/time states yet.
+Do not position آرا as a spa or clinic.
 
-### 6. Footer
+## 5. Bottom guidance block
 
-Use the same frozen public footer family.
+Remove the old certification/material claim block.
 
-Use neutral placeholder contact/business content.
+Do not show:
 
-## Content cleanup during refinement
+- international-standard guarantees;
+- official-certificate claims;
+- best-material claims;
+- hygiene guarantees.
 
-Remove or avoid:
+Instead use a grounded booking-guidance block that reinforces:
 
-- exact attendance schedules;
-- years of experience;
-- public ratings/reviews;
-- certification claims;
-- clinical/medical positioning;
-- senior/master hierarchy;
-- “first/fastest available” wording;
-- unsupported performance/quality claims;
-- exact fictional business facts.
+- choose a specific specialist; or
+- use `هر متخصص در دسترس`.
+
+This block should be concise and visually restrained.
+
+## 6. Footer
+
+Use the same frozen public-footer visual family as Home/Services.
+
+Use neutral placeholder content only:
+
+- `نشانی سالن — اطلاعات نهایی در صفحه تماس`
+- `اطلاعات تماس در صفحه تماس`
+- `ساعات کاری سالن در صفحه تماس نمایش داده می‌شود`
+- `خدمات سالن`
+- `رزرو نوبت`
+
+Do not include exact fictional address/phone/hours or north-Tehran positioning.
 
 ## Product boundaries
 
 Do not add:
 
-- marketplace/multiple salons;
-- branches;
+- ratings/reviews;
 - loyalty;
-- reviews/ratings;
-- online payment/deposit;
 - CRM;
+- online payment/deposit;
 - notifications/reminders;
-- social following metrics;
 - specialist ranking;
-- packages/promotions.
+- social metrics;
+- certificates;
+- clinical claims;
+- branches;
+- marketplace behavior.
+
+## Visual quality bar
+
+The result should feel:
+
+- complete;
+- editorial but practical;
+- visually aligned with frozen Home and Services;
+- dense enough to browse six specialists comfortably;
+- clearly one page in the same public design system.
+
+Do not create a sparse redesign.
 
 ## Required output
 
@@ -177,9 +211,9 @@ Return exactly one:
 - **Specialists — desktop/default**
 
 No specialist-detail screen.
-No availability state.
+No availability/date-time states.
 No mobile/tablet.
 No alternate version.
 No edge states.
 
-We will review and freeze Specialists default state before moving to Gallery.
+We will compare the new page against the old six-card version before deciding whether to freeze it.
