@@ -3,71 +3,49 @@
 - Project name: Beauty Salon
 - Owner: h3nrzi
 - Phase: Stitch baseline restart v2
-- Product definition and scope approval: Approved / frozen on 2026-10-08 — `docs/project/product-definition.md`
-- Product direction: Single women's salon with public discovery, real booking, authenticated appointment management and core salon operations
+- Product definition: Approved / scope frozen — `docs/project/product-definition.md`
+- Stitch brief: `docs/project/stitch-brief.md`
+- Stitch workflow: `docs/project/stitch-workflow-v2.md`
+- Active Stitch prompt: `docs/project/stitch-prompts/36-master-placeholder-baseline-v2.md`
 - Locale: Persian / RTL
-- Brand: آرا — Soft Editorial; calm, feminine, modern, premium; warm ivory/taupe foundation with restrained warm accent
-- Responsive priority: Mobile-first Booking and My Appointments
+- Brand direction: آرا — Soft Editorial
+- Product direction: Single women's beauty salon with public discovery, real booking, customer appointment management and core salon operations
 - Accessibility target: WCAG 2.2 AA for primary customer/staff flows
-- Media policy: Prototype/reference media allowed in Stitch; production requires explicit usage rights
-- Public pages: Home, Services, Specialists, Gallery, About, Contact, Booking, My Appointments
-- Customer identity: Name + verified mobile required; email optional; mobile-centered account; mobile read-only in v1
-- Customer scope: Book for self; view, cancel, reschedule and review appointment history
-- Booking composition: Multiple consecutive services per booking, all performable by one specialist; duration is the service-duration sum
-- Specialist choice: Specific specialist or any available specialist
-- Booking order: Services → specialist choice → date/time → identity/verification → confirmation
-- Scheduling: Service durations in 15-minute increments; appointment starts on a 30-minute grid
-- Availability: Salon hours + specialist schedule + breaks + time off + existing appointments
-- Booking window: Up to 90 days ahead; minimum 60-minute lead for same-day booking
-- Pricing: Service-price sum shown and retained at booking confirmation; pay at salon
-- Confirmation: Immediate; no manual approval in v1
-- Availability conflict: Do not book a stale slot; preserve services/specialist and return to current time selection
-- Customer change policy: Cancel/reschedule until 24 hours before appointment; later changes use salon contact path
-- Reschedule semantics: Date/time only; services and specialist remain unchanged
-- Appointment lifecycle: Confirmed → Completed / Cancelled / No-show
-- Operational roles: Manager; Staff / Specialist
-- Manager scope: All appointments, services, specialists, salon hours, schedules, breaks, time off, cancel/reschedule/reassign
-- Specialist scope: Own appointments; view details; mark Completed / No-show
-- Stitch brief: Draft with approved working brand/visual direction — `docs/project/stitch-brief.md`
-- Home + initial design-system baseline: Frozen as `references/ara-home-soft-editorial-v1/README.md`
-- Services baseline: Frozen as `references/ara-services-soft-editorial-v1/README.md`
-- Specialists baseline: Frozen as `references/ara-specialists-soft-editorial-v1/README.md`
-- Gallery baseline: Frozen as `references/ara-gallery-soft-editorial-v1/README.md`
-- About baseline: Frozen as `references/ara-about-soft-editorial-v1/README.md`
-- Contact baseline: Frozen as `references/ara-contact-soft-editorial-v1/README.md`
-- Booking baseline: Frozen as `references/ara-booking-soft-editorial-v1/README.md`
-- My Appointments baseline: Frozen as `references/ara-my-appointments-soft-editorial-v1/README.md`; whole-product visual baseline/export audit still pending
-- Engineering handoff: Pending
-- MATT configuration confirmed once: Pending
-- Relevant decisions / glossary / ADRs: Pending
-- Approved spec / active ticket: Pending
-- Runtime and reproduction procedure: Pending
-- Local implementation gate and evidence: Pending
-- Human acceptance gate: Owner h3nrzi; pending design/implementation evidence
-- Production-release gate: Pending
-- Booking iterations 01–04: Completed; final stale-slot patch accepted
-- Booking CTA helper consistency: Approved deterministic cleanup — «مرحله بعدی…» helper text stays below the primary CTA across all Booking stages; does not reopen Stitch baseline
-- Blockers / capability gaps: Public discovery pages through Contact and Booking are frozen; known literal-content/media/token/UI-consistency cleanup is deterministic and deferred to export audit/engineering handoff
-- My Appointments iteration 01: Visual direction accepted; baseline not frozen
-- My Appointments iterations 01–03: Completed; mobile + desktop visual/interaction baseline frozen as `references/ara-my-appointments-soft-editorial-v1/README.md`
-- Manager Appointments iteration 01: Visual direction accepted; baseline not frozen
-- Manager Appointments iteration 02: Desktop operation-state coverage became substantially complete
-- Manager Appointments iteration 03: Desktop structure reached freeze-candidate coverage
-- Manager Appointments iteration 04: Desktop layouts/interactions accepted; semantic cleanup attempted
-- Manager Appointments iteration 05: Targeted desktop cleanup requested
-- Manager Appointments iterations 01–07: Desktop completed and frozen as `references/ara-manager-appointments-desktop-v1/README.md`
-- Sequencing decision: Freeze Manager Appointments desktop first; mobile/tablet is intentionally deferred until desktop is complete
-- Manager Appointments desktop source: Organized at `references/manager-appointments-desktop/` with canonical English screen folders, `reference.html`, `screenshot.png`, root `design-system.md`, and preserved Stitch mapping
-- Manager Appointments Mobile 24A: Workspace/search/filter completed and frozen
-- Manager Appointments Mobile 24B: Active detail + cancel flow completed and frozen
-- Manager Appointments Mobile 24C: Reschedule flow completed and frozen
-- Stitch constraint: Responsive generation is driven by explicitly selected canvas screens; prompts must not rely on unseen project/repository context
-- Responsive sequencing: Complete and freeze Mobile first in selected-screen batches; Tablet follows afterward
-- Manager Appointments Mobile 24D: Previous batch/patch rejected as a visual baseline due to accumulated design drift; reset required
-- Next action: Start from a clean Stitch project/canvas with no old screens selected and run `docs/project/stitch-prompts/36-master-placeholder-baseline-v2.md`; review the whole 16-screen family before refining any individual page.
 
-Replace pending entries with links to existing artifacts as work progresses.
+## Restart decision — 2026-10-10
 
-- Stitch workflow v2: Active — placeholder-first whole-product baseline → visual-system freeze → page-by-page refinement → state families → responsive adaptation
-- Workflow doc: `docs/project/stitch-workflow-v2.md`
-- Previous Stitch visual baselines: retained as historical learning references; not authoritative for the v2 visual direction unless explicitly reused later
+The previous Stitch iteration has been discarded as an active design baseline.
+
+Removed from the active repository:
+- Stitch prompts 01–35
+- all previous Stitch reviews
+- all previous Stitch reference/baseline exports
+
+Retained:
+- frozen Product Definition
+- Stitch brief / product and visual constraints
+- Stitch workflow v2
+- master placeholder baseline prompt v2
+
+The project is intentionally restarting visual design from a clean Stitch project/canvas.
+
+## v2 workflow
+
+```text
+master placeholder baseline
+→ whole-product visual-system review
+→ visual-system freeze
+→ page-by-page default-state refinement
+→ state-family generation
+→ responsive adaptation
+→ export audit
+→ engineering handoff
+```
+
+## Next action
+
+Start from a clean Stitch project/canvas with no old screens selected and run:
+
+`docs/project/stitch-prompts/36-master-placeholder-baseline-v2.md`
+
+Review the complete 16-screen placeholder family before refining any individual page or generating secondary states.
