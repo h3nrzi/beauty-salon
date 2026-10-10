@@ -6,7 +6,7 @@
 - Product definition: Approved / scope frozen — `docs/project/product-definition.md`
 - Stitch brief: `docs/project/stitch-brief.md`
 - Stitch workflow: `docs/project/stitch-workflow-v2.md`
-- Active Stitch prompt: Pending old-version review for Gallery
+- Active Stitch prompt: `docs/project/stitch-prompts/12-refine-gallery-default.md`
 - Locale: Persian / RTL
 - Brand direction: آرا — Soft Editorial
 - Product direction: Single women's beauty salon with public discovery, real booking, customer appointment management and core salon operations
@@ -61,6 +61,16 @@ master placeholder baseline
 
 ## Next action
 
-Before refining Gallery, review the existing/old Gallery Stitch screen supplied by the product owner.
+Old Gallery version reviewed and preserve/improve targets recorded.
 
-Do not write or run a Gallery refinement prompt until the old version has been compared and its preserve/improve targets are recorded.
+In Stitch select:
+
+1. old Gallery six-item screen;
+2. frozen Home;
+3. frozen Services.
+
+Run:
+
+`docs/project/stitch-prompts/12-refine-gallery-default.md`
+
+Then compare the generated Gallery against the old version before freezing it.
