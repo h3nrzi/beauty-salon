@@ -1,7 +1,8 @@
 # Booking default service-selection v2
 
-Status: **Frozen — desktop/default**  
-Frozen: 2026-10-10
+Status: **REVOKED — requires correction**  
+Originally frozen: 2026-10-10
+Revoked: 2026-10-10 after Review 23
 
 Source export:
 
@@ -43,3 +44,10 @@ SHA-256:
 Representative selected services are fixture data only and do not imply automatic production preselection.
 
 Product Definition remains authoritative.
+
+
+## Revocation note
+
+Review 23 found that the artifact was not a true initial state, screenshot and HTML disagreed, embedded selection metadata was stale/incomplete, the sixth service was not represented in the interaction data, zero-selection CTA behavior was incorrect, and accessibility intent was insufficient.
+
+This file is retained as historical evidence only and is **not an active frozen baseline**.
