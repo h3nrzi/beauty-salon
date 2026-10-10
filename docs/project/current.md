@@ -6,7 +6,7 @@
 - Product definition: Approved / scope frozen — `docs/project/product-definition.md`
 - Stitch brief: `docs/project/stitch-brief.md`
 - Stitch workflow: `docs/project/stitch-workflow-v2.md`
-- Active Stitch prompt: `docs/project/stitch-prompts/15-refine-about-default.md`
+- Active Stitch prompt: `docs/project/stitch-prompts/16-about-final-patch.md`
 - Locale: Persian / RTL
 - Brand direction: آرا — Soft Editorial
 - Product direction: Single women's beauty salon with public discovery, real booking, customer appointment management and core salon operations
@@ -46,7 +46,7 @@ master placeholder baseline
 
 - Whole-product placeholder inventory: Complete
 - Shared visual system: Frozen — `docs/project/stitch-design-system-v2.md`
-- Page refinement: Home + Services + Specialists + Gallery frozen; About next
+- Page refinement: Home + Services + Specialists + Gallery frozen; About structure accepted, final patch pending
 
 ## Frozen pages
 
@@ -75,17 +75,8 @@ master placeholder baseline
 
 ## Next action
 
-Old About version reviewed and preserve/improve targets recorded.
+Select only the current refined About screen in Stitch and run:
 
-In Stitch select:
+`docs/project/stitch-prompts/16-about-final-patch.md`
 
-1. old About screen;
-2. frozen Home;
-3. frozen Gallery;
-4. optionally frozen Specialists.
-
-Run:
-
-`docs/project/stitch-prompts/15-refine-about-default.md`
-
-Then compare the generated About page against the old version before freezing it.
+If the duplicate footer and remaining absolute literals are corrected without visual drift, freeze About desktop/default.
