@@ -6,7 +6,7 @@
 - Product definition: Approved / scope frozen — `docs/project/product-definition.md`
 - Stitch brief: `docs/project/stitch-brief.md`
 - Stitch workflow: `docs/project/stitch-workflow-v2.md`
-- Active Stitch prompt: `docs/project/stitch-prompts/19-contact-final-patch.md`
+- Active Stitch prompt: Pending old-version review for Booking
 - Locale: Persian / RTL
 - Brand direction: آرا — Soft Editorial
 - Product direction: Single women's beauty salon with public discovery, real booking, customer appointment management and core salon operations
@@ -46,7 +46,7 @@ master placeholder baseline
 
 - Whole-product placeholder inventory: Complete
 - Shared visual system: Frozen — `docs/project/stitch-design-system-v2.md`
-- Page refinement: Home + Services + Specialists + Gallery + About frozen; Contact structure accepted, final patch pending
+- Page refinement: Home + Services + Specialists + Gallery + About + Contact frozen; Booking next
 
 ## Frozen pages
 
@@ -55,11 +55,10 @@ master placeholder baseline
 - Specialists — desktop/default: Frozen — `docs/project/stitch-freezes/specialists-default-v2.md`
 - Gallery — desktop/default: Frozen — `docs/project/stitch-freezes/gallery-default-v2.md`
 - About — desktop/default: Frozen — `docs/project/stitch-freezes/about-default-v2.md`
+- Contact — desktop/default: Frozen — `docs/project/stitch-freezes/contact-default-v2.md`
 
 ## Next action
 
-Select only the current refined Contact screen in Stitch and run:
+Before refining Booking, review the existing/old Booking Stitch screen supplied by the product owner.
 
-`docs/project/stitch-prompts/19-contact-final-patch.md`
-
-If the stale footer, embedded-text image and remaining literals are corrected without visual drift, freeze Contact desktop/default.
+Do not write or run a Booking refinement prompt until the old version has been compared and its preserve/improve targets are recorded.
