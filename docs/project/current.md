@@ -6,7 +6,7 @@
 - Product definition: Approved / scope frozen — `docs/project/product-definition.md`
 - Stitch brief: `docs/project/stitch-brief.md`
 - Stitch workflow: `docs/project/stitch-workflow-v2.md`
-- Active Stitch prompt: `docs/project/stitch-prompts/02-complete-placeholder-baseline.md`
+- Active Stitch prompt: `docs/project/stitch-prompts/03-refine-home-default.md`
 - Locale: Persian / RTL
 - Brand direction: آرا — Soft Editorial
 - Product direction: Single women's beauty salon with public discovery, real booking, customer appointment management and core salon operations
@@ -42,12 +42,16 @@ master placeholder baseline
 → engineering handoff
 ```
 
+## Baseline status
+
+- Whole-product placeholder inventory: Complete
+- Shared visual system: Frozen — `docs/project/stitch-design-system-v2.md`
+- Page refinement: Not yet started
+
 ## Next action
 
-Review 01 found a coherent visual direction but an incomplete baseline: 15/16 screens exist, and Home / Gallery / About need desktop normalization.
+Select the current Home baseline + Services baseline visual anchor in Stitch and run:
 
-Run:
+`docs/project/stitch-prompts/03-refine-home-default.md`
 
-`docs/project/stitch-prompts/02-complete-placeholder-baseline.md`
-
-using the selection instructions in that prompt. Do not begin page-by-page refinement until the whole 16-screen family is complete.
+Review and freeze Home default state before moving to Services.
