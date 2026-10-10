@@ -6,7 +6,7 @@
 - Product definition: Approved / scope frozen — `docs/project/product-definition.md`
 - Stitch brief: `docs/project/stitch-brief.md`
 - Stitch workflow: `docs/project/stitch-workflow-v2.md`
-- Active Stitch prompt: `docs/project/stitch-prompts/09-services-export-content-sync.md`
+- Active Stitch prompt: `docs/project/stitch-prompts/10-refine-specialists-default.md`
 - Locale: Persian / RTL
 - Brand direction: آرا — Soft Editorial
 - Product direction: Single women's beauty salon with public discovery, real booking, customer appointment management and core salon operations
@@ -46,28 +46,17 @@ master placeholder baseline
 
 - Whole-product placeholder inventory: Complete
 - Shared visual system: Frozen — `docs/project/stitch-design-system-v2.md`
-- Page refinement: Home frozen; Services structure/content accepted in HTML; screenshot/export sync pending
+- Page refinement: Home + Services frozen; Specialists next
 
 ## Frozen pages
 
 - Home — desktop/default: Frozen — `docs/project/stitch-freezes/home-default-v2.md`
-
-## Frozen pages
-
-- Home — desktop/default: Frozen — `docs/project/stitch-freezes/home-default-v2.md`
-
-## Frozen pages
-
-- Home — desktop/default: Frozen — `docs/project/stitch-freezes/home-default-v2.md`
-
-## Frozen pages
-
-- Home — desktop/default: Frozen — `docs/project/stitch-freezes/home-default-v2.md`
+- Services — desktop/default: Frozen — `docs/project/stitch-freezes/services-default-v2.md`
 
 ## Next action
 
-Select only the current Services screen in Stitch and run:
+Select the current Specialists baseline + frozen Home visual anchor in Stitch and run:
 
-`docs/project/stitch-prompts/09-services-export-content-sync.md`
+`docs/project/stitch-prompts/10-refine-specialists-default.md`
 
-If the next exported screenshot matches the cleaned content, freeze Services desktop/default and continue to Specialists.
+Review and freeze Specialists default state before moving to Gallery.
