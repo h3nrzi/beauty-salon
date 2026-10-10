@@ -6,7 +6,7 @@
 - Product definition: Approved / scope frozen — `docs/project/product-definition.md`
 - Stitch brief: `docs/project/stitch-brief.md`
 - Stitch workflow: `docs/project/stitch-workflow-v2.md`
-- Active Stitch prompt: `docs/project/stitch-prompts/18-refine-contact-default.md`
+- Active Stitch prompt: `docs/project/stitch-prompts/19-contact-final-patch.md`
 - Locale: Persian / RTL
 - Brand direction: آرا — Soft Editorial
 - Product direction: Single women's beauty salon with public discovery, real booking, customer appointment management and core salon operations
@@ -46,7 +46,7 @@ master placeholder baseline
 
 - Whole-product placeholder inventory: Complete
 - Shared visual system: Frozen — `docs/project/stitch-design-system-v2.md`
-- Page refinement: Home + Services + Specialists + Gallery + About frozen; Contact next
+- Page refinement: Home + Services + Specialists + Gallery + About frozen; Contact structure accepted, final patch pending
 
 ## Frozen pages
 
@@ -58,16 +58,8 @@ master placeholder baseline
 
 ## Next action
 
-The old Contact version was already supplied earlier and has now been reviewed.
+Select only the current refined Contact screen in Stitch and run:
 
-In Stitch select:
+`docs/project/stitch-prompts/19-contact-final-patch.md`
 
-1. old Contact screen;
-2. frozen Home;
-3. frozen About.
-
-Run:
-
-`docs/project/stitch-prompts/18-refine-contact-default.md`
-
-Then compare the generated Contact page against the old version before freezing it.
+If the stale footer, embedded-text image and remaining literals are corrected without visual drift, freeze Contact desktop/default.
