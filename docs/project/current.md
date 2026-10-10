@@ -6,7 +6,7 @@
 - Product definition: Approved / scope frozen — `docs/project/product-definition.md`
 - Stitch brief: `docs/project/stitch-brief.md`
 - Stitch workflow: `docs/project/stitch-workflow-v2.md`
-- Active Stitch prompt: Pending old-version review for About
+- Active Stitch prompt: `docs/project/stitch-prompts/15-refine-about-default.md`
 - Locale: Persian / RTL
 - Brand direction: آرا — Soft Editorial
 - Product direction: Single women's beauty salon with public discovery, real booking, customer appointment management and core salon operations
@@ -66,8 +66,26 @@ master placeholder baseline
 - Specialists — desktop/default: Frozen — `docs/project/stitch-freezes/specialists-default-v2.md`
 - Gallery — desktop/default: Frozen — `docs/project/stitch-freezes/gallery-default-v2.md`
 
+## Frozen pages
+
+- Home — desktop/default: Frozen — `docs/project/stitch-freezes/home-default-v2.md`
+- Services — desktop/default: Frozen — `docs/project/stitch-freezes/services-default-v2.md`
+- Specialists — desktop/default: Frozen — `docs/project/stitch-freezes/specialists-default-v2.md`
+- Gallery — desktop/default: Frozen — `docs/project/stitch-freezes/gallery-default-v2.md`
+
 ## Next action
 
-Before refining About, review the existing/old About Stitch screen supplied by the product owner.
+Old About version reviewed and preserve/improve targets recorded.
 
-Do not write or run an About refinement prompt until the old version has been compared and its preserve/improve targets are recorded.
+In Stitch select:
+
+1. old About screen;
+2. frozen Home;
+3. frozen Gallery;
+4. optionally frozen Specialists.
+
+Run:
+
+`docs/project/stitch-prompts/15-refine-about-default.md`
+
+Then compare the generated About page against the old version before freezing it.
