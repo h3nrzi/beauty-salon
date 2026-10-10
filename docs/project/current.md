@@ -6,7 +6,7 @@
 - Product definition: Approved / scope frozen — `docs/project/product-definition.md`
 - Stitch brief: `docs/project/stitch-brief.md`
 - Stitch workflow: `docs/project/stitch-workflow-v2.md`
-- Active Stitch prompt: `docs/project/stitch-prompts/03-refine-home-default.md`
+- Active Stitch prompt: `docs/project/stitch-prompts/04-home-semantic-cleanup.md`
 - Locale: Persian / RTL
 - Brand direction: آرا — Soft Editorial
 - Product direction: Single women's beauty salon with public discovery, real booking, customer appointment management and core salon operations
@@ -46,12 +46,12 @@ master placeholder baseline
 
 - Whole-product placeholder inventory: Complete
 - Shared visual system: Frozen — `docs/project/stitch-design-system-v2.md`
-- Page refinement: Not yet started
+- Page refinement: Home visual structure accepted; semantic cleanup pending
 
 ## Next action
 
-Select the current Home baseline + Services baseline visual anchor in Stitch and run:
+Select only the current refined Home screen in Stitch and run:
 
-`docs/project/stitch-prompts/03-refine-home-default.md`
+`docs/project/stitch-prompts/04-home-semantic-cleanup.md`
 
-Review and freeze Home default state before moving to Services.
+If the semantic cleanup preserves the accepted layout, freeze Home default state and continue to Services.
