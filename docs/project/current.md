@@ -6,7 +6,7 @@
 - Product definition: Approved / scope frozen — `docs/project/product-definition.md`
 - Stitch brief: `docs/project/stitch-brief.md`
 - Stitch workflow: `docs/project/stitch-workflow-v2.md`
-- Active Stitch prompt: `docs/project/stitch-prompts/10-refine-specialists-default.md`
+- Active Stitch prompt: Pending old-version review for Gallery
 - Locale: Persian / RTL
 - Brand direction: آرا — Soft Editorial
 - Product direction: Single women's beauty salon with public discovery, real booking, customer appointment management and core salon operations
@@ -46,25 +46,21 @@ master placeholder baseline
 
 - Whole-product placeholder inventory: Complete
 - Shared visual system: Frozen — `docs/project/stitch-design-system-v2.md`
-- Page refinement: Home + Services frozen; Specialists next
+- Page refinement: Home + Services + Specialists frozen; Gallery next
 
 ## Frozen pages
 
 - Home — desktop/default: Frozen — `docs/project/stitch-freezes/home-default-v2.md`
 - Services — desktop/default: Frozen — `docs/project/stitch-freezes/services-default-v2.md`
 
+## Frozen pages
+
+- Home — desktop/default: Frozen — `docs/project/stitch-freezes/home-default-v2.md`
+- Services — desktop/default: Frozen — `docs/project/stitch-freezes/services-default-v2.md`
+- Specialists — desktop/default: Frozen — `docs/project/stitch-freezes/specialists-default-v2.md`
+
 ## Next action
 
-Old Specialists version reviewed and comparison target recorded.
+Before refining Gallery, review the existing/old Gallery Stitch screen supplied by the product owner.
 
-In Stitch select:
-
-1. old Specialists six-card screen;
-2. frozen Home;
-3. frozen Services.
-
-Run:
-
-`docs/project/stitch-prompts/10-refine-specialists-default.md`
-
-Then compare the generated Specialists page against the old version before freezing it.
+Do not write or run a Gallery refinement prompt until the old version has been compared and its preserve/improve targets are recorded.
