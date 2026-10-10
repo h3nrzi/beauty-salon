@@ -6,7 +6,7 @@
 - Product definition: Approved / scope frozen — `docs/project/product-definition.md`
 - Stitch brief: `docs/project/stitch-brief.md`
 - Stitch workflow: `docs/project/stitch-workflow-v2.md`
-- Active Stitch prompt: `docs/project/stitch-prompts/23-booking-true-default-correction.md`
+- Active Stitch prompt: `docs/project/stitch-prompts/24-booking-zero-selection-sync.md`
 - Locale: Persian / RTL
 - Brand direction: آرا — Soft Editorial
 - Product direction: Single women's beauty salon with public discovery, real booking, customer appointment management and core salon operations
@@ -59,12 +59,14 @@ master placeholder baseline
 
 ## Re-opened page
 
-- Booking service-selection — previous freeze revoked after Review 23
+- Booking service-selection — filter removal accepted; zero-selection static/runtime sync still pending
 
 ## Next action
 
-Select only the current Booking service-selection screen in Stitch and run:
+Select only the current no-filter Booking service-selection screen in Stitch and run:
 
-`docs/project/stitch-prompts/23-booking-true-default-correction.md`
+`docs/project/stitch-prompts/24-booking-zero-selection-sync.md`
 
-Do not continue to My Appointments until Booking default is corrected and re-frozen.
+Do not reintroduce category filters.
+
+Do not continue to My Appointments until Booking default is synchronized and re-frozen.
