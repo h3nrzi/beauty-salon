@@ -6,7 +6,7 @@
 - Product definition: Approved / scope frozen — `docs/project/product-definition.md`
 - Stitch brief: `docs/project/stitch-brief.md`
 - Stitch workflow: `docs/project/stitch-workflow-v2.md`
-- Active Stitch prompt: `docs/project/stitch-prompts/08-services-semantic-cleanup.md`
+- Active Stitch prompt: `docs/project/stitch-prompts/09-services-export-content-sync.md`
 - Locale: Persian / RTL
 - Brand direction: آرا — Soft Editorial
 - Product direction: Single women's beauty salon with public discovery, real booking, customer appointment management and core salon operations
@@ -46,7 +46,11 @@ master placeholder baseline
 
 - Whole-product placeholder inventory: Complete
 - Shared visual system: Frozen — `docs/project/stitch-design-system-v2.md`
-- Page refinement: Home frozen; Services visual structure accepted; semantic cleanup pending
+- Page refinement: Home frozen; Services structure/content accepted in HTML; screenshot/export sync pending
+
+## Frozen pages
+
+- Home — desktop/default: Frozen — `docs/project/stitch-freezes/home-default-v2.md`
 
 ## Frozen pages
 
@@ -62,8 +66,8 @@ master placeholder baseline
 
 ## Next action
 
-Select only the current regenerated Services screen in Stitch and run:
+Select only the current Services screen in Stitch and run:
 
-`docs/project/stitch-prompts/08-services-semantic-cleanup.md`
+`docs/project/stitch-prompts/09-services-export-content-sync.md`
 
-If the semantic cleanup preserves the accepted six-card catalog, freeze Services desktop/default and continue to Specialists.
+If the next exported screenshot matches the cleaned content, freeze Services desktop/default and continue to Specialists.
