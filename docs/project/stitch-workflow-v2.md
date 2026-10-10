@@ -61,16 +61,24 @@ If the family is visually incoherent, regenerate the baseline from the master pr
 
 ### Phase 3 — Page-by-page refinement
 
-Refine one primary page at a time.
+Before starting **every new page**, first inspect the existing/old version supplied by the product owner.
 
 For each page:
-1. select only that baseline screen;
-2. give one focused prompt;
-3. improve hierarchy/content/layout;
-4. keep the frozen visual language;
-5. freeze the page's default state before moving to its secondary states.
 
-Do not mix unrelated pages in one refinement prompt.
+1. product owner provides the old/current Stitch version;
+2. review that version first and record:
+   - what already works visually;
+   - what should be preserved;
+   - what should be improved;
+   - semantic/product drift to remove;
+   - density/coverage expectations;
+3. only after that comparison, write the refinement prompt;
+4. select the old page plus any frozen visual anchor explicitly required by the prompt;
+5. generate one refined default-state page;
+6. compare old vs new before accepting or freezing;
+7. freeze the page's default state before moving to its secondary states.
+
+Do not write the next page's refinement prompt before reviewing its old version.
 
 ### Phase 4 — State generation
 
