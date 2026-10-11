@@ -6,7 +6,7 @@
 - Product definition: Approved / scope frozen — `docs/project/product-definition.md`
 - Stitch brief: `docs/project/stitch-brief.md`
 - Stitch workflow: `docs/project/stitch-workflow-v2.md`
-- Active Stitch prompt: `docs/project/stitch-prompts/26-refine-my-appointments-default.md`
+- Active Stitch prompt: `docs/project/stitch-prompts/28-my-appointments-final-patch.md`
 - Locale: Persian / RTL
 - Brand direction: آرا — Soft Editorial
 - Product direction: Single women's beauty salon with public discovery, real booking, customer appointment management and core salon operations
@@ -69,22 +69,8 @@ master placeholder baseline
 
 ## Next action
 
-The uploaded My Appointments screen was the old/reference version, not a refinement result.
+Select only the current refined My Appointments screen in Stitch and run:
 
-The old version has already been reviewed in:
+`docs/project/stitch-prompts/28-my-appointments-final-patch.md`
 
-`docs/project/stitch-reviews/26-my-appointments-old-version-assessment.md`
-
-Now run the actual refinement.
-
-In Stitch select:
-
-1. old My Appointments screen;
-2. frozen Booking service-selection screen;
-3. frozen Home.
-
-Run:
-
-`docs/project/stitch-prompts/26-refine-my-appointments-default.md`
-
-Then export the new result for old-vs-new comparison before freezing.
+If the stale footer and remaining system-centric literals are corrected without visual drift, freeze My Appointments desktop/default.
