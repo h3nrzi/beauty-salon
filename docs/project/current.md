@@ -6,7 +6,7 @@
 - Product definition: Approved / scope frozen — `docs/project/product-definition.md`
 - Stitch brief: `docs/project/stitch-brief.md`
 - Stitch workflow: `docs/project/stitch-workflow-v2.md`
-- Active Stitch prompt: `docs/project/stitch-prompts/29-my-appointments-fixture-consistency.md`
+- Active Stitch prompt: `docs/project/stitch-prompts/30-my-appointments-future-date-export-sync.md`
 - Locale: Persian / RTL
 - Brand direction: آرا — Soft Editorial
 - Product direction: Single women's beauty salon with public discovery, real booking, customer appointment management and core salon operations
@@ -69,8 +69,13 @@ master placeholder baseline
 
 ## Next action
 
-Select only the current refined My Appointments screen in Stitch and run:
+Select only the current My Appointments screen in Stitch and run:
 
-`docs/project/stitch-prompts/29-my-appointments-fixture-consistency.md`
+`docs/project/stitch-prompts/30-my-appointments-future-date-export-sync.md`
 
-The visual design is accepted. Only the first appointment duration and future-date fixture consistency remain before freeze.
+The page design is accepted. Remaining blockers are:
+
+1. both upcoming dates must actually be future dates;
+2. screen.png and code.html must show the same cleaned content.
+
+Do not continue until this export is synchronized.
