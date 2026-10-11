@@ -6,7 +6,7 @@
 - Product definition: Approved / scope frozen — `docs/project/product-definition.md`
 - Stitch brief: `docs/project/stitch-brief.md`
 - Stitch workflow: `docs/project/stitch-workflow-v2.md`
-- Active Stitch prompt: `docs/project/stitch-prompts/43-manager-specialist-schedules-surgical-refinement.md`
+- Active Stitch prompt: `docs/project/stitch-prompts/44-manager-specialist-schedules-final-terminology.md`
 - Locale: Persian / RTL
 - Brand direction: آرا — Soft Editorial
 - Product direction: Single women's beauty salon with public discovery, real booking, customer appointment management and core salon operations
@@ -92,12 +92,15 @@ master placeholder baseline
 
 ## Next action
 
-Old Manager Specialist Schedules version reviewed and preserve/improve targets recorded.
+The Manager Specialist Schedules visual structure is accepted.
 
-In Stitch select **only the old/original Manager Specialist Schedules screen** and run:
+Select only the current refined screen in Stitch and run:
 
-`docs/project/stitch-prompts/43-manager-specialist-schedules-surgical-refinement.md`
+`docs/project/stitch-prompts/44-manager-specialist-schedules-final-terminology.md`
 
-Do not use additional visual anchors.
+Only two literal fixes remain before freeze:
 
-Then compare the new result against the old version before freezing it.
+1. `۶ متخصص فعال` → `۶ متخصص`;
+2. `روز کاری و فعال` → `روز کاری`.
+
+Do not redesign the page.
