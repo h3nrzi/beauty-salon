@@ -6,7 +6,7 @@
 - Product definition: Approved / scope frozen — `docs/project/product-definition.md`
 - Stitch brief: `docs/project/stitch-brief.md`
 - Stitch workflow: `docs/project/stitch-workflow-v2.md`
-- Active Stitch prompt: Pending old-version review for Manager Specialists
+- Active Stitch prompt: `docs/project/stitch-prompts/38-manager-specialists-surgical-refinement.md`
 - Locale: Persian / RTL
 - Brand direction: آرا — Soft Editorial
 - Product direction: Single women's beauty salon with public discovery, real booking, customer appointment management and core salon operations
@@ -56,48 +56,6 @@ master placeholder baseline
 - Gallery — desktop/default: Frozen — `docs/project/stitch-freezes/gallery-default-v2.md`
 - About — desktop/default: Frozen — `docs/project/stitch-freezes/about-default-v2.md`
 - Contact — desktop/default: Frozen — `docs/project/stitch-freezes/contact-default-v2.md`
-
-## Frozen pages
-
-- Home — desktop/default: Frozen — `docs/project/stitch-freezes/home-default-v2.md`
-- Services — desktop/default: Frozen — `docs/project/stitch-freezes/services-default-v2.md`
-- Specialists — desktop/default: Frozen — `docs/project/stitch-freezes/specialists-default-v2.md`
-- Gallery — desktop/default: Frozen — `docs/project/stitch-freezes/gallery-default-v2.md`
-- About — desktop/default: Frozen — `docs/project/stitch-freezes/about-default-v2.md`
-- Contact — desktop/default: Frozen — `docs/project/stitch-freezes/contact-default-v2.md`
-- Booking service-selection — desktop/default: Frozen — `docs/project/stitch-freezes/booking-service-selection-default-v2.md`
-
-## Frozen pages
-
-- Home — desktop/default: Frozen — `docs/project/stitch-freezes/home-default-v2.md`
-- Services — desktop/default: Frozen — `docs/project/stitch-freezes/services-default-v2.md`
-- Specialists — desktop/default: Frozen — `docs/project/stitch-freezes/specialists-default-v2.md`
-- Gallery — desktop/default: Frozen — `docs/project/stitch-freezes/gallery-default-v2.md`
-- About — desktop/default: Frozen — `docs/project/stitch-freezes/about-default-v2.md`
-- Contact — desktop/default: Frozen — `docs/project/stitch-freezes/contact-default-v2.md`
-- Booking service-selection — desktop/default: Frozen — `docs/project/stitch-freezes/booking-service-selection-default-v2.md`
-- My Appointments — desktop/default: Frozen — `docs/project/stitch-freezes/my-appointments-default-v2.md`
-
-## Frozen pages
-
-- Home — desktop/default: Frozen — `docs/project/stitch-freezes/home-default-v2.md`
-- Services — desktop/default: Frozen — `docs/project/stitch-freezes/services-default-v2.md`
-- Specialists — desktop/default: Frozen — `docs/project/stitch-freezes/specialists-default-v2.md`
-- Gallery — desktop/default: Frozen — `docs/project/stitch-freezes/gallery-default-v2.md`
-- About — desktop/default: Frozen — `docs/project/stitch-freezes/about-default-v2.md`
-- Contact — desktop/default: Frozen — `docs/project/stitch-freezes/contact-default-v2.md`
-- Booking service-selection — desktop/default: Frozen — `docs/project/stitch-freezes/booking-service-selection-default-v2.md`
-- My Appointments — desktop/default: Frozen — `docs/project/stitch-freezes/my-appointments-default-v2.md`
-- Manager Appointments — desktop/default: Frozen — `docs/project/stitch-freezes/manager-appointments-default-v2.md`
-
-## Frozen pages
-
-- Home — desktop/default: Frozen — `docs/project/stitch-freezes/home-default-v2.md`
-- Services — desktop/default: Frozen — `docs/project/stitch-freezes/services-default-v2.md`
-- Specialists — desktop/default: Frozen — `docs/project/stitch-freezes/specialists-default-v2.md`
-- Gallery — desktop/default: Frozen — `docs/project/stitch-freezes/gallery-default-v2.md`
-- About — desktop/default: Frozen — `docs/project/stitch-freezes/about-default-v2.md`
-- Contact — desktop/default: Frozen — `docs/project/stitch-freezes/contact-default-v2.md`
 - Booking service-selection — desktop/default: Frozen — `docs/project/stitch-freezes/booking-service-selection-default-v2.md`
 - My Appointments — desktop/default: Frozen — `docs/project/stitch-freezes/my-appointments-default-v2.md`
 - Manager Appointments — desktop/default: Frozen — `docs/project/stitch-freezes/manager-appointments-default-v2.md`
@@ -105,6 +63,12 @@ master placeholder baseline
 
 ## Next action
 
-Before refining Manager Specialists, review the existing/old Manager Specialists Stitch screen supplied by the product owner.
+Old Manager Specialists version reviewed and preserve/improve targets recorded.
 
-Do not write or run a Manager Specialists refinement prompt until the old version has been compared and its preserve/improve targets are recorded.
+In Stitch select **only the old/original Manager Specialists screen** and run:
+
+`docs/project/stitch-prompts/38-manager-specialists-surgical-refinement.md`
+
+Do not use additional visual anchors for this pass.
+
+Then compare the new result against the old version before freezing it.
