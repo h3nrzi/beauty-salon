@@ -6,7 +6,7 @@
 - Product definition: Approved / scope frozen — `docs/project/product-definition.md`
 - Stitch brief: `docs/project/stitch-brief.md`
 - Stitch workflow: `docs/project/stitch-workflow-v2.md`
-- Active Stitch prompt: `docs/project/stitch-prompts/35-refine-manager-services-default.md`
+- Active Stitch prompt: `docs/project/stitch-prompts/36-manager-services-surgical-refinement.md`
 - Locale: Persian / RTL
 - Brand direction: آرا — Soft Editorial
 - Product direction: Single women's beauty salon with public discovery, real booking, customer appointment management and core salon operations
@@ -90,18 +90,19 @@ master placeholder baseline
 - My Appointments — desktop/default: Frozen — `docs/project/stitch-freezes/my-appointments-default-v2.md`
 - Manager Appointments — desktop/default: Frozen — `docs/project/stitch-freezes/manager-appointments-default-v2.md`
 
+## Rejected refinement
+
+- Manager Services Prompt 35 output rejected for visual regression.
+- Old Manager Services remains the active visual source.
+
 ## Next action
 
-Old Manager Services version reviewed and preserve/improve targets recorded.
+In Stitch select **only the old/original Manager Services screen**.
 
-In Stitch select:
-
-1. old Manager Services screen;
-2. frozen Manager Appointments;
-3. frozen public Services.
+Do not select the rejected output or any other visual anchor.
 
 Run:
 
-`docs/project/stitch-prompts/35-refine-manager-services-default.md`
+`docs/project/stitch-prompts/36-manager-services-surgical-refinement.md`
 
-Then compare the generated Manager Services page against the old version before freezing it.
+The next result must preserve the old page geometry and apply only surgical scope/content cleanup.
