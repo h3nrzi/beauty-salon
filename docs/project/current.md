@@ -6,7 +6,7 @@
 - Product definition: Approved / scope frozen — `docs/project/product-definition.md`
 - Stitch brief: `docs/project/stitch-brief.md`
 - Stitch workflow: `docs/project/stitch-workflow-v2.md`
-- Active Stitch prompt: `docs/project/stitch-prompts/33-manager-appointments-readability-patch.md`
+- Active Stitch prompt: Pending old-version review for Manager Services
 - Locale: Persian / RTL
 - Brand direction: آرا — Soft Editorial
 - Product direction: Single women's beauty salon with public discovery, real booking, customer appointment management and core salon operations
@@ -46,7 +46,7 @@ master placeholder baseline
 
 - Whole-product placeholder inventory: Complete
 - Shared visual system: Frozen — `docs/project/stitch-design-system-v2.md`
-- Page refinement: Public/customer default pages frozen through My Appointments; Manager Appointments next
+- Page refinement: Public/customer defaults + Manager Appointments frozen; Manager Services next
 
 ## Frozen pages
 
@@ -78,17 +78,20 @@ master placeholder baseline
 - Booking service-selection — desktop/default: Frozen — `docs/project/stitch-freezes/booking-service-selection-default-v2.md`
 - My Appointments — desktop/default: Frozen — `docs/project/stitch-freezes/my-appointments-default-v2.md`
 
+## Frozen pages
+
+- Home — desktop/default: Frozen — `docs/project/stitch-freezes/home-default-v2.md`
+- Services — desktop/default: Frozen — `docs/project/stitch-freezes/services-default-v2.md`
+- Specialists — desktop/default: Frozen — `docs/project/stitch-freezes/specialists-default-v2.md`
+- Gallery — desktop/default: Frozen — `docs/project/stitch-freezes/gallery-default-v2.md`
+- About — desktop/default: Frozen — `docs/project/stitch-freezes/about-default-v2.md`
+- Contact — desktop/default: Frozen — `docs/project/stitch-freezes/contact-default-v2.md`
+- Booking service-selection — desktop/default: Frozen — `docs/project/stitch-freezes/booking-service-selection-default-v2.md`
+- My Appointments — desktop/default: Frozen — `docs/project/stitch-freezes/my-appointments-default-v2.md`
+- Manager Appointments — desktop/default: Frozen — `docs/project/stitch-freezes/manager-appointments-default-v2.md`
+
 ## Next action
 
-Select only the current refined Manager Appointments screen in Stitch and run:
+Before refining Manager Services, review the existing/old Manager Services Stitch screen supplied by the product owner.
 
-`docs/project/stitch-prompts/33-manager-appointments-readability-patch.md`
-
-The scope and overall design are accepted. Remaining blockers are only desktop readability:
-
-1. truncated date/specialist filters;
-2. wrapped quick-filter counts;
-3. overly narrow Services cells;
-4. hard-coded `امروز:` fixture wording.
-
-If corrected without visual drift, freeze Manager Appointments desktop/default.
+Do not write or run a Manager Services refinement prompt until the old version has been compared and its preserve/improve targets are recorded.
