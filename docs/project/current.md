@@ -6,7 +6,7 @@
 - Product definition: Approved / scope frozen — `docs/project/product-definition.md`
 - Stitch brief: `docs/project/stitch-brief.md`
 - Stitch workflow: `docs/project/stitch-workflow-v2.md`
-- Active Stitch prompt: Pending old-version review for Manager Services
+- Active Stitch prompt: `docs/project/stitch-prompts/35-refine-manager-services-default.md`
 - Locale: Persian / RTL
 - Brand direction: آرا — Soft Editorial
 - Product direction: Single women's beauty salon with public discovery, real booking, customer appointment management and core salon operations
@@ -92,6 +92,16 @@ master placeholder baseline
 
 ## Next action
 
-Before refining Manager Services, review the existing/old Manager Services Stitch screen supplied by the product owner.
+Old Manager Services version reviewed and preserve/improve targets recorded.
 
-Do not write or run a Manager Services refinement prompt until the old version has been compared and its preserve/improve targets are recorded.
+In Stitch select:
+
+1. old Manager Services screen;
+2. frozen Manager Appointments;
+3. frozen public Services.
+
+Run:
+
+`docs/project/stitch-prompts/35-refine-manager-services-default.md`
+
+Then compare the generated Manager Services page against the old version before freezing it.
