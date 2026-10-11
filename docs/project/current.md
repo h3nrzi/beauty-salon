@@ -6,7 +6,7 @@
 - Product definition: Approved / scope frozen — `docs/project/product-definition.md`
 - Stitch brief: `docs/project/stitch-brief.md`
 - Stitch workflow: `docs/project/stitch-workflow-v2.md`
-- Active Stitch prompt: Pending old-version review for Manager Salon Hours
+- Active Stitch prompt: `docs/project/stitch-prompts/41-manager-salon-hours-surgical-refinement.md`
 - Locale: Persian / RTL
 - Brand direction: آرا — Soft Editorial
 - Product direction: Single women's beauty salon with public discovery, real booking, customer appointment management and core salon operations
@@ -77,6 +77,12 @@ master placeholder baseline
 
 ## Next action
 
-Before refining Manager Salon Hours, review the existing/old Manager Salon Hours Stitch screen supplied by the product owner.
+Old Manager Salon Hours version reviewed and preserve/improve targets recorded.
 
-Do not write or run a refinement prompt until the old version has been compared and its preserve/improve targets are recorded.
+In Stitch select **only the old/original Manager Salon Hours screen** and run:
+
+`docs/project/stitch-prompts/41-manager-salon-hours-surgical-refinement.md`
+
+Do not use additional visual anchors.
+
+Then compare the new result against the old version before freezing it.
