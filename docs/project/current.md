@@ -6,7 +6,7 @@
 - Product definition: Approved / scope frozen — `docs/project/product-definition.md`
 - Stitch brief: `docs/project/stitch-brief.md`
 - Stitch workflow: `docs/project/stitch-workflow-v2.md`
-- Active Stitch prompt: `docs/project/stitch-prompts/38-manager-specialists-surgical-refinement.md`
+- Active Stitch prompt: `docs/project/stitch-prompts/39-manager-specialists-default-state-cleanup.md`
 - Locale: Persian / RTL
 - Brand direction: آرا — Soft Editorial
 - Product direction: Single women's beauty salon with public discovery, real booking, customer appointment management and core salon operations
@@ -63,12 +63,15 @@ master placeholder baseline
 
 ## Next action
 
-Old Manager Specialists version reviewed and preserve/improve targets recorded.
+The visible Manager Specialists refinement is accepted.
 
-In Stitch select **only the old/original Manager Specialists screen** and run:
+Select only the current refined Manager Specialists screen in Stitch and run:
 
-`docs/project/stitch-prompts/38-manager-specialists-surgical-refinement.md`
+`docs/project/stitch-prompts/39-manager-specialists-default-state-cleanup.md`
 
-Do not use additional visual anchors for this pass.
+Remaining blockers before freeze:
 
-Then compare the new result against the old version before freezing it.
+1. remove the hidden add-specialist modal/form from this default export;
+2. remove the hard-coded `امروز:` prefix.
+
+Do not redesign the page.
