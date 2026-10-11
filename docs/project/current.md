@@ -6,7 +6,7 @@
 - Product definition: Approved / scope frozen — `docs/project/product-definition.md`
 - Stitch brief: `docs/project/stitch-brief.md`
 - Stitch workflow: `docs/project/stitch-workflow-v2.md`
-- Active Stitch prompt: `docs/project/stitch-prompts/32-refine-manager-appointments-default.md`
+- Active Stitch prompt: `docs/project/stitch-prompts/33-manager-appointments-readability-patch.md`
 - Locale: Persian / RTL
 - Brand direction: آرا — Soft Editorial
 - Product direction: Single women's beauty salon with public discovery, real booking, customer appointment management and core salon operations
@@ -80,16 +80,15 @@ master placeholder baseline
 
 ## Next action
 
-Old Manager Appointments version reviewed and preserve/improve targets recorded.
+Select only the current refined Manager Appointments screen in Stitch and run:
 
-In Stitch select:
+`docs/project/stitch-prompts/33-manager-appointments-readability-patch.md`
 
-1. old Manager Appointments screen;
-2. frozen My Appointments;
-3. optionally frozen Booking.
+The scope and overall design are accepted. Remaining blockers are only desktop readability:
 
-Run:
+1. truncated date/specialist filters;
+2. wrapped quick-filter counts;
+3. overly narrow Services cells;
+4. hard-coded `امروز:` fixture wording.
 
-`docs/project/stitch-prompts/32-refine-manager-appointments-default.md`
-
-Then compare the generated Manager Appointments page against the old version before freezing it.
+If corrected without visual drift, freeze Manager Appointments desktop/default.
