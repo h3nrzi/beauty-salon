@@ -6,7 +6,7 @@
 - Product definition: Approved / scope frozen — `docs/project/product-definition.md`
 - Stitch brief: `docs/project/stitch-brief.md`
 - Stitch workflow: `docs/project/stitch-workflow-v2.md`
-- Active Stitch prompt: `docs/project/stitch-prompts/28-my-appointments-final-patch.md`
+- Active Stitch prompt: `docs/project/stitch-prompts/29-my-appointments-fixture-consistency.md`
 - Locale: Persian / RTL
 - Brand direction: آرا — Soft Editorial
 - Product direction: Single women's beauty salon with public discovery, real booking, customer appointment management and core salon operations
@@ -71,6 +71,6 @@ master placeholder baseline
 
 Select only the current refined My Appointments screen in Stitch and run:
 
-`docs/project/stitch-prompts/28-my-appointments-final-patch.md`
+`docs/project/stitch-prompts/29-my-appointments-fixture-consistency.md`
 
-If the stale footer and remaining system-centric literals are corrected without visual drift, freeze My Appointments desktop/default.
+The visual design is accepted. Only the first appointment duration and future-date fixture consistency remain before freeze.
