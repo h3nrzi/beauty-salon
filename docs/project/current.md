@@ -6,7 +6,7 @@
 - Product definition: Approved / scope frozen — `docs/project/product-definition.md`
 - Stitch brief: `docs/project/stitch-brief.md`
 - Stitch workflow: `docs/project/stitch-workflow-v2.md`
-- Active Stitch prompt: `docs/project/stitch-prompts/26-refine-my-appointments-default.md`
+- Active Stitch prompt: `docs/project/stitch-prompts/27-my-appointments-forced-cleanup.md`
 - Locale: Persian / RTL
 - Brand direction: آرا — Soft Editorial
 - Product direction: Single women's beauty salon with public discovery, real booking, customer appointment management and core salon operations
@@ -69,16 +69,15 @@ master placeholder baseline
 
 ## Next action
 
-Old My Appointments version reviewed and preserve/improve targets recorded.
+The first My Appointments refinement export was byte-identical to the old version and is rejected as a no-op.
 
 In Stitch select:
 
 1. old My Appointments screen;
-2. frozen Booking service-selection screen;
-3. frozen Home.
+2. optionally frozen Booking as the single visual anchor.
 
 Run:
 
-`docs/project/stitch-prompts/26-refine-my-appointments-default.md`
+`docs/project/stitch-prompts/27-my-appointments-forced-cleanup.md`
 
-Then compare the generated My Appointments page against the old version before freezing it.
+The next export must visibly remove the old VIP/loyalty/facility/policy drift before review.
