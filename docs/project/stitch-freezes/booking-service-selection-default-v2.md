@@ -1,53 +1,66 @@
 # Booking default service-selection v2
 
-Status: **REVOKED — requires correction**  
-Originally frozen: 2026-10-10
-Revoked: 2026-10-10 after Review 23
+Status: **Frozen — desktop/default**  
+Frozen: 2026-10-11
 
 Source export:
 
-`stitch_salon_visual_baseline (22).zip`
+`stitch_salon_visual_baseline (24).zip`
 
 SHA-256:
 
-`00362dab4f9841d12f9a79e3b9dbc1a8428c6556020fff0f888c5253d11edc39`
+`819380de1b7c766878aa25d35f9afdb7cf81fd6f24f90856da637ec6058183c6`
+
+## Manual design decision
+
+The category/filter row was intentionally removed by the product owner.
+
+For the current six-service catalog, the frozen default shows all services directly with no filter controls.
 
 ## Frozen visual baseline
 
 - five-step booking progress
-- service-selection catalog
-- category chips
+- no-filter six-service catalog
+- true zero-selection initial state
 - selected/unselected service treatment
 - desktop split layout
 - sticky booking summary
-- selected-service removal
+- empty summary at zero selection
 - total duration + total price
 - same-specialist guidance
-- `ادامه و انتخاب متخصص` CTA
+- disabled Continue CTA until selection
+- `ادامه و انتخاب متخصص` CTA hierarchy
 - next-step helper
 - neutral public footer
 
 ## Frozen semantic baseline
 
-- multiple services supported
-- services performed consecutively
+- initial state has 0 selected services
+- customer explicitly selects one or more services
+- services are performed consecutively
 - one specialist must be eligible for the full selected service set
-- totals are derived from selected services
+- totals derive from selected services
+- Continue is disabled with zero selection
 - payment is at salon
 - next step is Specialist
 - identity/mobile verification occurs later
+- no category filter is required for the current catalog size
 
-## Deterministic cleanup deferred
+## Accessibility intent
 
-- `پرداخت در سالن پس از ارائه خدمات انجام می‌شود.` → `پرداخت در سالن`
+- keyboard-operable service selection
+- checkbox-style selection semantics
+- visible focus treatment
+- selected state not color-only
+- accessible remove-button labels
+- true disabled Continue state
 
-Representative selected services are fixture data only and do not imply automatic production preselection.
+## Not frozen
+
+- fixture service data
+- responsive variants
+- Specialist / Date-Time / Identity / Review steps
+- success/stale/error states
+- production control implementation details
 
 Product Definition remains authoritative.
-
-
-## Revocation note
-
-Review 23 found that the artifact was not a true initial state, screenshot and HTML disagreed, embedded selection metadata was stale/incomplete, the sixth service was not represented in the interaction data, zero-selection CTA behavior was incorrect, and accessibility intent was insufficient.
-
-This file is retained as historical evidence only and is **not an active frozen baseline**.
