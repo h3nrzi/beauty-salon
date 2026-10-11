@@ -6,7 +6,7 @@
 - Product definition: Approved / scope frozen — `docs/project/product-definition.md`
 - Stitch brief: `docs/project/stitch-brief.md`
 - Stitch workflow: `docs/project/stitch-workflow-v2.md`
-- Active Stitch prompt: `docs/project/stitch-prompts/30-my-appointments-future-date-export-sync.md`
+- Active Stitch prompt: Pending old-version review for Manager Appointments
 - Locale: Persian / RTL
 - Brand direction: آرا — Soft Editorial
 - Product direction: Single women's beauty salon with public discovery, real booking, customer appointment management and core salon operations
@@ -46,7 +46,7 @@ master placeholder baseline
 
 - Whole-product placeholder inventory: Complete
 - Shared visual system: Frozen — `docs/project/stitch-design-system-v2.md`
-- Page refinement: Home + Services + Specialists + Gallery + About + Contact + Booking default frozen; My Appointments next
+- Page refinement: Public/customer default pages frozen through My Appointments; Manager Appointments next
 
 ## Frozen pages
 
@@ -67,15 +67,19 @@ master placeholder baseline
 - Contact — desktop/default: Frozen — `docs/project/stitch-freezes/contact-default-v2.md`
 - Booking service-selection — desktop/default: Frozen — `docs/project/stitch-freezes/booking-service-selection-default-v2.md`
 
+## Frozen pages
+
+- Home — desktop/default: Frozen — `docs/project/stitch-freezes/home-default-v2.md`
+- Services — desktop/default: Frozen — `docs/project/stitch-freezes/services-default-v2.md`
+- Specialists — desktop/default: Frozen — `docs/project/stitch-freezes/specialists-default-v2.md`
+- Gallery — desktop/default: Frozen — `docs/project/stitch-freezes/gallery-default-v2.md`
+- About — desktop/default: Frozen — `docs/project/stitch-freezes/about-default-v2.md`
+- Contact — desktop/default: Frozen — `docs/project/stitch-freezes/contact-default-v2.md`
+- Booking service-selection — desktop/default: Frozen — `docs/project/stitch-freezes/booking-service-selection-default-v2.md`
+- My Appointments — desktop/default: Frozen — `docs/project/stitch-freezes/my-appointments-default-v2.md`
+
 ## Next action
 
-Select only the current My Appointments screen in Stitch and run:
+Before refining Manager Appointments, review the existing/old Manager Appointments Stitch screen supplied by the product owner.
 
-`docs/project/stitch-prompts/30-my-appointments-future-date-export-sync.md`
-
-The page design is accepted. Remaining blockers are:
-
-1. both upcoming dates must actually be future dates;
-2. screen.png and code.html must show the same cleaned content.
-
-Do not continue until this export is synchronized.
+Do not write or run a Manager Appointments refinement prompt until the old version has been compared and its preserve/improve targets are recorded.
