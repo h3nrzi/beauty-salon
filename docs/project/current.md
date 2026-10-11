@@ -6,7 +6,7 @@
 - Product definition: Approved / scope frozen — `docs/project/product-definition.md`
 - Stitch brief: `docs/project/stitch-brief.md`
 - Stitch workflow: `docs/project/stitch-workflow-v2.md`
-- Active Stitch prompt: `docs/project/stitch-prompts/41-manager-salon-hours-surgical-refinement.md`
+- Active Stitch prompt: Pending old-version review for Manager Specialist Schedules
 - Locale: Persian / RTL
 - Brand direction: آرا — Soft Editorial
 - Product direction: Single women's beauty salon with public discovery, real booking, customer appointment management and core salon operations
@@ -46,7 +46,7 @@ master placeholder baseline
 
 - Whole-product placeholder inventory: Complete
 - Shared visual system: Frozen — `docs/project/stitch-design-system-v2.md`
-- Page refinement: Public/customer defaults + Manager Appointments + Manager Services + Manager Specialists frozen; Manager Salon Hours next
+- Page refinement: Public/customer defaults + Manager Appointments + Manager Services + Manager Specialists + Manager Salon Hours frozen; Manager Specialist Schedules next
 
 ## Frozen pages
 
@@ -75,14 +75,23 @@ master placeholder baseline
 - Manager Services — desktop/default: Frozen — `docs/project/stitch-freezes/manager-services-default-v2.md`
 - Manager Specialists — desktop/default: Frozen — `docs/project/stitch-freezes/manager-specialists-default-v2.md`
 
+## Frozen pages
+
+- Home — desktop/default: Frozen — `docs/project/stitch-freezes/home-default-v2.md`
+- Services — desktop/default: Frozen — `docs/project/stitch-freezes/services-default-v2.md`
+- Specialists — desktop/default: Frozen — `docs/project/stitch-freezes/specialists-default-v2.md`
+- Gallery — desktop/default: Frozen — `docs/project/stitch-freezes/gallery-default-v2.md`
+- About — desktop/default: Frozen — `docs/project/stitch-freezes/about-default-v2.md`
+- Contact — desktop/default: Frozen — `docs/project/stitch-freezes/contact-default-v2.md`
+- Booking service-selection — desktop/default: Frozen — `docs/project/stitch-freezes/booking-service-selection-default-v2.md`
+- My Appointments — desktop/default: Frozen — `docs/project/stitch-freezes/my-appointments-default-v2.md`
+- Manager Appointments — desktop/default: Frozen — `docs/project/stitch-freezes/manager-appointments-default-v2.md`
+- Manager Services — desktop/default: Frozen — `docs/project/stitch-freezes/manager-services-default-v2.md`
+- Manager Specialists — desktop/default: Frozen — `docs/project/stitch-freezes/manager-specialists-default-v2.md`
+- Manager Salon Hours — desktop/default: Frozen — `docs/project/stitch-freezes/manager-salon-hours-default-v2.md`
+
 ## Next action
 
-Old Manager Salon Hours version reviewed and preserve/improve targets recorded.
+Before refining Manager Specialist Schedules, review the existing/old Manager Specialist Schedules Stitch screen supplied by the product owner.
 
-In Stitch select **only the old/original Manager Salon Hours screen** and run:
-
-`docs/project/stitch-prompts/41-manager-salon-hours-surgical-refinement.md`
-
-Do not use additional visual anchors.
-
-Then compare the new result against the old version before freezing it.
+Do not write or run a refinement prompt until the old version has been compared and its preserve/improve targets are recorded.
