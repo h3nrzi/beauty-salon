@@ -6,7 +6,7 @@
 - Product definition: Approved / scope frozen — `docs/project/product-definition.md`
 - Stitch brief: `docs/project/stitch-brief.md`
 - Stitch workflow: `docs/project/stitch-workflow-v2.md`
-- Active Stitch prompt: `docs/project/stitch-prompts/44-manager-specialist-schedules-final-terminology.md`
+- Active Stitch prompt: Pending old-version review for Manager Breaks
 - Locale: Persian / RTL
 - Brand direction: آرا — Soft Editorial
 - Product direction: Single women's beauty salon with public discovery, real booking, customer appointment management and core salon operations
@@ -46,7 +46,7 @@ master placeholder baseline
 
 - Whole-product placeholder inventory: Complete
 - Shared visual system: Frozen — `docs/project/stitch-design-system-v2.md`
-- Page refinement: Public/customer defaults + Manager Appointments + Manager Services + Manager Specialists + Manager Salon Hours frozen; Manager Specialist Schedules next
+- Page refinement: Public/customer defaults + Manager Appointments + Manager Services + Manager Specialists + Manager Salon Hours + Manager Specialist Schedules frozen; Manager Breaks next
 
 ## Frozen pages
 
@@ -92,15 +92,6 @@ master placeholder baseline
 
 ## Next action
 
-The Manager Specialist Schedules visual structure is accepted.
+Before refining Manager Breaks, review the existing/old Manager Breaks Stitch screen supplied by the product owner.
 
-Select only the current refined screen in Stitch and run:
-
-`docs/project/stitch-prompts/44-manager-specialist-schedules-final-terminology.md`
-
-Only two literal fixes remain before freeze:
-
-1. `۶ متخصص فعال` → `۶ متخصص`;
-2. `روز کاری و فعال` → `روز کاری`.
-
-Do not redesign the page.
+Do not write or run a refinement prompt until the old version has been compared and its preserve/improve targets are recorded.
